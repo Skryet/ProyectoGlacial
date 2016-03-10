@@ -116,6 +116,7 @@
             this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
             this.btn_Modificar.TabIndex = 8;
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // btn_Eliminar
             // 
@@ -232,7 +233,6 @@
             this.Controls.Add(this.pnl_Encabezado);
             this.Name = "frm_Proveedores";
             this.Text = "SGA - Proveedores";
-            this.Load += new System.EventHandler(this.frm_Proveedores_Load);
             this.pnl_Encabezado.ResumeLayout(false);
             this.pnl_Encabezado.PerformLayout();
             this.pnl_Menu.ResumeLayout(false);

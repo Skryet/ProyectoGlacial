@@ -10,6 +10,7 @@ namespace Proyecto_Glacial
     {
 
         public static int idCliente;
+        public static int idProveedor;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

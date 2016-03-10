@@ -53,6 +53,7 @@ namespace Proyecto_Glacial.Proveedores
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)
         {
+            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
             id = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
             Insertar(id);            
         }

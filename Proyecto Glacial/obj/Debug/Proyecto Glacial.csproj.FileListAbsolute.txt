@@ -16,3 +16,21 @@ C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\
 C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorAgregar.resources
 C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorBuscar.resources
 C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.pdb
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\bin\Debug\MySql.Data.dll
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csprojResolveAssemblyReference.cache
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesAgregar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesBuscar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesMenu.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesModificar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_MenuPrincipal.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Properties.Resources.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorAgregar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorBuscar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources

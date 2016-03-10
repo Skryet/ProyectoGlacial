@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace Proyecto_Glacial
 {
-    public delegate void insertarID(int id);
+    public delegate void insertarID(int id);    
 
     public partial class frm_Proveedores : Form
     {        
         private int id;
+        private Proveedores.frm_ProveedorBuscar form;
+        private Proveedores.frm_ProveedorBuscar ProveedorBuscar;
 
         public frm_Proveedores()
-        {
+        {            
             InitializeComponent();
             id = 0;            
         }
@@ -42,7 +44,18 @@ namespace Proyecto_Glacial
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
             if (id != 0)
+            {
                 proveedoresTableAdapter.BorrarProveedor(id);
+                proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
+                id = 0;
+                ProveedorBuscar.Close();
+                form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
+                ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();
+                ProveedorBuscar.Insertar += new insertarID(insertado);                
+                AddFormInPanel(ProveedorBuscar);
+            }
+            else
+                MessageBox.Show("No se a seleccionado ningun registro para la eliminacion", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }        
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -54,8 +67,8 @@ namespace Proyecto_Glacial
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            Proveedores.frm_ProveedorBuscar form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
-            Proveedores.frm_ProveedorBuscar ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();
+            form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
+            ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();
             ProveedorBuscar.Insertar += new insertarID(insertado);
             AddFormInPanel(ProveedorBuscar);
         }
@@ -74,5 +87,17 @@ namespace Proyecto_Glacial
             this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
 
         }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            if (Program.idProveedor != 0)
+            {
+                Proveedores.frm_ProveedorModificar form = Application.OpenForms.OfType<Proveedores.frm_ProveedorModificar>().FirstOrDefault();
+                Proveedores.frm_ProveedorModificar ProveedorModificar = form ?? new Proveedores.frm_ProveedorModificar();
+                AddFormInPanel(ProveedorModificar);                
+            }
+            else
+                MessageBox.Show("No se a seleccionado ningun registro para la modificación", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }        
     }
 }
