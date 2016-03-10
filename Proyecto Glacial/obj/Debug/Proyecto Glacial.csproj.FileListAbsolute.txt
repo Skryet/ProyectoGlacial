@@ -18,3 +18,5 @@ C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\
 C:\Users\jever\Source\Repos\Glacial\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
