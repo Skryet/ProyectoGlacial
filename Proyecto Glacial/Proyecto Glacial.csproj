@@ -196,7 +196,7 @@
     <None Include="Resources\SearchButtonAllGray.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Prueba\" />
+    <None Include="Resources\diskette.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

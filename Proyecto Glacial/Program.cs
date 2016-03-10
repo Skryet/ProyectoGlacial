@@ -10,6 +10,7 @@ namespace Proyecto_Glacial
     {
 
         public static int idCliente;
+        public static bool isOpenMainClientForm = true;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,7 +19,7 @@ namespace Proyecto_Glacial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Proveedores());
+            Application.Run(new frm_MenuPrincipal());
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Proyecto_Glacial
 {
     public partial class frm_ClientesAgregar : Form
     {
+        
+    
 
         private bool verificar()
         {
@@ -65,17 +67,21 @@ namespace Proyecto_Glacial
             if (!verificar())
                 MessageBox.Show("Faltan campos por llenar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
-            { 
-            //Agregar Cliente a la BDD
-            this.clientesTableAdapter.InsertarNuevoCliente(
-                txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text,
-                txtDireccion.Text, txtColonia.Text, txtCiudad.Text,
-                txtColonia.Text);
-            //Mensaje de Confirmación            
-            Limpiar();
-            MessageBox.Show("Cliente Registrado con Éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            {
+                //Agregar Cliente a la BDD
+                this.clientesTableAdapter.InsertarNuevoCliente(
+                    txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text,
+                    txtDireccion.Text, txtColonia.Text, txtCiudad.Text,
+                    txtColonia.Text);
+                //Mensaje de Confirmación            
+                Limpiar();
+                Program.isOpenMainClientForm = false;
+                var resultado = MessageBox.Show("Cliente Registrado con Éxito, ¿Desea Agregar otro Cliente ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.No)
+                {
+                    this.Close();
+                }
             }
-            
 
 
         }

@@ -127,22 +127,25 @@
   <data name="DeleteButtonRed(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteButtonRed(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clipboard-search-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-search-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DeleteButtonRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteButtonRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AddButtonBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddButtonBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clipboard-search-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clipboard-search-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ModifyButtonBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModifyButtonBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButtonAllGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchButtonAllGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SearchButtonGray(02)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchButtonGray(02).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SearchButtonAllGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SearchButtonAllGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="diskette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diskette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
