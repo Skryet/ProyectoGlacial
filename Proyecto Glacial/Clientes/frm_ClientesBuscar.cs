@@ -64,9 +64,14 @@ namespace Proyecto_Glacial.Clientes
                 switch (cmb_SelccionarTipo.Text)
                 {
                     case "Número de Cliente":
-                        this.clientesTableAdapter.FillByBuscarClienteId(this.glacial_almacenDataSet.clientes, Convert.ToInt32(txt_Buscar.Text));
-                        if (clientesDataGridView.RowCount == 0)
-                            MessageBox.Show("No se encontró un registro con este número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (txt_Buscar.Text.GetType() == Type.GetType("System.Int32")) //Verificar si es número
+                        {
+                            this.clientesTableAdapter.FillByBuscarClienteId(this.glacial_almacenDataSet.clientes, Convert.ToInt32(txt_Buscar.Text));
+                            if (clientesDataGridView.RowCount == 0)
+                                MessageBox.Show("No se encontró un registro con este número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Por favor introduzca un número válido");
                         break;
 
                     case "Apellido Paterno":
@@ -93,6 +98,7 @@ namespace Proyecto_Glacial.Clientes
 
         private void clientesDataGridView_Click(object sender, EventArgs e)
         {
+            
 
             Int32 selectedCellCount =
                 clientesDataGridView.GetCellCount(DataGridViewElementStates.Selected);
