@@ -110,6 +110,13 @@
     <Compile Include="Proveedores\frm_Proveedores.Designer.cs">
       <DependentUpon>frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedores\frm_ProveedorModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\frm_ProveedorModificar.Designer.cs">
+      <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frm_Proveedores.resx">
       <DependentUpon>frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\frm_ProveedorModificar.resx">
+      <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="glacial_almacenDataSet.xsc">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>

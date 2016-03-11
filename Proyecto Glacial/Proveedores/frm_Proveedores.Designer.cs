@@ -43,15 +43,15 @@
             this.pnl_Contenido = new System.Windows.Forms.Panel();
             this.pnl_BarraEstado = new System.Windows.Forms.Panel();
             this.lbl_MenuActual = new System.Windows.Forms.Label();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_Encabezado.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.pnl_BarraEstado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Provedores
@@ -110,15 +110,18 @@
             // 
             // btn_Modificar
             // 
+            this.btn_Modificar.Enabled = false;
             this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
             this.btn_Modificar.Location = new System.Drawing.Point(47, 394);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
             this.btn_Modificar.TabIndex = 8;
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // btn_Eliminar
             // 
+            this.btn_Eliminar.Enabled = false;
             this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
             this.btn_Eliminar.Location = new System.Drawing.Point(49, 266);
             this.btn_Eliminar.Name = "btn_Eliminar";
@@ -186,25 +189,11 @@
             // 
             this.lbl_MenuActual.AutoSize = true;
             this.lbl_MenuActual.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
-            this.lbl_MenuActual.Location = new System.Drawing.Point(298, 9);
+            this.lbl_MenuActual.Location = new System.Drawing.Point(288, 9);
             this.lbl_MenuActual.Name = "lbl_MenuActual";
-            this.lbl_MenuActual.Size = new System.Drawing.Size(290, 16);
+            this.lbl_MenuActual.Size = new System.Drawing.Size(321, 16);
             this.lbl_MenuActual.TabIndex = 0;
-            this.lbl_MenuActual.Text = "Sistema de Gestion de Almacen - Clientes";
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataMember = "proveedores";
-            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proveedoresTableAdapter
-            // 
-            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            this.lbl_MenuActual.Text = "Sistema de Gestion de Almacen - Proveedores";
             // 
             // tableAdapterManager
             // 
@@ -221,6 +210,20 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // proveedoresTableAdapter
+            // 
+            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "proveedores";
+            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
             // frm_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,15 +235,14 @@
             this.Controls.Add(this.pnl_Encabezado);
             this.Name = "frm_Proveedores";
             this.Text = "SGA - Proveedores";
-            this.Load += new System.EventHandler(this.frm_Proveedores_Load);
             this.pnl_Encabezado.ResumeLayout(false);
             this.pnl_Encabezado.PerformLayout();
             this.pnl_Menu.ResumeLayout(false);
             this.pnl_Menu.PerformLayout();
             this.pnl_BarraEstado.ResumeLayout(false);
             this.pnl_BarraEstado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,9 +263,9 @@
         private System.Windows.Forms.Label lbl_MenuActual;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Buscar;
+        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private glacial_almacenDataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
         private glacial_almacenDataSet glacial_almacenDataSet;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
-        private glacial_almacenDataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
-        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

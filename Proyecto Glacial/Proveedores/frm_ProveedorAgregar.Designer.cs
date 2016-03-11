@@ -35,14 +35,14 @@
             System.Windows.Forms.Label lbl_Colonia;
             System.Windows.Forms.Label lbl_Estado;
             this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.txt_Colonia = new System.Windows.Forms.TextBox();
             this.txt_Estado = new System.Windows.Forms.TextBox();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_Agregar = new System.Windows.Forms.Label();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             lbl_Nombre = new System.Windows.Forms.Label();
@@ -64,16 +64,6 @@
             lbl_Nombre.TabIndex = 1;
             lbl_Nombre.Text = "Nombre";
             // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "nombre", true));
-            this.txt_Nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Nombre.Location = new System.Drawing.Point(129, 46);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(355, 26);
-            this.txt_Nombre.TabIndex = 2;
-            this.txt_Nombre.TextChanged += new System.EventHandler(this.despintarTexto);
-            // 
             // lbl_Telefono
             // 
             lbl_Telefono.AutoSize = true;
@@ -83,16 +73,6 @@
             lbl_Telefono.Size = new System.Drawing.Size(77, 18);
             lbl_Telefono.TabIndex = 3;
             lbl_Telefono.Text = "Teléfono";
-            // 
-            // txt_Telefono
-            // 
-            this.txt_Telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "telefono", true));
-            this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Telefono.Location = new System.Drawing.Point(129, 91);
-            this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(100, 26);
-            this.txt_Telefono.TabIndex = 4;
-            this.txt_Telefono.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // lbl_Direccion
             // 
@@ -104,16 +84,6 @@
             lbl_Direccion.TabIndex = 5;
             lbl_Direccion.Text = "Dirección";
             // 
-            // txt_Direccion
-            // 
-            this.txt_Direccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "direccion", true));
-            this.txt_Direccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Direccion.Location = new System.Drawing.Point(129, 136);
-            this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(347, 26);
-            this.txt_Direccion.TabIndex = 6;
-            this.txt_Direccion.TextChanged += new System.EventHandler(this.despintarTexto);
-            // 
             // lbl_Colonia
             // 
             lbl_Colonia.AutoSize = true;
@@ -124,16 +94,6 @@
             lbl_Colonia.TabIndex = 7;
             lbl_Colonia.Text = "Colonia";
             // 
-            // txt_Colonia
-            // 
-            this.txt_Colonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "colonia", true));
-            this.txt_Colonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Colonia.Location = new System.Drawing.Point(129, 181);
-            this.txt_Colonia.Name = "txt_Colonia";
-            this.txt_Colonia.Size = new System.Drawing.Size(356, 26);
-            this.txt_Colonia.TabIndex = 8;
-            this.txt_Colonia.TextChanged += new System.EventHandler(this.despintarTexto);
-            // 
             // lbl_Estado
             // 
             lbl_Estado.AutoSize = true;
@@ -143,6 +103,56 @@
             lbl_Estado.Size = new System.Drawing.Size(64, 18);
             lbl_Estado.TabIndex = 9;
             lbl_Estado.Text = "Estado";
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "nombre", true));
+            this.txt_Nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Nombre.Location = new System.Drawing.Point(129, 46);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.Size = new System.Drawing.Size(355, 26);
+            this.txt_Nombre.TabIndex = 2;
+            this.txt_Nombre.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "proveedores";
+            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txt_Telefono
+            // 
+            this.txt_Telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "telefono", true));
+            this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Telefono.Location = new System.Drawing.Point(129, 91);
+            this.txt_Telefono.Name = "txt_Telefono";
+            this.txt_Telefono.Size = new System.Drawing.Size(100, 26);
+            this.txt_Telefono.TabIndex = 4;
+            this.txt_Telefono.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txt_Direccion
+            // 
+            this.txt_Direccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "direccion", true));
+            this.txt_Direccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Direccion.Location = new System.Drawing.Point(129, 136);
+            this.txt_Direccion.Name = "txt_Direccion";
+            this.txt_Direccion.Size = new System.Drawing.Size(347, 26);
+            this.txt_Direccion.TabIndex = 6;
+            this.txt_Direccion.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txt_Colonia
+            // 
+            this.txt_Colonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "colonia", true));
+            this.txt_Colonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Colonia.Location = new System.Drawing.Point(129, 181);
+            this.txt_Colonia.Name = "txt_Colonia";
+            this.txt_Colonia.Size = new System.Drawing.Size(356, 26);
+            this.txt_Colonia.TabIndex = 8;
+            this.txt_Colonia.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // txt_Estado
             // 
@@ -173,16 +183,6 @@
             this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
             this.lbl_Agregar.TabIndex = 11;
             this.lbl_Agregar.Text = "Agregar";
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataMember = "proveedores";
-            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // proveedoresTableAdapter
             // 
