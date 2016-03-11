@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pnl_Contenido.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 92</value>
+  </data>
+  <data name="pnl_Contenido.Size" type="System.Drawing.Size, System.Drawing">
+    <value>695, 523</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnl_Contenido.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pnl_Contenido.Name" xml:space="preserve">
+    <value>pnl_Contenido</value>
+  </data>
+  <data name="&gt;&gt;pnl_Contenido.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_Contenido.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_Contenido.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 14.25pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 89</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 22</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Catalogo</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_Buscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="btn_Buscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="btn_Buscar.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Name" xml:space="preserve">
+    <value>btn_Buscar</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_Modificar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_Modificar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 394</value>
+  </data>
+  <data name="btn_Modificar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="btn_Modificar.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btn_Modificar.Name" xml:space="preserve">
+    <value>btn_Modificar</value>
+  </data>
+  <data name="&gt;&gt;btn_Modificar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Modificar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;btn_Modificar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_Eliminar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_Eliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 266</value>
+  </data>
+  <data name="btn_Eliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="btn_Eliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btn_Eliminar.Name" xml:space="preserve">
+    <value>btn_Eliminar</value>
+  </data>
+  <data name="&gt;&gt;btn_Eliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Eliminar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;btn_Eliminar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_Agregar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 138</value>
+  </data>
+  <data name="btn_Agregar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="btn_Agregar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btn_Agregar.Name" xml:space="preserve">
+    <value>btn_Agregar</value>
+  </data>
+  <data name="&gt;&gt;btn_Agregar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Agregar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;btn_Agregar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl_Modificar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Modificar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 14.25pt</value>
+  </data>
+  <data name="lbl_Modificar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 470</value>
+  </data>
+  <data name="lbl_Modificar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="lbl_Modificar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl_Modificar.Text" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Modificar.Name" xml:space="preserve">
+    <value>lbl_Modificar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Modificar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Modificar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;lbl_Modificar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl_Eliminar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Eliminar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 14.25pt</value>
+  </data>
+  <data name="lbl_Eliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 342</value>
+  </data>
+  <data name="lbl_Eliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 22</value>
+  </data>
+  <data name="lbl_Eliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_Eliminar.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Eliminar.Name" xml:space="preserve">
+    <value>lbl_Eliminar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Eliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Eliminar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;lbl_Eliminar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbl_Agregar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Agregar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 14.25pt</value>
+  </data>
+  <data name="lbl_Agregar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 214</value>
+  </data>
+  <data name="lbl_Agregar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="lbl_Agregar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_Agregar.Text" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Agregar.Name" xml:space="preserve">
+    <value>lbl_Agregar</value>
+  </data>
+  <data name="&gt;&gt;lbl_Agregar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Agregar.Parent" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;lbl_Agregar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pnl_Menu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 92</value>
+  </data>
+  <data name="pnl_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 523</value>
+  </data>
+  <data name="pnl_Menu.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pnl_Menu.Name" xml:space="preserve">
+    <value>pnl_Menu</value>
+  </data>
+  <data name="&gt;&gt;pnl_Menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_Menu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_Menu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_Provedores.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Provedores.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 26.25pt</value>
+  </data>
+  <data name="lbl_Provedores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 18</value>
+  </data>
+  <data name="lbl_Provedores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 40</value>
+  </data>
+  <data name="lbl_Provedores.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_Provedores.Text" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Name" xml:space="preserve">
+    <value>lbl_Provedores</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Parent" xml:space="preserve">
+    <value>pnl_Encabezado</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_Encabezado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="pnl_Encabezado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>875, 80</value>
+  </data>
+  <data name="pnl_Encabezado.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnl_Encabezado.Name" xml:space="preserve">
+    <value>pnl_Encabezado</value>
+  </data>
+  <data name="&gt;&gt;pnl_Encabezado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_Encabezado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_Encabezado.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_MenuActual.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_MenuActual.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 10pt</value>
+  </data>
+  <data name="lbl_MenuActual.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 9</value>
+  </data>
+  <data name="lbl_MenuActual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 16</value>
+  </data>
+  <data name="lbl_MenuActual.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_MenuActual.Text" xml:space="preserve">
+    <value>Sistema de Gestion de Almacen - Empresas</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Name" xml:space="preserve">
+    <value>lbl_MenuActual</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Parent" xml:space="preserve">
+    <value>pnl_BarraEstado</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_BarraEstado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 622</value>
+  </data>
+  <data name="pnl_BarraEstado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>872, 34</value>
+  </data>
+  <data name="pnl_BarraEstado.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pnl_BarraEstado.Name" xml:space="preserve">
+    <value>pnl_BarraEstado</value>
+  </data>
+  <data name="&gt;&gt;pnl_BarraEstado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_BarraEstado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_BarraEstado.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>884, 661</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>SGA - Empresas</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frm_Empresas</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
