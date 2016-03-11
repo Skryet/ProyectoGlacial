@@ -12,9 +12,9 @@ namespace Proyecto_Glacial
 {
     class Validaciones
     {
-        public void limpiarCampos(Control.ControlCollection[] controles)
+        public void limpiarCampos(Form validar)
         {
-            foreach (Control ctrl in controles)
+            foreach (Control ctrl in validar.Controls)
             {
                 if (ctrl is TextBox)
                 {

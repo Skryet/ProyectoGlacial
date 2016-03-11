@@ -12,7 +12,25 @@ namespace Proyecto_Glacial.Proveedores
 {    
     public partial class frm_ProveedorModificar : Form
     {
-        Validaciones validar;
+        private void despintarTexto(object sender, EventArgs e)
+        {
+            TextBox limpiar = (TextBox)sender;
+            limpiar.BackColor = Color.White;
+        }        
+
+        private bool validarCampos()
+        {
+            bool vacio = false;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox && ctrl.Text == "")
+                {
+                    ctrl.BackColor = Color.Red;
+                    vacio = true;
+                }
+            }
+            return vacio;
+        }
 
         public frm_ProveedorModificar()
         {
@@ -34,16 +52,15 @@ namespace Proyecto_Glacial.Proveedores
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
-        {
-            Control.ControlCollection[] controles = new Control.ControlCollection [this.Controls.Count];
-            this.Controls.CopyTo(controles, 0);
-            if (validar.validarCampos(controles))
-            {
+        {            
+            if (validarCampos() != true)
+            {                
                 DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de modificar el proveedor " + txt_Nombre.Text, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
                     this.proveedoresTableAdapter.ActualizarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, Program.idProveedor);
                     Program.idProveedor = 0;
+                    AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido modificado", "Mensaje", 1200); ;
                     this.Close();
                 }
             }

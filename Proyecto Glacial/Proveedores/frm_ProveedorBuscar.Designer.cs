@@ -44,6 +44,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Actualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).BeginInit();
@@ -187,11 +188,23 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // btn_Actualizar
+            // 
+            this.btn_Actualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Actualizar.Location = new System.Drawing.Point(207, 84);
+            this.btn_Actualizar.Name = "btn_Actualizar";
+            this.btn_Actualizar.Size = new System.Drawing.Size(240, 23);
+            this.btn_Actualizar.TabIndex = 12;
+            this.btn_Actualizar.Text = "Actualizar lista de proveedores";
+            this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
+            // 
             // frm_ProveedorBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 484);
+            this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.proveedoresDataGridView);
             this.Controls.Add(this.cbb_Opciones);
             this.Controls.Add(this.btn_Buscar);
@@ -225,5 +238,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button btn_Actualizar;
     }
 }

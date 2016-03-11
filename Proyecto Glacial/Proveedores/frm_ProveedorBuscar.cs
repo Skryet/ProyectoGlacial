@@ -11,10 +11,7 @@ using System.Windows.Forms;
 namespace Proyecto_Glacial.Proveedores
 {
     public partial class frm_ProveedorBuscar : Form
-    {
-        public event insertarID Insertar;
-        private int id;
-
+    {        
         public frm_ProveedorBuscar()
         {            
             InitializeComponent();            
@@ -32,7 +29,8 @@ namespace Proyecto_Glacial.Proveedores
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.proveedores' table. You can move, or remove it, as needed.
             this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
-
+            if (proveedoresDataGridView.RowCount != 0)
+                proveedoresDataGridView.CurrentRow.Selected = false;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -53,9 +51,15 @@ namespace Proyecto_Glacial.Proveedores
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
-            id = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
-            Insertar(id);            
+            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);            
+        }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
+            if (proveedoresDataGridView.RowCount != 0)
+                proveedoresDataGridView.CurrentRow.Selected = false;
+            Program.idProveedor = 0;
         }
     }
 }
