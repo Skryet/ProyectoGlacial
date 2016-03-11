@@ -14,7 +14,19 @@ namespace Proyecto_Glacial
     {
         
     
-
+        private bool validarCampos()
+        {
+            bool vacio = false;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox && ctrl.Text == "")
+                {                    
+                    ctrl.BackColor = Color.Red;
+                    vacio = true;
+                }
+            }
+            return vacio;
+        }
         private bool verificar()
         {
             if (txtNombre.Text != "" && txtApellidoP.Text != "" && txtApellidoM.Text != "" && txtDireccion.Text != "" && txtColonia.Text != "" && txtCodigoPostal.Text != "" && txtCiudad.Text != "")
@@ -64,8 +76,11 @@ namespace Proyecto_Glacial
         {
 
             //Verificar espacios en blanco
-            if (!verificar())
+            if (validarCampos())
+            { 
                 MessageBox.Show("Faltan campos por llenar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+            }
             else
             {
                 //Agregar Cliente a la BDD
@@ -82,9 +97,15 @@ namespace Proyecto_Glacial
                     this.Close();
                 }
             }
-
-
         }
+
+        private void despintarTexto(object sender, EventArgs e)
+        {
+            TextBox limpiar = (TextBox)sender;
+            limpiar.BackColor = Color.White;
+        }
+
+
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
@@ -94,6 +115,11 @@ namespace Proyecto_Glacial
         private void clientesBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void frm_ClientesAgregar_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

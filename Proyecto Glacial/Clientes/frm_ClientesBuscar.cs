@@ -98,7 +98,8 @@ namespace Proyecto_Glacial.Clientes
 
         private void clientesDataGridView_Click(object sender, EventArgs e)
         {
-            
+
+            //Habilitar Eliminar y Modificar            
 
             Int32 selectedCellCount =
                 clientesDataGridView.GetCellCount(DataGridViewElementStates.Selected);

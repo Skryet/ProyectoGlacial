@@ -12,6 +12,10 @@ namespace Proyecto_Glacial
 {
     public partial class frm_ClientesMenu : Form
     {
+        public void NombreMetodo(string mensaje)
+        {
+            lbl_Agregar.Text = mensaje;
+        }
 
         public Clientes.frm_ClientesModificar form;
         public Clientes.frm_ClientesModificar ClientesModificar;
@@ -26,7 +30,15 @@ namespace Proyecto_Glacial
         }
 
         
-        private void AddFormInPanel(Form fh)
+        public String TextBoxText
+        {
+            get { return lbl_Agregar.Text; }
+            set
+            {
+                lbl_Agregar.Text = value;
+            }
+        }
+        public void AddFormInPanel(Form fh)
         {
             if (this.pnl_ContenidoCentro.Controls.Count > 0)
                 this.pnl_ContenidoCentro.Controls.RemoveAt(0);
@@ -40,7 +52,7 @@ namespace Proyecto_Glacial
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            
+            Program.isOpenMainClientForm = true;
             frm_ClientesAgregar form = Application.OpenForms.OfType<frm_ClientesAgregar>().FirstOrDefault();
             frm_ClientesAgregar clientesAgregar = form ?? new frm_ClientesAgregar();
             AddFormInPanel(clientesAgregar);
@@ -53,29 +65,35 @@ namespace Proyecto_Glacial
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            btn_Eliminar.Enabled = true;
-            btn_Modificar.Enabled = true;
-            var resultado = MessageBox.Show("¿Está seguro de eliminar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                ClientesBuscar.Close();
-                this.clientesTableAdapter.EliminarClientePorId(Program.idCliente);
-                MessageBox.Show("Registro Eliminado con éxito!","Completado");
+            if (Program.idCliente == 0)
+                MessageBox.Show("Seleccione un registro para trabajar");
+            else
+                { 
+                btn_Eliminar.Enabled = true;
+                btn_Modificar.Enabled = true;
+                var resultado = MessageBox.Show("¿Está seguro de eliminar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ClientesBuscar.Close();
+                    this.clientesTableAdapter.EliminarClientePorId(Program.idCliente);
+                    MessageBox.Show("Registro Eliminado con éxito!","Completado");
 
 
-                form2 = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
-                ClientesBuscar = form2 ?? new Clientes.frm_ClientesBuscar();
-                AddFormInPanel(ClientesBuscar);
-                lbl_Estado.Text = "Glacial - Buscar Clientes";
-                this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-                // this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+                    form2 = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
+                    ClientesBuscar = form2 ?? new Clientes.frm_ClientesBuscar();
+                    AddFormInPanel(ClientesBuscar);
+                    lbl_Estado.Text = "Glacial - Buscar Clientes";
+                    this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+                    // this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+                }
             }
 
 
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
-        {   
+        {
+            
             if(!Program.isOpenMainClientForm)
             {
                 ClientesBuscar.Close();
@@ -92,22 +110,27 @@ namespace Proyecto_Glacial
             lbl_Estado.Text = "Glacial - Buscar Clientes";
             this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
 
-            //Habilitar Eliminar y Modificar            
-            btn_Modificar.Enabled = true;
             btn_Eliminar.Enabled = true;
+            btn_Modificar.Enabled = true;
 
 
-            
+
 
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-
-            form = Application.OpenForms.OfType<Clientes.frm_ClientesModificar>().FirstOrDefault();
-            ClientesModificar = form ?? new Clientes.frm_ClientesModificar();
-            AddFormInPanel(ClientesModificar);
-            lbl_Estado.Text = "Glacial - Modificar Clientes";
+            if(Program.idCliente == 0)
+            {
+                MessageBox.Show("Selecccione un registro para trabajar");
+            }
+            else
+            { 
+                form = Application.OpenForms.OfType<Clientes.frm_ClientesModificar>().FirstOrDefault();
+                ClientesModificar = form ?? new Clientes.frm_ClientesModificar();
+                AddFormInPanel(ClientesModificar);
+                lbl_Estado.Text = "Glacial - Modificar Clientes";
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
