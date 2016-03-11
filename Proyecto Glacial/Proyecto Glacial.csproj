@@ -116,7 +116,6 @@
     <Compile Include="Proveedores\frm_ProveedorModificar.Designer.cs">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
