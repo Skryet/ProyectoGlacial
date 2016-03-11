@@ -37,6 +37,8 @@
             System.Windows.Forms.Label apellidoMLabel;
             System.Windows.Forms.Label ciudadLabel;
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.txtApellidoP = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtColonia = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.txtApellidoM = new System.Windows.Forms.TextBox();
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.btn_AgregarCliente = new System.Windows.Forms.Button();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.lblConfirmar = new System.Windows.Forms.Label();
@@ -138,72 +138,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(254, 26);
             this.txtNombre.TabIndex = 1;
-            // 
-            // txtApellidoP
-            // 
-            this.txtApellidoP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "apellidoP", true));
-            this.txtApellidoP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoP.Location = new System.Drawing.Point(163, 83);
-            this.txtApellidoP.Name = "txtApellidoP";
-            this.txtApellidoP.Size = new System.Drawing.Size(169, 26);
-            this.txtApellidoP.TabIndex = 2;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "direccion", true));
-            this.txtDireccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(103, 124);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(345, 26);
-            this.txtDireccion.TabIndex = 4;
-            // 
-            // txtColonia
-            // 
-            this.txtColonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "colonia", true));
-            this.txtColonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtColonia.Location = new System.Drawing.Point(533, 124);
-            this.txtColonia.Name = "txtColonia";
-            this.txtColonia.Size = new System.Drawing.Size(127, 26);
-            this.txtColonia.TabIndex = 5;
-            // 
-            // txtCodigoPostal
-            // 
-            this.txtCodigoPostal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "cp", true));
-            this.txtCodigoPostal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoPostal.Location = new System.Drawing.Point(141, 208);
-            this.txtCodigoPostal.MaxLength = 5;
-            this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(100, 26);
-            this.txtCodigoPostal.TabIndex = 6;
-            // 
-            // txtApellidoM
-            // 
-            this.txtApellidoM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "apellidoM", true));
-            this.txtApellidoM.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoM.Location = new System.Drawing.Point(491, 83);
-            this.txtApellidoM.Name = "txtApellidoM";
-            this.txtApellidoM.Size = new System.Drawing.Size(169, 26);
-            this.txtApellidoM.TabIndex = 3;
-            this.txtApellidoM.TextChanged += new System.EventHandler(this.apellidoMTextBox_TextChanged);
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "ciudad", true));
-            this.txtCiudad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudad.Location = new System.Drawing.Point(103, 168);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(366, 26);
-            this.txtCiudad.TabIndex = 6;
-            // 
-            // btn_AgregarCliente
-            // 
-            this.btn_AgregarCliente.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_2_;
-            this.btn_AgregarCliente.Location = new System.Drawing.Point(491, 211);
-            this.btn_AgregarCliente.Name = "btn_AgregarCliente";
-            this.btn_AgregarCliente.Size = new System.Drawing.Size(80, 80);
-            this.btn_AgregarCliente.TabIndex = 15;
-            this.btn_AgregarCliente.UseVisualStyleBackColor = true;
-            this.btn_AgregarCliente.Click += new System.EventHandler(this.btn_AgregarCliente_Click);
+            this.txtNombre.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // clientesBindingSource
             // 
@@ -214,6 +149,77 @@
             // 
             this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
             this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtApellidoP
+            // 
+            this.txtApellidoP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "apellidoP", true));
+            this.txtApellidoP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoP.Location = new System.Drawing.Point(163, 83);
+            this.txtApellidoP.Name = "txtApellidoP";
+            this.txtApellidoP.Size = new System.Drawing.Size(169, 26);
+            this.txtApellidoP.TabIndex = 2;
+            this.txtApellidoP.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "direccion", true));
+            this.txtDireccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(103, 124);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(345, 26);
+            this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txtColonia
+            // 
+            this.txtColonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "colonia", true));
+            this.txtColonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColonia.Location = new System.Drawing.Point(533, 124);
+            this.txtColonia.Name = "txtColonia";
+            this.txtColonia.Size = new System.Drawing.Size(127, 26);
+            this.txtColonia.TabIndex = 5;
+            this.txtColonia.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txtCodigoPostal
+            // 
+            this.txtCodigoPostal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "cp", true));
+            this.txtCodigoPostal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoPostal.Location = new System.Drawing.Point(141, 208);
+            this.txtCodigoPostal.MaxLength = 5;
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(100, 26);
+            this.txtCodigoPostal.TabIndex = 6;
+            this.txtCodigoPostal.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txtApellidoM
+            // 
+            this.txtApellidoM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "apellidoM", true));
+            this.txtApellidoM.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoM.Location = new System.Drawing.Point(491, 83);
+            this.txtApellidoM.Name = "txtApellidoM";
+            this.txtApellidoM.Size = new System.Drawing.Size(169, 26);
+            this.txtApellidoM.TabIndex = 3;
+            this.txtApellidoM.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "ciudad", true));
+            this.txtCiudad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCiudad.Location = new System.Drawing.Point(103, 168);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(366, 26);
+            this.txtCiudad.TabIndex = 6;
+            this.txtCiudad.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // btn_AgregarCliente
+            // 
+            this.btn_AgregarCliente.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_2_;
+            this.btn_AgregarCliente.Location = new System.Drawing.Point(491, 211);
+            this.btn_AgregarCliente.Name = "btn_AgregarCliente";
+            this.btn_AgregarCliente.Size = new System.Drawing.Size(80, 80);
+            this.btn_AgregarCliente.TabIndex = 15;
+            this.btn_AgregarCliente.UseVisualStyleBackColor = true;
+            this.btn_AgregarCliente.Click += new System.EventHandler(this.btn_AgregarCliente_Click);
             // 
             // clientesTableAdapter
             // 
@@ -268,6 +274,7 @@
             this.Name = "frm_ClientesAgregar";
             this.Text = "Clientes-Agregar";
             this.Load += new System.EventHandler(this.frm_ClientesAgregar_Load);
+            this.TextChanged += new System.EventHandler(this.frm_ClientesAgregar_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);

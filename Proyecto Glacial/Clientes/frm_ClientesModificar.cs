@@ -12,13 +12,18 @@ namespace Proyecto_Glacial.Clientes
 {
     public partial class frm_ClientesModificar : Form
     {
+      
+        
         public frm_ClientesModificar()
         {
             InitializeComponent();
         }
 
+       
+
         private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            
             this.Validate();
             this.clientesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
@@ -56,9 +61,20 @@ namespace Proyecto_Glacial.Clientes
             {
                 this.clientesTableAdapter.UpdateClientesPorId(txt_Nombre.Text, txt_apellidoP.Text, txt_apellidoP.Text, txt_direccion.Text, txt_colonia.Text, txt_ciudad.Text, txt_cp.Text, Program.idCliente);
                 MessageBox.Show("Registro Actualizado con éxito!", "Completado");
-                this.Close();
+                //this.Close();
+                this.Refresh();
+
+                //Deshabilitar Campos
+                txt_Nombre.Enabled = false;
+                txt_apellidoP.Enabled = false;
+                txt_apellidoM.Enabled = false;
+                txt_direccion.Enabled = false;
+                txt_colonia.Enabled = false;
+                txt_ciudad.Enabled = false;
+                txt_cp.Enabled = false;
             }
            
+            
 
             
         }

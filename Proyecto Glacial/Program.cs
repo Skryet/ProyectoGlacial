@@ -9,7 +9,7 @@ namespace Proyecto_Glacial
     static class Program
     {
 
-        public static int idCliente;
+        public static int idCliente = 0;
         public static bool isOpenMainClientForm = true;
         /// <summary>
         /// The main entry point for the application.
