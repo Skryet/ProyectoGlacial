@@ -1,6 +1,6 @@
-﻿namespace Proyecto_Glacial
+﻿namespace Proyecto_Glacial.Inventario
 {
-    partial class frm_ClientesMenu
+    partial class frm_InventarioMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lbl_Clientes = new System.Windows.Forms.Label();
-            this.pnl_Header = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_MenuIzquierdo = new System.Windows.Forms.Panel();
             this.lbl_Modificar = new System.Windows.Forms.Label();
             this.btn_Modificar = new System.Windows.Forms.Button();
@@ -42,38 +40,16 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.pnl_ContenidoCentro = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.pnl_barraEstado = new System.Windows.Forms.Panel();
-            this.lbl_Estado = new System.Windows.Forms.Label();
-            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.pnl_Header.SuspendLayout();
             this.pnl_MenuIzquierdo.SuspendLayout();
             this.pnl_ContenidoCentro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            this.pnl_barraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_Clientes
+            // panel1
             // 
-            this.lbl_Clientes.AutoSize = true;
-            this.lbl_Clientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Clientes.Location = new System.Drawing.Point(371, 16);
-            this.lbl_Clientes.Name = "lbl_Clientes";
-            this.lbl_Clientes.Size = new System.Drawing.Size(165, 43);
-            this.lbl_Clientes.TabIndex = 0;
-            this.lbl_Clientes.Text = "Clientes";
-            // 
-            // pnl_Header
-            // 
-            this.pnl_Header.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Header.Controls.Add(this.lbl_Clientes);
-            this.pnl_Header.Location = new System.Drawing.Point(4, 6);
-            this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(875, 80);
-            this.pnl_Header.TabIndex = 1;
+            this.panel1.Location = new System.Drawing.Point(4, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(875, 80);
+            this.panel1.TabIndex = 0;
             // 
             // pnl_MenuIzquierdo
             // 
@@ -89,7 +65,7 @@
             this.pnl_MenuIzquierdo.Location = new System.Drawing.Point(4, 93);
             this.pnl_MenuIzquierdo.Name = "pnl_MenuIzquierdo";
             this.pnl_MenuIzquierdo.Size = new System.Drawing.Size(181, 523);
-            this.pnl_MenuIzquierdo.TabIndex = 2;
+            this.pnl_MenuIzquierdo.TabIndex = 3;
             // 
             // lbl_Modificar
             // 
@@ -110,7 +86,6 @@
             this.btn_Modificar.Size = new System.Drawing.Size(80, 80);
             this.btn_Modificar.TabIndex = 7;
             this.btn_Modificar.UseVisualStyleBackColor = true;
-            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // btn_Agregar
             // 
@@ -120,7 +95,6 @@
             this.btn_Agregar.Size = new System.Drawing.Size(80, 80);
             this.btn_Agregar.TabIndex = 4;
             this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // lbl_Eliminar
             // 
@@ -141,7 +115,6 @@
             this.btn_Eliminar.Size = new System.Drawing.Size(80, 80);
             this.btn_Eliminar.TabIndex = 6;
             this.btn_Eliminar.UseVisualStyleBackColor = true;
-            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // lbl_Agregar
             // 
@@ -161,7 +134,6 @@
             this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
             this.btn_BuscarTodo.TabIndex = 5;
             this.btn_BuscarTodo.UseVisualStyleBackColor = true;
-            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // lbl_Buscar
             // 
@@ -180,113 +152,51 @@
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
             this.pnl_ContenidoCentro.Size = new System.Drawing.Size(688, 523);
-            this.pnl_ContenidoCentro.TabIndex = 3;
+            this.pnl_ContenidoCentro.TabIndex = 4;
+            this.pnl_ContenidoCentro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ContenidoCentro_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(138, 64);
+            this.label1.Location = new System.Drawing.Point(160, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 185);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Menú de Inventario\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
+            this.label1.Text = "Menú de Clientes\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pnl_barraEstado
-            // 
-            this.pnl_barraEstado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_barraEstado.Controls.Add(this.lbl_Estado);
-            this.pnl_barraEstado.Location = new System.Drawing.Point(4, 620);
-            this.pnl_barraEstado.Name = "pnl_barraEstado";
-            this.pnl_barraEstado.Size = new System.Drawing.Size(875, 38);
-            this.pnl_barraEstado.TabIndex = 4;
-            // 
-            // lbl_Estado
-            // 
-            this.lbl_Estado.AutoSize = true;
-            this.lbl_Estado.Location = new System.Drawing.Point(9, 13);
-            this.lbl_Estado.Name = "lbl_Estado";
-            this.lbl_Estado.Size = new System.Drawing.Size(52, 13);
-            this.lbl_Estado.TabIndex = 0;
-            this.lbl_Estado.Text = "Estado....";
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = null;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
-            // frm_ClientesMenu
+            // frm_InventarioMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
-            this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);
-            this.Controls.Add(this.pnl_Header);
-            this.Name = "frm_ClientesMenu";
-            this.Text = "Menu Clientes";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ClientesMenu_FormClosed);
-            this.pnl_Header.ResumeLayout(false);
-            this.pnl_Header.PerformLayout();
+            this.Controls.Add(this.panel1);
+            this.Name = "frm_InventarioMenu";
+            this.Text = "Menú Inventario";
             this.pnl_MenuIzquierdo.ResumeLayout(false);
             this.pnl_MenuIzquierdo.PerformLayout();
             this.pnl_ContenidoCentro.ResumeLayout(false);
             this.pnl_ContenidoCentro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
-            this.pnl_barraEstado.ResumeLayout(false);
-            this.pnl_barraEstado.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_Clientes;
-        private System.Windows.Forms.Panel pnl_Header;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnl_MenuIzquierdo;
-        private System.Windows.Forms.Panel pnl_ContenidoCentro;
-        private System.Windows.Forms.Panel pnl_barraEstado;
-        private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Label lbl_Modificar;
-        private System.Windows.Forms.Label lbl_Eliminar;
-        private System.Windows.Forms.Label lbl_Agregar;
-        private System.Windows.Forms.Label lbl_Buscar;
-        private System.Windows.Forms.Button btn_BuscarTodo;
-        private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.Button btn_Modificar;
-        private System.Windows.Forms.Label lbl_Estado;
-        private glacial_almacenDataSet glacial_almacenDataSet;
-        private System.Windows.Forms.BindingSource clientesBindingSource;
-        private glacial_almacenDataSetTableAdapters.clientesTableAdapter clientesTableAdapter;
-        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Label lbl_Eliminar;
+        private System.Windows.Forms.Button btn_Eliminar;
+        private System.Windows.Forms.Label lbl_Agregar;
+        private System.Windows.Forms.Button btn_BuscarTodo;
+        private System.Windows.Forms.Label lbl_Buscar;
+        private System.Windows.Forms.Panel pnl_ContenidoCentro;
         private System.Windows.Forms.Label label1;
     }
 }

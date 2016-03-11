@@ -90,6 +90,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\frm_InventarioAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioAgregar.Designer.cs">
+      <DependentUpon>frm_InventarioAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioBuscar.Designer.cs">
+      <DependentUpon>frm_InventarioBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioMenu.Designer.cs">
+      <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores\frm_ProveedorAgregar.cs">
@@ -124,6 +142,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioAgregar.resx">
+      <DependentUpon>frm_InventarioAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioBuscar.resx">
+      <DependentUpon>frm_InventarioBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioMenu.resx">
+      <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
