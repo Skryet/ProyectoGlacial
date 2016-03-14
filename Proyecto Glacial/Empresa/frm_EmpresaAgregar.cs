@@ -75,7 +75,7 @@ namespace Proyecto_Glacial.Empresa
         {
             if (validarCampos() != true)
             {
-                this.empresaTableAdapter.InsertarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text);
+                this.empresaTableAdapter.InsertarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text);
                 limpiarCampos();
 
                 AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido agregado", "Mensaje", 1200); ;
@@ -92,6 +92,11 @@ namespace Proyecto_Glacial.Empresa
                 Program.idProveedor = 0;
                 this.Close();
             }
+        }
+
+        private void lbl_Cancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
