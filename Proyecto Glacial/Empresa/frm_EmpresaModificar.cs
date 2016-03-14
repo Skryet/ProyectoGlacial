@@ -60,5 +60,20 @@ namespace Proyecto_Glacial.Empresa
             else
                 MessageBox.Show("Faltan campos por agregar por favor agreguelos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro de cancelar la modificación del proveedor " + txt_Nombre.Text +"?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                Program.idProveedor = 0;
+                this.Close();
+            }
+        }
+
+        private void lbl_Cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Proyecto_Glacial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empresa.frm_Empresas());
+            Application.Run(new frm_Proveedores());
         }
     }
 }

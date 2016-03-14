@@ -45,6 +45,8 @@
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.lbl_Cancelar = new System.Windows.Forms.Label();
             lbl_Estado = new System.Windows.Forms.Label();
             lbl_Colonia = new System.Windows.Forms.Label();
             lbl_Direccion = new System.Windows.Forms.Label();
@@ -202,11 +204,33 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(444, 348);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Cancelar.TabIndex = 26;
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // lbl_Cancelar
+            // 
+            this.lbl_Cancelar.AutoSize = true;
+            this.lbl_Cancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_Cancelar.Location = new System.Drawing.Point(438, 424);
+            this.lbl_Cancelar.Name = "lbl_Cancelar";
+            this.lbl_Cancelar.Size = new System.Drawing.Size(92, 22);
+            this.lbl_Cancelar.TabIndex = 25;
+            this.lbl_Cancelar.Text = "Cancelar";
+            this.lbl_Cancelar.Click += new System.EventHandler(this.lbl_Cancelar_Click);
+            // 
             // frm_EmpresaModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 484);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.lbl_Cancelar);
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.lbl_Modificar);
             this.Controls.Add(lbl_Estado);
@@ -242,5 +266,7 @@
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Label lbl_Cancelar;
     }
 }
