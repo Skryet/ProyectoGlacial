@@ -34,3 +34,9 @@ C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorBuscar.resources
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioAgregar.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioBuscar.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioMenu.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarDatosProveedoProducto.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarProductosProveedor.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_ProveedoresBuscarParaProducto.resources

@@ -40,8 +40,11 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.pnl_ContenidoCentro = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnl_barraEstado = new System.Windows.Forms.Panel();
+            this.lbl_Estado = new System.Windows.Forms.Label();
             this.pnl_MenuIzquierdo.SuspendLayout();
             this.pnl_ContenidoCentro.SuspendLayout();
+            this.pnl_barraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +98,7 @@
             this.btn_Agregar.Size = new System.Drawing.Size(80, 80);
             this.btn_Agregar.TabIndex = 4;
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // lbl_Eliminar
             // 
@@ -134,6 +138,7 @@
             this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
             this.btn_BuscarTodo.TabIndex = 5;
             this.btn_BuscarTodo.UseVisualStyleBackColor = true;
+            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_BuscarTodo_Click);
             // 
             // lbl_Buscar
             // 
@@ -163,14 +168,33 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 185);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Menú de Clientes\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
+            this.label1.Text = "Menú de Inventario\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnl_barraEstado
+            // 
+            this.pnl_barraEstado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_barraEstado.Controls.Add(this.lbl_Estado);
+            this.pnl_barraEstado.Location = new System.Drawing.Point(4, 622);
+            this.pnl_barraEstado.Name = "pnl_barraEstado";
+            this.pnl_barraEstado.Size = new System.Drawing.Size(875, 38);
+            this.pnl_barraEstado.TabIndex = 5;
+            // 
+            // lbl_Estado
+            // 
+            this.lbl_Estado.AutoSize = true;
+            this.lbl_Estado.Location = new System.Drawing.Point(9, 13);
+            this.lbl_Estado.Name = "lbl_Estado";
+            this.lbl_Estado.Size = new System.Drawing.Size(52, 13);
+            this.lbl_Estado.TabIndex = 0;
+            this.lbl_Estado.Text = "Estado....";
             // 
             // frm_InventarioMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);
             this.Controls.Add(this.panel1);
@@ -180,6 +204,8 @@
             this.pnl_MenuIzquierdo.PerformLayout();
             this.pnl_ContenidoCentro.ResumeLayout(false);
             this.pnl_ContenidoCentro.PerformLayout();
+            this.pnl_barraEstado.ResumeLayout(false);
+            this.pnl_barraEstado.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +224,7 @@
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.Panel pnl_ContenidoCentro;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnl_barraEstado;
+        private System.Windows.Forms.Label lbl_Estado;
     }
 }

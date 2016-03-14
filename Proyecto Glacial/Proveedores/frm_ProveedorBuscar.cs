@@ -56,5 +56,10 @@ namespace Proyecto_Glacial.Proveedores
             id = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
             Insertar(id);            
         }
+
+        private void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

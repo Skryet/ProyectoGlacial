@@ -82,6 +82,7 @@
     <Compile Include="frm_MenuPrincipal.Designer.cs">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\generarConexion.cs" />
     <Compile Include="glacial_almacenDataSet.cs">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
     </Compile>
@@ -107,6 +108,24 @@
     </Compile>
     <Compile Include="Inventario\frm_InventarioMenu.Designer.cs">
       <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.Designer.cs">
+      <DependentUpon>frm_InventarioAgregarDatosProveedoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.Designer.cs">
+      <DependentUpon>frm_InventarioAgregarProductosProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.Designer.cs">
+      <DependentUpon>frm_ProveedoresBuscarParaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frm_InventarioMenu.resx">
       <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.resx">
+      <DependentUpon>frm_InventarioAgregarDatosProveedoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.resx">
+      <DependentUpon>frm_InventarioAgregarProductosProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.resx">
+      <DependentUpon>frm_ProveedoresBuscarParaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -224,6 +252,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIconBlue%2802%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddProviderBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectGree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\socialBlack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
