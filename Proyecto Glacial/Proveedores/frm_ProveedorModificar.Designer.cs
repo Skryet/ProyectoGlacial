@@ -108,6 +108,7 @@
             // 
             // btn_Guardar
             // 
+            this.btn_Guardar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
             this.btn_Guardar.Location = new System.Drawing.Point(548, 348);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 75);
@@ -119,7 +120,7 @@
             // 
             this.lbl_Guardar.AutoSize = true;
             this.lbl_Guardar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lbl_Guardar.Location = new System.Drawing.Point(501, 424);
+            this.lbl_Guardar.Location = new System.Drawing.Point(503, 424);
             this.lbl_Guardar.Name = "lbl_Guardar";
             this.lbl_Guardar.Size = new System.Drawing.Size(168, 22);
             this.lbl_Guardar.TabIndex = 23;

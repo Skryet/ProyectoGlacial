@@ -36,13 +36,13 @@
             System.Windows.Forms.Label lbl_Nombre;
             this.lbl_Modificar = new System.Windows.Forms.Label();
             this.txt_Estado = new System.Windows.Forms.TextBox();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.txt_Colonia = new System.Windows.Forms.TextBox();
             this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.btn_Modificar = new System.Windows.Forms.Button();
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.btn_Cancelar = new System.Windows.Forms.Button();
@@ -52,8 +52,8 @@
             lbl_Direccion = new System.Windows.Forms.Label();
             lbl_Telefono = new System.Windows.Forms.Label();
             lbl_Nombre = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Estado
@@ -110,7 +110,7 @@
             // 
             this.lbl_Modificar.AutoSize = true;
             this.lbl_Modificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lbl_Modificar.Location = new System.Drawing.Point(552, 424);
+            this.lbl_Modificar.Location = new System.Drawing.Point(554, 424);
             this.lbl_Modificar.Name = "lbl_Modificar";
             this.lbl_Modificar.Size = new System.Drawing.Size(95, 22);
             this.lbl_Modificar.TabIndex = 23;
@@ -125,6 +125,16 @@
             this.txt_Estado.Size = new System.Drawing.Size(231, 26);
             this.txt_Estado.TabIndex = 22;
             this.txt_Estado.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataMember = "empresa";
+            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_Colonia
             // 
@@ -168,22 +178,13 @@
             // 
             // btn_Modificar
             // 
+            this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
             this.btn_Modificar.Location = new System.Drawing.Point(563, 348);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
             this.btn_Modificar.TabIndex = 24;
             this.btn_Modificar.UseVisualStyleBackColor = true;
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataMember = "empresa";
-            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
             // 
             // empresaTableAdapter
             // 
@@ -246,8 +247,8 @@
             this.Name = "frm_EmpresaModificar";
             this.Text = "Empresa - Modificar";
             this.Load += new System.EventHandler(this.frm_EmpresaModificar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
