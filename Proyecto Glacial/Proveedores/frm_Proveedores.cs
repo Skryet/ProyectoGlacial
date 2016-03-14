@@ -66,22 +66,7 @@ namespace Proyecto_Glacial
             AddFormInPanel(ProveedorBuscar);
             btn_Eliminar.Enabled = true;
             btn_Modificar.Enabled = true;
-        }
-
-        private void proveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.proveedoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
-
-        private void frm_Proveedores_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'glacial_almacenDataSet.proveedores' table. You can move, or remove it, as needed.
-            this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
-
-        }
+        }                
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {

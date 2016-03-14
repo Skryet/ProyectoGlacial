@@ -39,9 +39,11 @@ namespace Proyecto_Glacial.Proveedores
             {
                 case "Nombre":
                     proveedoresTableAdapter.BuscarNombre(this.glacial_almacenDataSet.proveedores, "%" + txt_Buscar.Text + "%");
+                    txt_Buscar.Text = "";
                     break;
                 case "Estado":
                     proveedoresTableAdapter.BuscarEstado(this.glacial_almacenDataSet.proveedores, "%" + txt_Buscar.Text + "%");
+                    txt_Buscar.Text = "";
                     break;
                 default:
                     MessageBox.Show("No se ha seleccionado la opcion de busqueda", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -60,6 +62,7 @@ namespace Proyecto_Glacial.Proveedores
             if (proveedoresDataGridView.RowCount != 0)
                 proveedoresDataGridView.CurrentRow.Selected = false;
             Program.idProveedor = 0;
+            txt_Buscar.Text = "";
         }
     }
 }

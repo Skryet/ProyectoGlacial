@@ -12,6 +12,7 @@ namespace Proyecto_Glacial
         public static int idCliente = 0;
         public static bool isOpenMainClientForm = true;       
         public static int idProveedor;
+        public static int idEmpresa;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

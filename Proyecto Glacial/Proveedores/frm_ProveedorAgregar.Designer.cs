@@ -45,6 +45,8 @@
             this.lbl_Agregar = new System.Windows.Forms.Label();
             this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.lbl_Cancelar = new System.Windows.Forms.Label();
             lbl_Nombre = new System.Windows.Forms.Label();
             lbl_Telefono = new System.Windows.Forms.Label();
             lbl_Direccion = new System.Windows.Forms.Label();
@@ -130,7 +132,7 @@
             this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Telefono.Location = new System.Drawing.Point(129, 91);
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(100, 26);
+            this.txt_Telefono.Size = new System.Drawing.Size(169, 26);
             this.txt_Telefono.TabIndex = 4;
             this.txt_Telefono.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
@@ -203,11 +205,32 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(459, 355);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Cancelar.TabIndex = 32;
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // lbl_Cancelar
+            // 
+            this.lbl_Cancelar.AutoSize = true;
+            this.lbl_Cancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_Cancelar.Location = new System.Drawing.Point(450, 431);
+            this.lbl_Cancelar.Name = "lbl_Cancelar";
+            this.lbl_Cancelar.Size = new System.Drawing.Size(95, 22);
+            this.lbl_Cancelar.TabIndex = 31;
+            this.lbl_Cancelar.Text = "Regresar";
+            // 
             // frm_ProveedorAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 484);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.lbl_Cancelar);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.lbl_Agregar);
             this.Controls.Add(lbl_Estado);
@@ -243,5 +266,7 @@
         private System.Windows.Forms.TextBox txt_Estado;
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Label lbl_Agregar;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Label lbl_Cancelar;
     }
 }

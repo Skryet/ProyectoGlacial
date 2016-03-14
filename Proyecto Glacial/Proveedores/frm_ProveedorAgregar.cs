@@ -66,5 +66,15 @@ namespace Proyecto_Glacial.Proveedores
         {
 
         }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro de regresar al menu principal?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                Program.idProveedor = 0;
+                this.Close();
+            }
+        }
     }
 }

@@ -76,6 +76,30 @@
     <Compile Include="Clientes\frm_ClientesModificar.Designer.cs">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Empresa\frm_EmpresaAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\frm_EmpresaAgregar.Designer.cs">
+      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frm_EmpresaBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\frm_EmpresaBuscar.Designer.cs">
+      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frm_EmpresaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\frm_EmpresaModificar.Designer.cs">
+      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frm_Empresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\frm_Empresas.Designer.cs">
+      <DependentUpon>frm_Empresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +151,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\frm_ClientesModificar.resx">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
+      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\frm_EmpresaBuscar.resx">
+      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\frm_EmpresaModificar.resx">
+      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\frm_Empresas.resx">
+      <DependentUpon>frm_Empresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
