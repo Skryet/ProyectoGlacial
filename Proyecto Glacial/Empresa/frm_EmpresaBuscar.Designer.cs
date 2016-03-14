@@ -34,10 +34,6 @@
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.lbl_BuscarPor = new System.Windows.Forms.Label();
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.empresaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +41,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Actualizar
@@ -57,8 +57,9 @@
             this.btn_Actualizar.Name = "btn_Actualizar";
             this.btn_Actualizar.Size = new System.Drawing.Size(240, 23);
             this.btn_Actualizar.TabIndex = 17;
-            this.btn_Actualizar.Text = "Actualizar lista de proveedores";
+            this.btn_Actualizar.Text = "Actualizar lista de empresas";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // cbb_Opciones
             // 
@@ -82,6 +83,7 @@
             this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
             this.btn_Buscar.TabIndex = 15;
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txt_Buscar
             // 
@@ -101,41 +103,13 @@
             this.lbl_BuscarPor.TabIndex = 13;
             this.lbl_BuscarPor.Text = "Buscar Por:";
             // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataMember = "empresa";
-            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // empresaTableAdapter
-            // 
-            this.empresaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = null;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = null;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
             // empresaDataGridView
             // 
             this.empresaDataGridView.AllowUserToAddRows = false;
             this.empresaDataGridView.AllowUserToDeleteRows = false;
             this.empresaDataGridView.AllowUserToOrderColumns = true;
             this.empresaDataGridView.AutoGenerateColumns = false;
+            this.empresaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.empresaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -153,6 +127,7 @@
             this.empresaDataGridView.ShowEditingIcon = false;
             this.empresaDataGridView.Size = new System.Drawing.Size(678, 326);
             this.empresaDataGridView.TabIndex = 18;
+            this.empresaDataGridView.Click += new System.EventHandler(this.empresaDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -196,6 +171,35 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataMember = "empresa";
+            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empresaTableAdapter
+            // 
+            this.empresaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.material_comprasTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = null;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
             // frm_EmpresaBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,9 +214,9 @@
             this.Name = "frm_EmpresaBuscar";
             this.Text = "Empresa - Buscar";
             this.Load += new System.EventHandler(this.frm_EmpresaBuscar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

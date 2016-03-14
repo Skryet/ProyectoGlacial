@@ -371,24 +371,6 @@
   <data name="&gt;&gt;pnl_Menu.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbl_Provedores.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Provedores.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Rounded MT Bold, 26.25pt</value>
-  </data>
-  <data name="lbl_Provedores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 18</value>
-  </data>
-  <data name="lbl_Provedores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 40</value>
-  </data>
-  <data name="lbl_Provedores.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lbl_Provedores.Text" xml:space="preserve">
-    <value>Empresas</value>
-  </data>
   <data name="&gt;&gt;lbl_Provedores.Name" xml:space="preserve">
     <value>lbl_Provedores</value>
   </data>
@@ -422,23 +404,35 @@
   <data name="&gt;&gt;pnl_Encabezado.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lbl_MenuActual.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbl_Provedores.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_MenuActual.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Rounded MT Bold, 10pt</value>
+  <data name="lbl_Provedores.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 26.25pt</value>
   </data>
-  <data name="lbl_MenuActual.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 9</value>
+  <data name="lbl_Provedores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 18</value>
   </data>
-  <data name="lbl_MenuActual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 16</value>
+  <data name="lbl_Provedores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 40</value>
   </data>
-  <data name="lbl_MenuActual.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbl_Provedores.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lbl_MenuActual.Text" xml:space="preserve">
-    <value>Sistema de Gestion de Almacen - Empresas</value>
+  <data name="lbl_Provedores.Text" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Name" xml:space="preserve">
+    <value>lbl_Provedores</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.Parent" xml:space="preserve">
+    <value>pnl_Encabezado</value>
+  </data>
+  <data name="&gt;&gt;lbl_Provedores.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lbl_MenuActual.Name" xml:space="preserve">
     <value>lbl_MenuActual</value>
@@ -473,6 +467,48 @@
   <data name="&gt;&gt;pnl_BarraEstado.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="lbl_MenuActual.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_MenuActual.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Rounded MT Bold, 10pt</value>
+  </data>
+  <data name="lbl_MenuActual.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 9</value>
+  </data>
+  <data name="lbl_MenuActual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 16</value>
+  </data>
+  <data name="lbl_MenuActual.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_MenuActual.Text" xml:space="preserve">
+    <value>Sistema de Gestion de Almacen - Empresas</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Name" xml:space="preserve">
+    <value>lbl_MenuActual</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.Parent" xml:space="preserve">
+    <value>pnl_BarraEstado</value>
+  </data>
+  <data name="&gt;&gt;lbl_MenuActual.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="glacial_almacenDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="empresaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>196, 17</value>
+  </metadata>
+  <metadata name="empresaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>373, 17</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>544, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -484,6 +520,30 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SGA - Empresas</value>
+  </data>
+  <data name="&gt;&gt;glacial_almacenDataSet.Name" xml:space="preserve">
+    <value>glacial_almacenDataSet</value>
+  </data>
+  <data name="&gt;&gt;glacial_almacenDataSet.Type" xml:space="preserve">
+    <value>Proyecto_Glacial.glacial_almacenDataSet, glacial_almacenDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;empresaBindingSource.Name" xml:space="preserve">
+    <value>empresaBindingSource</value>
+  </data>
+  <data name="&gt;&gt;empresaBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;empresaTableAdapter.Name" xml:space="preserve">
+    <value>empresaTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;empresaTableAdapter.Type" xml:space="preserve">
+    <value>Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter, glacial_almacenDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Name" xml:space="preserve">
+    <value>tableAdapterManager</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
+    <value>Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager, glacial_almacenDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_Empresas</value>

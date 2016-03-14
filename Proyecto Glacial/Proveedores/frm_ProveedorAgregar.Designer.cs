@@ -130,7 +130,7 @@
             this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Telefono.Location = new System.Drawing.Point(129, 91);
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(100, 26);
+            this.txt_Telefono.Size = new System.Drawing.Size(169, 26);
             this.txt_Telefono.TabIndex = 4;
             this.txt_Telefono.TextChanged += new System.EventHandler(this.despintarTexto);
             // 

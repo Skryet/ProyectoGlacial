@@ -17,19 +17,48 @@ namespace Proyecto_Glacial.Empresa
             InitializeComponent();
         }
 
-        private void empresaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void despintarTexto(object sender, EventArgs e)
         {
-            this.Validate();
-            this.empresaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
+            TextBox limpiar = (TextBox)sender;
+            limpiar.BackColor = Color.White;
         }
+
+        private bool validarCampos()
+        {
+            bool vacio = false;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox && ctrl.Text == "")
+                {
+                    ctrl.BackColor = Color.Red;
+                    vacio = true;
+                }
+            }
+            return vacio;
+        }  
 
         private void frm_EmpresaModificar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+            this.empresaTableAdapter.BuscarID(this.glacial_almacenDataSet.empresa, Program.idEmpresa);
 
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos() != true)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de modificar el proveedor " + txt_Nombre.Text, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    this.empresaTableAdapter.ActualizarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, Program.idProveedor);
+                    Program.idProveedor = 0;
+                    AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido modificado", "Mensaje", 1200); ;
+                    this.Close();
+                }
+            }
+            else
+                MessageBox.Show("Faltan campos por agregar por favor agreguelos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

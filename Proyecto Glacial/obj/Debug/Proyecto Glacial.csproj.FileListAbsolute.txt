@@ -34,3 +34,7 @@ C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaAgregar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaBuscar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaModificar.resources
+C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_Empresas.resources

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Empresas));
             this.pnl_Contenido = new System.Windows.Forms.Panel();
             this.pnl_Menu = new System.Windows.Forms.Panel();
@@ -43,9 +44,15 @@
             this.lbl_Provedores = new System.Windows.Forms.Label();
             this.pnl_BarraEstado = new System.Windows.Forms.Panel();
             this.lbl_MenuActual = new System.Windows.Forms.Label();
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.pnl_Menu.SuspendLayout();
             this.pnl_Encabezado.SuspendLayout();
             this.pnl_BarraEstado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Contenido
@@ -78,6 +85,7 @@
             resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // btn_Modificar
             // 
@@ -85,6 +93,7 @@
             this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // btn_Eliminar
             // 
@@ -92,6 +101,7 @@
             this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Agregar
             // 
@@ -99,6 +109,7 @@
             resources.ApplyResources(this.btn_Agregar, "btn_Agregar");
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // lbl_Modificar
             // 
@@ -137,6 +148,35 @@
             resources.ApplyResources(this.lbl_MenuActual, "lbl_MenuActual");
             this.lbl_MenuActual.Name = "lbl_MenuActual";
             // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataMember = "empresa";
+            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // empresaTableAdapter
+            // 
+            this.empresaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.material_comprasTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = null;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
             // frm_Empresas
             // 
             resources.ApplyResources(this, "$this");
@@ -152,6 +192,8 @@
             this.pnl_Encabezado.PerformLayout();
             this.pnl_BarraEstado.ResumeLayout(false);
             this.pnl_BarraEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +214,9 @@
         private System.Windows.Forms.Label lbl_Provedores;
         private System.Windows.Forms.Panel pnl_BarraEstado;
         private System.Windows.Forms.Label lbl_MenuActual;
+        private glacial_almacenDataSet glacial_almacenDataSet;
+        private System.Windows.Forms.BindingSource empresaBindingSource;
+        private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
+        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

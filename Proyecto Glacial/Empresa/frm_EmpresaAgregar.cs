@@ -17,6 +17,37 @@ namespace Proyecto_Glacial.Empresa
             InitializeComponent();
         }
 
+        private void limpiarCampos()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+            }
+        }
+
+        private bool validarCampos()
+        {
+            bool vacio = false;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox && ctrl.Text == "")
+                {
+                    ctrl.BackColor = Color.Red;
+                    vacio = true;
+                }
+            }
+            return vacio;
+        }
+
+        private void despintarTexto(object sender, EventArgs e)
+        {
+            TextBox limpiar = (TextBox)sender;
+            limpiar.BackColor = Color.White;
+        }
+
         private void empresaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -38,6 +69,19 @@ namespace Proyecto_Glacial.Empresa
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.
             this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
 
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos() != true)
+            {
+                this.empresaTableAdapter.InsertarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text);
+                limpiarCampos();
+
+                AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido agregado", "Mensaje", 1200); ;
+            }
+            else
+                MessageBox.Show("Faltan campos por agregar por favor agreguelos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

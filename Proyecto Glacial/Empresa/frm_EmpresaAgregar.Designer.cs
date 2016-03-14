@@ -54,25 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
-            this.btn_Agregar.Location = new System.Drawing.Point(563, 348);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Agregar.TabIndex = 24;
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Agregar
-            // 
-            this.lbl_Agregar.AutoSize = true;
-            this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lbl_Agregar.Location = new System.Drawing.Point(558, 424);
-            this.lbl_Agregar.Name = "lbl_Agregar";
-            this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
-            this.lbl_Agregar.TabIndex = 23;
-            this.lbl_Agregar.Text = "Agregar";
-            // 
             // lbl_Estado
             // 
             lbl_Estado.AutoSize = true;
@@ -82,14 +63,6 @@
             lbl_Estado.Size = new System.Drawing.Size(64, 18);
             lbl_Estado.TabIndex = 21;
             lbl_Estado.Text = "Estado";
-            // 
-            // txt_Estado
-            // 
-            this.txt_Estado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Estado.Location = new System.Drawing.Point(132, 221);
-            this.txt_Estado.Name = "txt_Estado";
-            this.txt_Estado.Size = new System.Drawing.Size(231, 26);
-            this.txt_Estado.TabIndex = 22;
             // 
             // lbl_Colonia
             // 
@@ -101,14 +74,6 @@
             lbl_Colonia.TabIndex = 19;
             lbl_Colonia.Text = "Colonia";
             // 
-            // txt_Colonia
-            // 
-            this.txt_Colonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Colonia.Location = new System.Drawing.Point(132, 174);
-            this.txt_Colonia.Name = "txt_Colonia";
-            this.txt_Colonia.Size = new System.Drawing.Size(356, 26);
-            this.txt_Colonia.TabIndex = 20;
-            // 
             // lbl_Direccion
             // 
             lbl_Direccion.AutoSize = true;
@@ -118,14 +83,6 @@
             lbl_Direccion.Size = new System.Drawing.Size(85, 18);
             lbl_Direccion.TabIndex = 17;
             lbl_Direccion.Text = "Dirección";
-            // 
-            // txt_Direccion
-            // 
-            this.txt_Direccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Direccion.Location = new System.Drawing.Point(132, 129);
-            this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(347, 26);
-            this.txt_Direccion.TabIndex = 18;
             // 
             // lbl_Telefono
             // 
@@ -137,14 +94,6 @@
             lbl_Telefono.TabIndex = 15;
             lbl_Telefono.Text = "Teléfono";
             // 
-            // txt_Telefono
-            // 
-            this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Telefono.Location = new System.Drawing.Point(132, 84);
-            this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(100, 26);
-            this.txt_Telefono.TabIndex = 16;
-            // 
             // lbl_Nombre
             // 
             lbl_Nombre.AutoSize = true;
@@ -155,6 +104,62 @@
             lbl_Nombre.TabIndex = 13;
             lbl_Nombre.Text = "Nombre";
             // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
+            this.btn_Agregar.Location = new System.Drawing.Point(563, 348);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Agregar.TabIndex = 24;
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // lbl_Agregar
+            // 
+            this.lbl_Agregar.AutoSize = true;
+            this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_Agregar.Location = new System.Drawing.Point(558, 424);
+            this.lbl_Agregar.Name = "lbl_Agregar";
+            this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
+            this.lbl_Agregar.TabIndex = 23;
+            this.lbl_Agregar.Text = "Agregar";
+            // 
+            // txt_Estado
+            // 
+            this.txt_Estado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Estado.Location = new System.Drawing.Point(132, 221);
+            this.txt_Estado.Name = "txt_Estado";
+            this.txt_Estado.Size = new System.Drawing.Size(231, 26);
+            this.txt_Estado.TabIndex = 22;
+            this.txt_Estado.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txt_Colonia
+            // 
+            this.txt_Colonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Colonia.Location = new System.Drawing.Point(132, 174);
+            this.txt_Colonia.Name = "txt_Colonia";
+            this.txt_Colonia.Size = new System.Drawing.Size(356, 26);
+            this.txt_Colonia.TabIndex = 20;
+            this.txt_Colonia.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txt_Direccion
+            // 
+            this.txt_Direccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Direccion.Location = new System.Drawing.Point(132, 129);
+            this.txt_Direccion.Name = "txt_Direccion";
+            this.txt_Direccion.Size = new System.Drawing.Size(347, 26);
+            this.txt_Direccion.TabIndex = 18;
+            this.txt_Direccion.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
+            // txt_Telefono
+            // 
+            this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Telefono.Location = new System.Drawing.Point(132, 84);
+            this.txt_Telefono.Name = "txt_Telefono";
+            this.txt_Telefono.Size = new System.Drawing.Size(169, 26);
+            this.txt_Telefono.TabIndex = 16;
+            this.txt_Telefono.TextChanged += new System.EventHandler(this.despintarTexto);
+            // 
             // txt_Nombre
             // 
             this.txt_Nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,6 +167,7 @@
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(355, 26);
             this.txt_Nombre.TabIndex = 14;
+            this.txt_Nombre.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // glacial_almacenDataSet
             // 
