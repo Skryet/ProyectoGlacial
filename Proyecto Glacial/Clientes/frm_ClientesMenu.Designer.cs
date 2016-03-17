@@ -47,8 +47,10 @@
             this.lbl_Estado = new System.Windows.Forms.Label();
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Header.SuspendLayout();
             this.pnl_MenuIzquierdo.SuspendLayout();
+            this.pnl_ContenidoCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.pnl_barraEstado.SuspendLayout();
@@ -174,6 +176,7 @@
             // pnl_ContenidoCentro
             // 
             this.pnl_ContenidoCentro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_ContenidoCentro.Controls.Add(this.label1);
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
             this.pnl_ContenidoCentro.Size = new System.Drawing.Size(688, 523);
@@ -226,6 +229,18 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(160, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(431, 185);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Menú de Clientes\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frm_ClientesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,10 +252,13 @@
             this.Controls.Add(this.pnl_Header);
             this.Name = "frm_ClientesMenu";
             this.Text = "Menu Clientes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ClientesMenu_FormClosed);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
             this.pnl_MenuIzquierdo.ResumeLayout(false);
             this.pnl_MenuIzquierdo.PerformLayout();
+            this.pnl_ContenidoCentro.ResumeLayout(false);
+            this.pnl_ContenidoCentro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.pnl_barraEstado.ResumeLayout(false);
@@ -269,5 +287,6 @@
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private glacial_almacenDataSetTableAdapters.clientesTableAdapter clientesTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label1;
     }
 }

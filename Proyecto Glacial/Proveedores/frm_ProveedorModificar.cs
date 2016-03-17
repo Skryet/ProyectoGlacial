@@ -58,7 +58,8 @@ namespace Proyecto_Glacial.Proveedores
                 DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de modificar el proveedor " + txt_Nombre.Text, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    this.proveedoresTableAdapter.ActualizarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, Program.idProveedor);
+                    
+                    this.proveedoresTableAdapter.ModificarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text, Program.idProveedor);
                     Program.idProveedor = 0;
                     AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido modificado", "Mensaje", 1200); ;
                     this.Close();

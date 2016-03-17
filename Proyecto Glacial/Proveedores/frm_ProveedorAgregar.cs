@@ -47,7 +47,7 @@ namespace Proyecto_Glacial.Proveedores
         {
             if (validarCampos() != true)
             {
-                this.proveedoresTableAdapter.InsertarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text);
+                this.proveedoresTableAdapter.InsertarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text);
                 limpiarCampos();
 
                 AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido agregado", "Mensaje",  1200); ;                
