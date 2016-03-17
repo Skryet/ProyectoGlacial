@@ -51,6 +51,6 @@ C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources
 C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
-C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
-C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
-C:\Users\jever\Source\Repos\Proyecto Glacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources
+C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
