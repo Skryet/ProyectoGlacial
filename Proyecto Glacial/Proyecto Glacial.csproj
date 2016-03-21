@@ -140,6 +140,36 @@
     <Compile Include="Proveedores\frm_ProveedorModificar.Designer.cs">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\frm_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_Ventas.Designer.cs">
+      <DependentUpon>frm_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasAgregar.Designer.cs">
+      <DependentUpon>frm_VentasAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasAgregarProducto.Designer.cs">
+      <DependentUpon>frm_VentasAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frm_VentaSeleccionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_VentaSeleccionCliente.Designer.cs">
+      <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.Designer.cs">
+      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +213,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frm_ProveedorModificar.resx">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_Ventas.resx">
+      <DependentUpon>frm_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_VentasAgregar.resx">
+      <DependentUpon>frm_VentasAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_VentasAgregarProducto.resx">
+      <DependentUpon>frm_VentasAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_VentaSeleccionCliente.resx">
+      <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_VentasSeleccionEmpresa.resx">
+      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="glacial_almacenDataSet.xsc">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>

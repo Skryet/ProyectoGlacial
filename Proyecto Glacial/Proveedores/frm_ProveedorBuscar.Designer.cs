@@ -55,32 +55,35 @@
             // 
             // cbb_Opciones
             // 
-            this.cbb_Opciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
+            this.cbb_Opciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbb_Opciones.FormattingEnabled = true;
             this.cbb_Opciones.Items.AddRange(new object[] {
             "Nombre",
             "Estado"});
-            this.cbb_Opciones.Location = new System.Drawing.Point(14, 45);
+            this.cbb_Opciones.Location = new System.Drawing.Point(19, 55);
+            this.cbb_Opciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbb_Opciones.Name = "cbb_Opciones";
-            this.cbb_Opciones.Size = new System.Drawing.Size(141, 23);
+            this.cbb_Opciones.Size = new System.Drawing.Size(187, 28);
             this.cbb_Opciones.TabIndex = 10;
             this.cbb_Opciones.Text = "Seleccione";
             // 
             // txt_Buscar
             // 
-            this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
-            this.txt_Buscar.Location = new System.Drawing.Point(161, 45);
+            this.txt_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_Buscar.Location = new System.Drawing.Point(215, 55);
+            this.txt_Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(400, 23);
+            this.txt_Buscar.Size = new System.Drawing.Size(532, 26);
             this.txt_Buscar.TabIndex = 8;
             // 
             // lbl_BuscarPor
             // 
             this.lbl_BuscarPor.AutoSize = true;
-            this.lbl_BuscarPor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
-            this.lbl_BuscarPor.Location = new System.Drawing.Point(265, 16);
+            this.lbl_BuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lbl_BuscarPor.Location = new System.Drawing.Point(353, 20);
+            this.lbl_BuscarPor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_BuscarPor.Name = "lbl_BuscarPor";
-            this.lbl_BuscarPor.Size = new System.Drawing.Size(116, 21);
+            this.lbl_BuscarPor.Size = new System.Drawing.Size(126, 26);
             this.lbl_BuscarPor.TabIndex = 7;
             this.lbl_BuscarPor.Text = "Buscar Por:";
             // 
@@ -88,9 +91,10 @@
             // 
             this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
-            this.btn_Buscar.Location = new System.Drawing.Point(582, 19);
+            this.btn_Buscar.Location = new System.Drawing.Point(776, 23);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Buscar.Size = new System.Drawing.Size(100, 92);
             this.btn_Buscar.TabIndex = 9;
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
@@ -126,10 +130,11 @@
             // 
             // btn_Actualizar
             // 
-            this.btn_Actualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Actualizar.Location = new System.Drawing.Point(207, 84);
+            this.btn_Actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Actualizar.Location = new System.Drawing.Point(276, 103);
+            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(240, 23);
+            this.btn_Actualizar.Size = new System.Drawing.Size(320, 28);
             this.btn_Actualizar.TabIndex = 12;
             this.btn_Actualizar.Text = "Actualizar lista de proveedores";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
@@ -140,6 +145,8 @@
             this.proveedoresDataGridView.AllowUserToAddRows = false;
             this.proveedoresDataGridView.AllowUserToDeleteRows = false;
             this.proveedoresDataGridView.AutoGenerateColumns = false;
+            this.proveedoresDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.proveedoresDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.proveedoresDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.proveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proveedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -153,76 +160,99 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.proveedoresDataGridView.DataSource = this.proveedoresBindingSource;
-            this.proveedoresDataGridView.Location = new System.Drawing.Point(0, 122);
+            this.proveedoresDataGridView.Location = new System.Drawing.Point(0, 150);
+            this.proveedoresDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.proveedoresDataGridView.Name = "proveedoresDataGridView";
-            this.proveedoresDataGridView.Size = new System.Drawing.Size(679, 350);
+            this.proveedoresDataGridView.ReadOnly = true;
+            this.proveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.proveedoresDataGridView.Size = new System.Drawing.Size(905, 431);
             this.proveedoresDataGridView.TabIndex = 12;
+            this.proveedoresDataGridView.Click += new System.EventHandler(this.proveedoresDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_proveedor";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 87;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "telefono";
             this.dataGridViewTextBoxColumn3.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 93;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "direccion";
             this.dataGridViewTextBoxColumn4.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 96;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "colonia";
             this.dataGridViewTextBoxColumn5.HeaderText = "Colonia";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 84;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
             this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 81;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "correo";
             this.dataGridViewTextBoxColumn7.HeaderText = "Correo";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 80;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
             this.dataGridViewTextBoxColumn8.HeaderText = "C.P.";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 63;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "rfc";
             this.dataGridViewTextBoxColumn9.HeaderText = "R.F.C.";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 76;
             // 
             // frm_ProveedorBuscar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 484);
+            this.ClientSize = new System.Drawing.Size(905, 596);
             this.Controls.Add(this.proveedoresDataGridView);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.cbb_Opciones);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.lbl_BuscarPor);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_ProveedorBuscar";
             this.Text = "Proveedor - Buscar";
             this.Load += new System.EventHandler(this.frm_ProveedorBuscar_Load);

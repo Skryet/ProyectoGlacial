@@ -15,15 +15,7 @@ namespace Proyecto_Glacial.Proveedores
         public frm_ProveedorBuscar()
         {            
             InitializeComponent();            
-        }
-
-        private void proveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.proveedoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
+        }      
 
         private void frm_ProveedorBuscar_Load(object sender, EventArgs e)
         {
