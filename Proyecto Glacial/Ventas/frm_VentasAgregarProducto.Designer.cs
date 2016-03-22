@@ -48,6 +48,7 @@
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Seleccionar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_Precio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
@@ -99,10 +100,10 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.productosDataGridView.DataSource = this.productosBindingSource;
-            this.productosDataGridView.Location = new System.Drawing.Point(-2, 187);
+            this.productosDataGridView.Location = new System.Drawing.Point(5, 187);
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.RowTemplate.Height = 24;
-            this.productosDataGridView.Size = new System.Drawing.Size(895, 212);
+            this.productosDataGridView.Size = new System.Drawing.Size(895, 309);
             this.productosDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
@@ -173,7 +174,7 @@
             this.cbx_Tipo.Name = "cbx_Tipo";
             this.cbx_Tipo.Size = new System.Drawing.Size(121, 24);
             this.cbx_Tipo.TabIndex = 3;
-            this.cbx_Tipo.Text = "Seleccionar";
+            this.cbx_Tipo.Text = "Seleccione";
             // 
             // txt_Buscar
             // 
@@ -193,7 +194,7 @@
             // 
             // btn_Seleccionar
             // 
-            this.btn_Seleccionar.Location = new System.Drawing.Point(400, 544);
+            this.btn_Seleccionar.Location = new System.Drawing.Point(387, 523);
             this.btn_Seleccionar.Name = "btn_Seleccionar";
             this.btn_Seleccionar.Size = new System.Drawing.Size(119, 40);
             this.btn_Seleccionar.TabIndex = 6;
@@ -203,16 +204,32 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(169, 146);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Precio 1",
+            "Precio 2",
+            "Precio 3",
+            "Especial"});
+            this.comboBox1.Location = new System.Drawing.Point(487, 137);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(158, 24);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Seleccione";
+            // 
+            // lbl_Precio
+            // 
+            this.lbl_Precio.AutoSize = true;
+            this.lbl_Precio.Location = new System.Drawing.Point(239, 140);
+            this.lbl_Precio.Name = "lbl_Precio";
+            this.lbl_Precio.Size = new System.Drawing.Size(235, 17);
+            this.lbl_Precio.TabIndex = 8;
+            this.lbl_Precio.Text = "Seleccione el precio que desea dar:";
             // 
             // frm_VentasAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 596);
+            this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Seleccionar);
             this.Controls.Add(this.btn_Buscar);
@@ -252,5 +269,6 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Seleccionar;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_Precio;
     }
 }

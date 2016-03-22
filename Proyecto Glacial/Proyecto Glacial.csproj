@@ -106,6 +106,7 @@
     <Compile Include="frm_MenuPrincipal.Designer.cs">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="generarConexion.cs" />
     <Compile Include="glacial_almacenDataSet.cs">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
     </Compile>
@@ -140,6 +141,7 @@
     <Compile Include="Proveedores\frm_ProveedorModificar.Designer.cs">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\Consultas\consultasVentas.cs" />
     <Compile Include="Ventas\frm_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +290,7 @@
   <ItemGroup>
     <None Include="Resources\diskette.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

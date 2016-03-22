@@ -29,7 +29,6 @@ namespace Proyecto_Glacial.Ventas
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -63,7 +62,27 @@ namespace Proyecto_Glacial.Ventas
 
         private void clientesDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idCliente = Convert.ToInt32(clientesDataGridView.Rows[clientesDataGridView.CurrentCellAddress.Y].Cells[0].Value);
+            Program.idClienteVenta = Convert.ToInt32(clientesDataGridView.Rows[clientesDataGridView.CurrentCellAddress.Y].Cells[0].Value);
+        }
+
+        private void btn_SeleccionarCliente_Click(object sender, EventArgs e)
+        {
+            if (Program.idClienteVenta == 0)
+                MessageBox.Show("No se ha seleccionado ningun cliente, seleccione uno por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                this.Close();
+        }
+
+        private void btn_AgregarCiente_Click(object sender, EventArgs e)
+        {
+            Form agregarCliente = new frm_ClientesAgregar();
+            agregarCliente.ShowDialog();
+            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+        }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
         }
     }
 }

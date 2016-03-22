@@ -116,6 +116,7 @@
             this.btn_SeleccionarCliente.TabIndex = 5;
             this.btn_SeleccionarCliente.Text = "...";
             this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
             // 
             // btn_SeleccionarEmpresa
             // 
@@ -126,6 +127,7 @@
             this.btn_SeleccionarEmpresa.TabIndex = 7;
             this.btn_SeleccionarEmpresa.Text = "...";
             this.btn_SeleccionarEmpresa.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarEmpresa.Click += new System.EventHandler(this.btn_SeleccionarEmpresa_Click);
             // 
             // txt_Empresa
             // 
