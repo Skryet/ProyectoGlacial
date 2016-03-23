@@ -15,9 +15,10 @@ namespace Proyecto_Glacial
         public static int idEmpresa;
 
         //Variables de Ventas
-        public static int idClienteVenta = 0;
-        public static int idEmpresaVenta = 0;
+        public static int idComprador = 0;
+        public static int idVenta = 0;
         public static int idProductoVenta = 0;
+        public static int idListaVenta = 0;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -26,7 +27,7 @@ namespace Proyecto_Glacial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Proveedores());
+            Application.Run(new Ventas.frm_Ventas());
         }
     }
 }

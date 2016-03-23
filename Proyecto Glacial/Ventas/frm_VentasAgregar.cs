@@ -12,7 +12,7 @@ namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_VentasAgregar : Form
     {
-        private Consultas.consultasVentas consultas;
+        private Consultas.consultasVentas consultas = new Consultas.consultasVentas();
 
         public frm_VentasAgregar()
         {
@@ -30,10 +30,10 @@ namespace Proyecto_Glacial.Ventas
         {
             Form agregarCliente = new frm_VentaSeleccionCliente();
             agregarCliente.ShowDialog();
-            if (Program.idClienteVenta != 0)
+            if (Program.idComprador != 0)
             {
                 string nombreCliente = "";
-                consultas.obtenerNombreCliente(ref nombreCliente, Program.idClienteVenta);
+                consultas.obtenerNombreCliente(ref nombreCliente, Program.idComprador);
                 txt_Cliente.Text = nombreCliente;
             }
             else
@@ -44,14 +44,56 @@ namespace Proyecto_Glacial.Ventas
         {
             Form agregarEmpresa = new frm_VentasSeleccionEmpresa();
             agregarEmpresa.ShowDialog();
-            if (Program.idClienteVenta != 0)
+            if (Program.idComprador != 0)
             {
                 string nombreEmpresa = "";
-                consultas.obtenerNombreCliente(ref nombreEmpresa, Program.idClienteVenta);
-                txt_Cliente.Text = nombreEmpresa;
+                consultas.obtenerNombreEmpresa(ref nombreEmpresa, Program.idComprador);
+                txt_Empresa.Text = nombreEmpresa;
             }
             else
                 MessageBox.Show("Ha ocurrido un error al seleccionar el cliente, seleccionelo de nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void rbt_SinRegistro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_SinRegistro.Checked == true)
+            {
+                Program.idComprador = 0;
+                txt_Cliente.Text = "";
+                txt_Empresa.Text = "";
+                txt_Cliente.Enabled = false;
+                txt_Empresa.Enabled = false;
+                btn_SeleccionarEmpresa.Enabled = false;
+                btn_SeleccionarCliente.Enabled = false;
+            }
+        }
+
+        private void rbt_Cliente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_Cliente.Checked == true)
+            {
+                Program.idComprador = 0;
+                txt_Cliente.Text = "";
+                txt_Empresa.Text = "";
+                txt_Cliente.Enabled = true;
+                txt_Empresa.Enabled = false;
+                btn_SeleccionarEmpresa.Enabled = false;
+                btn_SeleccionarCliente.Enabled = true;
+            }
+        }
+
+        private void rbt_Empresa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_Empresa.Checked == true)
+            {
+                Program.idComprador = 0;
+                txt_Cliente.Text = "";
+                txt_Empresa.Text = "";
+                txt_Cliente.Enabled = false;
+                txt_Empresa.Enabled = true;
+                btn_SeleccionarEmpresa.Enabled = true;
+                btn_SeleccionarCliente.Enabled = false;
+            }
         }
     }
 }

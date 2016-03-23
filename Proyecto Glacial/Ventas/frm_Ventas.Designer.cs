@@ -53,14 +53,14 @@
             this.pnl_BarraEstado.Location = new System.Drawing.Point(10, 766);
             this.pnl_BarraEstado.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_BarraEstado.Name = "pnl_BarraEstado";
-            this.pnl_BarraEstado.Size = new System.Drawing.Size(1163, 42);
+            this.pnl_BarraEstado.Size = new System.Drawing.Size(1282, 42);
             this.pnl_BarraEstado.TabIndex = 8;
             // 
             // lbl_MenuActual
             // 
             this.lbl_MenuActual.AutoSize = true;
             this.lbl_MenuActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_MenuActual.Location = new System.Drawing.Point(412, 11);
+            this.lbl_MenuActual.Location = new System.Drawing.Point(485, 11);
             this.lbl_MenuActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MenuActual.Name = "lbl_MenuActual";
             this.lbl_MenuActual.Size = new System.Drawing.Size(317, 20);
@@ -72,7 +72,7 @@
             this.pnl_Contenido.Location = new System.Drawing.Point(246, 113);
             this.pnl_Contenido.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Contenido.Name = "pnl_Contenido";
-            this.pnl_Contenido.Size = new System.Drawing.Size(927, 644);
+            this.pnl_Contenido.Size = new System.Drawing.Size(1046, 644);
             this.pnl_Contenido.TabIndex = 7;
             // 
             // pnl_Menu
@@ -112,6 +112,7 @@
             this.btn_Buscar.Size = new System.Drawing.Size(100, 92);
             this.btn_Buscar.TabIndex = 10;
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // btn_Modificar
             // 
@@ -147,6 +148,7 @@
             this.btn_Agregar.Size = new System.Drawing.Size(100, 92);
             this.btn_Agregar.TabIndex = 6;
             this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // lbl_Modificar
             // 
@@ -185,7 +187,7 @@
             // 
             this.lbl_Ventas.AutoSize = true;
             this.lbl_Ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Ventas.Location = new System.Drawing.Point(488, 22);
+            this.lbl_Ventas.Location = new System.Drawing.Point(569, 24);
             this.lbl_Ventas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Ventas.Name = "lbl_Ventas";
             this.lbl_Ventas.Size = new System.Drawing.Size(158, 52);
@@ -198,14 +200,14 @@
             this.pnl_Encabezado.Location = new System.Drawing.Point(6, 6);
             this.pnl_Encabezado.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Encabezado.Name = "pnl_Encabezado";
-            this.pnl_Encabezado.Size = new System.Drawing.Size(1167, 98);
+            this.pnl_Encabezado.Size = new System.Drawing.Size(1286, 98);
             this.pnl_Encabezado.TabIndex = 5;
             // 
             // frm_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 814);
+            this.ClientSize = new System.Drawing.Size(1294, 815);
             this.Controls.Add(this.pnl_BarraEstado);
             this.Controls.Add(this.pnl_Contenido);
             this.Controls.Add(this.pnl_Menu);

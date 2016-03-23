@@ -31,5 +31,10 @@ namespace Proyecto_Glacial.Ventas
             this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);
 
         }
+
+        private void productosDataGridView_Click(object sender, EventArgs e)
+        {
+            Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+        }
     }
 }

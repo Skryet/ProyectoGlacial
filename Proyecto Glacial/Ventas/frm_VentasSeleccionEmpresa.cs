@@ -53,13 +53,30 @@ namespace Proyecto_Glacial.Ventas
 
         private void empresaDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idEmpresa = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);
+            Program.idComprador = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);
         }
 
         private void btn_AgregarEmpresa_Click(object sender, EventArgs e)
         {
             Form AgregarEmpresa = new Empresa.frm_EmpresaAgregar();
             AgregarEmpresa.ShowDialog();
+            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+
+        }
+
+        private void btn_SeleccionarEmpresa_Click(object sender, EventArgs e)
+        {
+            if (Program.idComprador == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ninguna empresa, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idComprador = 0;
+                    this.Close();
+                }
+            }
+            else
+                this.Close();
         }
     }
 }

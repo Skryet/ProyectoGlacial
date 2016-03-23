@@ -57,43 +57,46 @@
             // 
             this.rbt_Cliente.AutoSize = true;
             this.rbt_Cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_Cliente.Location = new System.Drawing.Point(364, 73);
+            this.rbt_Cliente.Location = new System.Drawing.Point(328, 73);
             this.rbt_Cliente.Name = "rbt_Cliente";
             this.rbt_Cliente.Size = new System.Drawing.Size(80, 27);
             this.rbt_Cliente.TabIndex = 0;
             this.rbt_Cliente.TabStop = true;
             this.rbt_Cliente.Text = "Socio";
             this.rbt_Cliente.UseVisualStyleBackColor = true;
+            this.rbt_Cliente.CheckedChanged += new System.EventHandler(this.rbt_Cliente_CheckedChanged);
             // 
             // rbt_Empresa
             // 
             this.rbt_Empresa.AutoSize = true;
             this.rbt_Empresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_Empresa.Location = new System.Drawing.Point(766, 72);
+            this.rbt_Empresa.Location = new System.Drawing.Point(730, 72);
             this.rbt_Empresa.Name = "rbt_Empresa";
             this.rbt_Empresa.Size = new System.Drawing.Size(110, 27);
             this.rbt_Empresa.TabIndex = 1;
             this.rbt_Empresa.TabStop = true;
             this.rbt_Empresa.Text = "Empresa";
             this.rbt_Empresa.UseVisualStyleBackColor = true;
+            this.rbt_Empresa.CheckedChanged += new System.EventHandler(this.rbt_Empresa_CheckedChanged);
             // 
             // rbt_SinRegistro
             // 
             this.rbt_SinRegistro.AutoSize = true;
             this.rbt_SinRegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_SinRegistro.Location = new System.Drawing.Point(54, 87);
+            this.rbt_SinRegistro.Location = new System.Drawing.Point(18, 87);
             this.rbt_SinRegistro.Name = "rbt_SinRegistro";
             this.rbt_SinRegistro.Size = new System.Drawing.Size(91, 27);
             this.rbt_SinRegistro.TabIndex = 2;
             this.rbt_SinRegistro.TabStop = true;
             this.rbt_SinRegistro.Text = "Cliente";
             this.rbt_SinRegistro.UseVisualStyleBackColor = true;
+            this.rbt_SinRegistro.CheckedChanged += new System.EventHandler(this.rbt_SinRegistro_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(377, 25);
+            this.label1.Location = new System.Drawing.Point(341, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 23);
             this.label1.TabIndex = 3;
@@ -101,16 +104,19 @@
             // 
             // txt_Cliente
             // 
+            this.txt_Cliente.Enabled = false;
             this.txt_Cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cliente.Location = new System.Drawing.Point(187, 104);
+            this.txt_Cliente.Location = new System.Drawing.Point(151, 104);
             this.txt_Cliente.Name = "txt_Cliente";
+            this.txt_Cliente.ReadOnly = true;
             this.txt_Cliente.Size = new System.Drawing.Size(380, 30);
             this.txt_Cliente.TabIndex = 4;
             // 
             // btn_SeleccionarCliente
             // 
+            this.btn_SeleccionarCliente.Enabled = false;
             this.btn_SeleccionarCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(573, 105);
+            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(537, 105);
             this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
             this.btn_SeleccionarCliente.Size = new System.Drawing.Size(36, 31);
             this.btn_SeleccionarCliente.TabIndex = 5;
@@ -120,8 +126,9 @@
             // 
             // btn_SeleccionarEmpresa
             // 
+            this.btn_SeleccionarEmpresa.Enabled = false;
             this.btn_SeleccionarEmpresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SeleccionarEmpresa.Location = new System.Drawing.Point(964, 104);
+            this.btn_SeleccionarEmpresa.Location = new System.Drawing.Point(928, 104);
             this.btn_SeleccionarEmpresa.Name = "btn_SeleccionarEmpresa";
             this.btn_SeleccionarEmpresa.Size = new System.Drawing.Size(36, 31);
             this.btn_SeleccionarEmpresa.TabIndex = 7;
@@ -131,9 +138,11 @@
             // 
             // txt_Empresa
             // 
+            this.txt_Empresa.Enabled = false;
             this.txt_Empresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Empresa.Location = new System.Drawing.Point(651, 105);
+            this.txt_Empresa.Location = new System.Drawing.Point(615, 105);
             this.txt_Empresa.Name = "txt_Empresa";
+            this.txt_Empresa.ReadOnly = true;
             this.txt_Empresa.Size = new System.Drawing.Size(307, 30);
             this.txt_Empresa.TabIndex = 6;
             // 
@@ -149,10 +158,10 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.vista_venta_lista_productosDataGridView.DataSource = this.vista_venta_lista_productosBindingSource;
-            this.vista_venta_lista_productosDataGridView.Location = new System.Drawing.Point(66, 231);
+            this.vista_venta_lista_productosDataGridView.Location = new System.Drawing.Point(18, 166);
             this.vista_venta_lista_productosDataGridView.Name = "vista_venta_lista_productosDataGridView";
             this.vista_venta_lista_productosDataGridView.RowTemplate.Height = 24;
-            this.vista_venta_lista_productosDataGridView.Size = new System.Drawing.Size(934, 332);
+            this.vista_venta_lista_productosDataGridView.Size = new System.Drawing.Size(946, 315);
             this.vista_venta_lista_productosDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn2
@@ -232,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 683);
+            this.ClientSize = new System.Drawing.Size(978, 683);
             this.Controls.Add(this.vista_venta_lista_productosDataGridView);
             this.Controls.Add(this.btn_SeleccionarEmpresa);
             this.Controls.Add(this.txt_Empresa);

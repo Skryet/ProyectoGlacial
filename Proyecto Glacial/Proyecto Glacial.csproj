@@ -142,6 +142,7 @@
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Consultas\consultasVentas.cs" />
+    <Compile Include="Ventas\Consultas\generarVenta.cs" />
     <Compile Include="Ventas\frm_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>

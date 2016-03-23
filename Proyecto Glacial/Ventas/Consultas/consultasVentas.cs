@@ -11,7 +11,6 @@ namespace Proyecto_Glacial.Ventas.Consultas
     class consultasVentas
     {
         private generarConexion conexion = new generarConexion();
-        bool estadoConexion = false;
 
         public void obtenerNombreCliente(ref string nombreCliente, int idCliente)
         {
@@ -22,8 +21,8 @@ namespace Proyecto_Glacial.Ventas.Consultas
                 MySqlDataReader lector = consulta.ExecuteReader();
                 while (lector.Read())
                 {
-                    nombreCliente = lector.GetString(0);
-                    nombreCliente += lector.GetString(1);
+                    nombreCliente = lector.GetString(0) +" ";
+                    nombreCliente += lector.GetString(1) + " ";
                     nombreCliente += lector.GetString(2);
                 }
             }

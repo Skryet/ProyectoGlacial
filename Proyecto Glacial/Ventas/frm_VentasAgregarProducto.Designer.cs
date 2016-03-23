@@ -49,6 +49,8 @@
             this.btn_Seleccionar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl_Precio = new System.Windows.Forms.Label();
+            this.lbl_Cantidad = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
@@ -105,6 +107,7 @@
             this.productosDataGridView.RowTemplate.Height = 24;
             this.productosDataGridView.Size = new System.Drawing.Size(895, 309);
             this.productosDataGridView.TabIndex = 1;
+            this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -209,7 +212,7 @@
             "Precio 2",
             "Precio 3",
             "Especial"});
-            this.comboBox1.Location = new System.Drawing.Point(487, 137);
+            this.comboBox1.Location = new System.Drawing.Point(387, 131);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(158, 24);
             this.comboBox1.TabIndex = 7;
@@ -218,17 +221,37 @@
             // lbl_Precio
             // 
             this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Location = new System.Drawing.Point(239, 140);
+            this.lbl_Precio.Location = new System.Drawing.Point(139, 134);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(235, 17);
             this.lbl_Precio.TabIndex = 8;
             this.lbl_Precio.Text = "Seleccione el precio que desea dar:";
+            // 
+            // lbl_Cantidad
+            // 
+            this.lbl_Cantidad.AutoSize = true;
+            this.lbl_Cantidad.Location = new System.Drawing.Point(581, 137);
+            this.lbl_Cantidad.Name = "lbl_Cantidad";
+            this.lbl_Cantidad.Size = new System.Drawing.Size(64, 17);
+            this.lbl_Cantidad.TabIndex = 9;
+            this.lbl_Cantidad.Text = "Cantidad";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(651, 134);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_VentasAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 596);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Seleccionar);
@@ -270,5 +293,7 @@
         private System.Windows.Forms.Button btn_Seleccionar;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl_Precio;
+        private System.Windows.Forms.Label lbl_Cantidad;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

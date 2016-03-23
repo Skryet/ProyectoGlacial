@@ -45,7 +45,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_AgregarEmpresa = new System.Windows.Forms.Button();
-            this.btn_SeleccionarCliente = new System.Windows.Forms.Button();
+            this.btn_SeleccionarEmpresa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).BeginInit();
@@ -216,14 +216,15 @@
             this.btn_AgregarEmpresa.UseVisualStyleBackColor = true;
             this.btn_AgregarEmpresa.Click += new System.EventHandler(this.btn_AgregarEmpresa_Click);
             // 
-            // btn_SeleccionarCliente
+            // btn_SeleccionarEmpresa
             // 
-            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(562, 513);
-            this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
-            this.btn_SeleccionarCliente.Size = new System.Drawing.Size(173, 42);
-            this.btn_SeleccionarCliente.TabIndex = 26;
-            this.btn_SeleccionarCliente.Text = "Seleccionar Cliente";
-            this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarEmpresa.Location = new System.Drawing.Point(562, 513);
+            this.btn_SeleccionarEmpresa.Name = "btn_SeleccionarEmpresa";
+            this.btn_SeleccionarEmpresa.Size = new System.Drawing.Size(173, 42);
+            this.btn_SeleccionarEmpresa.TabIndex = 26;
+            this.btn_SeleccionarEmpresa.Text = "Seleccionar Empresa";
+            this.btn_SeleccionarEmpresa.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarEmpresa.Click += new System.EventHandler(this.btn_SeleccionarEmpresa_Click);
             // 
             // frm_VentasSeleccionEmpresa
             // 
@@ -231,7 +232,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 596);
             this.Controls.Add(this.btn_AgregarEmpresa);
-            this.Controls.Add(this.btn_SeleccionarCliente);
+            this.Controls.Add(this.btn_SeleccionarEmpresa);
             this.Controls.Add(this.empresaDataGridView);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.cbb_Opciones);
@@ -267,6 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.Button btn_AgregarEmpresa;
-        private System.Windows.Forms.Button btn_SeleccionarCliente;
+        private System.Windows.Forms.Button btn_SeleccionarEmpresa;
     }
 }
