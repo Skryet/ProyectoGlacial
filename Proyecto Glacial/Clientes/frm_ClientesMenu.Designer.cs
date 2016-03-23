@@ -41,19 +41,19 @@
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.pnl_ContenidoCentro = new System.Windows.Forms.Panel();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_barraEstado = new System.Windows.Forms.Panel();
             this.lbl_Estado = new System.Windows.Forms.Label();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Header.SuspendLayout();
             this.pnl_MenuIzquierdo.SuspendLayout();
             this.pnl_ContenidoCentro.SuspendLayout();
+            this.pnl_barraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            this.pnl_barraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Clientes
@@ -182,15 +182,17 @@
             this.pnl_ContenidoCentro.Size = new System.Drawing.Size(688, 523);
             this.pnl_ContenidoCentro.TabIndex = 3;
             // 
-            // clientesBindingSource
+            // label1
             // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(138, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(431, 185);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Menú de Inventario\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnl_barraEstado
             // 
@@ -204,11 +206,22 @@
             // lbl_Estado
             // 
             this.lbl_Estado.AutoSize = true;
-            this.lbl_Estado.Location = new System.Drawing.Point(9, 13);
+            this.lbl_Estado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Estado.Location = new System.Drawing.Point(9, 8);
             this.lbl_Estado.Name = "lbl_Estado";
-            this.lbl_Estado.Size = new System.Drawing.Size(52, 13);
+            this.lbl_Estado.Size = new System.Drawing.Size(108, 24);
             this.lbl_Estado.TabIndex = 0;
             this.lbl_Estado.Text = "Estado....";
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // clientesTableAdapter
             // 
@@ -229,18 +242,6 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 185);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menú de Clientes\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // frm_ClientesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,16 +254,17 @@
             this.Name = "frm_ClientesMenu";
             this.Text = "Menu Clientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ClientesMenu_FormClosed);
+            this.Load += new System.EventHandler(this.frm_ClientesMenu_Load);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
             this.pnl_MenuIzquierdo.ResumeLayout(false);
             this.pnl_MenuIzquierdo.PerformLayout();
             this.pnl_ContenidoCentro.ResumeLayout(false);
             this.pnl_ContenidoCentro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.pnl_barraEstado.ResumeLayout(false);
             this.pnl_barraEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

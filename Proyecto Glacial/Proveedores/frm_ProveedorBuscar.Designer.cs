@@ -32,7 +32,6 @@
             this.cbb_Opciones = new System.Windows.Forms.ComboBox();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.lbl_BuscarPor = new System.Windows.Forms.Label();
-            this.btn_Buscar = new System.Windows.Forms.Button();
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
@@ -48,6 +47,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).BeginInit();
@@ -73,6 +73,7 @@
             this.txt_Buscar.Name = "txt_Buscar";
             this.txt_Buscar.Size = new System.Drawing.Size(400, 23);
             this.txt_Buscar.TabIndex = 8;
+            this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
             // lbl_BuscarPor
             // 
@@ -83,17 +84,6 @@
             this.lbl_BuscarPor.Size = new System.Drawing.Size(116, 21);
             this.lbl_BuscarPor.TabIndex = 7;
             this.lbl_BuscarPor.Text = "Buscar Por:";
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
-            this.btn_Buscar.Location = new System.Drawing.Point(582, 19);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Buscar.TabIndex = 9;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // glacial_almacenDataSet
             // 
@@ -211,6 +201,17 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "rfc";
             this.dataGridViewTextBoxColumn9.HeaderText = "R.F.C.";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
+            this.btn_Buscar.Location = new System.Drawing.Point(582, 19);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Buscar.TabIndex = 9;
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // frm_ProveedorBuscar
             // 

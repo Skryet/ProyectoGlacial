@@ -12,16 +12,19 @@ namespace Proyecto_Glacial
 {
     public partial class frm_ClientesMenu : Form
     {
+        Form banFormModificar;
+        Form banFormAgregar;
+        Form banFormBuscar;
+
         public void NombreMetodo(string mensaje)
         {
             lbl_Agregar.Text = mensaje;
         }
 
-        public Clientes.frm_ClientesModificar form;
-        public Clientes.frm_ClientesModificar ClientesModificar;
 
-        public Clientes.frm_ClientesBuscar form2;
+        public Clientes.frm_ClientesModificar ClientesModificar;
         public Clientes.frm_ClientesBuscar ClientesBuscar;
+        public frm_ClientesAgregar ClientesAgregar;
 
         
         public frm_ClientesMenu()
@@ -53,9 +56,9 @@ namespace Proyecto_Glacial
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             Program.isOpenMainClientForm = true;
-            frm_ClientesAgregar form = Application.OpenForms.OfType<frm_ClientesAgregar>().FirstOrDefault();
-            frm_ClientesAgregar clientesAgregar = form ?? new frm_ClientesAgregar();
-            AddFormInPanel(clientesAgregar);
+            ClientesAgregar = Application.OpenForms.OfType<frm_ClientesAgregar>().FirstOrDefault();
+            ClientesAgregar = ClientesAgregar ?? new frm_ClientesAgregar();
+            AddFormInPanel(ClientesAgregar);
             lbl_Estado.Text = "Glacial - Agregar Nuevos Clientes";
 
             //Deshabilitar Modificar y Eliminar
@@ -79,8 +82,8 @@ namespace Proyecto_Glacial
                     MessageBox.Show("Registro Eliminado con éxito!","Completado");
 
 
-                    form2 = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
-                    ClientesBuscar = form2 ?? new Clientes.frm_ClientesBuscar();
+                    ClientesBuscar = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
+                    ClientesBuscar = ClientesBuscar ?? new Clientes.frm_ClientesBuscar();
                     AddFormInPanel(ClientesBuscar);
                     lbl_Estado.Text = "Glacial - Buscar Clientes";
                     this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
@@ -93,19 +96,18 @@ namespace Proyecto_Glacial
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            
-            if(!Program.isOpenMainClientForm)
-            {
-                ClientesBuscar.Close();
-            }
-            if (Program.isOpenMainClientForm)
-            {
-                Program.isOpenMainClientForm = false;
-            }
-            if(btn_Modificar.Enabled)
+            banFormModificar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Clientes.frm_ClientesModificar);
+            banFormAgregar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frm_ClientesAgregar);
+            banFormBuscar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Clientes.frm_ClientesBuscar);
+            if (banFormModificar != null)
                 ClientesModificar.Close();
-            form2 = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
-            ClientesBuscar = form2 ?? new Clientes.frm_ClientesBuscar();
+            if (banFormAgregar != null)
+                ClientesAgregar.Close();
+            if (banFormBuscar != null)
+                ClientesBuscar.Close();
+
+            ClientesBuscar = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
+            ClientesBuscar = ClientesBuscar ?? new Clientes.frm_ClientesBuscar();
             AddFormInPanel(ClientesBuscar);
             lbl_Estado.Text = "Glacial - Buscar Clientes";
             this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
@@ -125,9 +127,9 @@ namespace Proyecto_Glacial
                 MessageBox.Show("Selecccione un registro para trabajar");
             }
             else
-            { 
-                form = Application.OpenForms.OfType<Clientes.frm_ClientesModificar>().FirstOrDefault();
-                ClientesModificar = form ?? new Clientes.frm_ClientesModificar();
+            {
+                ClientesModificar = Application.OpenForms.OfType<Clientes.frm_ClientesModificar>().FirstOrDefault();
+                ClientesModificar = ClientesModificar ?? new Clientes.frm_ClientesModificar();
                 AddFormInPanel(ClientesModificar);
                 lbl_Estado.Text = "Glacial - Modificar Clientes";
             }
@@ -141,6 +143,11 @@ namespace Proyecto_Glacial
         private void frm_ClientesMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
              Program.isOpenMainClientForm = true;
+        }
+
+        private void frm_ClientesMenu_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(300, 20);
         }
 
 

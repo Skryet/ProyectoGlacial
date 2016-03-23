@@ -1,0 +1,234 @@
+﻿namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
+{
+    partial class frm_ProveedoresBuscarParaProducto
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.cbb_Opciones = new System.Windows.Forms.ComboBox();
+            this.txt_Buscar = new System.Windows.Forms.TextBox();
+            this.lbl_BuscarPor = new System.Windows.Forms.Label();
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_seleccionar = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // cbb_Opciones
+            // 
+            this.cbb_Opciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
+            this.cbb_Opciones.FormattingEnabled = true;
+            this.cbb_Opciones.Items.AddRange(new object[] {
+            "Nombre",
+            "Estado"});
+            this.cbb_Opciones.Location = new System.Drawing.Point(13, 43);
+            this.cbb_Opciones.Name = "cbb_Opciones";
+            this.cbb_Opciones.Size = new System.Drawing.Size(141, 23);
+            this.cbb_Opciones.TabIndex = 15;
+            this.cbb_Opciones.Text = "Seleccione";
+            // 
+            // txt_Buscar
+            // 
+            this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
+            this.txt_Buscar.Location = new System.Drawing.Point(160, 43);
+            this.txt_Buscar.Name = "txt_Buscar";
+            this.txt_Buscar.Size = new System.Drawing.Size(400, 23);
+            this.txt_Buscar.TabIndex = 13;
+            // 
+            // lbl_BuscarPor
+            // 
+            this.lbl_BuscarPor.AutoSize = true;
+            this.lbl_BuscarPor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
+            this.lbl_BuscarPor.Location = new System.Drawing.Point(264, 14);
+            this.lbl_BuscarPor.Name = "lbl_BuscarPor";
+            this.lbl_BuscarPor.Size = new System.Drawing.Size(116, 21);
+            this.lbl_BuscarPor.TabIndex = 12;
+            this.lbl_BuscarPor.Text = "Buscar Por:";
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "proveedores";
+            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // proveedoresTableAdapter
+            // 
+            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.empresaTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.material_comprasTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = null;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = this.proveedoresTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
+            // proveedoresDataGridView
+            // 
+            this.proveedoresDataGridView.AutoGenerateColumns = false;
+            this.proveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.proveedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.proveedoresDataGridView.DataSource = this.proveedoresBindingSource;
+            this.proveedoresDataGridView.Location = new System.Drawing.Point(13, 122);
+            this.proveedoresDataGridView.Name = "proveedoresDataGridView";
+            this.proveedoresDataGridView.ReadOnly = true;
+            this.proveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.proveedoresDataGridView.Size = new System.Drawing.Size(629, 93);
+            this.proveedoresDataGridView.TabIndex = 16;
+            this.proveedoresDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedoresDataGridView_CellContentClick);
+            this.proveedoresDataGridView.Click += new System.EventHandler(this.proveedoresDataGridView_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_proveedor";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_proveedor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "telefono";
+            this.dataGridViewTextBoxColumn3.HeaderText = "telefono";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "direccion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "direccion";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "colonia";
+            this.dataGridViewTextBoxColumn5.HeaderText = "colonia";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
+            this.dataGridViewTextBoxColumn6.HeaderText = "estado";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // btn_seleccionar
+            // 
+            this.btn_seleccionar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_seleccionar.Enabled = false;
+            this.btn_seleccionar.Image = global::Proyecto_Glacial.Properties.Resources.SelectGree;
+            this.btn_seleccionar.Location = new System.Drawing.Point(295, 221);
+            this.btn_seleccionar.Name = "btn_seleccionar";
+            this.btn_seleccionar.Size = new System.Drawing.Size(75, 75);
+            this.btn_seleccionar.TabIndex = 17;
+            this.btn_seleccionar.UseVisualStyleBackColor = false;
+            this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
+            this.btn_Buscar.Location = new System.Drawing.Point(567, 16);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Buscar.TabIndex = 14;
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // frm_ProveedoresBuscarParaProducto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(654, 316);
+            this.Controls.Add(this.btn_seleccionar);
+            this.Controls.Add(this.proveedoresDataGridView);
+            this.Controls.Add(this.cbb_Opciones);
+            this.Controls.Add(this.btn_Buscar);
+            this.Controls.Add(this.txt_Buscar);
+            this.Controls.Add(this.lbl_BuscarPor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "frm_ProveedoresBuscarParaProducto";
+            this.Text = "Almacén - Buscar Proveedor para Producto";
+            this.Load += new System.EventHandler(this.frm_ProveedoresBuscarParaProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.ComboBox cbb_Opciones;
+        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.TextBox txt_Buscar;
+        private System.Windows.Forms.Label lbl_BuscarPor;
+        private glacial_almacenDataSet glacial_almacenDataSet;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource;
+        private glacial_almacenDataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
+        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView proveedoresDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button btn_seleccionar;
+    }
+}
