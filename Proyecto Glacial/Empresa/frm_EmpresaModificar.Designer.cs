@@ -1,6 +1,6 @@
-﻿namespace Proyecto_Glacial.Proveedores
+﻿namespace Proyecto_Glacial.Empresa
 {
-    partial class frm_ProveedorModificar
+    partial class frm_EmpresaModificar
     {
         /// <summary>
         /// Required designer variable.
@@ -37,16 +37,16 @@
             System.Windows.Forms.Label lbl_RFC;
             System.Windows.Forms.Label lbl_Cp;
             System.Windows.Forms.Label lbl_email;
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.lbl_Guardar = new System.Windows.Forms.Label();
+            this.lbl_Modificar = new System.Windows.Forms.Label();
             this.txt_Estado = new System.Windows.Forms.TextBox();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.txt_Colonia = new System.Windows.Forms.TextBox();
             this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.proveedoresTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedoresTableAdapter();
+            this.btn_Modificar = new System.Windows.Forms.Button();
+            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.lbl_Cancelar = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             lbl_RFC = new System.Windows.Forms.Label();
             lbl_Cp = new System.Windows.Forms.Label();
             lbl_email = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,29 +115,19 @@
             lbl_Nombre.TabIndex = 13;
             lbl_Nombre.Text = "Nombre";
             // 
-            // btn_Guardar
+            // lbl_Modificar
             // 
-            this.btn_Guardar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
-            this.btn_Guardar.Location = new System.Drawing.Point(548, 348);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Guardar.TabIndex = 24;
-            this.btn_Guardar.UseVisualStyleBackColor = true;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-            // 
-            // lbl_Guardar
-            // 
-            this.lbl_Guardar.AutoSize = true;
-            this.lbl_Guardar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lbl_Guardar.Location = new System.Drawing.Point(503, 424);
-            this.lbl_Guardar.Name = "lbl_Guardar";
-            this.lbl_Guardar.Size = new System.Drawing.Size(168, 22);
-            this.lbl_Guardar.TabIndex = 23;
-            this.lbl_Guardar.Text = "Guardar cambios";
+            this.lbl_Modificar.AutoSize = true;
+            this.lbl_Modificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_Modificar.Location = new System.Drawing.Point(554, 424);
+            this.lbl_Modificar.Name = "lbl_Modificar";
+            this.lbl_Modificar.Size = new System.Drawing.Size(95, 22);
+            this.lbl_Modificar.TabIndex = 23;
+            this.lbl_Modificar.Text = "Modificar";
             // 
             // txt_Estado
             // 
-            this.txt_Estado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "estado", true));
+            this.txt_Estado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "estado", true));
             this.txt_Estado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Estado.Location = new System.Drawing.Point(132, 221);
             this.txt_Estado.Name = "txt_Estado";
@@ -145,10 +135,10 @@
             this.txt_Estado.TabIndex = 22;
             this.txt_Estado.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
-            // proveedoresBindingSource
+            // empresaBindingSource
             // 
-            this.proveedoresBindingSource.DataMember = "proveedores";
-            this.proveedoresBindingSource.DataSource = this.glacial_almacenDataSet;
+            this.empresaBindingSource.DataMember = "empresa";
+            this.empresaBindingSource.DataSource = this.glacial_almacenDataSet;
             // 
             // glacial_almacenDataSet
             // 
@@ -157,7 +147,7 @@
             // 
             // txt_Colonia
             // 
-            this.txt_Colonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "colonia", true));
+            this.txt_Colonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "colonia", true));
             this.txt_Colonia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Colonia.Location = new System.Drawing.Point(132, 174);
             this.txt_Colonia.Name = "txt_Colonia";
@@ -167,7 +157,7 @@
             // 
             // txt_Direccion
             // 
-            this.txt_Direccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "direccion", true));
+            this.txt_Direccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "direccion", true));
             this.txt_Direccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Direccion.Location = new System.Drawing.Point(132, 129);
             this.txt_Direccion.Name = "txt_Direccion";
@@ -177,7 +167,7 @@
             // 
             // txt_Telefono
             // 
-            this.txt_Telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "telefono", true));
+            this.txt_Telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "telefono", true));
             this.txt_Telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Telefono.Location = new System.Drawing.Point(132, 84);
             this.txt_Telefono.Name = "txt_Telefono";
@@ -187,7 +177,7 @@
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "nombre", true));
+            this.txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "nombre", true));
             this.txt_Nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.Location = new System.Drawing.Point(132, 39);
             this.txt_Nombre.Name = "txt_Nombre";
@@ -195,31 +185,41 @@
             this.txt_Nombre.TabIndex = 14;
             this.txt_Nombre.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
-            // proveedoresTableAdapter
+            // btn_Modificar
             // 
-            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
+            this.btn_Modificar.Location = new System.Drawing.Point(563, 348);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Modificar.TabIndex = 24;
+            this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
+            // 
+            // empresaTableAdapter
+            // 
+            this.empresaTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
+            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = this.proveedoresTableAdapter;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(404, 348);
+            this.btn_Cancelar.Location = new System.Drawing.Point(444, 348);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Cancelar.TabIndex = 28;
+            this.btn_Cancelar.TabIndex = 26;
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
@@ -227,17 +227,18 @@
             // 
             this.lbl_Cancelar.AutoSize = true;
             this.lbl_Cancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lbl_Cancelar.Location = new System.Drawing.Point(398, 424);
+            this.lbl_Cancelar.Location = new System.Drawing.Point(438, 424);
             this.lbl_Cancelar.Name = "lbl_Cancelar";
             this.lbl_Cancelar.Size = new System.Drawing.Size(92, 22);
-            this.lbl_Cancelar.TabIndex = 27;
+            this.lbl_Cancelar.TabIndex = 25;
             this.lbl_Cancelar.Text = "Cancelar";
+            this.lbl_Cancelar.Click += new System.EventHandler(this.lbl_Cancelar_Click);
             // 
             // lbl_RFC
             // 
             lbl_RFC.AutoSize = true;
             lbl_RFC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_RFC.Location = new System.Drawing.Point(35, 363);
+            lbl_RFC.Location = new System.Drawing.Point(35, 364);
             lbl_RFC.Name = "lbl_RFC";
             lbl_RFC.Size = new System.Drawing.Size(57, 18);
             lbl_RFC.TabIndex = 37;
@@ -245,9 +246,9 @@
             // 
             // txt_RFC
             // 
-            this.txt_RFC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "rfc", true));
+            this.txt_RFC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "rfc", true));
             this.txt_RFC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.txt_RFC.Location = new System.Drawing.Point(132, 360);
+            this.txt_RFC.Location = new System.Drawing.Point(132, 361);
             this.txt_RFC.Name = "txt_RFC";
             this.txt_RFC.Size = new System.Drawing.Size(231, 26);
             this.txt_RFC.TabIndex = 39;
@@ -256,7 +257,7 @@
             // 
             lbl_Cp.AutoSize = true;
             lbl_Cp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_Cp.Location = new System.Drawing.Point(35, 318);
+            lbl_Cp.Location = new System.Drawing.Point(35, 319);
             lbl_Cp.Name = "lbl_Cp";
             lbl_Cp.Size = new System.Drawing.Size(41, 18);
             lbl_Cp.TabIndex = 35;
@@ -264,9 +265,9 @@
             // 
             // txt_cp
             // 
-            this.txt_cp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "cp", true));
+            this.txt_cp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "cp", true));
             this.txt_cp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.txt_cp.Location = new System.Drawing.Point(132, 315);
+            this.txt_cp.Location = new System.Drawing.Point(132, 316);
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.Size = new System.Drawing.Size(100, 26);
             this.txt_cp.TabIndex = 38;
@@ -275,7 +276,7 @@
             // 
             lbl_email.AutoSize = true;
             lbl_email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_email.Location = new System.Drawing.Point(35, 272);
+            lbl_email.Location = new System.Drawing.Point(35, 273);
             lbl_email.Name = "lbl_email";
             lbl_email.Size = new System.Drawing.Size(51, 18);
             lbl_email.TabIndex = 34;
@@ -283,14 +284,14 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "correo", true));
+            this.txt_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "correo", true));
             this.txt_Email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.txt_Email.Location = new System.Drawing.Point(132, 269);
+            this.txt_Email.Location = new System.Drawing.Point(132, 270);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(306, 26);
             this.txt_Email.TabIndex = 36;
             // 
-            // frm_ProveedorModificar
+            // frm_EmpresaModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,8 +304,8 @@
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.lbl_Cancelar);
-            this.Controls.Add(this.btn_Guardar);
-            this.Controls.Add(this.lbl_Guardar);
+            this.Controls.Add(this.btn_Modificar);
+            this.Controls.Add(this.lbl_Modificar);
             this.Controls.Add(lbl_Estado);
             this.Controls.Add(this.txt_Estado);
             this.Controls.Add(lbl_Colonia);
@@ -315,10 +316,10 @@
             this.Controls.Add(this.txt_Telefono);
             this.Controls.Add(lbl_Nombre);
             this.Controls.Add(this.txt_Nombre);
-            this.Name = "frm_ProveedorModificar";
-            this.Text = "Proveedor - Modificar";
-            this.Load += new System.EventHandler(this.frm_ProveedorModificar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            this.Name = "frm_EmpresaModificar";
+            this.Text = "Empresa - Modificar";
+            this.Load += new System.EventHandler(this.frm_EmpresaModificar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -327,17 +328,17 @@
 
         #endregion
 
-        private glacial_almacenDataSet glacial_almacenDataSet;
-        private System.Windows.Forms.BindingSource proveedoresBindingSource;
-        private glacial_almacenDataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
-        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.Label lbl_Guardar;
+        private System.Windows.Forms.Button btn_Modificar;
+        private System.Windows.Forms.Label lbl_Modificar;
         private System.Windows.Forms.TextBox txt_Estado;
         private System.Windows.Forms.TextBox txt_Colonia;
         private System.Windows.Forms.TextBox txt_Direccion;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.TextBox txt_Nombre;
+        private glacial_almacenDataSet glacial_almacenDataSet;
+        private System.Windows.Forms.BindingSource empresaBindingSource;
+        private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
+        private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label lbl_Cancelar;
         private System.Windows.Forms.TextBox txt_RFC;

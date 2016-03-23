@@ -47,7 +47,7 @@ namespace Proyecto_Glacial.Proveedores
         {
             if (validarCampos() != true)
             {
-                this.proveedoresTableAdapter.InsertarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text);
+                this.proveedoresTableAdapter.InsertarProveedor(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text);
                 limpiarCampos();
 
                 AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido agregado", "Mensaje",  1200); ;                
@@ -65,6 +65,16 @@ namespace Proyecto_Glacial.Proveedores
         private void frm_ProveedorAgregar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro de regresar al menu principal?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                Program.idProveedor = 0;
+                this.Close();
+            }
         }
     }
 }
