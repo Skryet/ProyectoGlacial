@@ -77,9 +77,9 @@ namespace Proyecto_Glacial
 
             //Verificar espacios en blanco
             if (validarCampos())
-            { 
+            {
                 MessageBox.Show("Faltan campos por llenar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               
+
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Proyecto_Glacial
                 this.clientesTableAdapter.InsertarNuevoCliente(
                     txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text,
                     txtDireccion.Text, txtColonia.Text, txtCiudad.Text,
-                    txtColonia.Text);
+                    txtColonia.Text, txt_correo.Text, txt_rfc.Text);
                 //Mensaje de Confirmación            
                 Limpiar();
                 Program.isOpenMainClientForm = false;

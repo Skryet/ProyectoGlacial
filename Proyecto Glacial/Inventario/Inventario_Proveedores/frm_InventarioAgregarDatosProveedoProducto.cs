@@ -59,10 +59,10 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            if(!validarCampos())
+            if (!validarCampos())
             {
                 //Agregar Proveedor a la lista de proveedores del producto
-                this.proveedor_codigoTableAdapter.InsertarProveedorCodigoConIdLista(Convert.ToInt32(txt_idProveedor.Text), txt_codigo.Text, Convert.ToInt32(txt_precio.Text), txt_Medida.Text, Program.idListaProveedorActual);
+                this.proveedor_codigoTableAdapter.InsertarProveedorCodigoConIdLista(Convert.ToInt32(txt_idProveedor.Text), txt_codigo.Text, Convert.ToDouble(txt_precio.Text), txt_Medida.Text, Program.idListaProveedorActual);
 
                 //Mensaje de Confirmación            
                 var resultado = MessageBox.Show("Proveedor del Producto Registrado con Éxito, ¿Desea Agregar otro Proveedor ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -80,7 +80,7 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
             {
                 MessageBox.Show("Faltan campos por llenar");
             }
-            
+
 
         }
 
@@ -106,9 +106,35 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
 
         private void frm_InventarioAgregarDatosProveedoProducto_Load(object sender, EventArgs e)
         {
+            
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.proveedor_codigo' Puede moverla o quitarla según sea necesario.
             //this.proveedor_codigoTableAdapter.Fill(this.glacial_almacenDataSet.proveedor_codigo);
 
+        }
+
+
+
+        private void txt_Medida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.metodosOptimizar.isChar(e);
+        }
+
+        private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.metodosOptimizar.isDecimalPoint(e);
+        }
+
+
+        private void frm_InventarioAgregarDatosProveedoProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            limpiarCampos();
+            Program.idProveedor = 0;
+            Program.nombreProveedor = "";
+        }
+
+        private void frm_InventarioAgregarDatosProveedoProducto_Load_1(object sender, EventArgs e)
+        {
+            this.Location = new Point(300, 100);
         }
     }
 }

@@ -56,10 +56,13 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
         {
-            Int32 selectedCellCount = proveedoresDataGridView.GetCellCount(DataGridViewElementStates.Selected);
-            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.SelectedCells[0].Value.ToString());
-            Program.nombreProveedor = proveedoresDataGridView.SelectedCells[1].Value.ToString();
-            this.Close();
+            if(proveedoresDataGridView.SelectedCells[0].Value.ToString() != "")
+            { 
+                Int32 selectedCellCount = proveedoresDataGridView.GetCellCount(DataGridViewElementStates.Selected);
+                Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.SelectedCells[0].Value.ToString());
+                Program.nombreProveedor = proveedoresDataGridView.SelectedCells[1].Value.ToString();
+                this.Close();
+            }
         }
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)

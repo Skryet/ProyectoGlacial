@@ -12,9 +12,14 @@ namespace Proyecto_Glacial
         public static string nombreProveedor;
         public static int idListaProveedorActual;
         public static bool agregarProveedoresProducto = false;
+        public static int idProveedorCodigo;
+
+        public static int idProducto;
 
         public static int idCliente;
         public static bool isOpenMainClientForm = true;
+
+        public static optimizar metodosOptimizar = new optimizar();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

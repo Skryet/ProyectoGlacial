@@ -71,8 +71,10 @@
             this.Controls.Add(this.btn_productos);
             this.Controls.Add(this.btn_Proveedores);
             this.Controls.Add(this.btn_Clientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_MenuPrincipal";
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.frm_MenuPrincipal_Load);
             this.ResumeLayout(false);
 
         }

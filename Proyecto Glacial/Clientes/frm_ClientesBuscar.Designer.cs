@@ -46,6 +46,8 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -88,7 +90,8 @@
             this.cmb_SelccionarTipo.FormattingEnabled = true;
             this.cmb_SelccionarTipo.Items.AddRange(new object[] {
             "Número de Cliente",
-            "Apellido Paterno"});
+            "Apellido Paterno",
+            "Nombre del Cliente"});
             this.cmb_SelccionarTipo.Location = new System.Drawing.Point(12, 51);
             this.cmb_SelccionarTipo.Name = "cmb_SelccionarTipo";
             this.cmb_SelccionarTipo.Size = new System.Drawing.Size(194, 30);
@@ -138,11 +141,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn8,
+            this.correo,
+            this.rfc});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
             this.clientesDataGridView.Location = new System.Drawing.Point(24, 152);
             this.clientesDataGridView.MultiSelect = false;
             this.clientesDataGridView.Name = "clientesDataGridView";
+            this.clientesDataGridView.ReadOnly = true;
             this.clientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientesDataGridView.Size = new System.Drawing.Size(624, 220);
             this.clientesDataGridView.TabIndex = 16;
@@ -151,50 +157,72 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_cliente";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_cliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de Cliente";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "apellidoP";
-            this.dataGridViewTextBoxColumn3.HeaderText = "apellidoP";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido Paterno";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "apellidoM";
-            this.dataGridViewTextBoxColumn4.HeaderText = "apellidoM";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Apellido Materno";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "direccion";
-            this.dataGridViewTextBoxColumn5.HeaderText = "direccion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Direccion";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "colonia";
-            this.dataGridViewTextBoxColumn6.HeaderText = "colonia";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Colonia";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ciudad";
-            this.dataGridViewTextBoxColumn7.HeaderText = "ciudad";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ciudad";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
-            this.dataGridViewTextBoxColumn8.HeaderText = "cp";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Código Postal";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "correo";
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            // 
+            // rfc
+            // 
+            this.rfc.DataPropertyName = "rfc";
+            this.rfc.HeaderText = "RFC";
+            this.rfc.Name = "rfc";
+            this.rfc.ReadOnly = true;
             // 
             // btn_BuscarTodo
             // 
@@ -251,6 +279,8 @@
         private System.Windows.Forms.TextBox txt_Buscar;
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.DataGridView clientesDataGridView;
+        private System.Windows.Forms.Button btn_BuscarTodo;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -259,7 +289,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Button btn_BuscarTodo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rfc;
     }
 }

@@ -40,3 +40,6 @@ C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarDatosProveedoProducto.resources
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarProductosProveedor.resources
 C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_ProveedoresBuscarParaProducto.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioBuscarProductoProveedores.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioModificarDatosProveedorProducto.resources
+C:\Users\chhris\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioModificar.resources

@@ -124,6 +124,7 @@
             this.proveedoresDataGridView.DataSource = this.proveedoresBindingSource;
             this.proveedoresDataGridView.Location = new System.Drawing.Point(13, 122);
             this.proveedoresDataGridView.Name = "proveedoresDataGridView";
+            this.proveedoresDataGridView.ReadOnly = true;
             this.proveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.proveedoresDataGridView.Size = new System.Drawing.Size(629, 93);
             this.proveedoresDataGridView.TabIndex = 16;
@@ -200,6 +201,7 @@
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.lbl_BuscarPor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_ProveedoresBuscarParaProducto";
             this.Text = "Almacén - Buscar Proveedor para Producto";
             this.Load += new System.EventHandler(this.frm_ProveedoresBuscarParaProducto_Load);

@@ -36,7 +36,6 @@
             this.txt_Medida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.btn_agregar = new System.Windows.Forms.Button();
             this.lbl_proveedor = new System.Windows.Forms.Label();
             this.txt_proveedor = new System.Windows.Forms.TextBox();
             this.but_agregarProveedor = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.proveedor_codigoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedor_codigoTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.proveedor_codigoTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.btn_agregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedor_codigoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,11 +54,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 139);
+            this.label1.Location = new System.Drawing.Point(122, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 22);
+            this.label1.Size = new System.Drawing.Size(214, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Código:";
+            this.label1.Text = "Código del Proveedor:";
             // 
             // txt_codigo
             // 
@@ -77,6 +77,7 @@
             this.txt_precio.Size = new System.Drawing.Size(167, 29);
             this.txt_precio.TabIndex = 3;
             this.txt_precio.TextChanged += new System.EventHandler(this.despintarTexto);
+            this.txt_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_KeyPress);
             // 
             // label2
             // 
@@ -96,6 +97,7 @@
             this.txt_Medida.Size = new System.Drawing.Size(167, 29);
             this.txt_Medida.TabIndex = 1;
             this.txt_Medida.TextChanged += new System.EventHandler(this.despintarTexto);
+            this.txt_Medida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Medida_KeyPress);
             // 
             // label3
             // 
@@ -116,17 +118,6 @@
             this.lbl_titulo.Size = new System.Drawing.Size(433, 33);
             this.lbl_titulo.TabIndex = 6;
             this.lbl_titulo.Text = "Almacén - Agregar productos";
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Enabled = false;
-            this.btn_agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_02_;
-            this.btn_agregar.Location = new System.Drawing.Point(578, 95);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(80, 80);
-            this.btn_agregar.TabIndex = 7;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // lbl_proveedor
             // 
@@ -182,6 +173,7 @@
             // glacial_almacenDataSet
             // 
             this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.EnforceConstraints = false;
             this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // proveedor_codigoBindingSource
@@ -208,11 +200,22 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Enabled = false;
+            this.btn_agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_02_;
+            this.btn_agregar.Location = new System.Drawing.Point(578, 95);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(80, 80);
+            this.btn_agregar.TabIndex = 7;
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
             // frm_InventarioAgregarDatosProveedoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 223);
+            this.ClientSize = new System.Drawing.Size(692, 223);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_idProveedor);
             this.Controls.Add(this.but_agregarProveedor);
@@ -226,10 +229,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_codigo);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_InventarioAgregarDatosProveedoProducto";
             this.Text = "Almacén - Agregar datos Producto";
             this.Activated += new System.EventHandler(this.frm_InventarioAgregarDatosProveedoProducto_Activated);
-            this.Load += new System.EventHandler(this.frm_InventarioAgregarDatosProveedoProducto_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_InventarioAgregarDatosProveedoProducto_FormClosed);
+            this.Load += new System.EventHandler(this.frm_InventarioAgregarDatosProveedoProducto_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedor_codigoBindingSource)).EndInit();
             this.ResumeLayout(false);
