@@ -173,6 +173,7 @@
     <Compile Include="Ventas\frm_VentasSeleccionEmpresa.Designer.cs">
       <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>

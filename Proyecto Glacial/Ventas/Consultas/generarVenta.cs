@@ -62,6 +62,10 @@ namespace Proyecto_Glacial.Ventas.Consultas
 
         }
 
-        public void agregarProduto
+        public void agregarProduto(Objetos.materialVenta material)
+        {
+            MySqlCommand consulta = new MySqlCommand("INSERT INTO material_ventas (id_lista_material_ventas, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES ('" + material.idListaMaterialVentas.ToString() + "','" + material.idProducto.ToString() + "','" + material.Cantidad.ToString() + "','" + material.unidadMedida.ToString() + "','" + material.precioUnidad.ToString() + "','" + material.Total.ToString() + "');", generarConexion.obtenerConexion);
+            conexion.abrirConexion();
+        }
     }
 }
