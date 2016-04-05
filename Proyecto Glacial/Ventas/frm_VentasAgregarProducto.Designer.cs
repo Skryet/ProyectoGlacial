@@ -47,10 +47,10 @@
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Seleccionar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_TipoPrecio = new System.Windows.Forms.ComboBox();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.lbl_Cantidad = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Cantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
@@ -102,10 +102,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.productosDataGridView.DataSource = this.productosBindingSource;
-            this.productosDataGridView.Location = new System.Drawing.Point(5, 187);
+            this.productosDataGridView.Location = new System.Drawing.Point(4, 152);
+            this.productosDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.RowTemplate.Height = 24;
-            this.productosDataGridView.Size = new System.Drawing.Size(895, 309);
+            this.productosDataGridView.Size = new System.Drawing.Size(671, 251);
             this.productosDataGridView.TabIndex = 1;
             this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
             // 
@@ -160,9 +161,10 @@
             // lbl_Buscar
             // 
             this.lbl_Buscar.AutoSize = true;
-            this.lbl_Buscar.Location = new System.Drawing.Point(415, 26);
+            this.lbl_Buscar.Location = new System.Drawing.Point(311, 21);
+            this.lbl_Buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Buscar.Name = "lbl_Buscar";
-            this.lbl_Buscar.Size = new System.Drawing.Size(81, 17);
+            this.lbl_Buscar.Size = new System.Drawing.Size(61, 13);
             this.lbl_Buscar.TabIndex = 2;
             this.lbl_Buscar.Text = "Buscar por:";
             // 
@@ -173,93 +175,103 @@
             "Linea",
             "Linea y Codigo",
             "Descripcion"});
-            this.cbx_Tipo.Location = new System.Drawing.Point(169, 75);
+            this.cbx_Tipo.Location = new System.Drawing.Point(127, 61);
+            this.cbx_Tipo.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_Tipo.Name = "cbx_Tipo";
-            this.cbx_Tipo.Size = new System.Drawing.Size(121, 24);
+            this.cbx_Tipo.Size = new System.Drawing.Size(92, 21);
             this.cbx_Tipo.TabIndex = 3;
             this.cbx_Tipo.Text = "Seleccione";
             // 
             // txt_Buscar
             // 
-            this.txt_Buscar.Location = new System.Drawing.Point(296, 77);
+            this.txt_Buscar.Location = new System.Drawing.Point(222, 63);
+            this.txt_Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(291, 22);
+            this.txt_Buscar.Size = new System.Drawing.Size(219, 20);
             this.txt_Buscar.TabIndex = 4;
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(642, 70);
+            this.btn_Buscar.Location = new System.Drawing.Point(482, 57);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(87, 37);
+            this.btn_Buscar.Size = new System.Drawing.Size(65, 30);
             this.btn_Buscar.TabIndex = 5;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
             // 
             // btn_Seleccionar
             // 
-            this.btn_Seleccionar.Location = new System.Drawing.Point(387, 523);
+            this.btn_Seleccionar.Location = new System.Drawing.Point(290, 425);
+            this.btn_Seleccionar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Seleccionar.Name = "btn_Seleccionar";
-            this.btn_Seleccionar.Size = new System.Drawing.Size(119, 40);
+            this.btn_Seleccionar.Size = new System.Drawing.Size(89, 32);
             this.btn_Seleccionar.TabIndex = 6;
             this.btn_Seleccionar.Text = "Seleccionar";
             this.btn_Seleccionar.UseVisualStyleBackColor = true;
+            this.btn_Seleccionar.Click += new System.EventHandler(this.btn_Seleccionar_Click);
             // 
-            // comboBox1
+            // cbx_TipoPrecio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbx_TipoPrecio.FormattingEnabled = true;
+            this.cbx_TipoPrecio.Items.AddRange(new object[] {
             "Precio 1",
             "Precio 2",
             "Precio 3",
             "Especial"});
-            this.comboBox1.Location = new System.Drawing.Point(387, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Seleccione";
+            this.cbx_TipoPrecio.Location = new System.Drawing.Point(290, 106);
+            this.cbx_TipoPrecio.Margin = new System.Windows.Forms.Padding(2);
+            this.cbx_TipoPrecio.Name = "cbx_TipoPrecio";
+            this.cbx_TipoPrecio.Size = new System.Drawing.Size(120, 21);
+            this.cbx_TipoPrecio.TabIndex = 7;
+            this.cbx_TipoPrecio.Text = "Seleccione";
             // 
             // lbl_Precio
             // 
             this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Location = new System.Drawing.Point(139, 134);
+            this.lbl_Precio.Location = new System.Drawing.Point(104, 109);
+            this.lbl_Precio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Precio.Name = "lbl_Precio";
-            this.lbl_Precio.Size = new System.Drawing.Size(235, 17);
+            this.lbl_Precio.Size = new System.Drawing.Size(177, 13);
             this.lbl_Precio.TabIndex = 8;
             this.lbl_Precio.Text = "Seleccione el precio que desea dar:";
             // 
             // lbl_Cantidad
             // 
             this.lbl_Cantidad.AutoSize = true;
-            this.lbl_Cantidad.Location = new System.Drawing.Point(581, 137);
+            this.lbl_Cantidad.Location = new System.Drawing.Point(436, 111);
+            this.lbl_Cantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Cantidad.Name = "lbl_Cantidad";
-            this.lbl_Cantidad.Size = new System.Drawing.Size(64, 17);
+            this.lbl_Cantidad.Size = new System.Drawing.Size(49, 13);
             this.lbl_Cantidad.TabIndex = 9;
             this.lbl_Cantidad.Text = "Cantidad";
             // 
-            // textBox1
+            // txt_Cantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(651, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Cantidad.Location = new System.Drawing.Point(488, 109);
+            this.txt_Cantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Cantidad.Name = "txt_Cantidad";
+            this.txt_Cantidad.Size = new System.Drawing.Size(76, 20);
+            this.txt_Cantidad.TabIndex = 10;
+            this.txt_Cantidad.Text = "0";
+            this.txt_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_VentasAgregarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 596);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(679, 484);
+            this.Controls.Add(this.txt_Cantidad);
             this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.lbl_Precio);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_TipoPrecio);
             this.Controls.Add(this.btn_Seleccionar);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.cbx_Tipo);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.productosDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_VentasAgregarProducto";
             this.Text = "frm_VentasAgregarProducto";
             this.Load += new System.EventHandler(this.frm_VentasAgregarProducto_Load);
@@ -291,9 +303,9 @@
         private System.Windows.Forms.TextBox txt_Buscar;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Seleccionar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_TipoPrecio;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.Label lbl_Cantidad;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Cantidad;
     }
 }

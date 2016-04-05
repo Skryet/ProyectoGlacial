@@ -13,6 +13,8 @@ namespace Proyecto_Glacial.Ventas.Consultas
         private generarConexion conexion = new generarConexion();
 
 
+
+
         public bool crearVenta(ref int idVenta, ref int idListaVenta, int idComprador)
         {
             int seEjecuto = 0;
@@ -66,6 +68,7 @@ namespace Proyecto_Glacial.Ventas.Consultas
         {
             MySqlCommand consulta = new MySqlCommand("INSERT INTO material_ventas (id_lista_material_ventas, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES ('" + material.idListaMaterialVentas.ToString() + "','" + material.idProducto.ToString() + "','" + material.Cantidad.ToString() + "','" + material.unidadMedida.ToString() + "','" + material.precioUnidad.ToString() + "','" + material.Total.ToString() + "');", generarConexion.obtenerConexion);
             conexion.abrirConexion();
+            consulta.ExecuteNonQuery();
         }
     }
 }

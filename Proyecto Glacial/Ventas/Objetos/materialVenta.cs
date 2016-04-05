@@ -29,7 +29,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public int idMaterialVentas { get { return id_material_ventas; } set { id_material_ventas = value; } }
 
-        public int idListaMaterialVentas { get { return id_material_ventas; } set { id_material_ventas = value; } }
+        public int idListaMaterialVentas { get { return id_lista_material_ventas; } set { id_lista_material_ventas = value; } }
 
         public int idProducto { get { return id_producto; } set { id_producto = value; } }
 
@@ -37,10 +37,15 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public string unidadMedida { get { return unidad_medida; } set { unidad_medida = value; } }
 
-        public double precioUnidad { get { return precioUnidad; } set { precio_unidad = value; } }
+        public double precioUnidad { get { return precio_unidad; } set { precio_unidad = value; } }
 
         public double Total { get { return total; } set { total = value; } }
 
+        public double obtenerTotal()
+        {
+            total = precioUnidad * cantidad;
+            return total;           
+        }
 
     }
 }

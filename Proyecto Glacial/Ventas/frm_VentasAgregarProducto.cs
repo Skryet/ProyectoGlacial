@@ -12,6 +12,8 @@ namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_VentasAgregarProducto : Form
     {
+        private Ventas.Consultas.generarVenta ventas = new Consultas.generarVenta();
+
         public frm_VentasAgregarProducto()
         {
             InitializeComponent();
@@ -35,6 +37,41 @@ namespace Proyecto_Glacial.Ventas
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
             Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+        }
+
+        private void btn_Seleccionar_Click(object sender, EventArgs e)
+        {
+            if (Program.idProductoVenta != 0)
+            {
+                Objetos.materialVenta producto = new Objetos.materialVenta();
+                producto.idListaMaterialVentas = Program.idListaVenta;
+                producto.idProducto = Program.idProductoVenta;
+                producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
+                switch (cbx_TipoPrecio.Text)
+                {
+                    case "Precio 1":
+                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                        break;
+                    case "Precio 2":
+                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
+                        break;
+                    case "Precio 3":
+                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
+                        break;
+                    case "Especial":
+
+                        break;
+                    default:
+                        MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                }
+                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
+                ventas.agregarProduto(producto);
+            }
+            else
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
+            }
         }
     }
 }
