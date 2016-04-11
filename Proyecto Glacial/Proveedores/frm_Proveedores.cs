@@ -78,6 +78,6 @@ namespace Proyecto_Glacial
             }
             else
                 MessageBox.Show("No se a seleccionado ningun registro para la modificación", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }        
+        }
     }
 }

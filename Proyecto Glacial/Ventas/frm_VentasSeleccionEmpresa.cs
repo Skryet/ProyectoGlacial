@@ -8,21 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Glacial.Empresa
+namespace Proyecto_Glacial.Ventas
 {
-    public partial class frm_EmpresaBuscar : Form
+    public partial class frm_VentasSeleccionEmpresa : Form
     {
-        public frm_EmpresaBuscar()
+        public frm_VentasSeleccionEmpresa()
         {
             InitializeComponent();
-        }
-
-        private void frm_EmpresaBuscar_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
-
-        }
+        }       
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
@@ -33,8 +26,15 @@ namespace Proyecto_Glacial.Empresa
             txt_Buscar.Text = "";
         }
 
+        private void frm_VentasSeleccionEmpresa_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.empresa' Puede moverla o quitarla según sea necesario.
+            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+
+        }
+
         private void btn_Buscar_Click(object sender, EventArgs e)
-        {          
+        {
             switch (cbb_Opciones.Text)
             {
                 case "Nombre":
@@ -53,7 +53,30 @@ namespace Proyecto_Glacial.Empresa
 
         private void empresaDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idEmpresa = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);            
+            Program.idEmpresaVenta = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);
         }
-    }    
+
+        private void btn_AgregarEmpresa_Click(object sender, EventArgs e)
+        {
+            Form AgregarEmpresa = new Empresa.frm_EmpresaAgregar();
+            AgregarEmpresa.ShowDialog();
+            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+
+        }
+
+        private void btn_SeleccionarEmpresa_Click(object sender, EventArgs e)
+        {
+            if (Program.idEmpresaVenta == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ninguna empresa, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idEmpresaVenta = 0;
+                    this.Close();
+                }
+            }
+            else
+                this.Close();
+        }
+    }
 }

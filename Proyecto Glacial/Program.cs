@@ -18,12 +18,18 @@ namespace Proyecto_Glacial
 
         public static int idProducto;
 
-        public static int idCliente;
-        public static bool isOpenMainClientForm = true;
-
-        public static optimizar metodosOptimizar = new optimizar();
-        //public static int idProveedor;
+        public static int idCliente = 0;
+        public static bool isOpenMainClientForm = true;       
+        public static int idProveedor;
         public static int idEmpresa;
+
+        //Variables de Ventas
+        public static int idClienteVenta = 0;
+        public static int idEmpresaVenta = 0;
+        public static int idVenta = 0;
+        public static int idProductoVenta = 0;
+        public static bool ventaCreada = false;      
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
