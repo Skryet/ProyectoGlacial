@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +65,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
@@ -79,9 +80,9 @@
             // 
             // idProducto
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.idProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.idProducto.DefaultCellStyle = dataGridViewCellStyle1;
             this.idProducto.HeaderText = "Id Del Producto";
             this.idProducto.Name = "idProducto";
             // 
@@ -161,6 +162,7 @@
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = this.lista_material_comprasTableAdapter;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;

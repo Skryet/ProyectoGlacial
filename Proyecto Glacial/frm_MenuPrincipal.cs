@@ -52,5 +52,11 @@ namespace Proyecto_Glacial
             Form frm_compras = new Compras.frm_ComprasMenu();
             frm_compras.ShowDialog();
         }
+
+        private void btn_empresas_Click(object sender, EventArgs e)
+        {
+            Form frm_empresa = new Empresa.frm_Empresas();
+            frm_empresa.ShowDialog();
+        }
     }
 }

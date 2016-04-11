@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comprasDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.date_inicio = new System.Windows.Forms.DateTimePicker();
             this.date_fin = new System.Windows.Forms.DateTimePicker();
@@ -40,13 +47,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.comprasTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.comprasTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.comprasDataGridView)).BeginInit();
@@ -56,7 +56,10 @@
             // 
             // comprasDataGridView
             // 
+            this.comprasDataGridView.AllowUserToAddRows = false;
+            this.comprasDataGridView.AllowUserToDeleteRows = false;
             this.comprasDataGridView.AutoGenerateColumns = false;
+            this.comprasDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.comprasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.comprasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -73,6 +76,51 @@
             this.comprasDataGridView.Size = new System.Drawing.Size(567, 220);
             this.comprasDataGridView.TabIndex = 1;
             this.comprasDataGridView.Click += new System.EventHandler(this.comprasDataGridView_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_compra";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de Compra";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "fecha";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "tipo_pago";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo de Pago";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "autorizacion";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Autorización";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "total";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // comprasBindingSource
+            // 
+            this.comprasBindingSource.DataMember = "compras";
+            this.comprasBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -182,51 +230,6 @@
             this.btn_Buscar.UseVisualStyleBackColor = true;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_compra";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Número de Compra";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "fecha";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "tipo_pago";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo de Pago";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "autorizacion";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Autorización";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "total";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // comprasBindingSource
-            // 
-            this.comprasBindingSource.DataMember = "compras";
-            this.comprasBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // comprasTableAdapter
             // 
             this.comprasTableAdapter.ClearBeforeFill = true;
@@ -238,6 +241,7 @@
             this.tableAdapterManager.comprasTableAdapter = this.comprasTableAdapter;
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;

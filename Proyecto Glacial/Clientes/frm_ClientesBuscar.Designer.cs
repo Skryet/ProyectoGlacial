@@ -76,6 +76,7 @@
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
@@ -130,7 +131,10 @@
             // 
             // clientesDataGridView
             // 
+            this.clientesDataGridView.AllowUserToAddRows = false;
+            this.clientesDataGridView.AllowUserToDeleteRows = false;
             this.clientesDataGridView.AutoGenerateColumns = false;
+            this.clientesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.clientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

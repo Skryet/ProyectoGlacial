@@ -138,8 +138,8 @@ namespace Proyecto_Glacial.Inventario
                     img = ms.ToArray();
                     banderaRealizarPeticionFinal = true;
                     Program.agregarProveedoresProducto = false;
-                    btn_Guardar.Enabled = false;
-                    this.productosTableAdapter.InsertarProductosConProveedores((txt_lineaProducto.Text).ToString(),
+                    btn_Guardar.Enabled = false;                
+                this.productosTableAdapter.InsertarProductosConProveedores((txt_lineaProducto.Text).ToString(),
                         Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
                         (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
                         Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),

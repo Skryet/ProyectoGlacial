@@ -36,17 +36,17 @@
             this.lista_material_comprasTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.lista_material_comprasTableAdapter();
             this.lista_material_comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lista_material_comprasDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_modificar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comprasTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.comprasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
@@ -77,6 +77,7 @@
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = this.lista_material_comprasTableAdapter;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = this.lista_proveedores_productosTableAdapter;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
@@ -95,7 +96,10 @@
             // 
             // lista_material_comprasDataGridView
             // 
+            this.lista_material_comprasDataGridView.AllowUserToAddRows = false;
+            this.lista_material_comprasDataGridView.AllowUserToDeleteRows = false;
             this.lista_material_comprasDataGridView.AutoGenerateColumns = false;
+            this.lista_material_comprasDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.lista_material_comprasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lista_material_comprasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -106,12 +110,56 @@
             this.dataGridViewTextBoxColumn3});
             this.lista_material_comprasDataGridView.DataSource = this.lista_material_comprasBindingSource;
             this.lista_material_comprasDataGridView.Location = new System.Drawing.Point(12, 52);
+            this.lista_material_comprasDataGridView.MultiSelect = false;
             this.lista_material_comprasDataGridView.Name = "lista_material_comprasDataGridView";
             this.lista_material_comprasDataGridView.ReadOnly = true;
             this.lista_material_comprasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lista_material_comprasDataGridView.Size = new System.Drawing.Size(560, 220);
             this.lista_material_comprasDataGridView.TabIndex = 0;
             this.lista_material_comprasDataGridView.Click += new System.EventHandler(this.lista_material_comprasDataGridView_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id_lista_material_compra";
+            this.Column1.HeaderText = "Lista MaterialCompra";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_producto";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Número del producto";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "cantidad";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "unidad_medida";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Unidad de Medida";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "total";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // label1
             // 
@@ -163,49 +211,6 @@
             this.btn_modificar.TabIndex = 2;
             this.btn_modificar.UseVisualStyleBackColor = true;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id_lista_material_compra";
-            this.Column1.HeaderText = "Lista MaterialCompra";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_producto";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Número del producto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "cantidad";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "unidad_medida";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Unidad de Medida";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "total";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // comprasBindingSource
             // 

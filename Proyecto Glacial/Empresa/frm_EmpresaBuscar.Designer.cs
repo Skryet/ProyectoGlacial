@@ -127,8 +127,8 @@
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            //this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -140,6 +140,8 @@
             this.empresaDataGridView.AllowUserToAddRows = false;
             this.empresaDataGridView.AllowUserToDeleteRows = false;
             this.empresaDataGridView.AutoGenerateColumns = false;
+            this.empresaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.empresaDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.empresaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.empresaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -163,54 +165,63 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empresa";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 69;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "telefono";
             this.dataGridViewTextBoxColumn3.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 74;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "direccion";
             this.dataGridViewTextBoxColumn4.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 77;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "colonia";
             this.dataGridViewTextBoxColumn5.HeaderText = "Colonia";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 67;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
             this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 65;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "correo";
             this.dataGridViewTextBoxColumn7.HeaderText = "Correo";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 63;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
             this.dataGridViewTextBoxColumn8.HeaderText = "C.P.";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 52;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "rfc";
             this.dataGridViewTextBoxColumn9.HeaderText = "R.F.C.";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 62;
             // 
             // frm_EmpresaBuscar
             // 

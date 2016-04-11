@@ -229,6 +229,7 @@
             this.btn_empresas.Size = new System.Drawing.Size(120, 120);
             this.btn_empresas.TabIndex = 3;
             this.btn_empresas.UseVisualStyleBackColor = false;
+            this.btn_empresas.Click += new System.EventHandler(this.btn_empresas_Click);
             // 
             // btn_productos
             // 
