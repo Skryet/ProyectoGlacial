@@ -36,11 +36,15 @@ namespace Proyecto_Glacial.Ventas
             Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
             Ventas.frm_VentasAgregar generarVenta = form ?? new Ventas.frm_VentasAgregar();
             AddFormInPanel(generarVenta);
+            Program.ventaCreada = true;
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            generar.crearVenta(ref Program.idVenta, ref Program.idListaVenta, Program.idComprador);
+            if (Program.ventaCreada == true)
+            {
+                generar.crearVenta(ref Program.idVenta, Program.idComprador);
+            }
             Ventas.frm_VentasAgregarProducto form = Application.OpenForms.OfType<Ventas.frm_VentasAgregarProducto>().FirstOrDefault();
             Ventas.frm_VentasAgregarProducto agregarProducto = form ?? new Ventas.frm_VentasAgregarProducto();
             AddFormInPanel(agregarProducto);

@@ -78,3 +78,6 @@ C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregarProducto.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentaSeleccionCliente.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasSeleccionEmpresa.resources
+C:\Users\Jever\Desktop\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+C:\Users\Jever\Desktop\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\Jever\Desktop\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb

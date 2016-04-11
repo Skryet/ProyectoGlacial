@@ -48,6 +48,7 @@
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.vista_venta_lista_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
@@ -58,7 +59,7 @@
             this.rbt_Cliente.AutoSize = true;
             this.rbt_Cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbt_Cliente.Location = new System.Drawing.Point(246, 59);
-            this.rbt_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbt_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_Cliente.Name = "rbt_Cliente";
             this.rbt_Cliente.Size = new System.Drawing.Size(67, 22);
             this.rbt_Cliente.TabIndex = 0;
@@ -71,7 +72,7 @@
             this.rbt_Empresa.AutoSize = true;
             this.rbt_Empresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbt_Empresa.Location = new System.Drawing.Point(548, 58);
-            this.rbt_Empresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbt_Empresa.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_Empresa.Name = "rbt_Empresa";
             this.rbt_Empresa.Size = new System.Drawing.Size(90, 22);
             this.rbt_Empresa.TabIndex = 1;
@@ -85,7 +86,7 @@
             this.rbt_SinRegistro.Checked = true;
             this.rbt_SinRegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbt_SinRegistro.Location = new System.Drawing.Point(14, 71);
-            this.rbt_SinRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbt_SinRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_SinRegistro.Name = "rbt_SinRegistro";
             this.rbt_SinRegistro.Size = new System.Drawing.Size(75, 22);
             this.rbt_SinRegistro.TabIndex = 2;
@@ -110,7 +111,7 @@
             this.txt_Cliente.Enabled = false;
             this.txt_Cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Cliente.Location = new System.Drawing.Point(113, 84);
-            this.txt_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Cliente.Name = "txt_Cliente";
             this.txt_Cliente.ReadOnly = true;
             this.txt_Cliente.Size = new System.Drawing.Size(286, 26);
@@ -121,7 +122,7 @@
             this.btn_SeleccionarCliente.Enabled = false;
             this.btn_SeleccionarCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SeleccionarCliente.Location = new System.Drawing.Point(403, 85);
-            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
             this.btn_SeleccionarCliente.Size = new System.Drawing.Size(27, 25);
             this.btn_SeleccionarCliente.TabIndex = 5;
@@ -134,7 +135,7 @@
             this.btn_SeleccionarEmpresa.Enabled = false;
             this.btn_SeleccionarEmpresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SeleccionarEmpresa.Location = new System.Drawing.Point(696, 84);
-            this.btn_SeleccionarEmpresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_SeleccionarEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SeleccionarEmpresa.Name = "btn_SeleccionarEmpresa";
             this.btn_SeleccionarEmpresa.Size = new System.Drawing.Size(27, 25);
             this.btn_SeleccionarEmpresa.TabIndex = 7;
@@ -147,7 +148,7 @@
             this.txt_Empresa.Enabled = false;
             this.txt_Empresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Empresa.Location = new System.Drawing.Point(461, 85);
-            this.txt_Empresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Empresa.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Empresa.Name = "txt_Empresa";
             this.txt_Empresa.ReadOnly = true;
             this.txt_Empresa.Size = new System.Drawing.Size(231, 26);
@@ -166,7 +167,7 @@
             this.dataGridViewTextBoxColumn6});
             this.vista_venta_lista_productosDataGridView.DataSource = this.vista_venta_lista_productosBindingSource;
             this.vista_venta_lista_productosDataGridView.Location = new System.Drawing.Point(14, 135);
-            this.vista_venta_lista_productosDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vista_venta_lista_productosDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.vista_venta_lista_productosDataGridView.Name = "vista_venta_lista_productosDataGridView";
             this.vista_venta_lista_productosDataGridView.RowTemplate.Height = 24;
             this.vista_venta_lista_productosDataGridView.Size = new System.Drawing.Size(710, 256);
@@ -235,21 +236,29 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.material_ventasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(572, 479);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(120, 45);
+            this.btn_Cancelar.TabIndex = 10;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
             // frm_VentasAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 555);
+            this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.vista_venta_lista_productosDataGridView);
             this.Controls.Add(this.btn_SeleccionarEmpresa);
             this.Controls.Add(this.txt_Empresa);
@@ -259,7 +268,7 @@
             this.Controls.Add(this.rbt_SinRegistro);
             this.Controls.Add(this.rbt_Empresa);
             this.Controls.Add(this.rbt_Cliente);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_VentasAgregar";
             this.Text = "Ventas - Agregar";
             this.Load += new System.EventHandler(this.frm_VentasAgregar_Load);
@@ -292,5 +301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button btn_Cancelar;
     }
 }

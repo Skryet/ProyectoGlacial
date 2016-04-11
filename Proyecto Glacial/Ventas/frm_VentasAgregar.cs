@@ -22,7 +22,7 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentasAgregar_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.vista_venta_lista_productos' Puede moverla o quitarla según sea necesario.
-            this.vista_venta_lista_productosTableAdapter.Fill(this.glacial_almacenDataSet.vista_venta_lista_productos);
+            this.vista_venta_lista_productosTableAdapter.BuscarIDVenta(this.glacial_almacenDataSet.vista_venta_lista_productos, Program.idVenta);
             this.Location = new Point(300, 100);
         }
 
@@ -94,6 +94,11 @@ namespace Proyecto_Glacial.Ventas
                 btn_SeleccionarEmpresa.Enabled = true;
                 btn_SeleccionarCliente.Enabled = false;
             }
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

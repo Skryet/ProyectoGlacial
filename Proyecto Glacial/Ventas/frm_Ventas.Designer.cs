@@ -32,8 +32,8 @@
             this.lbl_MenuActual = new System.Windows.Forms.Label();
             this.pnl_Contenido = new System.Windows.Forms.Panel();
             this.pnl_Menu = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.lbl_NuevaVenta = new System.Windows.Forms.Label();
+            this.btn_NuevaVenta = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
@@ -74,8 +74,8 @@
             // 
             // pnl_Menu
             // 
-            this.pnl_Menu.Controls.Add(this.label1);
-            this.pnl_Menu.Controls.Add(this.btn_Buscar);
+            this.pnl_Menu.Controls.Add(this.lbl_NuevaVenta);
+            this.pnl_Menu.Controls.Add(this.btn_NuevaVenta);
             this.pnl_Menu.Controls.Add(this.btn_Modificar);
             this.pnl_Menu.Controls.Add(this.btn_Eliminar);
             this.pnl_Menu.Controls.Add(this.btn_Agregar);
@@ -87,26 +87,26 @@
             this.pnl_Menu.Size = new System.Drawing.Size(174, 523);
             this.pnl_Menu.TabIndex = 6;
             // 
-            // label1
+            // lbl_NuevaVenta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 22);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Catalogo";
+            this.lbl_NuevaVenta.AutoSize = true;
+            this.lbl_NuevaVenta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NuevaVenta.Location = new System.Drawing.Point(51, 89);
+            this.lbl_NuevaVenta.Name = "lbl_NuevaVenta";
+            this.lbl_NuevaVenta.Size = new System.Drawing.Size(73, 22);
+            this.lbl_NuevaVenta.TabIndex = 11;
+            this.lbl_NuevaVenta.Text = "Ventas";
             // 
-            // btn_Buscar
+            // btn_NuevaVenta
             // 
-            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
-            this.btn_Buscar.Location = new System.Drawing.Point(49, 13);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Buscar.TabIndex = 10;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            this.btn_NuevaVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_NuevaVenta.Image = global::Proyecto_Glacial.Properties.Resources.shop;
+            this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 13);
+            this.btn_NuevaVenta.Name = "btn_NuevaVenta";
+            this.btn_NuevaVenta.Size = new System.Drawing.Size(75, 75);
+            this.btn_NuevaVenta.TabIndex = 10;
+            this.btn_NuevaVenta.UseVisualStyleBackColor = false;
+            this.btn_NuevaVenta.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // btn_Modificar
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.pnl_Contenido);
             this.Controls.Add(this.pnl_Menu);
             this.Controls.Add(this.pnl_Encabezado);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Ventas";
             this.Text = "SGA - Ventas";
             this.pnl_BarraEstado.ResumeLayout(false);
@@ -217,8 +217,8 @@
         private System.Windows.Forms.Label lbl_MenuActual;
         private System.Windows.Forms.Panel pnl_Contenido;
         private System.Windows.Forms.Panel pnl_Menu;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.Label lbl_NuevaVenta;
+        private System.Windows.Forms.Button btn_NuevaVenta;
         private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.Button btn_Agregar;

@@ -37,14 +37,38 @@ namespace Proyecto_Glacial.Ventas
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
             Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+        }       
+
+        private void cbx_TipoPrecio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_TipoPrecio.Text == "Especial")
+            {
+                txt_PrecioEspecial.Enabled = true;
+                lbl_PrecioEspecial.Enabled = true;
+                txt_PrecioEspecial.Visible = true;
+                lbl_PrecioEspecial.Visible = true;
+            }
+
+            else
+            {
+                txt_PrecioEspecial.Enabled = false;
+                lbl_PrecioEspecial.Enabled = false;
+                txt_PrecioEspecial.Visible = false;
+                lbl_PrecioEspecial.Visible = false;
+            }
         }
 
-        private void btn_Seleccionar_Click(object sender, EventArgs e)
+        private void bn_Finalizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
         {
             if (Program.idProductoVenta != 0)
             {
                 Objetos.materialVenta producto = new Objetos.materialVenta();
-                producto.idListaMaterialVentas = Program.idListaVenta;
+                producto.idlVenta = Program.idVenta;
                 producto.idProducto = Program.idProductoVenta;
                 producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
                 switch (cbx_TipoPrecio.Text)
@@ -59,7 +83,7 @@ namespace Proyecto_Glacial.Ventas
                         producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
                         break;
                     case "Especial":
-
+                        producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
                         break;
                     default:
                         MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -70,7 +94,7 @@ namespace Proyecto_Glacial.Ventas
             }
             else
             {
-                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

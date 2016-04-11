@@ -238,8 +238,8 @@
     </None>
     <None Include="glacial_almacenDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>glacial_almacenDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>glacial_almacenDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="glacial_almacenDataSet.xss">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
@@ -292,7 +292,9 @@
   <ItemGroup>
     <None Include="Resources\diskette.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\shop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

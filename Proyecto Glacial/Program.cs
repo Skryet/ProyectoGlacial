@@ -18,7 +18,7 @@ namespace Proyecto_Glacial
         public static int idComprador = 0;
         public static int idVenta = 0;
         public static int idProductoVenta = 0;
-        public static int idListaVenta = 0;
+        public static bool ventaCreada = false;      
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

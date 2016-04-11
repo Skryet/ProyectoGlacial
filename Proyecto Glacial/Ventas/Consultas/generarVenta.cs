@@ -12,10 +12,7 @@ namespace Proyecto_Glacial.Ventas.Consultas
     {
         private generarConexion conexion = new generarConexion();
 
-
-
-
-        public bool crearVenta(ref int idVenta, ref int idListaVenta, int idComprador)
+        public bool crearVenta(ref int idVenta, int idComprador)
         {
             int seEjecuto = 0;
 
@@ -36,8 +33,11 @@ namespace Proyecto_Glacial.Ventas.Consultas
                 MessageBox.Show("Registro agregado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
+
             else
+            {
                 return false;
+            }
 
             consulta = new MySqlCommand("SELECT MAX(id_venta) AS id FROM ventas;", generarConexion.obtenerConexion);
             conexion.abrirConexion();
@@ -46,27 +46,67 @@ namespace Proyecto_Glacial.Ventas.Consultas
             {
                 idVenta = lector.GetInt32(0);
             }
-            conexion.cerrarConexion();
+            conexion.cerrarConexion();            
 
-            consulta = new MySqlCommand("INSERT INTO lista_material_ventas (id_venta) VALUES ('" + idVenta.ToString() + "');", generarConexion.obtenerConexion);
-            conexion.abrirConexion();
-            consulta.ExecuteNonQuery();
-            conexion.cerrarConexion();
+        }
 
-            consulta = new MySqlCommand("SELECT MAX(id_lista_material_ventas) AS id FROM lista_material_ventas;", generarConexion.obtenerConexion);
+        public bool borrarVenta(int idVenta)
+        {
+            int seEjecuto = 0;            
+            MySqlCommand consulta = new MySqlCommand("DELETE FROM ventas WHERE id_venta = " + idVenta.ToString() + ";", generarConexion.obtenerConexion);
             conexion.abrirConexion();
-            lector = consulta.ExecuteReader();
-            while (lector.Read())
+            try
             {
-                idListaVenta = lector.GetInt32(0);
+                seEjecuto = consulta.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             conexion.cerrarConexion();
 
+            if (seEjecuto != 0)
+            {
+                MessageBox.Show("Registro Eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }            
+        }
+
+        public bool borrarMaterialVenta(int idVenta)
+        {
+            int seEjecuto = 0;
+            MySqlCommand consulta = new MySqlCommand("DELETE FROM lista_material_ventas WHERE id_venta = " + idVenta.ToString() + ";", generarConexion.obtenerConexion);
+            conexion.abrirConexion();
+            try
+            {
+                seEjecuto = consulta.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conexion.cerrarConexion();
+
+            if (seEjecuto != 0)
+            {
+                MessageBox.Show("Registro Eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
         public void agregarProduto(Objetos.materialVenta material)
         {
-            MySqlCommand consulta = new MySqlCommand("INSERT INTO material_ventas (id_lista_material_ventas, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES ('" + material.idListaMaterialVentas.ToString() + "','" + material.idProducto.ToString() + "','" + material.Cantidad.ToString() + "','" + material.unidadMedida.ToString() + "','" + material.precioUnidad.ToString() + "','" + material.Total.ToString() + "');", generarConexion.obtenerConexion);
+            MySqlCommand consulta = new MySqlCommand("INSERT INTO lista_material_ventas (id_venta, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES ('" + material.idlVenta.ToString() + "','" + material.idProducto.ToString() + "','" + material.Cantidad.ToString() + "','" + material.unidadMedida.ToString() + "','" + material.precioUnidad.ToString() + "','" + material.Total.ToString() + "');", generarConexion.obtenerConexion);
             conexion.abrirConexion();
             consulta.ExecuteNonQuery();
         }

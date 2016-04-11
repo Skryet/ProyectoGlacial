@@ -9,7 +9,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
     class materialVenta
     {
         private int id_material_ventas;
-        private int id_lista_material_ventas;
+        private int id_venta;
         private int id_producto;
         private int cantidad;
         private string unidad_medida;
@@ -18,8 +18,8 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public materialVenta()
         {
-            id_lista_material_ventas = 0;
-            id_lista_material_ventas = 0;
+            id_venta = 0;
+            id_venta = 0;
             id_producto = 0;
             cantidad = 0;
             unidad_medida = "";
@@ -29,7 +29,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public int idMaterialVentas { get { return id_material_ventas; } set { id_material_ventas = value; } }
 
-        public int idListaMaterialVentas { get { return id_lista_material_ventas; } set { id_lista_material_ventas = value; } }
+        public int idlVenta { get { return id_venta; } set { id_venta = value; } }
 
         public int idProducto { get { return id_producto; } set { id_producto = value; } }
 
