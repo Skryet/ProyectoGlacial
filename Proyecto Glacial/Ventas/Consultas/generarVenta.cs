@@ -12,11 +12,11 @@ namespace Proyecto_Glacial.Ventas.Consultas
     {
         private generarConexion conexion = new generarConexion();
 
-        public bool crearVenta(ref int idVenta, int idComprador)
+        public bool crearVenta(ref int idVenta, int idClienteVenta, int idEmpresaVenta)
         {
             int seEjecuto = 0;
 
-            MySqlCommand consulta = new MySqlCommand("INSERT INTO ventas (id_comprador) VALUES ('" + idComprador + "');", generarConexion.obtenerConexion);
+            MySqlCommand consulta = new MySqlCommand("INSERT INTO ventas (id_cliente, id_empresa) VALUES ('" + idClienteVenta.ToString() + "', '" + idEmpresaVenta.ToString() + "');", generarConexion.obtenerConexion);
             conexion.abrirConexion();
             try
             {

@@ -50,7 +50,7 @@
             // pnl_BarraEstado
             // 
             this.pnl_BarraEstado.Controls.Add(this.lbl_MenuActual);
-            this.pnl_BarraEstado.Location = new System.Drawing.Point(8, 622);
+            this.pnl_BarraEstado.Location = new System.Drawing.Point(6, 691);
             this.pnl_BarraEstado.Name = "pnl_BarraEstado";
             this.pnl_BarraEstado.Size = new System.Drawing.Size(962, 34);
             this.pnl_BarraEstado.TabIndex = 8;
@@ -69,7 +69,7 @@
             // 
             this.pnl_Contenido.Location = new System.Drawing.Point(184, 92);
             this.pnl_Contenido.Name = "pnl_Contenido";
-            this.pnl_Contenido.Size = new System.Drawing.Size(784, 523);
+            this.pnl_Contenido.Size = new System.Drawing.Size(784, 594);
             this.pnl_Contenido.TabIndex = 7;
             // 
             // pnl_Menu
@@ -84,14 +84,14 @@
             this.pnl_Menu.Controls.Add(this.lbl_Agregar);
             this.pnl_Menu.Location = new System.Drawing.Point(4, 92);
             this.pnl_Menu.Name = "pnl_Menu";
-            this.pnl_Menu.Size = new System.Drawing.Size(174, 523);
+            this.pnl_Menu.Size = new System.Drawing.Size(174, 593);
             this.pnl_Menu.TabIndex = 6;
             // 
             // lbl_NuevaVenta
             // 
             this.lbl_NuevaVenta.AutoSize = true;
             this.lbl_NuevaVenta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NuevaVenta.Location = new System.Drawing.Point(51, 89);
+            this.lbl_NuevaVenta.Location = new System.Drawing.Point(51, 126);
             this.lbl_NuevaVenta.Name = "lbl_NuevaVenta";
             this.lbl_NuevaVenta.Size = new System.Drawing.Size(73, 22);
             this.lbl_NuevaVenta.TabIndex = 11;
@@ -101,7 +101,7 @@
             // 
             this.btn_NuevaVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_NuevaVenta.Image = global::Proyecto_Glacial.Properties.Resources.shop;
-            this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 13);
+            this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 50);
             this.btn_NuevaVenta.Name = "btn_NuevaVenta";
             this.btn_NuevaVenta.Size = new System.Drawing.Size(75, 75);
             this.btn_NuevaVenta.TabIndex = 10;
@@ -113,7 +113,7 @@
             this.btn_Modificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Modificar.Enabled = false;
             this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
-            this.btn_Modificar.Location = new System.Drawing.Point(47, 394);
+            this.btn_Modificar.Location = new System.Drawing.Point(47, 431);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
             this.btn_Modificar.TabIndex = 8;
@@ -124,7 +124,7 @@
             this.btn_Eliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Eliminar.Enabled = false;
             this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
-            this.btn_Eliminar.Location = new System.Drawing.Point(49, 266);
+            this.btn_Eliminar.Location = new System.Drawing.Point(49, 303);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(75, 75);
             this.btn_Eliminar.TabIndex = 7;
@@ -134,7 +134,7 @@
             // 
             this.btn_Agregar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
-            this.btn_Agregar.Location = new System.Drawing.Point(49, 138);
+            this.btn_Agregar.Location = new System.Drawing.Point(49, 175);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 75);
             this.btn_Agregar.TabIndex = 6;
@@ -145,7 +145,7 @@
             // 
             this.lbl_Modificar.AutoSize = true;
             this.lbl_Modificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Modificar.Location = new System.Drawing.Point(37, 470);
+            this.lbl_Modificar.Location = new System.Drawing.Point(37, 507);
             this.lbl_Modificar.Name = "lbl_Modificar";
             this.lbl_Modificar.Size = new System.Drawing.Size(95, 22);
             this.lbl_Modificar.TabIndex = 3;
@@ -155,7 +155,7 @@
             // 
             this.lbl_Eliminar.AutoSize = true;
             this.lbl_Eliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Eliminar.Location = new System.Drawing.Point(44, 342);
+            this.lbl_Eliminar.Location = new System.Drawing.Point(44, 379);
             this.lbl_Eliminar.Name = "lbl_Eliminar";
             this.lbl_Eliminar.Size = new System.Drawing.Size(85, 22);
             this.lbl_Eliminar.TabIndex = 2;
@@ -165,7 +165,7 @@
             // 
             this.lbl_Agregar.AutoSize = true;
             this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Agregar.Location = new System.Drawing.Point(45, 214);
+            this.lbl_Agregar.Location = new System.Drawing.Point(45, 251);
             this.lbl_Agregar.Name = "lbl_Agregar";
             this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
             this.lbl_Agregar.TabIndex = 1;
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 662);
+            this.ClientSize = new System.Drawing.Size(970, 729);
             this.Controls.Add(this.pnl_BarraEstado);
             this.Controls.Add(this.pnl_Contenido);
             this.Controls.Add(this.pnl_Menu);

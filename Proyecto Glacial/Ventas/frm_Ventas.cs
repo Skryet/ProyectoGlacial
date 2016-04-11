@@ -16,7 +16,7 @@ namespace Proyecto_Glacial.Ventas
 
         public frm_Ventas()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void AddFormInPanel(Form fh)
@@ -43,7 +43,7 @@ namespace Proyecto_Glacial.Ventas
         {
             if (Program.ventaCreada == true)
             {
-                generar.crearVenta(ref Program.idVenta, Program.idComprador);
+                generar.crearVenta(ref Program.idVenta, Program.idClienteVenta, Program.idEmpresaVenta);
             }
             Ventas.frm_VentasAgregarProducto form = Application.OpenForms.OfType<Ventas.frm_VentasAgregarProducto>().FirstOrDefault();
             Ventas.frm_VentasAgregarProducto agregarProducto = form ?? new Ventas.frm_VentasAgregarProducto();

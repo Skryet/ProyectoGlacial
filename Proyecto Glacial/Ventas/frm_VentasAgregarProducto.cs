@@ -19,19 +19,10 @@ namespace Proyecto_Glacial.Ventas
             InitializeComponent();
         }
 
-        private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
-
         private void frm_VentasAgregarProducto_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);
-
+            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);            
         }
 
         private void productosDataGridView_Click(object sender, EventArgs e)
@@ -96,6 +87,22 @@ namespace Proyecto_Glacial.Ventas
             {
                 DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.productosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
+
+        }
+
+        private void productosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.productosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
+
         }
     }
 }

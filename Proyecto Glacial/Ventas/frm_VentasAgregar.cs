@@ -13,11 +13,28 @@ namespace Proyecto_Glacial.Ventas
     public partial class frm_VentasAgregar : Form
     {
         private Consultas.consultasVentas consultas = new Consultas.consultasVentas();
-
+        private Consultas.generarVenta consultasVentas = new Consultas.generarVenta();
+                            
         public frm_VentasAgregar()
         {
             InitializeComponent();
+            if (Program.ventaCreada == true)
+            {
+                rbt_Cliente.Enabled = false;
+                rbt_Empresa.Enabled = false;
+                rbt_SinRegistro.Enabled = false;
+            }
         }
+
+        private void limpiarVariablesVenta()
+        {
+            //Variables de Ventas
+            Program.idClienteVenta = 0;
+            Program.idEmpresaVenta = 0;
+            Program.idVenta = 0;
+            Program.idProductoVenta = 0;
+            Program.ventaCreada = false;
+        }        
 
         private void frm_VentasAgregar_Load(object sender, EventArgs e)
         {
@@ -30,10 +47,10 @@ namespace Proyecto_Glacial.Ventas
         {
             Form agregarCliente = new frm_VentaSeleccionCliente();
             agregarCliente.ShowDialog();
-            if (Program.idComprador != 0)
+            if (Program.idClienteVenta != 0)
             {
                 string nombreCliente = "";
-                consultas.obtenerNombreCliente(ref nombreCliente, Program.idComprador);
+                consultas.obtenerNombreCliente(ref nombreCliente, Program.idClienteVenta);
                 txt_Cliente.Text = nombreCliente;
             }
             else
@@ -44,10 +61,10 @@ namespace Proyecto_Glacial.Ventas
         {
             Form agregarEmpresa = new frm_VentasSeleccionEmpresa();
             agregarEmpresa.ShowDialog();
-            if (Program.idComprador != 0)
+            if (Program.idEmpresaVenta != 0)
             {
                 string nombreEmpresa = "";
-                consultas.obtenerNombreEmpresa(ref nombreEmpresa, Program.idComprador);
+                consultas.obtenerNombreEmpresa(ref nombreEmpresa, Program.idEmpresaVenta);
                 txt_Empresa.Text = nombreEmpresa;
             }
             else
@@ -58,7 +75,8 @@ namespace Proyecto_Glacial.Ventas
         {
             if (rbt_SinRegistro.Checked == true)
             {
-                Program.idComprador = 0;
+                Program.idClienteVenta = 0;
+                Program.idEmpresaVenta = 0;
                 txt_Cliente.Text = "";
                 txt_Empresa.Text = "";
                 txt_Cliente.Enabled = false;
@@ -72,7 +90,8 @@ namespace Proyecto_Glacial.Ventas
         {
             if (rbt_Cliente.Checked == true)
             {
-                Program.idComprador = 0;
+                Program.idClienteVenta = 0;
+                Program.idEmpresaVenta = 0;
                 txt_Cliente.Text = "";
                 txt_Empresa.Text = "";
                 txt_Cliente.Enabled = true;
@@ -86,7 +105,8 @@ namespace Proyecto_Glacial.Ventas
         {
             if (rbt_Empresa.Checked == true)
             {
-                Program.idComprador = 0;
+                Program.idClienteVenta = 0;
+                Program.idEmpresaVenta = 0;
                 txt_Cliente.Text = "";
                 txt_Empresa.Text = "";
                 txt_Cliente.Enabled = false;
@@ -98,7 +118,67 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            
+            if (Program.ventaCreada == true)
+            {
+                consultasVentas.borrarVenta(Program.idVenta);
+                limpiarVariablesVenta();
+                this.Close();
+            }
+            else
+            {
+                limpiarVariablesVenta();
+                this.Close();
+            }
+        }
+
+        private void btn_Descuento_Click(object sender, EventArgs e)
+        {
+            if (btn_Descuento.Text == "Aplicar Descuento")
+            {
+                btn_Descuento.Text = "Quitar descuento";
+                pnl_Descuento.Visible = true;
+            }
+
+            else if (btn_Descuento.Text == "Quitar descuento")
+            {
+                btn_Descuento.Text = "Aplicar Descuento";
+                foreach (Control ctr in pnl_Descuento.Controls)
+                {
+                    if (ctr is TextBox)
+                        ctr.Text = "0.00";
+                }
+                pnl_Descuento.Visible = false;
+            }            
+        }
+
+        private void rbt_Porcentage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_Porcentage.Checked == false)
+            {
+                lbl_Porcentaje.Enabled = false;
+                txt_DescuentoPorcentaje.Text = "0.00";
+                txt_DescuentoPorcentaje.Enabled = false;
+            }
+            else
+            {
+                lbl_Porcentaje.Enabled = true;                
+                txt_DescuentoPorcentaje.Enabled = true;
+            }
+        }
+
+        private void rdb_Cantidad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_Cantidad.Checked == false)
+            {
+                lbl_Cantidad.Enabled = false;
+                txt_DescuentoCantidad.Text = "0.00";
+                txt_DescuentoCantidad.Enabled = false;
+            }
+            else
+            {
+                lbl_Cantidad.Enabled = true;
+                txt_DescuentoCantidad.Enabled = true;
+            }
         }
     }
 }

@@ -62,17 +62,17 @@ namespace Proyecto_Glacial.Ventas
 
         private void clientesDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idComprador = Convert.ToInt32(clientesDataGridView.Rows[clientesDataGridView.CurrentCellAddress.Y].Cells[0].Value);
+            Program.idClienteVenta = Convert.ToInt32(clientesDataGridView.Rows[clientesDataGridView.CurrentCellAddress.Y].Cells[0].Value);
         }
 
         private void btn_SeleccionarCliente_Click(object sender, EventArgs e)
         {
-            if (Program.idComprador == 0)
+            if (Program.idClienteVenta == 0)
             {
                 DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun cliente, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    Program.idComprador = 0;
+                    Program.idClienteVenta = 0;
                     this.Close();
                 }
             }

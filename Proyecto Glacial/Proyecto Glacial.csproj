@@ -107,14 +107,6 @@
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="generarConexion.cs" />
-    <Compile Include="glacial_almacenDataSet.cs">
-      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="glacial_almacenDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores\frm_ProveedorAgregar.cs">
@@ -233,17 +225,6 @@
     <EmbeddedResource Include="Ventas\frm_VentasSeleccionEmpresa.resx">
       <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="glacial_almacenDataSet.xsc">
-      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="glacial_almacenDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>glacial_almacenDataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="glacial_almacenDataSet.xss">
-      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

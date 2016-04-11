@@ -53,7 +53,7 @@ namespace Proyecto_Glacial.Ventas
 
         private void empresaDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idComprador = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);
+            Program.idEmpresaVenta = Convert.ToInt32(empresaDataGridView.Rows[empresaDataGridView.CurrentCellAddress.Y].Cells[0].Value);
         }
 
         private void btn_AgregarEmpresa_Click(object sender, EventArgs e)
@@ -66,12 +66,12 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_SeleccionarEmpresa_Click(object sender, EventArgs e)
         {
-            if (Program.idComprador == 0)
+            if (Program.idEmpresaVenta == 0)
             {
                 DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ninguna empresa, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    Program.idComprador = 0;
+                    Program.idEmpresaVenta = 0;
                     this.Close();
                 }
             }
