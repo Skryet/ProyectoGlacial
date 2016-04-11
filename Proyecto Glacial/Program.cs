@@ -13,6 +13,8 @@ namespace Proyecto_Glacial
         public static int idListaProveedorActual;
         public static bool agregarProveedoresProducto = false;
         public static int idProveedorCodigo;
+        public static int idCompra;
+        public static int idListaCompra;
 
         public static int idProducto;
 
@@ -20,7 +22,7 @@ namespace Proyecto_Glacial
         public static bool isOpenMainClientForm = true;
 
         public static optimizar metodosOptimizar = new optimizar();
-        public static int idProveedor;
+        //public static int idProveedor;
         public static int idEmpresa;
         /// <summary>
         /// The main entry point for the application.
@@ -30,7 +32,7 @@ namespace Proyecto_Glacial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Proveedores());
+            Application.Run(new frm_MenuPrincipal());
         }
     }
 }

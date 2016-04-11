@@ -207,7 +207,7 @@
             this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
+            //this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;

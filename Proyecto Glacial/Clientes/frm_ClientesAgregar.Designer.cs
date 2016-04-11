@@ -129,8 +129,8 @@
             // ciudadLabel
             // 
             ciudadLabel.AutoSize = true;
-            ciudadLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ciudadLabel.Location = new System.Drawing.Point(12, 176);
+            ciudadLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciudadLabel.Location = new System.Drawing.Point(10, 123);
             ciudadLabel.Name = "ciudadLabel";
             ciudadLabel.Size = new System.Drawing.Size(81, 22);
             ciudadLabel.TabIndex = 13;
@@ -213,7 +213,7 @@
             this.txtCodigoPostal.Location = new System.Drawing.Point(458, 148);
             this.txtCodigoPostal.MaxLength = 5;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(100, 29);
+            this.txtCodigoPostal.Size = new System.Drawing.Size(139, 29);
             this.txtCodigoPostal.TabIndex = 7;
             this.txtCodigoPostal.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
@@ -240,7 +240,7 @@
             // btn_AgregarCliente
             // 
             this.btn_AgregarCliente.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_2_;
-            this.btn_AgregarCliente.Location = new System.Drawing.Point(545, 192);
+            this.btn_AgregarCliente.Location = new System.Drawing.Point(563, 207);
             this.btn_AgregarCliente.Name = "btn_AgregarCliente";
             this.btn_AgregarCliente.Size = new System.Drawing.Size(80, 80);
             this.btn_AgregarCliente.TabIndex = 15;
@@ -259,7 +259,7 @@
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
+            //this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -270,7 +270,7 @@
             // 
             this.lblConfirmar.AutoSize = true;
             this.lblConfirmar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmar.Location = new System.Drawing.Point(539, 278);
+            this.lblConfirmar.Location = new System.Drawing.Point(557, 293);
             this.lblConfirmar.Name = "lblConfirmar";
             this.lblConfirmar.Size = new System.Drawing.Size(86, 22);
             this.lblConfirmar.TabIndex = 16;

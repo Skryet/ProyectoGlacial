@@ -36,11 +36,15 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.cmb_SelccionarTipo = new System.Windows.Forms.ComboBox();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.btn_detalles = new System.Windows.Forms.Button();
+            this.btn_BuscarTodo = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,17 +52,17 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaCarro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloCarro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_especial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_detalles = new System.Windows.Forms.Button();
-            this.btn_BuscarTodo = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            this.numeroPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,35 +108,6 @@
             this.txt_Buscar.TabIndex = 19;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "productos";
-            this.productosBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = null;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
             // productosDataGridView
             // 
             this.productosDataGridView.AutoGenerateColumns = false;
@@ -145,10 +120,14 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
+            this.marcaCarro,
+            this.modeloCarro,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn3});
+            this.precio_especial,
+            this.dataGridViewTextBoxColumn3,
+            this.numeroPedimento});
             this.productosDataGridView.DataSource = this.productosBindingSource;
             this.productosDataGridView.Location = new System.Drawing.Point(12, 155);
             this.productosDataGridView.Name = "productosDataGridView";
@@ -158,96 +137,15 @@
             this.productosDataGridView.TabIndex = 26;
             this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // productosBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_producto";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Número de producto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productosBindingSource.DataMember = "productos";
+            this.productosBindingSource.DataSource = this.glacial_almacenDataSet;
             // 
-            // dataGridViewTextBoxColumn2
+            // glacial_almacenDataSet
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_linea_producto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_linea_producto";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "descripcion";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "existencia";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Existencia";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "cantidad_minima";
-            this.dataGridViewTextBoxColumn7.HeaderText = "cantidad_minima";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "unidad_medida";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Unidad de medida";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "precio1";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Precio 1";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "precio2";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Precio 2";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "precio3";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Precio 3";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_lista_proveedores";
-            this.dataGridViewTextBoxColumn3.FillWeight = 1F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "id_lista_proveedores";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_detalles
             // 
@@ -292,6 +190,142 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Detalles Producto";
             // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.empresaTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_producto";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de producto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_linea_producto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Línea del Producto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "descripcion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "existencia";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Existencia";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "cantidad_minima";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Cantidad mínima en Inventario";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "unidad_medida";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Unidad de medida";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // marcaCarro
+            // 
+            this.marcaCarro.DataPropertyName = "marcaCarro";
+            this.marcaCarro.HeaderText = "Marca del Vehículo perteneciente";
+            this.marcaCarro.Name = "marcaCarro";
+            this.marcaCarro.ReadOnly = true;
+            // 
+            // modeloCarro
+            // 
+            this.modeloCarro.DataPropertyName = "modeloCarro";
+            this.modeloCarro.HeaderText = "Modelo del vehículo perteneciente";
+            this.modeloCarro.Name = "modeloCarro";
+            this.modeloCarro.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "precio1";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Precio 1";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "precio2";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Precio 2";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "precio3";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Precio 3";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // precio_especial
+            // 
+            this.precio_especial.DataPropertyName = "precio_especial";
+            this.precio_especial.HeaderText = "Precio Especial";
+            this.precio_especial.Name = "precio_especial";
+            this.precio_especial.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_lista_proveedores";
+            this.dataGridViewTextBoxColumn3.FillWeight = 1F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "id_lista_proveedores";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // numeroPedimento
+            // 
+            this.numeroPedimento.DataPropertyName = "numeroPedimento";
+            this.numeroPedimento.HeaderText = "Número de pedimento";
+            this.numeroPedimento.Name = "numeroPedimento";
+            this.numeroPedimento.ReadOnly = true;
+            // 
             // frm_InventarioBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,9 +343,9 @@
             this.Name = "frm_InventarioBuscar";
             this.Text = "Inventario Buscar";
             this.Load += new System.EventHandler(this.frm_InventarioBuscar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,9 +373,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaCarro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloCarro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_especial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroPedimento;
     }
 }

@@ -15,7 +15,6 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
     public partial class frm_InventarioBuscarProductoProveedores : Form
     {
         private generarConexion conexion = new generarConexion();
-        private MySqlCommand command;
         private MySqlDataAdapter da;
 
 
@@ -85,6 +84,26 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
         private void frm_InventarioBuscarProductoProveedores_FormClosed(object sender, FormClosedEventArgs e)
         {
             btn_agregar.Enabled = true;
+        }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
+            MySqlCommand consulta = new MySqlCommand("SELECT compatibilidadCarros FROM productos WHERE id_producto = " +  Program.idProducto, generarConexion.obtenerConexion);
+            conexion.abrirConexion();
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    MessageBox.Show(lector.GetString(0).ToString(),"Este carro tiene compatibilidad con: ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conexion.cerrarConexion();
         }
     }
 }

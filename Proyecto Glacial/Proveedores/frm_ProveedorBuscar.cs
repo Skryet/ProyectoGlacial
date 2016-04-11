@@ -12,8 +12,6 @@ namespace Proyecto_Glacial.Proveedores
 {
     public partial class frm_ProveedorBuscar : Form
     {
-        public event insertarID Insertar;
-        private int id;
 
         public frm_ProveedorBuscar()
         {            

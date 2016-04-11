@@ -40,9 +40,6 @@
             this.vista_listar_proveedores_productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_modificar = new System.Windows.Forms.Button();
             this.vista_listar_proveedores_productoTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_listar_proveedores_productoTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.proveedor_codigoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,7 +47,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_visualizar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vista_listar_proveedores_productoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista_listar_proveedores_productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
@@ -152,38 +154,6 @@
             this.lbl_titulo.TabIndex = 1;
             this.lbl_titulo.Text = "Detalles de los Proveedores";
             // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_2_;
-            this.btn_agregar.Location = new System.Drawing.Point(564, 143);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(80, 80);
-            this.btn_agregar.TabIndex = 4;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Enabled = false;
-            this.btn_eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed_2_;
-            this.btn_eliminar.Location = new System.Drawing.Point(497, 249);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(80, 80);
-            this.btn_eliminar.TabIndex = 3;
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // btn_modificar
-            // 
-            this.btn_modificar.Enabled = false;
-            this.btn_modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
-            this.btn_modificar.Location = new System.Drawing.Point(617, 249);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(80, 80);
-            this.btn_modificar.TabIndex = 2;
-            this.btn_modificar.UseVisualStyleBackColor = true;
-            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
-            // 
             // vista_listar_proveedores_productoTableAdapter
             // 
             this.vista_listar_proveedores_productoTableAdapter.ClearBeforeFill = true;
@@ -197,7 +167,6 @@
             this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -243,6 +212,26 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Agregar";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(98, 290);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 48);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Visualizar \r\ncompatibilidad";
+            // 
+            // btn_visualizar
+            // 
+            this.btn_visualizar.Image = global::Proyecto_Glacial.Properties.Resources.BusinessBlue;
+            this.btn_visualizar.Location = new System.Drawing.Point(12, 274);
+            this.btn_visualizar.Name = "btn_visualizar";
+            this.btn_visualizar.Size = new System.Drawing.Size(80, 80);
+            this.btn_visualizar.TabIndex = 9;
+            this.btn_visualizar.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(555, 12);
@@ -252,11 +241,45 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddIconBlue_2_;
+            this.btn_agregar.Location = new System.Drawing.Point(564, 143);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(80, 80);
+            this.btn_agregar.TabIndex = 4;
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Enabled = false;
+            this.btn_eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed_2_;
+            this.btn_eliminar.Location = new System.Drawing.Point(497, 249);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(80, 80);
+            this.btn_eliminar.TabIndex = 3;
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Enabled = false;
+            this.btn_modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
+            this.btn_modificar.Location = new System.Drawing.Point(617, 249);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(80, 80);
+            this.btn_modificar.TabIndex = 2;
+            this.btn_modificar.UseVisualStyleBackColor = true;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
+            // 
             // frm_InventarioBuscarProductoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 358);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btn_visualizar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -306,5 +329,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_visualizar;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -42,6 +42,15 @@ namespace Proyecto_Glacial
             this.Location = new Point(300, 20);
         }
 
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btn_comprarProductos_Click(object sender, EventArgs e)
+        {
+            Form frm_compras = new Compras.frm_ComprasMenu();
+            frm_compras.ShowDialog();
+        }
     }
 }

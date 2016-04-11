@@ -75,7 +75,7 @@ namespace Proyecto_Glacial.Inventario
             btn_detalles.Enabled = true;
             if(productosDataGridView.SelectedCells[10].Value.ToString() != "")
             //ListaProveedorActual
-            Program.idListaProveedorActual = Convert.ToInt32(productosDataGridView.SelectedCells[10].Value.ToString());
+            Program.idListaProveedorActual = Convert.ToInt32(productosDataGridView.SelectedCells[13].Value.ToString());
 
             //IdProducto
             Program.idProducto = Convert.ToInt32(productosDataGridView.SelectedCells[0].Value.ToString());
