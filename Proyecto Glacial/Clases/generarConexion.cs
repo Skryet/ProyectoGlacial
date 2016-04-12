@@ -1,11 +1,20 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Proyecto_Glacial
 {
     class generarConexion
     {
         private static MySqlConnection conexion = new MySqlConnection("server=glacialcolima.ddns.net;user id=SGAglacial;password=Glacial_MASTER16;persistsecurityinfo=True;database=glacial_almacen");
+
         bool estadoConexion = false;
 
         public generarConexion()
@@ -16,6 +25,7 @@ namespace Proyecto_Glacial
         /// <summary>
         /// Abrir conexion con el servidor
         /// </summary>
+        /// 
         public void abrirConexion()
         {
             try
@@ -55,5 +65,6 @@ namespace Proyecto_Glacial
         /// Obtener  cadena de conexion
         /// </summary>
         public static MySqlConnection obtenerConexion { get { return conexion; } }
+
     }
 }

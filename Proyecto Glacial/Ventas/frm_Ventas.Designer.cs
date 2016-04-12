@@ -100,7 +100,6 @@
             // btn_NuevaVenta
             // 
             this.btn_NuevaVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_NuevaVenta.Image = global::Proyecto_Glacial.Properties.Resources.shop;
             this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 50);
             this.btn_NuevaVenta.Name = "btn_NuevaVenta";
             this.btn_NuevaVenta.Size = new System.Drawing.Size(75, 75);

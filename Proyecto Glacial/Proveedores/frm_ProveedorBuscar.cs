@@ -11,11 +11,20 @@ using System.Windows.Forms;
 namespace Proyecto_Glacial.Proveedores
 {
     public partial class frm_ProveedorBuscar : Form
-    {        
+    {
+
         public frm_ProveedorBuscar()
         {            
             InitializeComponent();            
-        }      
+        }
+
+        private void proveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.proveedoresBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
+
+        }
 
         private void frm_ProveedorBuscar_Load(object sender, EventArgs e)
         {
@@ -55,6 +64,11 @@ namespace Proyecto_Glacial.Proveedores
                 proveedoresDataGridView.CurrentRow.Selected = false;
             Program.idProveedor = 0;
             txt_Buscar.Text = "";
+        }
+
+        private void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

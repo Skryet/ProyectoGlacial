@@ -17,6 +17,14 @@ namespace Proyecto_Glacial.Empresa
             InitializeComponent();
         }
 
+        private void empresaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.empresaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
+
+        }
+
         private void frm_EmpresaBuscar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.

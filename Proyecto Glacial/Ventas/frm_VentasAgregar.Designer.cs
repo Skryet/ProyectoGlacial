@@ -62,9 +62,9 @@
             this.lbl_Porcentaje = new System.Windows.Forms.Label();
             this.txt_DescuentoPorcentaje = new System.Windows.Forms.TextBox();
             this.pnl_Descuento = new System.Windows.Forms.Panel();
-            this.lbl_Descuento = new System.Windows.Forms.Label();
-            this.rbt_Porcentage = new System.Windows.Forms.RadioButton();
             this.rbt_Cantidad = new System.Windows.Forms.RadioButton();
+            this.rbt_Porcentage = new System.Windows.Forms.RadioButton();
+            this.lbl_Descuento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
@@ -173,7 +173,12 @@
             // 
             // vista_venta_lista_productosDataGridView
             // 
+            this.vista_venta_lista_productosDataGridView.AllowUserToAddRows = false;
+            this.vista_venta_lista_productosDataGridView.AllowUserToDeleteRows = false;
             this.vista_venta_lista_productosDataGridView.AutoGenerateColumns = false;
+            this.vista_venta_lista_productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.vista_venta_lista_productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.vista_venta_lista_productosDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.vista_venta_lista_productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vista_venta_lista_productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -185,8 +190,11 @@
             this.vista_venta_lista_productosDataGridView.DataSource = this.vista_venta_lista_productosBindingSource;
             this.vista_venta_lista_productosDataGridView.Location = new System.Drawing.Point(13, 161);
             this.vista_venta_lista_productosDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.vista_venta_lista_productosDataGridView.MultiSelect = false;
             this.vista_venta_lista_productosDataGridView.Name = "vista_venta_lista_productosDataGridView";
+            this.vista_venta_lista_productosDataGridView.ReadOnly = true;
             this.vista_venta_lista_productosDataGridView.RowTemplate.Height = 24;
+            this.vista_venta_lista_productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vista_venta_lista_productosDataGridView.Size = new System.Drawing.Size(710, 234);
             this.vista_venta_lista_productosDataGridView.TabIndex = 9;
             // 
@@ -196,6 +204,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Linea";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 58;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -203,6 +212,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 65;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -210,6 +220,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 88;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -217,12 +228,15 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Unidad";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 66;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "cantidad";
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 74;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -230,6 +244,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Total";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 56;
             // 
             // vista_venta_lista_productosBindingSource
             // 
@@ -412,15 +427,15 @@
             this.pnl_Descuento.TabIndex = 23;
             this.pnl_Descuento.Visible = false;
             // 
-            // lbl_Descuento
+            // rbt_Cantidad
             // 
-            this.lbl_Descuento.AutoSize = true;
-            this.lbl_Descuento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Descuento.Location = new System.Drawing.Point(40, 3);
-            this.lbl_Descuento.Name = "lbl_Descuento";
-            this.lbl_Descuento.Size = new System.Drawing.Size(183, 18);
-            this.lbl_Descuento.TabIndex = 23;
-            this.lbl_Descuento.Text = "Aplicar descuento en:";
+            this.rbt_Cantidad.AutoSize = true;
+            this.rbt_Cantidad.Location = new System.Drawing.Point(16, 75);
+            this.rbt_Cantidad.Name = "rbt_Cantidad";
+            this.rbt_Cantidad.Size = new System.Drawing.Size(14, 13);
+            this.rbt_Cantidad.TabIndex = 25;
+            this.rbt_Cantidad.UseVisualStyleBackColor = true;
+            this.rbt_Cantidad.CheckedChanged += new System.EventHandler(this.rdb_Cantidad_CheckedChanged);
             // 
             // rbt_Porcentage
             // 
@@ -434,15 +449,15 @@
             this.rbt_Porcentage.UseVisualStyleBackColor = true;
             this.rbt_Porcentage.CheckedChanged += new System.EventHandler(this.rbt_Porcentage_CheckedChanged);
             // 
-            // rbt_Cantidad
+            // lbl_Descuento
             // 
-            this.rbt_Cantidad.AutoSize = true;
-            this.rbt_Cantidad.Location = new System.Drawing.Point(16, 75);
-            this.rbt_Cantidad.Name = "rbt_Cantidad";
-            this.rbt_Cantidad.Size = new System.Drawing.Size(14, 13);
-            this.rbt_Cantidad.TabIndex = 25;
-            this.rbt_Cantidad.UseVisualStyleBackColor = true;
-            this.rbt_Cantidad.CheckedChanged += new System.EventHandler(this.rdb_Cantidad_CheckedChanged);
+            this.lbl_Descuento.AutoSize = true;
+            this.lbl_Descuento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Descuento.Location = new System.Drawing.Point(40, 3);
+            this.lbl_Descuento.Name = "lbl_Descuento";
+            this.lbl_Descuento.Size = new System.Drawing.Size(183, 18);
+            this.lbl_Descuento.TabIndex = 23;
+            this.lbl_Descuento.Text = "Aplicar descuento en:";
             // 
             // frm_VentasAgregar
             // 

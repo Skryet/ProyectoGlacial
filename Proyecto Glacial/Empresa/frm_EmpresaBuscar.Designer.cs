@@ -55,11 +55,10 @@
             // 
             // btn_Actualizar
             // 
-            this.btn_Actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Actualizar.Location = new System.Drawing.Point(281, 108);
-            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Actualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Actualizar.Location = new System.Drawing.Point(211, 88);
             this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(320, 28);
+            this.btn_Actualizar.Size = new System.Drawing.Size(240, 23);
             this.btn_Actualizar.TabIndex = 17;
             this.btn_Actualizar.Text = "Actualizar lista de empresas";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
@@ -67,15 +66,14 @@
             // 
             // cbb_Opciones
             // 
-            this.cbb_Opciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbb_Opciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
             this.cbb_Opciones.FormattingEnabled = true;
             this.cbb_Opciones.Items.AddRange(new object[] {
             "Nombre",
             "Estado"});
-            this.cbb_Opciones.Location = new System.Drawing.Point(24, 60);
-            this.cbb_Opciones.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_Opciones.Location = new System.Drawing.Point(18, 49);
             this.cbb_Opciones.Name = "cbb_Opciones";
-            this.cbb_Opciones.Size = new System.Drawing.Size(187, 28);
+            this.cbb_Opciones.Size = new System.Drawing.Size(141, 23);
             this.cbb_Opciones.TabIndex = 16;
             this.cbb_Opciones.Text = "Seleccione";
             // 
@@ -83,31 +81,28 @@
             // 
             this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
-            this.btn_Buscar.Location = new System.Drawing.Point(781, 28);
-            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Buscar.Location = new System.Drawing.Point(586, 23);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(100, 92);
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
             this.btn_Buscar.TabIndex = 15;
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txt_Buscar
             // 
-            this.txt_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_Buscar.Location = new System.Drawing.Point(220, 60);
-            this.txt_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
+            this.txt_Buscar.Location = new System.Drawing.Point(165, 49);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(532, 26);
+            this.txt_Buscar.Size = new System.Drawing.Size(400, 23);
             this.txt_Buscar.TabIndex = 14;
             // 
             // lbl_BuscarPor
             // 
             this.lbl_BuscarPor.AutoSize = true;
-            this.lbl_BuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.lbl_BuscarPor.Location = new System.Drawing.Point(359, 25);
-            this.lbl_BuscarPor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_BuscarPor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
+            this.lbl_BuscarPor.Location = new System.Drawing.Point(269, 20);
             this.lbl_BuscarPor.Name = "lbl_BuscarPor";
-            this.lbl_BuscarPor.Size = new System.Drawing.Size(126, 26);
+            this.lbl_BuscarPor.Size = new System.Drawing.Size(116, 21);
             this.lbl_BuscarPor.TabIndex = 13;
             this.lbl_BuscarPor.Text = "Buscar Por:";
             // 
@@ -132,7 +127,8 @@
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;            
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -159,99 +155,85 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.empresaDataGridView.DataSource = this.empresaBindingSource;
-            this.empresaDataGridView.Location = new System.Drawing.Point(3, 156);
-            this.empresaDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.empresaDataGridView.Location = new System.Drawing.Point(2, 127);
             this.empresaDataGridView.Name = "empresaDataGridView";
-            this.empresaDataGridView.ReadOnly = true;
-            this.empresaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.empresaDataGridView.Size = new System.Drawing.Size(903, 425);
+            this.empresaDataGridView.Size = new System.Drawing.Size(677, 345);
             this.empresaDataGridView.TabIndex = 17;
-            this.empresaDataGridView.Click += new System.EventHandler(this.empresaDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empresa";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 87;
+            this.dataGridViewTextBoxColumn2.Width = 69;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "telefono";
             this.dataGridViewTextBoxColumn3.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 93;
+            this.dataGridViewTextBoxColumn3.Width = 74;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "direccion";
             this.dataGridViewTextBoxColumn4.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 96;
+            this.dataGridViewTextBoxColumn4.Width = 77;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "colonia";
             this.dataGridViewTextBoxColumn5.HeaderText = "Colonia";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 84;
+            this.dataGridViewTextBoxColumn5.Width = 67;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
             this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 81;
+            this.dataGridViewTextBoxColumn6.Width = 65;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "correo";
             this.dataGridViewTextBoxColumn7.HeaderText = "Correo";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 80;
+            this.dataGridViewTextBoxColumn7.Width = 63;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
             this.dataGridViewTextBoxColumn8.HeaderText = "C.P.";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 63;
+            this.dataGridViewTextBoxColumn8.Width = 52;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "rfc";
             this.dataGridViewTextBoxColumn9.HeaderText = "R.F.C.";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 76;
+            this.dataGridViewTextBoxColumn9.Width = 62;
             // 
             // frm_EmpresaBuscar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 596);
+            this.ClientSize = new System.Drawing.Size(681, 484);
             this.Controls.Add(this.empresaDataGridView);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.cbb_Opciones);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.lbl_BuscarPor);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_EmpresaBuscar";
             this.Text = "Empresa - Buscar";
             this.Load += new System.EventHandler(this.frm_EmpresaBuscar_Load);

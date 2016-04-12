@@ -12,6 +12,22 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\chhris\Pictures\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>50AFD96C508704578CA68DDCC7859DAF22A1368E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Proyecto Glacial_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -52,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoClosingMessageBox.cs" />
+    <Compile Include="Clases\AgregarObtenerImagen.cs" />
     <Compile Include="Clientes\frm_ClientesAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +104,36 @@
     </Compile>
     <Compile Include="Clientes\frm_ClientesModificar.Designer.cs">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasAgregar.Designer.cs">
+      <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasBuscar.Designer.cs">
+      <DependentUpon>frm_ComprasBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasBuscarDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasBuscarDetalles.Designer.cs">
+      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasMenu.Designer.cs">
+      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
+      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frm_EmpresaAgregar.cs">
       <SubType>Form</SubType>
@@ -106,7 +165,70 @@
     <Compile Include="frm_MenuPrincipal.Designer.cs">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="generarConexion.cs" />
+    <Compile Include="Clases\generarConexion.cs" />
+    <Compile Include="glacial_almacenDataSet.cs">
+      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="glacial_almacenDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioAgregar.Designer.cs">
+      <DependentUpon>frm_InventarioAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioBuscar.Designer.cs">
+      <DependentUpon>frm_InventarioBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioMenu.Designer.cs">
+      <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioModificar.Designer.cs">
+      <DependentUpon>frm_InventarioModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.Designer.cs">
+      <DependentUpon>frm_InventarioAgregarDatosProveedoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.Designer.cs">
+      <DependentUpon>frm_InventarioAgregarProductosProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioBuscarProductoProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioBuscarProductoProveedores.Designer.cs">
+      <DependentUpon>frm_InventarioBuscarProductoProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioModificarDatosProveedorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioModificarDatosProveedorProducto.Designer.cs">
+      <DependentUpon>frm_InventarioModificarDatosProveedorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.Designer.cs">
+      <DependentUpon>frm_ProveedoresBuscarParaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\optimizar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores\frm_ProveedorAgregar.cs">
@@ -138,31 +260,31 @@
     <Compile Include="Ventas\frm_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frm_Ventas.Designer.cs">
+    <Compile Include="Ventas\frm_Ventas.designer.cs">
       <DependentUpon>frm_Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_VentasAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frm_VentasAgregar.Designer.cs">
+    <Compile Include="Ventas\frm_VentasAgregar.designer.cs">
       <DependentUpon>frm_VentasAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_VentasAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frm_VentasAgregarProducto.Designer.cs">
+    <Compile Include="Ventas\frm_VentasAgregarProducto.designer.cs">
       <DependentUpon>frm_VentasAgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_VentaSeleccionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frm_VentaSeleccionCliente.Designer.cs">
+    <Compile Include="Ventas\frm_VentaSeleccionCliente.designer.cs">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_VentasSeleccionEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.Designer.cs">
+    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.designer.cs">
       <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
@@ -178,6 +300,21 @@
     <EmbeddedResource Include="Clientes\frm_ClientesModificar.resx">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasAgregar.resx">
+      <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasBuscar.resx">
+      <DependentUpon>frm_ComprasBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasBuscarDetalles.resx">
+      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasMenu.resx">
+      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasModificarDetallesCompra.resx">
+      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
       <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +329,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioAgregar.resx">
+      <DependentUpon>frm_InventarioAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioBuscar.resx">
+      <DependentUpon>frm_InventarioBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioMenu.resx">
+      <DependentUpon>frm_InventarioMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioModificar.resx">
+      <DependentUpon>frm_InventarioModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.resx">
+      <DependentUpon>frm_InventarioAgregarDatosProveedoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarProductosProveedor.resx">
+      <DependentUpon>frm_InventarioAgregarProductosProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioBuscarProductoProveedores.resx">
+      <DependentUpon>frm_InventarioBuscarProductoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioModificarDatosProveedorProducto.resx">
+      <DependentUpon>frm_InventarioModificarDatosProveedorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_ProveedoresBuscarParaProducto.resx">
+      <DependentUpon>frm_ProveedoresBuscarParaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +389,17 @@
     <EmbeddedResource Include="Ventas\frm_VentasSeleccionEmpresa.resx">
       <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="glacial_almacenDataSet.xsc">
+      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="glacial_almacenDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>glacial_almacenDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="glacial_almacenDataSet.xss">
+      <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -244,6 +419,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Proyecto Glacial_ClaveTemporal.pfx" />
     <None Include="Resources\AddButtonBlue.png" />
   </ItemGroup>
   <ItemGroup>
@@ -274,8 +450,93 @@
     <None Include="Resources\diskette.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\shop.png" />
+    <None Include="Resources\AddIconBlue%2802%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddProviderBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectGree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\socialBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addPictureBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CorporationBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StorageBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-trading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VentasBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseProgram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\completeSelling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GraphsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIconBlue%2802%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteProductRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowsPurpleModify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BusinessBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-Insert_image_here-.svg.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
