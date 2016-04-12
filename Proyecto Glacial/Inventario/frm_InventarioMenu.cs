@@ -65,9 +65,11 @@ namespace Proyecto_Glacial.Inventario
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            InventarioAgregarProductos = Application.OpenForms.OfType<Inventario.frm_InventarioAgregar>().FirstOrDefault();
-            InventarioAgregarProductos = InventarioAgregarProductos ?? new Inventario.frm_InventarioAgregar();
-            AddFormInPanel(InventarioAgregarProductos);
+            Form agregarProductos = new Inventario.frm_InventarioAgregar();
+            agregarProductos.ShowDialog();
+            //InventarioAgregarProductos = Application.OpenForms.OfType<Inventario.frm_InventarioAgregar>().FirstOrDefault();
+            //InventarioAgregarProductos = InventarioAgregarProductos ?? new Inventario.frm_InventarioAgregar();
+            //AddFormInPanel(InventarioAgregarProductos); 
             lbl_Estado.Text = "Almacén - Agregar Productos";
         }
 

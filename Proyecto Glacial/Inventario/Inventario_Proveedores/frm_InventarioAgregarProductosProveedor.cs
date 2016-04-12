@@ -67,7 +67,7 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
            // Program.idListaProveedorActual = buscarUltimoIdLista();
             //Program.idListaProveedorActual++;
             btn_completar.Enabled = true;
-            FRM_inventarioAgregarProductosProveedor.Show();
+            FRM_inventarioAgregarProductosProveedor.ShowDialog();
         }
 
         private void frm_InventarioAgregarProductosProveedor_Activated_1(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
         private void btn_completar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_InventarioAgregarProductosProveedor_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(300, 40);
         }
     }
 }

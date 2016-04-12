@@ -27,15 +27,7 @@ namespace Proyecto_Glacial
             }
             return vacio;
         }
-        private bool verificar()
-        {
-            if (txtNombre.Text != "" && txtApellidoP.Text != "" && txtApellidoM.Text != "" && txtDireccion.Text != "" && txtColonia.Text != "" && txtCodigoPostal.Text != "" && txtCiudad.Text != "")
-                return true;
-            else
-                return false;
-            
-            
-        }
+        
         public frm_ClientesAgregar()
         {
             InitializeComponent();
@@ -52,23 +44,11 @@ namespace Proyecto_Glacial
             txtColonia.Text = "";
             
         }
-        private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
 
         private void frm_ClientesAgregar_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.clientes' Puede moverla o quitarla según sea necesario.
             //this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-
-        }
-
-        private void apellidoMTextBox_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -105,21 +85,14 @@ namespace Proyecto_Glacial
             limpiar.BackColor = Color.White;
         }
 
-
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void clientesBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frm_ClientesAgregar_TextChanged(object sender, EventArgs e)
-        {
-          
+            DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro de regresar al menu principal?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                Program.idProveedor = 0;
+                this.Close();
+            }
         }
     }
 }

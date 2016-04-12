@@ -12,8 +12,6 @@ namespace Proyecto_Glacial.Proveedores
 {
     public partial class frm_ProveedorBuscar : Form
     {
-        public event insertarID Insertar;
-        private int id;
 
         public frm_ProveedorBuscar()
         {            
@@ -32,7 +30,8 @@ namespace Proyecto_Glacial.Proveedores
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.proveedores' table. You can move, or remove it, as needed.
             this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
-
+            if (proveedoresDataGridView.RowCount != 0)
+                proveedoresDataGridView.CurrentRow.Selected = false;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -41,9 +40,11 @@ namespace Proyecto_Glacial.Proveedores
             {
                 case "Nombre":
                     proveedoresTableAdapter.BuscarNombre(this.glacial_almacenDataSet.proveedores, "%" + txt_Buscar.Text + "%");
+                    txt_Buscar.Text = "";
                     break;
                 case "Estado":
                     proveedoresTableAdapter.BuscarEstado(this.glacial_almacenDataSet.proveedores, "%" + txt_Buscar.Text + "%");
+                    txt_Buscar.Text = "";
                     break;
                 default:
                     MessageBox.Show("No se ha seleccionado la opcion de busqueda", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -53,8 +54,16 @@ namespace Proyecto_Glacial.Proveedores
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)
         {
-            id = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);
-            Insertar(id);            
+            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);            
+        }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
+            if (proveedoresDataGridView.RowCount != 0)
+                proveedoresDataGridView.CurrentRow.Selected = false;
+            Program.idProveedor = 0;
+            txt_Buscar.Text = "";
         }
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)

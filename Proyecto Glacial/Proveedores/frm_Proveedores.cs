@@ -9,23 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_Glacial
-{
-    public delegate void insertarID(int id);
-
+{    
     public partial class frm_Proveedores : Form
-    {        
-        private int id;
+    {                
+        private Proveedores.frm_ProveedorBuscar form;
+        private Proveedores.frm_ProveedorBuscar ProveedorBuscar;
 
         public frm_Proveedores()
-        {
-            InitializeComponent();
-            id = 0;            
-        }
-
-        public void insertado(int idInsertado)
-        {
-            id = idInsertado;
-        }
+        {            
+            InitializeComponent();                 
+        }      
 
         private void AddFormInPanel(Form fh)
         {
@@ -41,8 +34,22 @@ namespace Proyecto_Glacial
        
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (id != 0)
-                proveedoresTableAdapter.BorrarProveedor(id);
+            if (Program.idProveedor != 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de eliminar el proveedor ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    proveedoresTableAdapter.BorrarProveedor(Program.idProveedor);
+                    proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
+                    Program.idProveedor = 0;
+                    ProveedorBuscar.Close();
+                    form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
+                    ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();                    
+                    AddFormInPanel(ProveedorBuscar);
+                }
+            }
+            else
+                MessageBox.Show("No se a seleccionado ningun registro para la eliminacion", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }        
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -54,25 +61,23 @@ namespace Proyecto_Glacial
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            Proveedores.frm_ProveedorBuscar form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
-            Proveedores.frm_ProveedorBuscar ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();
-            ProveedorBuscar.Insertar += new insertarID(insertado);
+            form = Application.OpenForms.OfType<Proveedores.frm_ProveedorBuscar>().FirstOrDefault();
+            ProveedorBuscar = form ?? new Proveedores.frm_ProveedorBuscar();            
             AddFormInPanel(ProveedorBuscar);
-        }
+            btn_Eliminar.Enabled = true;
+            btn_Modificar.Enabled = true;
+        }                
 
-        private void proveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.proveedoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
-
-        private void frm_Proveedores_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'glacial_almacenDataSet.proveedores' table. You can move, or remove it, as needed.
-            this.proveedoresTableAdapter.Fill(this.glacial_almacenDataSet.proveedores);
-
-        }
+            if (Program.idProveedor != 0)
+            {
+                Proveedores.frm_ProveedorModificar form = Application.OpenForms.OfType<Proveedores.frm_ProveedorModificar>().FirstOrDefault();
+                Proveedores.frm_ProveedorModificar ProveedorModificar = form ?? new Proveedores.frm_ProveedorModificar();
+                AddFormInPanel(ProveedorModificar);                                
+            }
+            else
+                MessageBox.Show("No se a seleccionado ningun registro para la modificación", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }        
     }
 }

@@ -13,7 +13,7 @@ namespace Proyecto_Glacial
 {
     class generarConexion
     {
-        private static MySqlConnection conexion = new MySqlConnection("server=192.168.1.83;user id=SGAglacial;password=pato12;database=glacial_almacen");
+        private static MySqlConnection conexion = new MySqlConnection("server=glacialcolima.ddns.net;user id=SGAglacial;password=Glacial_MASTER16;persistsecurityinfo=True;database=glacial_almacen");
 
         bool estadoConexion = false;
 

@@ -112,6 +112,7 @@ namespace Proyecto_Glacial.Inventario
 
         private void frm_InventarioAgregar_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(300, 30);
             btn_AgregarProveedor.Enabled = true;
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.lista_proveedores_productos' Puede moverla o quitarla según sea necesario.
             //this.lista_proveedores_productosTableAdapter.Fill(this.glacial_almacenDataSet.lista_proveedores_productos);            
@@ -122,33 +123,35 @@ namespace Proyecto_Glacial.Inventario
             Program.idListaProveedorActual = buscarUltimoIdLista();
             Program.idListaProveedorActual++;
             Form frm_AgregarProveedorProducto = new Inventario.Inventario_Proveedores.frm_InventarioAgregarProductosProveedor();
-            frm_AgregarProveedorProducto.Show();
+            frm_AgregarProveedorProducto.ShowDialog();
             btn_AgregarProveedor.Enabled = false;
             
         }
 
         private void btn_proveedoresAgregado_Click(object sender, EventArgs e)
         {
+            byte[] img = null;
             if (!validarCampos())
             {
                 MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-                byte[] img = ms.ToArray();
-                banderaRealizarPeticionFinal = true;
-                Program.agregarProveedoresProducto = false;
-                btn_Guardar.Enabled = false;
-                this.productosTableAdapter.InsertarProductosConProveedores(Convert.ToInt32(txt_lineaProducto.Text),
-                    Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
-                    (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
-                    Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
-                    Convert.ToDouble(txt_precio3.Text),img);
-                this.lista_proveedores_productosTableAdapter.InsertarListaNuevaDeProveedoresProductos();
-                var resultado = MessageBox.Show("Producto Registrado con Éxito, ¿Desea Agregar otro Producto ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.No)
-                {
-                    this.Close();
+                    pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                    img = ms.ToArray();
+                    banderaRealizarPeticionFinal = true;
+                    Program.agregarProveedoresProducto = false;
+                    btn_Guardar.Enabled = false;                
+                this.productosTableAdapter.InsertarProductosConProveedores((txt_lineaProducto.Text).ToString(),
+                        Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
+                        (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
+                        Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
+                        Convert.ToDouble(txt_precio3.Text),img,txt_marcaPerteneciente.Text, txt_año.Text, txt_modeloPerteneciente.Text
+                        ,Convert.ToInt32(txt_numeroPedimento.Text),Convert.ToDouble(txt_precioEspecial.Text),txt_compatibilidad.Text);
+                    this.lista_proveedores_productosTableAdapter.InsertarListaNuevaDeProveedoresProductos();
+                    var resultado = MessageBox.Show("Producto Registrado con Éxito, ¿Desea Agregar otro Producto ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.No)
+                    {
+                        this.Close();
+                    }
                 }
-            }
             else
                 MessageBox.Show("Faltan campos por llenar!", "Advertencia");
 
@@ -174,7 +177,6 @@ namespace Proyecto_Glacial.Inventario
 
         private void txt_precio1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Program.metodosOptimizar.isDecimalPoint(e);
         }
 
         private void frm_InventarioAgregar_FormClosed(object sender, FormClosedEventArgs e)
@@ -182,7 +184,9 @@ namespace Proyecto_Glacial.Inventario
             Program.idListaProveedorActual = 0;
             Program.idProveedor = 0;
             Program.nombreProveedor = "";
-            
+            Program.agregarProveedoresProducto = false;
+            banderaRealizarPeticionFinal = true;
+
         }
 
         private void isDigit(object sender, KeyPressEventArgs e)

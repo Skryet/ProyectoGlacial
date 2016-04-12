@@ -69,7 +69,7 @@ namespace Proyecto_Glacial.Inventario
 
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
-            this.productosTableAdapter.ActualizarProductoPorID(Convert.ToInt32(txt_lineaProducto.Text),
+            this.productosTableAdapter.ActualizarProductoPorID((txt_lineaProducto.Text).ToString(),
                 txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32(txt_existencia.Text),
                 Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
                 Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
