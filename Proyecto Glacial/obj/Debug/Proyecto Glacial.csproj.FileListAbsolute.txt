@@ -101,10 +101,6 @@ C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasBuscarDetalles.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasMenu.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasModificarDetallesCompra.resources
-C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaAgregar.resources
-C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaBuscar.resources
-C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaModificar.resources
-C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_Empresas.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_MenuPrincipal.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioAgregar.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioBuscar.resources
@@ -124,7 +120,6 @@ C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregar.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregarProducto.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentaSeleccionCliente.resources
-C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasSeleccionEmpresa.resources
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.application

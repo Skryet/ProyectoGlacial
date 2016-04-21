@@ -22,12 +22,15 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentasAgregarProducto_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);            
+            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);
+            if (productosDataGridView.RowCount != 0)
+                productosDataGridView.CurrentRow.Selected = false;
         }
 
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+            if (productosDataGridView.RowCount != 0)
+                Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
         }       
 
         private void cbx_TipoPrecio_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,37 +54,71 @@ namespace Proyecto_Glacial.Ventas
 
         private void bn_Finalizar_Click(object sender, EventArgs e)
         {
-
+            Program.idProductoVenta = 0;
+            this.Close();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
-        {
+        {                              
             if (Program.idProductoVenta != 0)
             {
                 Objetos.materialVenta producto = new Objetos.materialVenta();
-                producto.idlVenta = Program.idVenta;
+                producto.idVenta = Program.idVenta;
                 producto.idProducto = Program.idProductoVenta;
                 producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
-                switch (cbx_TipoPrecio.Text)
+                if (txt_Cantidad.Text != "0")
                 {
-                    case "Precio 1":
-                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                        break;
-                    case "Precio 2":
-                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
-                        break;
-                    case "Precio 3":
-                        producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
-                        break;
-                    case "Especial":
-                        producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
-                        break;
-                    default:
-                        MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        break;
+                    int existencia = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
+                    if (Convert.ToInt32(txt_Cantidad.Text) > existencia)
+                    {
+                        MessageBox.Show("No puedes ingresar una cantidad mayor a la que hay en existencia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txt_Cantidad.Text = "0";
+                    }
+                    else
+                    {
+                        int descontarExistencia = existencia - Convert.ToInt32(txt_Cantidad.Text);
+                        switch (cbx_TipoPrecio.Text)
+                        {
+                            case "Precio 1":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                ventas.agregarProduto(producto);
+                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Precio 2":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[7].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                ventas.agregarProduto(producto);
+                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Precio 3":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[8].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                ventas.agregarProduto(producto);
+                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Especial":
+                                producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
+                                producto.Total = producto.obtenerTotal();
+                                ventas.agregarProduto(producto);
+                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 0;
+                                break;
+                            default:
+                                MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                        }
+                    }
                 }
-                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
-                ventas.agregarProduto(producto);
+                else
+                    MessageBox.Show("La cantidad del producto no puede ser 0", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -89,20 +126,9 @@ namespace Proyecto_Glacial.Ventas
             }
         }
 
-        private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void frm_VentasAgregarProducto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Validate();
-            this.productosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
-
-        private void productosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
+            Program.idProductoVenta = 0;
+        }        
     }
 }

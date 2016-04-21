@@ -135,30 +135,6 @@
     <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
       <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaAgregar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaAgregar.Designer.cs">
-      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaBuscar.Designer.cs">
-      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaModificar.Designer.cs">
-      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\frm_Empresas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\frm_Empresas.Designer.cs">
-      <DependentUpon>frm_Empresas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,12 +257,6 @@
     <Compile Include="Ventas\frm_VentaSeleccionCliente.designer.cs">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.designer.cs">
-      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
@@ -314,18 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frm_ComprasModificarDetallesCompra.resx">
       <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
-      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaBuscar.resx">
-      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaModificar.resx">
-      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_Empresas.resx">
-      <DependentUpon>frm_Empresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
@@ -386,9 +344,6 @@
     <EmbeddedResource Include="Ventas\frm_VentaSeleccionCliente.resx">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\frm_VentasSeleccionEmpresa.resx">
-      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="glacial_almacenDataSet.xsc">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
     </None>
@@ -416,7 +371,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Proyecto Glacial_ClaveTemporal.pfx" />

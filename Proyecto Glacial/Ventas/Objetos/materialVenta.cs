@@ -29,7 +29,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public int idMaterialVentas { get { return id_material_ventas; } set { id_material_ventas = value; } }
 
-        public int idlVenta { get { return id_venta; } set { id_venta = value; } }
+        public int idVenta { get { return id_venta; } set { id_venta = value; } }
 
         public int idProducto { get { return id_producto; } set { id_producto = value; } }
 

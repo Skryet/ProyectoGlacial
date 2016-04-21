@@ -83,7 +83,6 @@
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;

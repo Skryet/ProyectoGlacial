@@ -20,8 +20,7 @@ namespace Proyecto_Glacial.Ventas
             InitializeComponent();
             if (Program.ventaCreada == true)
             {
-                rbt_Cliente.Enabled = false;
-                rbt_Empresa.Enabled = false;
+                rbt_Cliente.Enabled = false;                
                 rbt_SinRegistro.Enabled = false;
             }
         }
@@ -29,18 +28,50 @@ namespace Proyecto_Glacial.Ventas
         private void limpiarVariablesVenta()
         {
             //Variables de Ventas
-            Program.idClienteVenta = 0;
-            Program.idEmpresaVenta = 0;
+            Program.idClienteVenta = 0;            
             Program.idVenta = 0;
             Program.idProductoVenta = 0;
             Program.ventaCreada = false;
-        }        
+        }
+
+        private void generarTotalVenta()
+        {
+            double subtotal = 0;
+            double iva = 0;
+            double total = 0;
+            if (vista_venta_lista_productosDataGridView.RowCount !=  0)
+            {
+                for (int i = 0; i < vista_venta_lista_productosDataGridView.RowCount; i++)                
+                    subtotal += Convert.ToDouble(vista_venta_lista_productosDataGridView.Rows[i].Cells[5].Value);
+                subtotal = Math.Round(subtotal, 2);
+                iva = subtotal * 0.16;
+                total = subtotal + iva;
+                txt_Subtotal.Text = subtotal.ToString();
+                txt_IVA.Text = iva.ToString();
+                txt_Total.Text = total.ToString();
+            }
+        }
 
         private void frm_VentasAgregar_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.vista_venta_lista_productos' Puede moverla o quitarla según sea necesario.
-            this.vista_venta_lista_productosTableAdapter.BuscarIDVenta(this.glacial_almacenDataSet.vista_venta_lista_productos, Program.idVenta);
+            if (Program.idVenta != 0)
+                this.vista_venta_lista_productosTableAdapter.BuscarIDVenta(this.glacial_almacenDataSet.vista_venta_lista_productos, Program.idVenta);
+            if (vista_venta_lista_productosDataGridView.RowCount != 0)
+                vista_venta_lista_productosDataGridView.CurrentRow.Selected = false;
             this.Location = new Point(300, 100);
+            generarTotalVenta();
+
+            //Mostar nombre de cliente al regresar al menu
+            if (Program.idClienteVenta != 0)
+            {
+                int temp_idClienteVenta = Program.idClienteVenta;
+                string nombreCliente = "";
+                consultas.obtenerNombreCliente(ref nombreCliente, Program.idClienteVenta);
+                rbt_Cliente.Checked = true;
+                txt_Cliente.Text = nombreCliente;
+                Program.idClienteVenta = temp_idClienteVenta;             
+            }
         }
 
         private void btn_SeleccionarCliente_Click(object sender, EventArgs e)
@@ -56,32 +87,14 @@ namespace Proyecto_Glacial.Ventas
             else
                 MessageBox.Show("Ha ocurrido un error al seleccionar el cliente, seleccionelo de nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
-        private void btn_SeleccionarEmpresa_Click(object sender, EventArgs e)
-        {
-            Form agregarEmpresa = new frm_VentasSeleccionEmpresa();
-            agregarEmpresa.ShowDialog();
-            if (Program.idEmpresaVenta != 0)
-            {
-                string nombreEmpresa = "";
-                consultas.obtenerNombreEmpresa(ref nombreEmpresa, Program.idEmpresaVenta);
-                txt_Empresa.Text = nombreEmpresa;
-            }
-            else
-                MessageBox.Show("Ha ocurrido un error al seleccionar el cliente, seleccionelo de nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
+       
         private void rbt_SinRegistro_CheckedChanged(object sender, EventArgs e)
         {
             if (rbt_SinRegistro.Checked == true)
             {
-                Program.idClienteVenta = 0;
-                Program.idEmpresaVenta = 0;
-                txt_Cliente.Text = "";
-                txt_Empresa.Text = "";
+                Program.idClienteVenta = 0;                
+                txt_Cliente.Text = "";                
                 txt_Cliente.Enabled = false;
-                txt_Empresa.Enabled = false;
-                btn_SeleccionarEmpresa.Enabled = false;
                 btn_SeleccionarCliente.Enabled = false;
             }
         }
@@ -90,38 +103,20 @@ namespace Proyecto_Glacial.Ventas
         {
             if (rbt_Cliente.Checked == true)
             {
-                Program.idClienteVenta = 0;
-                Program.idEmpresaVenta = 0;
-                txt_Cliente.Text = "";
-                txt_Empresa.Text = "";
-                txt_Cliente.Enabled = true;
-                txt_Empresa.Enabled = false;
-                btn_SeleccionarEmpresa.Enabled = false;
+                Program.idClienteVenta = 0;                
+                txt_Cliente.Text = "";                
+                txt_Cliente.Enabled = true;                
                 btn_SeleccionarCliente.Enabled = true;
             }
-        }
-
-        private void rbt_Empresa_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbt_Empresa.Checked == true)
-            {
-                Program.idClienteVenta = 0;
-                Program.idEmpresaVenta = 0;
-                txt_Cliente.Text = "";
-                txt_Empresa.Text = "";
-                txt_Cliente.Enabled = false;
-                txt_Empresa.Enabled = true;
-                btn_SeleccionarEmpresa.Enabled = true;
-                btn_SeleccionarCliente.Enabled = false;
-            }
-        }
+        }       
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
+         {
             if (Program.ventaCreada == true)
             {
                 consultasVentas.borrarVenta(Program.idVenta);
                 limpiarVariablesVenta();
+                Program.ventaCreada = false;
                 this.Close();
             }
             else
@@ -150,35 +145,80 @@ namespace Proyecto_Glacial.Ventas
                 pnl_Descuento.Visible = false;
             }            
         }
-
-        private void rbt_Porcentage_CheckedChanged(object sender, EventArgs e)
+        
+        private void vista_venta_lista_productosDataGridView_Click(object sender, EventArgs e)
         {
-            if (rbt_Porcentage.Checked == false)
+            if (vista_venta_lista_productosDataGridView.RowCount != 0)
+                Program.idProductoVenta = Convert.ToInt32(vista_venta_lista_productosDataGridView.Rows[vista_venta_lista_productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+        }
+
+        private void btn_Finalizar_Click(object sender, EventArgs e)
+        {
+            Program.enActividadVenta = false;
+            Program.ventaCreada = false;
+            limpiarVariablesVenta();
+            this.Close();
+        }
+
+        private void frm_VentasAgregar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Program.ventaCreada == true && vista_venta_lista_productosDataGridView.RowCount != 0)
             {
-                lbl_Porcentaje.Enabled = false;
+                for (int i = 0; i < vista_venta_lista_productosDataGridView.RowCount; i++)
+                {
+                    int idProducto = Convert.ToInt32(vista_venta_lista_productosDataGridView.Rows[i].Cells[1].Value);
+                    int cantidad = Convert.ToInt32(vista_venta_lista_productosDataGridView.Rows[i].Cells[4].Value);
+                    consultasVentas.devolverProductos(cantidad, idProducto);
+                }               
+            }
+        }
+        private void validarDecimas(object sender, KeyPressEventArgs e)
+
+        {
+            TextBox textEvalua = new TextBox();
+            if (sender is Control)            
+                textEvalua = sender as TextBox;                            
+
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            bool IsDec = false;
+            int nroDec = 0;
+            for (int i = 0; i < textEvalua.Text.Length; i++)
+            {
+                if (textEvalua.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
+        }
+
+        private void txt_DescuentoPorcentaje_Leave(object sender, EventArgs e)
+        {
+            double subtotal = Convert.ToDouble(txt_Subtotal.Text);
+            double descuento = subtotal * (Convert.ToDouble(txt_DescuentoPorcentaje.Text)/100);
+            subtotal = subtotal - descuento;
+            if (subtotal > 0)
+                txt_Descuento.Text = descuento.ToString();
+            else
+            {
+                MessageBox.Show("La cantidad que desea descontar es mayor que el subtotal", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_DescuentoPorcentaje.Text = "0.00";
-                txt_DescuentoPorcentaje.Enabled = false;
             }
-            else
-            {
-                lbl_Porcentaje.Enabled = true;                
-                txt_DescuentoPorcentaje.Enabled = true;
-            }
-        }
-
-        private void rdb_Cantidad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbt_Cantidad.Checked == false)
-            {
-                lbl_Cantidad.Enabled = false;
-                txt_DescuentoCantidad.Text = "0.00";
-                txt_DescuentoCantidad.Enabled = false;
-            }
-            else
-            {
-                lbl_Cantidad.Enabled = true;
-                txt_DescuentoCantidad.Enabled = true;
-            }
-        }
+        }     
     }
 }

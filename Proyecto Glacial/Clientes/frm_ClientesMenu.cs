@@ -114,10 +114,6 @@ namespace Proyecto_Glacial
 
             btn_Eliminar.Enabled = true;
             btn_Modificar.Enabled = true;
-
-
-
-
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
@@ -149,14 +145,6 @@ namespace Proyecto_Glacial
         {
             this.Location = new Point(300, 20);
         }
-
-
-
-        // this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-
-
-
-
 
     }
 }

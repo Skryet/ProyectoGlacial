@@ -12,6 +12,8 @@ namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_VentaSeleccionCliente : Form
     {
+        Consultas.generarVenta agregar = new Consultas.generarVenta();
+
         public frm_VentaSeleccionCliente()
         {
             InitializeComponent();
@@ -28,7 +30,9 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentaSeleccionCliente_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);            
+            if (clientesDataGridView.RowCount != 0)
+                clientesDataGridView.CurrentRow.Selected = false;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -77,7 +81,10 @@ namespace Proyecto_Glacial.Ventas
                 }
             }
             else
-                this.Close();                 
+            {
+                agregar.agregarCliente(Program.idVenta, Program.idClienteVenta);
+                this.Close();
+            }
         }
 
         private void btn_AgregarCiente_Click(object sender, EventArgs e)

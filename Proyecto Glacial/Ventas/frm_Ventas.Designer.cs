@@ -32,6 +32,8 @@
             this.lbl_MenuActual = new System.Windows.Forms.Label();
             this.pnl_Contenido = new System.Windows.Forms.Panel();
             this.pnl_Menu = new System.Windows.Forms.Panel();
+            this.lbl_PoductoModificar = new System.Windows.Forms.Label();
+            this.lbl_PoductoEliminar = new System.Windows.Forms.Label();
             this.lbl_NuevaVenta = new System.Windows.Forms.Label();
             this.btn_NuevaVenta = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             this.lbl_Agregar = new System.Windows.Forms.Label();
             this.lbl_Ventas = new System.Windows.Forms.Label();
             this.pnl_Encabezado = new System.Windows.Forms.Panel();
+            this.lbl_PoductoAgregar = new System.Windows.Forms.Label();
             this.pnl_BarraEstado.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.pnl_Encabezado.SuspendLayout();
@@ -74,6 +77,9 @@
             // 
             // pnl_Menu
             // 
+            this.pnl_Menu.Controls.Add(this.lbl_PoductoAgregar);
+            this.pnl_Menu.Controls.Add(this.lbl_PoductoModificar);
+            this.pnl_Menu.Controls.Add(this.lbl_PoductoEliminar);
             this.pnl_Menu.Controls.Add(this.lbl_NuevaVenta);
             this.pnl_Menu.Controls.Add(this.btn_NuevaVenta);
             this.pnl_Menu.Controls.Add(this.btn_Modificar);
@@ -87,11 +93,33 @@
             this.pnl_Menu.Size = new System.Drawing.Size(174, 593);
             this.pnl_Menu.TabIndex = 6;
             // 
+            // lbl_PoductoModificar
+            // 
+            this.lbl_PoductoModificar.AutoSize = true;
+            this.lbl_PoductoModificar.Enabled = false;
+            this.lbl_PoductoModificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PoductoModificar.Location = new System.Drawing.Point(41, 535);
+            this.lbl_PoductoModificar.Name = "lbl_PoductoModificar";
+            this.lbl_PoductoModificar.Size = new System.Drawing.Size(93, 22);
+            this.lbl_PoductoModificar.TabIndex = 13;
+            this.lbl_PoductoModificar.Text = "producto";
+            // 
+            // lbl_PoductoEliminar
+            // 
+            this.lbl_PoductoEliminar.AutoSize = true;
+            this.lbl_PoductoEliminar.Enabled = false;
+            this.lbl_PoductoEliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PoductoEliminar.Location = new System.Drawing.Point(42, 395);
+            this.lbl_PoductoEliminar.Name = "lbl_PoductoEliminar";
+            this.lbl_PoductoEliminar.Size = new System.Drawing.Size(93, 22);
+            this.lbl_PoductoEliminar.TabIndex = 12;
+            this.lbl_PoductoEliminar.Text = "producto";
+            // 
             // lbl_NuevaVenta
             // 
             this.lbl_NuevaVenta.AutoSize = true;
             this.lbl_NuevaVenta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NuevaVenta.Location = new System.Drawing.Point(51, 126);
+            this.lbl_NuevaVenta.Location = new System.Drawing.Point(51, 112);
             this.lbl_NuevaVenta.Name = "lbl_NuevaVenta";
             this.lbl_NuevaVenta.Size = new System.Drawing.Size(73, 22);
             this.lbl_NuevaVenta.TabIndex = 11;
@@ -100,7 +128,7 @@
             // btn_NuevaVenta
             // 
             this.btn_NuevaVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 50);
+            this.btn_NuevaVenta.Location = new System.Drawing.Point(49, 36);
             this.btn_NuevaVenta.Name = "btn_NuevaVenta";
             this.btn_NuevaVenta.Size = new System.Drawing.Size(75, 75);
             this.btn_NuevaVenta.TabIndex = 10;
@@ -112,7 +140,7 @@
             this.btn_Modificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Modificar.Enabled = false;
             this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
-            this.btn_Modificar.Location = new System.Drawing.Point(47, 431);
+            this.btn_Modificar.Location = new System.Drawing.Point(47, 438);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(75, 75);
             this.btn_Modificar.TabIndex = 8;
@@ -123,17 +151,19 @@
             this.btn_Eliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Eliminar.Enabled = false;
             this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
-            this.btn_Eliminar.Location = new System.Drawing.Point(49, 303);
+            this.btn_Eliminar.Location = new System.Drawing.Point(49, 296);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(75, 75);
             this.btn_Eliminar.TabIndex = 7;
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Agregar
             // 
             this.btn_Agregar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Agregar.Enabled = false;
             this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
-            this.btn_Agregar.Location = new System.Drawing.Point(49, 175);
+            this.btn_Agregar.Location = new System.Drawing.Point(49, 161);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 75);
             this.btn_Agregar.TabIndex = 6;
@@ -143,8 +173,9 @@
             // lbl_Modificar
             // 
             this.lbl_Modificar.AutoSize = true;
+            this.lbl_Modificar.Enabled = false;
             this.lbl_Modificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Modificar.Location = new System.Drawing.Point(37, 507);
+            this.lbl_Modificar.Location = new System.Drawing.Point(40, 514);
             this.lbl_Modificar.Name = "lbl_Modificar";
             this.lbl_Modificar.Size = new System.Drawing.Size(95, 22);
             this.lbl_Modificar.TabIndex = 3;
@@ -153,8 +184,9 @@
             // lbl_Eliminar
             // 
             this.lbl_Eliminar.AutoSize = true;
+            this.lbl_Eliminar.Enabled = false;
             this.lbl_Eliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Eliminar.Location = new System.Drawing.Point(44, 379);
+            this.lbl_Eliminar.Location = new System.Drawing.Point(46, 374);
             this.lbl_Eliminar.Name = "lbl_Eliminar";
             this.lbl_Eliminar.Size = new System.Drawing.Size(85, 22);
             this.lbl_Eliminar.TabIndex = 2;
@@ -163,8 +195,9 @@
             // lbl_Agregar
             // 
             this.lbl_Agregar.AutoSize = true;
+            this.lbl_Agregar.Enabled = false;
             this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Agregar.Location = new System.Drawing.Point(45, 251);
+            this.lbl_Agregar.Location = new System.Drawing.Point(45, 237);
             this.lbl_Agregar.Name = "lbl_Agregar";
             this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
             this.lbl_Agregar.TabIndex = 1;
@@ -188,6 +221,17 @@
             this.pnl_Encabezado.Size = new System.Drawing.Size(964, 80);
             this.pnl_Encabezado.TabIndex = 5;
             // 
+            // lbl_PoductoAgregar
+            // 
+            this.lbl_PoductoAgregar.AutoSize = true;
+            this.lbl_PoductoAgregar.Enabled = false;
+            this.lbl_PoductoAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PoductoAgregar.Location = new System.Drawing.Point(43, 259);
+            this.lbl_PoductoAgregar.Name = "lbl_PoductoAgregar";
+            this.lbl_PoductoAgregar.Size = new System.Drawing.Size(93, 22);
+            this.lbl_PoductoAgregar.TabIndex = 14;
+            this.lbl_PoductoAgregar.Text = "producto";
+            // 
             // frm_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +244,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Ventas";
             this.Text = "SGA - Ventas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Ventas_FormClosing);
             this.pnl_BarraEstado.ResumeLayout(false);
             this.pnl_BarraEstado.PerformLayout();
             this.pnl_Menu.ResumeLayout(false);
@@ -226,5 +271,8 @@
         private System.Windows.Forms.Label lbl_Agregar;
         private System.Windows.Forms.Label lbl_Ventas;
         private System.Windows.Forms.Panel pnl_Encabezado;
+        private System.Windows.Forms.Label lbl_PoductoModificar;
+        private System.Windows.Forms.Label lbl_PoductoEliminar;
+        private System.Windows.Forms.Label lbl_PoductoAgregar;
     }
 }

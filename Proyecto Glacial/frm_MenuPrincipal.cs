@@ -20,20 +20,22 @@ namespace Proyecto_Glacial
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
             Form FormularioClientes = new frm_ClientesMenu();
-            FormularioClientes.Show();
-
+            FormularioClientes.ShowDialog();
+            this.Show();
         }
 
         private void btn_Proveedores_Click(object sender, EventArgs e)
         {
             Form frm_Proveedores = new frm_Proveedores();
-            frm_Proveedores.Show();
+            frm_Proveedores.ShowDialog();
+            this.Show();
         }
 
         private void btn_productos_Click(object sender, EventArgs e)
         {
             Form frm_inventario = new Inventario.frm_InventarioMenu();
             frm_inventario.ShowDialog();
+            this.Show();
         }
 
 
@@ -51,12 +53,14 @@ namespace Proyecto_Glacial
         {
             Form frm_compras = new Compras.frm_ComprasMenu();
             frm_compras.ShowDialog();
-        }
+            this.Show();
+        }       
 
-        private void btn_empresas_Click(object sender, EventArgs e)
+        private void btn_ventas_Click(object sender, EventArgs e)
         {
-            Form frm_empresa = new Empresa.frm_Empresas();
-            frm_empresa.ShowDialog();
+            Form frm_Ventas = new Ventas.frm_Ventas();
+            frm_Ventas.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -23,14 +23,13 @@ namespace Proyecto_Glacial
 
         //Variables de Ventas
         public static int idClienteVenta = 0;
-        public static int idEmpresaVenta = 0;
         public static int idVenta = 0;
         public static int idProductoVenta = 0;
         public static bool ventaCreada = false;
+        public static bool enActividadVenta = false;
 
         public static optimizar metodosOptimizar = new optimizar();
-        //public static int idProveedor;
-        public static int idEmpresa;
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
