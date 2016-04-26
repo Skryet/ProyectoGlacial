@@ -65,6 +65,9 @@ namespace Proyecto_Glacial.Ventas
                 Objetos.materialVenta producto = new Objetos.materialVenta();
                 producto.idVenta = Program.idVenta;
                 producto.idProducto = Program.idProductoVenta;
+                producto.Linea = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
+                producto.Codigo = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
+                producto.Descripcion = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[3].Value.ToString();
                 producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
                 if (txt_Cantidad.Text != "0")
                 {
@@ -83,32 +86,36 @@ namespace Proyecto_Glacial.Ventas
                                 producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
                                 producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
                                 producto.Total = producto.obtenerTotal();
-                                ventas.agregarProduto(producto);
-                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Precio 2":
                                 producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[7].Value);
                                 producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
                                 producto.Total = producto.obtenerTotal();
-                                ventas.agregarProduto(producto);
-                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Precio 3":
                                 producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[8].Value);
                                 producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
                                 producto.Total = producto.obtenerTotal();
-                                ventas.agregarProduto(producto);
-                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Especial":
                                 producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
                                 producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
                                 producto.Total = producto.obtenerTotal();
-                                ventas.agregarProduto(producto);
-                                ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
                                 Program.idProductoVenta = 0;
                                 break;
                             default:

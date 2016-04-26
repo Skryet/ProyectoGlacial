@@ -257,6 +257,7 @@
     <Compile Include="Ventas\frm_VentaSeleccionCliente.designer.cs">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\Objetos\ListaProductos.cs" />
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>

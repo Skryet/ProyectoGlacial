@@ -47,8 +47,7 @@ namespace Proyecto_Glacial.Ventas
             generarVenta = form ?? new Ventas.frm_VentasAgregar();
             AddFormInPanel(generarVenta);
             if (Program.ventaCreada == false)
-            {
-                generar.crearVenta(ref Program.idVenta, Program.idClienteVenta);
+            {                
                 Program.ventaCreada = true;
             }
             Program.enActividadVenta = true;
@@ -72,7 +71,7 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            generar.borrarPrductosVenta(Program.idVenta, Program.idProductoVenta);
+            Program.listaProductos.eliminarProducto(Program.idProductoVenta);
             generarVenta.Close();
             Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
             generarVenta = form ?? new Ventas.frm_VentasAgregar();
@@ -86,8 +85,7 @@ namespace Proyecto_Glacial.Ventas
                 DialogResult resultadoDialogo = MessageBox.Show("Hay una venta sin finalizar se perderá los datos de la venta si usted sale. ¿Esta seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    generarVenta.Close();
-                    generar.borrarVenta(Program.idVenta);
+                    generarVenta.Close();                    
                     Program.ventaCreada = false;
                     limpiarVariablesVenta();
                     this.Close();

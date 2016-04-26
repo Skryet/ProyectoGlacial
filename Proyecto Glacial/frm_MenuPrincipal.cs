@@ -58,6 +58,7 @@ namespace Proyecto_Glacial
 
         private void btn_ventas_Click(object sender, EventArgs e)
         {
+            Program.listaProductos = new Ventas.Objetos.ListaProductos();
             Form frm_Ventas = new Ventas.frm_Ventas();
             frm_Ventas.ShowDialog();
             this.Show();

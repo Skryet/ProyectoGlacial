@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Proyecto_Glacial.Ventas.Objetos
 {
     class materialVenta
-    {
-        private int id_material_ventas;
+    {        
         private int id_venta;
         private int id_producto;
         private int cantidad;
@@ -16,18 +15,23 @@ namespace Proyecto_Glacial.Ventas.Objetos
         private double precio_unidad;
         private double total;
 
+        //Variables de vista de DataGrid
+        private string linea;
+        private string codigo;
+        private string descripcion;
+
         public materialVenta()
-        {
-            id_venta = 0;
+        {            
             id_venta = 0;
             id_producto = 0;
             cantidad = 0;
             unidad_medida = "";
             precio_unidad = 0;
             total = 0;
-        }
-
-        public int idMaterialVentas { get { return id_material_ventas; } set { id_material_ventas = value; } }
+            linea = "";
+            codigo = "";
+            descripcion = "";
+        }       
 
         public int idVenta { get { return id_venta; } set { id_venta = value; } }
 
@@ -40,6 +44,12 @@ namespace Proyecto_Glacial.Ventas.Objetos
         public double precioUnidad { get { return precio_unidad; } set { precio_unidad = value; } }
 
         public double Total { get { return total; } set { total = value; } }
+
+        public string Linea { get { return linea; } set { linea = value; } }
+
+        public string Codigo { get { return codigo; } set { codigo = value; } }
+
+        public string Descripcion { get { return descripcion; } set { descripcion = value; } }
 
         public double obtenerTotal()
         {

@@ -34,7 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Cliente = new System.Windows.Forms.TextBox();
             this.btn_SeleccionarCliente = new System.Windows.Forms.Button();
-            this.vista_venta_lista_productosDataGridView = new System.Windows.Forms.DataGridView();
+            this.vista_venta_lista_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_Subtotal = new System.Windows.Forms.TextBox();
@@ -51,20 +52,20 @@
             this.pnl_Descuento = new System.Windows.Forms.Panel();
             this.lbl_Descuento = new System.Windows.Forms.Label();
             this.btn_Finalizar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vista_venta_lista_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.vista_venta_lista_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosDataGridView)).BeginInit();
-            this.pnl_Descuento.SuspendLayout();
+            this.dgv_ListaVenta = new System.Windows.Forms.DataGridView();
+            this.clm_Linea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_PrecioPieza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            this.pnl_Descuento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // rbt_Cliente
@@ -130,33 +131,15 @@
             this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
             this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
             // 
-            // vista_venta_lista_productosDataGridView
+            // vista_venta_lista_productosBindingSource
             // 
-            this.vista_venta_lista_productosDataGridView.AllowUserToAddRows = false;
-            this.vista_venta_lista_productosDataGridView.AllowUserToDeleteRows = false;
-            this.vista_venta_lista_productosDataGridView.AutoGenerateColumns = false;
-            this.vista_venta_lista_productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.vista_venta_lista_productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.vista_venta_lista_productosDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.vista_venta_lista_productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vista_venta_lista_productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.vista_venta_lista_productosDataGridView.DataSource = this.vista_venta_lista_productosBindingSource;
-            this.vista_venta_lista_productosDataGridView.Location = new System.Drawing.Point(13, 161);
-            this.vista_venta_lista_productosDataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.vista_venta_lista_productosDataGridView.MultiSelect = false;
-            this.vista_venta_lista_productosDataGridView.Name = "vista_venta_lista_productosDataGridView";
-            this.vista_venta_lista_productosDataGridView.ReadOnly = true;
-            this.vista_venta_lista_productosDataGridView.RowTemplate.Height = 24;
-            this.vista_venta_lista_productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vista_venta_lista_productosDataGridView.Size = new System.Drawing.Size(710, 234);
-            this.vista_venta_lista_productosDataGridView.TabIndex = 9;
-            this.vista_venta_lista_productosDataGridView.Click += new System.EventHandler(this.vista_venta_lista_productosDataGridView_Click);
+            this.vista_venta_lista_productosBindingSource.DataMember = "vista_venta_lista_productos";
+            this.vista_venta_lista_productosBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Cancelar
             // 
@@ -332,64 +315,6 @@
             this.btn_Finalizar.UseVisualStyleBackColor = true;
             this.btn_Finalizar.Click += new System.EventHandler(this.btn_Finalizar_Click);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_linea_producto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Linea";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 58;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_producto";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "descripcion";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "unidad_medida";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Unidad";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 66;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "cantidad";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "total";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 56;
-            // 
-            // vista_venta_lista_productosBindingSource
-            // 
-            this.vista_venta_lista_productosBindingSource.DataMember = "vista_venta_lista_productos";
-            this.vista_venta_lista_productosBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vista_venta_lista_productosTableAdapter
             // 
             this.vista_venta_lista_productosTableAdapter.ClearBeforeFill = true;
@@ -409,11 +334,86 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
+            // dgv_ListaVenta
+            // 
+            this.dgv_ListaVenta.AllowUserToAddRows = false;
+            this.dgv_ListaVenta.AllowUserToDeleteRows = false;
+            this.dgv_ListaVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_ListaVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv_ListaVenta.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_ListaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clm_Linea,
+            this.clm_Codigo,
+            this.clm_Descripcion,
+            this.clm_Unidad,
+            this.clm_Cantidad,
+            this.clm_PrecioPieza,
+            this.clm_Total});
+            this.dgv_ListaVenta.Location = new System.Drawing.Point(12, 149);
+            this.dgv_ListaVenta.MultiSelect = false;
+            this.dgv_ListaVenta.Name = "dgv_ListaVenta";
+            this.dgv_ListaVenta.ReadOnly = true;
+            this.dgv_ListaVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ListaVenta.Size = new System.Drawing.Size(712, 234);
+            this.dgv_ListaVenta.TabIndex = 25;
+            this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
+            // 
+            // clm_Linea
+            // 
+            this.clm_Linea.HeaderText = "Línea";
+            this.clm_Linea.Name = "clm_Linea";
+            this.clm_Linea.ReadOnly = true;
+            this.clm_Linea.Width = 60;
+            // 
+            // clm_Codigo
+            // 
+            this.clm_Codigo.HeaderText = "Código";
+            this.clm_Codigo.Name = "clm_Codigo";
+            this.clm_Codigo.ReadOnly = true;
+            this.clm_Codigo.Width = 65;
+            // 
+            // clm_Descripcion
+            // 
+            this.clm_Descripcion.HeaderText = "Descripción";
+            this.clm_Descripcion.Name = "clm_Descripcion";
+            this.clm_Descripcion.ReadOnly = true;
+            this.clm_Descripcion.Width = 88;
+            // 
+            // clm_Unidad
+            // 
+            this.clm_Unidad.HeaderText = "Unidad";
+            this.clm_Unidad.Name = "clm_Unidad";
+            this.clm_Unidad.ReadOnly = true;
+            this.clm_Unidad.Width = 66;
+            // 
+            // clm_Cantidad
+            // 
+            this.clm_Cantidad.HeaderText = "Cantidad";
+            this.clm_Cantidad.Name = "clm_Cantidad";
+            this.clm_Cantidad.ReadOnly = true;
+            this.clm_Cantidad.Width = 74;
+            // 
+            // clm_PrecioPieza
+            // 
+            this.clm_PrecioPieza.HeaderText = "Precio por unidad";
+            this.clm_PrecioPieza.Name = "clm_PrecioPieza";
+            this.clm_PrecioPieza.ReadOnly = true;
+            this.clm_PrecioPieza.Width = 105;
+            // 
+            // clm_Total
+            // 
+            this.clm_Total.HeaderText = "Total";
+            this.clm_Total.Name = "clm_Total";
+            this.clm_Total.ReadOnly = true;
+            this.clm_Total.Width = 56;
+            // 
             // frm_VentasAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 555);
+            this.Controls.Add(this.dgv_ListaVenta);
             this.Controls.Add(this.btn_Finalizar);
             this.Controls.Add(this.pnl_Descuento);
             this.Controls.Add(this.btn_Descuento);
@@ -425,7 +425,6 @@
             this.Controls.Add(this.txt_Subtotal);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btn_Cancelar);
-            this.Controls.Add(this.vista_venta_lista_productosDataGridView);
             this.Controls.Add(this.btn_SeleccionarCliente);
             this.Controls.Add(this.txt_Cliente);
             this.Controls.Add(this.label1);
@@ -436,11 +435,11 @@
             this.Text = "Ventas - Agregar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_VentasAgregar_FormClosing);
             this.Load += new System.EventHandler(this.frm_VentasAgregar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosDataGridView)).EndInit();
-            this.pnl_Descuento.ResumeLayout(false);
-            this.pnl_Descuento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            this.pnl_Descuento.ResumeLayout(false);
+            this.pnl_Descuento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,13 +456,6 @@
         private System.Windows.Forms.BindingSource vista_venta_lista_productosBindingSource;
         private glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter vista_venta_lista_productosTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView vista_venta_lista_productosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txt_Subtotal;
@@ -480,5 +472,13 @@
         private System.Windows.Forms.Panel pnl_Descuento;
         private System.Windows.Forms.Label lbl_Descuento;
         private System.Windows.Forms.Button btn_Finalizar;
+        private System.Windows.Forms.DataGridView dgv_ListaVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Linea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_PrecioPieza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Total;
     }
 }

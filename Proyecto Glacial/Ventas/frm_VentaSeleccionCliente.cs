@@ -11,9 +11,7 @@ using System.Windows.Forms;
 namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_VentaSeleccionCliente : Form
-    {
-        Consultas.generarVenta agregar = new Consultas.generarVenta();
-
+    {        
         public frm_VentaSeleccionCliente()
         {
             InitializeComponent();
@@ -81,8 +79,7 @@ namespace Proyecto_Glacial.Ventas
                 }
             }
             else
-            {
-                agregar.agregarCliente(Program.idVenta, Program.idClienteVenta);
+            {                
                 this.Close();
             }
         }

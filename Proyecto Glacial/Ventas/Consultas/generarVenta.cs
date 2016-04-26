@@ -11,6 +11,21 @@ namespace Proyecto_Glacial.Ventas.Consultas
     class generarVenta
     {
         private generarConexion conexion = new generarConexion();
+        private string consulta;
+
+        public generarVenta()
+        {
+            consulta = "";
+        }
+
+        public void agregarProductos(Objetos.materialVenta producto)
+        {
+            consulta += "INSERT INTO lista_material_ventas (id_venta, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES('" +
+                    producto.idVenta.ToString() + "','" + producto.idProducto.ToString() + "','" + producto.Cantidad.ToString() + "','" + producto.unidadMedida.ToString() + "','" +
+                    producto.precioUnidad.ToString() + "','" + producto.Total.ToString() + "');";
+        }
+
+        public void agregarVenta()
 
         public bool crearVenta(ref int idVenta, int idClienteVenta)
         {
