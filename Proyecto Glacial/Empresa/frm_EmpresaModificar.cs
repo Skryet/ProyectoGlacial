@@ -40,7 +40,7 @@ namespace Proyecto_Glacial.Empresa
         private void frm_EmpresaModificar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.
-            this.empresaTableAdapter.BuscarID(this.glacial_almacenDataSet.empresa, Program.idEmpresa);
+        //    this.empresaTableAdapter.BuscarID(this.glacial_almacenDataSet.empresa, Program.idEmpresa);
 
         }
 
@@ -51,7 +51,7 @@ namespace Proyecto_Glacial.Empresa
                 DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de modificar el proveedor " + txt_Nombre.Text, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    this.empresaTableAdapter.ModificarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text, Program.idEmpresa);
+            //        this.empresaTableAdapter.ModificarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text, Program.idEmpresa);
                     Program.idProveedor = 0;
                     AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido modificado", "Mensaje", 1200); ;
                     this.Close();

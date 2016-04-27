@@ -14,6 +14,7 @@ namespace Proyecto_Glacial.Inventario
 {
     public partial class frm_InventarioAgregar : Form
     {
+        public int codigoActualLinea = 0;
         generarConexion Conexion = new generarConexion();
         public int buscarUltimoIdLista()
         {
@@ -97,11 +98,6 @@ namespace Proyecto_Glacial.Inventario
 
         }
 
-        private void txt_nombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void productosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
@@ -114,6 +110,7 @@ namespace Proyecto_Glacial.Inventario
         {
             this.Location = new Point(300, 30);
             btn_AgregarProveedor.Enabled = true;
+            regresarTodos();
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.lista_proveedores_productos' Puede moverla o quitarla según sea necesario.
             //this.lista_proveedores_productosTableAdapter.Fill(this.glacial_almacenDataSet.lista_proveedores_productos);            
         }
@@ -126,6 +123,43 @@ namespace Proyecto_Glacial.Inventario
             frm_AgregarProveedorProducto.ShowDialog();
             btn_AgregarProveedor.Enabled = false;
             
+        }
+
+        private int buscarUltimoCodigo()
+        {
+            //SELECT MAX(linea_producto_codigo)FROM productos WHERE id_linea_producto = "CA"
+            int ultimoIdExistente = 0;
+            MySqlCommand consulta = new MySqlCommand("SELECT MAX(linea_producto_codigo)FROM productos WHERE id_linea_producto = " + "'" + txt_lineaProducto.Text + "'" , generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (lector.GetValue(0).ToString() == "")
+                    {
+                        ultimoIdExistente = 1;
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+                    }
+                    else
+                    {
+                        ultimoIdExistente = lector.GetInt32(0);
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente + 1;
+                    }
+                    
+                }
+                
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            return 0;
+
         }
 
         private void btn_proveedoresAgregado_Click(object sender, EventArgs e)
@@ -143,13 +177,21 @@ namespace Proyecto_Glacial.Inventario
                         Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
                         (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
                         Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
-                        Convert.ToDouble(txt_precio3.Text),img,txt_marcaPerteneciente.Text, txt_año.Text, txt_modeloPerteneciente.Text
-                        ,Convert.ToInt32(txt_numeroPedimento.Text),Convert.ToDouble(txt_precioEspecial.Text),txt_compatibilidad.Text);
+                        Convert.ToDouble(txt_precio3.Text),img,cmb_marca.Text, 
+                        txt_año.Text, cmb_modelo.Text ,(txt_numeroPedimento.Text),
+                        Convert.ToDouble(txt_precioEspecial.Text),txt_compatibilidad.Text,
+                        Convert.ToDouble(txt_precio.Text),codigoActualLinea,txt_detallesProveedor.Text);
                     this.lista_proveedores_productosTableAdapter.InsertarListaNuevaDeProveedoresProductos();
                     var resultado = MessageBox.Show("Producto Registrado con Éxito, ¿Desea Agregar otro Producto ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.No)
                     {
                         this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                        Form frmAgregar = new Inventario.frm_InventarioAgregar();
+                        frmAgregar.ShowDialog();
                     }
                 }
             else
@@ -199,6 +241,45 @@ namespace Proyecto_Glacial.Inventario
             Program.metodosOptimizar.isDecimalPoint(e);
         }
 
+        private void regresarTodos()
+        {
+            cmb_modelo.Text = "";
+            MySqlCommand consulta = new MySqlCommand("SELECT DISTINCT modeloCarro FROM productos", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    cmb_modelo.Items.Add(lector.GetString(0));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            Conexion.abrirConexion();
+            consulta = new MySqlCommand("SELECT DISTINCT marcaCarro FROM productos", generarConexion.obtenerConexion);
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    cmb_marca.Items.Add(lector.GetString(0));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Conexion.cerrarConexion();
+        }
+
+
         private void btn_examinar_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -208,6 +289,33 @@ namespace Proyecto_Glacial.Inventario
             {
                 pictureBox1.Image = Image.FromFile(opf.FileName);
             }
+        }
+
+        private void txt_precio_Leave(object sender, EventArgs e)
+        {
+            decimal val = Convert.ToDecimal(txt_precio.Text);
+            txt_precio.Text = val.ToString("N2");
+
+            txt_precio1.Text = ((Convert.ToDouble(txt_precio.Text) * .30) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+        
+        }
+
+        private void cmb_modelo_Leave(object sender, EventArgs e)
+        {
+            txt_año.Text = cmb_modelo.Text;
+        }
+
+        private void txt_lineaProducto_Leave(object sender, EventArgs e)
+        {
+            MessageBox.Show(buscarUltimoCodigo().ToString());
+        }
+
+        private void txt_lineaProducto_Leave_1(object sender, EventArgs e)
+        {            
+            codigoActualLinea = buscarUltimoCodigo();
         }
     }
 }

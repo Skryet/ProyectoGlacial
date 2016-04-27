@@ -40,6 +40,7 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label correoLabel;
             System.Windows.Forms.Label rfcLabel;
+            System.Windows.Forms.Label telefonoLabel;
             this.txt_cliente = new System.Windows.Forms.TextBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
@@ -55,6 +56,7 @@
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_rfc = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
             id_clienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoPLabel = new System.Windows.Forms.Label();
@@ -66,6 +68,7 @@
             label1 = new System.Windows.Forms.Label();
             correoLabel = new System.Windows.Forms.Label();
             rfcLabel = new System.Windows.Forms.Label();
+            telefonoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
@@ -144,7 +147,7 @@
             // 
             cpLabel.AutoSize = true;
             cpLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cpLabel.Location = new System.Drawing.Point(8, 191);
+            cpLabel.Location = new System.Drawing.Point(202, 191);
             cpLabel.Name = "cpLabel";
             cpLabel.Size = new System.Drawing.Size(143, 22);
             cpLabel.TabIndex = 14;
@@ -164,7 +167,7 @@
             // 
             correoLabel.AutoSize = true;
             correoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            correoLabel.Location = new System.Drawing.Point(157, 191);
+            correoLabel.Location = new System.Drawing.Point(12, 248);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new System.Drawing.Size(73, 22);
             correoLabel.TabIndex = 18;
@@ -174,11 +177,21 @@
             // 
             rfcLabel.AutoSize = true;
             rfcLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rfcLabel.Location = new System.Drawing.Point(12, 248);
+            rfcLabel.Location = new System.Drawing.Point(12, 305);
             rfcLabel.Name = "rfcLabel";
             rfcLabel.Size = new System.Drawing.Size(55, 22);
             rfcLabel.TabIndex = 20;
             rfcLabel.Text = "RFC:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telefonoLabel.Location = new System.Drawing.Point(17, 191);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(94, 22);
+            telefonoLabel.TabIndex = 22;
+            telefonoLabel.Text = "Teléfono:";
             // 
             // txt_cliente
             // 
@@ -260,10 +273,10 @@
             // 
             this.txt_cp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "cp", true));
             this.txt_cp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cp.Location = new System.Drawing.Point(12, 216);
+            this.txt_cp.Location = new System.Drawing.Point(206, 216);
             this.txt_cp.MaxLength = 5;
             this.txt_cp.Name = "txt_cp";
-            this.txt_cp.Size = new System.Drawing.Size(139, 29);
+            this.txt_cp.Size = new System.Drawing.Size(176, 29);
             this.txt_cp.TabIndex = 12;
             // 
             // btn_Actualizar
@@ -285,10 +298,10 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
+        //    this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            //this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -299,7 +312,7 @@
             // 
             this.txt_correo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "correo", true));
             this.txt_correo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_correo.Location = new System.Drawing.Point(161, 216);
+            this.txt_correo.Location = new System.Drawing.Point(11, 273);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(378, 29);
             this.txt_correo.TabIndex = 13;
@@ -307,18 +320,30 @@
             // txt_rfc
             // 
             this.txt_rfc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "rfc", true));
+            this.txt_rfc.Enabled = false;
             this.txt_rfc.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rfc.Location = new System.Drawing.Point(12, 273);
+            this.txt_rfc.Location = new System.Drawing.Point(11, 337);
             this.txt_rfc.MaxLength = 15;
             this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(180, 29);
+            this.txt_rfc.Size = new System.Drawing.Size(189, 29);
             this.txt_rfc.TabIndex = 14;
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "telefono", true));
+            this.txt_telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(11, 216);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(189, 29);
+            this.txt_telefono.TabIndex = 23;
             // 
             // frm_ClientesModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 378);
+            this.ClientSize = new System.Drawing.Size(674, 378);
+            this.Controls.Add(telefonoLabel);
+            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(rfcLabel);
             this.Controls.Add(this.txt_rfc);
             this.Controls.Add(correoLabel);
@@ -368,5 +393,6 @@
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_rfc;
+        private System.Windows.Forms.TextBox txt_telefono;
     }
 }

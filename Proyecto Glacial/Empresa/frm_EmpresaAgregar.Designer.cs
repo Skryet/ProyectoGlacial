@@ -45,8 +45,8 @@
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
+           // this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+          //  this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.lbl_Cancelar = new System.Windows.Forms.Label();
@@ -222,14 +222,14 @@
             // 
             // empresaTableAdapter
             // 
-            this.empresaTableAdapter.ClearBeforeFill = true;
+           // this.empresaTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
+          //  this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             //this.tableAdapterManager.material_comprasTableAdapter = null;
@@ -332,7 +332,7 @@
         private System.Windows.Forms.TextBox txt_Nombre;
         private glacial_almacenDataSet glacial_almacenDataSet;
         private System.Windows.Forms.BindingSource empresaBindingSource;
-        private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
+      //  private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label lbl_Cancelar;

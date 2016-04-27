@@ -4,6 +4,9 @@
 
     partial class glacial_almacenDataSet
     {
+        partial class clientesDataTable
+        {
+        }
     }
 }
 

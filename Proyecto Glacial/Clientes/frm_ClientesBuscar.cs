@@ -91,7 +91,7 @@ namespace Proyecto_Glacial.Clientes
             if (txt_Buscar.Text != "")
                 btn_Buscar.Enabled = true;
             else if (txt_Buscar.Text == "" || cmb_SelccionarTipo.Text == "Seleccione")
-                btn_Buscar.Enabled = false;
+                btn_Buscar.Enabled = false;           
         }
 
         private void btn_BuscarTodo_Click(object sender, EventArgs e)
@@ -103,8 +103,14 @@ namespace Proyecto_Glacial.Clientes
         {
             Int32 selectedCellCount =
                 clientesDataGridView.GetCellCount(DataGridViewElementStates.Selected);
-            Program.idCliente = Convert.ToInt32(clientesDataGridView.SelectedCells[0].Value.ToString());
+            Program.idCliente = Convert.ToInt32(clientesDataGridView.SelectedCells[1].Value.ToString());
+            
        
+        }
+
+        private void clientesDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            this.clientesDataGridView.Columns[1].DefaultCellStyle.Format = "##00000";
         }
     }
 }

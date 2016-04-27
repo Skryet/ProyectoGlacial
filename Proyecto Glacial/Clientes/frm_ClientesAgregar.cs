@@ -67,7 +67,7 @@ namespace Proyecto_Glacial
                 this.clientesTableAdapter.InsertarNuevoCliente(
                     txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text,
                     txtDireccion.Text, txtColonia.Text, txtCiudad.Text,
-                    txtColonia.Text, txt_correo.Text, txt_rfc.Text);
+                    txtCodigoPostal.Text, txt_correo.Text, txt_rfc.Text,txt_telefono.Text);
                 //Mensaje de Confirmación            
                 Limpiar();
                 Program.isOpenMainClientForm = false;

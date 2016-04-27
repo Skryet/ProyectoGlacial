@@ -19,7 +19,7 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+           // this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
             if (empresaDataGridView.RowCount != 0)
                 empresaDataGridView.CurrentRow.Selected = false;
             Program.idEmpresa = 0;
@@ -29,7 +29,7 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentasSeleccionEmpresa_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.empresa' Puede moverla o quitarla según sea necesario.
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+          //  this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
 
         }
 
@@ -38,11 +38,11 @@ namespace Proyecto_Glacial.Ventas
             switch (cbb_Opciones.Text)
             {
                 case "Nombre":
-                    empresaTableAdapter.BuscarNombre(this.glacial_almacenDataSet.empresa, "%" + txt_Buscar.Text + "%");
+       //             empresaTableAdapter.BuscarNombre(this.glacial_almacenDataSet.empresa, "%" + txt_Buscar.Text + "%");
                     txt_Buscar.Text = "";
                     break;
                 case "Estado":
-                    empresaTableAdapter.BuscarEstado(this.glacial_almacenDataSet.empresa, "%" + txt_Buscar.Text + "%");
+         //           empresaTableAdapter.BuscarEstado(this.glacial_almacenDataSet.empresa, "%" + txt_Buscar.Text + "%");
                     txt_Buscar.Text = "";
                     break;
                 default:
@@ -60,7 +60,7 @@ namespace Proyecto_Glacial.Ventas
         {
             Form AgregarEmpresa = new Empresa.frm_EmpresaAgregar();
             AgregarEmpresa.ShowDialog();
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+           // this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
 
         }
 

@@ -67,7 +67,7 @@ namespace Proyecto_Glacial.Empresa
         private void frm_EmpresaAgregar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'glacial_almacenDataSet.empresa' table. You can move, or remove it, as needed.
-            this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+           // this.empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
 
         }
 
@@ -75,7 +75,7 @@ namespace Proyecto_Glacial.Empresa
         {
             if (validarCampos() != true)
             {
-                this.empresaTableAdapter.InsertarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text);
+              //  this.empresaTableAdapter.InsertarEmpresa(txt_Nombre.Text, txt_Telefono.Text, txt_Direccion.Text, txt_Colonia.Text, txt_Estado.Text, txt_Email.Text, txt_cp.Text, txt_RFC.Text);
                 limpiarCampos();
 
                 AutoClosingMessageBox msg = new AutoClosingMessageBox("El registro ha sido agregado", "Mensaje", 1200); ;

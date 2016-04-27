@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\chhris\Pictures\</PublishUrl>
+    <PublishUrl>C:\Users\chhris\Pictures\Glacial1.07.01\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,6 +61,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -68,6 +73,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -135,6 +142,18 @@
     <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
       <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frm_ComprasReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasReporte.Designer.cs">
+      <DependentUpon>frm_ComprasReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Empresa\frm_EmpresaAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +216,12 @@
     </Compile>
     <Compile Include="Inventario\frm_InventarioModificar.Designer.cs">
       <DependentUpon>frm_InventarioModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioVisualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frm_InventarioVisualizarProducto.Designer.cs">
+      <DependentUpon>frm_InventarioVisualizarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.cs">
       <SubType>Form</SubType>
@@ -315,6 +340,13 @@
     <EmbeddedResource Include="Compras\frm_ComprasModificarDetallesCompra.resx">
       <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_ComprasReporte.resx">
+      <DependentUpon>frm_ComprasReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
       <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frm_InventarioModificar.resx">
       <DependentUpon>frm_InventarioModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frm_InventarioVisualizarProducto.resx">
+      <DependentUpon>frm_InventarioVisualizarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Inventario_Proveedores\frm_InventarioAgregarDatosProveedoProducto.resx">
       <DependentUpon>frm_InventarioAgregarDatosProveedoProducto.cs</DependentUpon>
@@ -536,7 +571,21 @@
   <ItemGroup>
     <None Include="Resources\-Insert_image_here-.svg.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

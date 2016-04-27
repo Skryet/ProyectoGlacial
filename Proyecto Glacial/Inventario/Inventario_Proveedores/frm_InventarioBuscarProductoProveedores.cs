@@ -36,7 +36,7 @@ namespace Proyecto_Glacial.Inventario.Inventario_Proveedores
             MySqlCommand consulta = new MySqlCommand("SELECT imagen FROM productos WHERE id_producto =  " + Program.idProducto, generarConexion.obtenerConexion);
             da = new MySqlDataAdapter(consulta);
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            da.Fill(dt); 
 
             byte[] img = (byte[])dt.Rows[0][0];
             MemoryStream ms = new MemoryStream(img);

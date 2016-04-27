@@ -38,6 +38,7 @@
             System.Windows.Forms.Label ciudadLabel;
             System.Windows.Forms.Label lbl_correo;
             System.Windows.Forms.Label lbl_RFC;
+            System.Windows.Forms.Label label1;
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
@@ -48,11 +49,12 @@
             this.txtApellidoM = new System.Windows.Forms.TextBox();
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.btn_AgregarCliente = new System.Windows.Forms.Button();
-            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.lblConfirmar = new System.Windows.Forms.Label();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_rfc = new System.Windows.Forms.TextBox();
+            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoPLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@
             ciudadLabel = new System.Windows.Forms.Label();
             lbl_correo = new System.Windows.Forms.Label();
             lbl_RFC = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
@@ -156,6 +159,16 @@
             lbl_RFC.TabIndex = 20;
             lbl_RFC.Text = "RFC:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(350, 66);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(88, 22);
+            label1.TabIndex = 22;
+            label1.Text = "Teléfono";
+            // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "nombre", true));
@@ -192,7 +205,7 @@
             this.txtDireccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(11, 91);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(632, 29);
+            this.txtDireccion.Size = new System.Drawing.Size(332, 29);
             this.txtDireccion.TabIndex = 4;
             this.txtDireccion.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
@@ -203,7 +216,7 @@
             this.txtColonia.Location = new System.Drawing.Point(259, 148);
             this.txtColonia.Name = "txtColonia";
             this.txtColonia.Size = new System.Drawing.Size(193, 29);
-            this.txtColonia.TabIndex = 6;
+            this.txtColonia.TabIndex = 7;
             this.txtColonia.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // txtCodigoPostal
@@ -214,7 +227,7 @@
             this.txtCodigoPostal.MaxLength = 5;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(139, 29);
-            this.txtCodigoPostal.TabIndex = 7;
+            this.txtCodigoPostal.TabIndex = 8;
             this.txtCodigoPostal.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // txtApellidoM
@@ -234,7 +247,7 @@
             this.txtCiudad.Location = new System.Drawing.Point(11, 148);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(242, 29);
-            this.txtCiudad.TabIndex = 5;
+            this.txtCiudad.TabIndex = 6;
             this.txtCiudad.TextChanged += new System.EventHandler(this.despintarTexto);
             // 
             // btn_AgregarCliente
@@ -246,25 +259,6 @@
             this.btn_AgregarCliente.TabIndex = 15;
             this.btn_AgregarCliente.UseVisualStyleBackColor = true;
             this.btn_AgregarCliente.Click += new System.EventHandler(this.btn_AgregarCliente_Click);
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            //this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = null;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // lblConfirmar
             // 
@@ -284,7 +278,7 @@
             this.txt_correo.MaxLength = 255;
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(441, 29);
-            this.txt_correo.TabIndex = 8;
+            this.txt_correo.TabIndex = 9;
             // 
             // txt_rfc
             // 
@@ -294,13 +288,43 @@
             this.txt_rfc.MaxLength = 15;
             this.txt_rfc.Name = "txt_rfc";
             this.txt_rfc.Size = new System.Drawing.Size(251, 29);
-            this.txt_rfc.TabIndex = 9;
+            this.txt_rfc.TabIndex = 10;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.comprasTableAdapter = null;
+          //  this.tableAdapterManager.empresaTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = null;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "direccion", true));
+            this.txt_telefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(349, 91);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(219, 29);
+            this.txt_telefono.TabIndex = 5;
             // 
             // frm_ClientesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 326);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(lbl_RFC);
             this.Controls.Add(this.txt_rfc);
             this.Controls.Add(lbl_correo);
@@ -348,5 +372,6 @@
         private System.Windows.Forms.Label lblConfirmar;
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_rfc;
+        private System.Windows.Forms.TextBox txt_telefono;
     }
 }

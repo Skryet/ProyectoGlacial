@@ -55,8 +55,8 @@ namespace Proyecto_Glacial.Empresa
                 DialogResult resultadoDialogo = MessageBox.Show("Esta seguro de eliminar la empresa ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    empresaTableAdapter.BorrarEmpresa(Program.idProveedor);
-                    empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
+                    //      empresaTableAdapter.BorrarEmpresa(Program.idProveedor);
+                    // empresaTableAdapter.Fill(this.glacial_almacenDataSet.empresa);
                     Program.idEmpresa = 0;
                     EmpresaBuscar.Close();
                     form = Application.OpenForms.OfType<Empresa.frm_EmpresaBuscar>().FirstOrDefault();

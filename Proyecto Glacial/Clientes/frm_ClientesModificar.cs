@@ -59,7 +59,9 @@ namespace Proyecto_Glacial.Clientes
             var resultado = MessageBox.Show("¿Está seguro de acctualizar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                this.clientesTableAdapter.UpdateClientesPorId(txt_Nombre.Text, txt_apellidoP.Text, txt_apellidoP.Text, txt_direccion.Text, txt_colonia.Text, txt_ciudad.Text, txt_cp.Text, txt_correo.Text,txt_rfc.Text, Program.idCliente);
+                this.clientesTableAdapter.UpdateClientesPorId(txt_Nombre.Text, txt_apellidoP.Text,
+                    txt_apellidoM.Text, txt_direccion.Text, txt_colonia.Text, txt_ciudad.Text,
+                    txt_cp.Text, txt_correo.Text, txt_rfc.Text, txt_telefono.Text, Program.idCliente);
                 MessageBox.Show("Registro Actualizado con éxito!", "Completado");
                 //this.Close();
                 this.Refresh();
@@ -74,6 +76,7 @@ namespace Proyecto_Glacial.Clientes
                 txt_cp.Enabled = false;
                 txt_correo.Enabled = false;
                 txt_rfc.Enabled = false;
+                txt_telefono.Enabled = false;
             }
            
             
