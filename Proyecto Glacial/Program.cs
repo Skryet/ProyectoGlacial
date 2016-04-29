@@ -24,7 +24,7 @@ namespace Proyecto_Glacial
         //Variables de Ventas
         public static int idClienteVenta = 0;
         public static int idVenta = 0;
-        public static int idProductoVenta = 0;
+        public static int idProductoVenta = 999;
         public static bool ventaCreada = false;
         public static bool enActividadVenta = false;
         public static Ventas.Objetos.ListaProductos listaProductos;                

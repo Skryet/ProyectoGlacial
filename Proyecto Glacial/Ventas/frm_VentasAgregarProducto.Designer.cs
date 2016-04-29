@@ -40,7 +40,6 @@
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.txt_PrecioEspecial = new System.Windows.Forms.TextBox();
             this.lbl_PrecioEspecial = new System.Windows.Forms.Label();
-            this.bn_Finalizar = new System.Windows.Forms.Button();
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.productosTableAdapter();
@@ -109,7 +108,7 @@
             // btn_AgregarProducto
             // 
             this.btn_AgregarProducto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(482, 502);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(310, 484);
             this.btn_AgregarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(162, 32);
@@ -127,7 +126,7 @@
             "Precio 2",
             "Precio 3",
             "Especial"});
-            this.cbx_TipoPrecio.Location = new System.Drawing.Point(363, 415);
+            this.cbx_TipoPrecio.Location = new System.Drawing.Point(363, 104);
             this.cbx_TipoPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_TipoPrecio.Name = "cbx_TipoPrecio";
             this.cbx_TipoPrecio.Size = new System.Drawing.Size(120, 26);
@@ -139,7 +138,7 @@
             // 
             this.lbl_Precio.AutoSize = true;
             this.lbl_Precio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Precio.Location = new System.Drawing.Point(66, 418);
+            this.lbl_Precio.Location = new System.Drawing.Point(66, 107);
             this.lbl_Precio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(293, 18);
@@ -150,7 +149,7 @@
             // 
             this.lbl_Cantidad.AutoSize = true;
             this.lbl_Cantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Cantidad.Location = new System.Drawing.Point(529, 418);
+            this.lbl_Cantidad.Location = new System.Drawing.Point(529, 107);
             this.lbl_Cantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Cantidad.Name = "lbl_Cantidad";
             this.lbl_Cantidad.Size = new System.Drawing.Size(80, 18);
@@ -160,7 +159,7 @@
             // txt_Cantidad
             // 
             this.txt_Cantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cantidad.Location = new System.Drawing.Point(613, 415);
+            this.txt_Cantidad.Location = new System.Drawing.Point(613, 104);
             this.txt_Cantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(76, 26);
@@ -172,7 +171,7 @@
             // 
             this.txt_PrecioEspecial.Enabled = false;
             this.txt_PrecioEspecial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PrecioEspecial.Location = new System.Drawing.Point(396, 457);
+            this.txt_PrecioEspecial.Location = new System.Drawing.Point(396, 146);
             this.txt_PrecioEspecial.Margin = new System.Windows.Forms.Padding(2);
             this.txt_PrecioEspecial.Name = "txt_PrecioEspecial";
             this.txt_PrecioEspecial.Size = new System.Drawing.Size(76, 26);
@@ -186,25 +185,13 @@
             this.lbl_PrecioEspecial.AutoSize = true;
             this.lbl_PrecioEspecial.Enabled = false;
             this.lbl_PrecioEspecial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PrecioEspecial.Location = new System.Drawing.Point(261, 460);
+            this.lbl_PrecioEspecial.Location = new System.Drawing.Point(261, 149);
             this.lbl_PrecioEspecial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_PrecioEspecial.Name = "lbl_PrecioEspecial";
             this.lbl_PrecioEspecial.Size = new System.Drawing.Size(131, 18);
             this.lbl_PrecioEspecial.TabIndex = 11;
             this.lbl_PrecioEspecial.Text = "Precio especial";
             this.lbl_PrecioEspecial.Visible = false;
-            // 
-            // bn_Finalizar
-            // 
-            this.bn_Finalizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bn_Finalizar.Location = new System.Drawing.Point(665, 502);
-            this.bn_Finalizar.Margin = new System.Windows.Forms.Padding(2);
-            this.bn_Finalizar.Name = "bn_Finalizar";
-            this.bn_Finalizar.Size = new System.Drawing.Size(89, 32);
-            this.bn_Finalizar.TabIndex = 13;
-            this.bn_Finalizar.Text = "Finalizar";
-            this.bn_Finalizar.UseVisualStyleBackColor = true;
-            this.bn_Finalizar.Click += new System.EventHandler(this.bn_Finalizar_Click);
             // 
             // glacial_almacenDataSet
             // 
@@ -254,13 +241,14 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.productosDataGridView.DataSource = this.productosBindingSource;
-            this.productosDataGridView.Location = new System.Drawing.Point(12, 112);
+            this.productosDataGridView.Location = new System.Drawing.Point(12, 179);
             this.productosDataGridView.MultiSelect = false;
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.ReadOnly = true;
             this.productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productosDataGridView.Size = new System.Drawing.Size(750, 283);
             this.productosDataGridView.TabIndex = 14;
+            this.productosDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productosDataGridView_CellDoubleClick);
             this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn2
@@ -273,7 +261,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_producto";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_linea_producto";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -339,9 +327,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 555);
+            this.ClientSize = new System.Drawing.Size(774, 531);
             this.Controls.Add(this.productosDataGridView);
-            this.Controls.Add(this.bn_Finalizar);
             this.Controls.Add(this.txt_PrecioEspecial);
             this.Controls.Add(this.lbl_PrecioEspecial);
             this.Controls.Add(this.txt_Cantidad);
@@ -378,7 +365,6 @@
         private System.Windows.Forms.TextBox txt_Cantidad;
         private System.Windows.Forms.TextBox txt_PrecioEspecial;
         private System.Windows.Forms.Label lbl_PrecioEspecial;
-        private System.Windows.Forms.Button bn_Finalizar;
         private glacial_almacenDataSet glacial_almacenDataSet;
         private System.Windows.Forms.BindingSource productosBindingSource;
         private glacial_almacenDataSetTableAdapters.productosTableAdapter productosTableAdapter;

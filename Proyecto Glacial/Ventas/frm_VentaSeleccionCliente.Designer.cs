@@ -46,7 +46,6 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_SeleccionarCliente = new System.Windows.Forms.Button();
-            this.btn_AgregarCiente = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -143,7 +142,7 @@
             this.dataGridViewTextBoxColumn10});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
             this.clientesDataGridView.Location = new System.Drawing.Point(2, 123);
-            this.clientesDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientesDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.clientesDataGridView.MultiSelect = false;
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
@@ -151,6 +150,7 @@
             this.clientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientesDataGridView.Size = new System.Drawing.Size(676, 279);
             this.clientesDataGridView.TabIndex = 23;
+            this.clientesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientesDataGridView_CellDoubleClick);
             this.clientesDataGridView.Click += new System.EventHandler(this.clientesDataGridView_Click);
             // 
             // dataGridViewTextBoxColumn1
@@ -210,8 +210,8 @@
             // 
             // btn_SeleccionarCliente
             // 
-            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(425, 428);
-            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(266, 427);
+            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
             this.btn_SeleccionarCliente.Size = new System.Drawing.Size(130, 34);
             this.btn_SeleccionarCliente.TabIndex = 24;
@@ -219,21 +219,10 @@
             this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
             this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
             // 
-            // btn_AgregarCiente
-            // 
-            this.btn_AgregarCiente.Location = new System.Drawing.Point(146, 428);
-            this.btn_AgregarCiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_AgregarCiente.Name = "btn_AgregarCiente";
-            this.btn_AgregarCiente.Size = new System.Drawing.Size(130, 34);
-            this.btn_AgregarCiente.TabIndex = 25;
-            this.btn_AgregarCiente.Text = "Agregar Cliente";
-            this.btn_AgregarCiente.UseVisualStyleBackColor = true;
-            this.btn_AgregarCiente.Click += new System.EventHandler(this.btn_AgregarCiente_Click);
-            // 
             // btn_Actualizar
             // 
             this.btn_Actualizar.Location = new System.Drawing.Point(266, 80);
-            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Actualizar.Name = "btn_Actualizar";
             this.btn_Actualizar.Size = new System.Drawing.Size(130, 24);
             this.btn_Actualizar.TabIndex = 26;
@@ -245,18 +234,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 484);
+            this.ClientSize = new System.Drawing.Size(680, 469);
             this.Controls.Add(this.btn_Actualizar);
-            this.Controls.Add(this.btn_AgregarCiente);
             this.Controls.Add(this.btn_SeleccionarCliente);
             this.Controls.Add(this.clientesDataGridView);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.cmb_SelccionarTipo);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_VentaSeleccionCliente";
             this.Text = "Ventas - Seleccionar Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_VentaSeleccionCliente_FormClosing);
             this.Load += new System.EventHandler(this.frm_VentaSeleccionCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
@@ -284,7 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Button btn_SeleccionarCliente;
-        private System.Windows.Forms.Button btn_AgregarCiente;
         private System.Windows.Forms.Button btn_Actualizar;
     }
 }

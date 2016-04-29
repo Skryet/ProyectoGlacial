@@ -30,7 +30,7 @@ namespace Proyecto_Glacial.Ventas
             //Variables de Ventas
             Program.idClienteVenta = 0;            
             Program.idVenta = 0;
-            Program.idProductoVenta = 0;
+            Program.idProductoVenta = 999;
             Program.ventaCreada = false;
         }
 
@@ -152,10 +152,33 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_Finalizar_Click(object sender, EventArgs e)
         {
-            Program.enActividadVenta = false;
-            Program.ventaCreada = false;
-            limpiarVariablesVenta();
-            this.Close();
+            if (dgv_ListaVenta.RowCount != 0)
+            {
+                Objetos.Venta venta = new Objetos.Venta();
+                //ASIGNAR VARIABLES DE VENTA
+                venta.idCliente = Program.idCliente;
+                venta.Subtotal = Convert.ToDouble(txt_Subtotal.Text);
+                venta.Descuento = Convert.ToDouble(txt_Descuento.Text);
+                venta.IVA = Convert.ToDouble(txt_IVA.Text);
+                venta.Total = Convert.ToDouble(txt_Total.Text);
+                venta.Fecha = DateTime.Now;
+                consultasVentas.agregarVenta(venta);
+
+                //AGREGAR PRODUCTOS A LA CONSULTA
+                for (int i = 0; i < Program.listaProductos.obtenerLargo(); i++)                
+                    consultasVentas.agregarProductos(Program.listaProductos.obtenerProducto(i));
+
+                //EJECUTAR CONSULTA
+                consultasVentas.ejecutarConsulta();                
+
+
+                Program.enActividadVenta = false;
+                Program.ventaCreada = false;
+                limpiarVariablesVenta();
+                this.Close();
+            }
+            else
+                MessageBox.Show("No se han agregado productos a la venta", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void frm_VentasAgregar_FormClosing(object sender, FormClosingEventArgs e)
@@ -213,8 +236,18 @@ namespace Proyecto_Glacial.Ventas
 
         private void dgv_ListaVenta_Click(object sender, EventArgs e)
         {
-            if (dgv_ListaVenta.RowCount != 0)
+            if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
                 Program.idProductoVenta = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[1].Value);
+        }
+
+        private void dgv_ListaVenta_Enter(object sender, EventArgs e)
+        {
+            dgv_ListaVenta.AllowUserToAddRows = true;
+        }
+
+        private void dgv_ListaVenta_Leave(object sender, EventArgs e)
+        {
+            dgv_ListaVenta.AllowUserToAddRows = false;
         }
     }
 }

@@ -23,9 +23,44 @@ namespace Proyecto_Glacial.Ventas.Consultas
             consulta += "INSERT INTO lista_material_ventas (id_venta, id_producto, cantidad, unidad_medida, precio_unidad, total) VALUES('" +
                     producto.idVenta.ToString() + "','" + producto.idProducto.ToString() + "','" + producto.Cantidad.ToString() + "','" + producto.unidadMedida.ToString() + "','" +
                     producto.precioUnidad.ToString() + "','" + producto.Total.ToString() + "');";
+
+            //Descontar Productos
+            consulta += "UPDATE productos SET existencia = '" + producto.Cantidad.ToString() + "' WHERE (id_producto = '" + producto.idProducto.ToString() + "');";
         }
 
-        public void agregarVenta()
+        public void agregarVenta(Objetos.Venta venta)
+        {
+            consulta += "INSERT INTO ventas (id_cliente, subtotal, descuento, IVA, total, fecha) VALUES('" + 
+                venta.idCliente.ToString()+ "', '"+ venta.Subtotal.ToString() +"', '"+ venta.Descuento.ToString() +
+                "', '"+ venta.IVA.ToString() +"', '"+ venta.Total.ToString() +"', '"+ venta.Fecha.ToString() +"');";
+        }
+
+        public bool ejecutarConsulta()
+        {
+            int seEjecuto = 0;
+            MySqlCommand consultaEjecutar = new MySqlCommand(consulta, generarConexion.obtenerConexion);
+            conexion.abrirConexion();
+            try
+            {
+                seEjecuto = consultaEjecutar.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conexion.cerrarConexion();
+
+            if (seEjecuto != 0)
+            {
+                MessageBox.Show("Venta Realizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
 
         public bool crearVenta(ref int idVenta, int idClienteVenta)
         {

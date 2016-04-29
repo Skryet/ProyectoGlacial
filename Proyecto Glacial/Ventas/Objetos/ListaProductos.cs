@@ -105,5 +105,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
         public materialVenta[] obtenerLista() { return lista; }
 
         public int obtenerLargo() { return i; }
+
+        public materialVenta obtenerProducto(int posicion) { return lista[posicion]; }        
     }
 }

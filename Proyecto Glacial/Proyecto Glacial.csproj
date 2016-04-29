@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\chhris\Pictures\</PublishUrl>
+    <PublishUrl>E:\ll\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -233,6 +233,12 @@
     </Compile>
     <Compile Include="Ventas\Consultas\consultasVentas.cs" />
     <Compile Include="Ventas\Consultas\generarVenta.cs" />
+    <Compile Include="Ventas\frm_AutocompletadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_AutocompletadoProductos.Designer.cs">
+      <DependentUpon>frm_AutocompletadoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frm_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,7 @@
     </Compile>
     <Compile Include="Ventas\Objetos\ListaProductos.cs" />
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
+    <Compile Include="Ventas\Objetos\Venta.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frm_ProveedorModificar.resx">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_AutocompletadoProductos.resx">
+      <DependentUpon>frm_AutocompletadoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frm_Ventas.resx">
       <DependentUpon>frm_Ventas.cs</DependentUpon>

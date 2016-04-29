@@ -54,7 +54,7 @@ namespace Proyecto_Glacial.Ventas
 
         private void bn_Finalizar_Click(object sender, EventArgs e)
         {
-            Program.idProductoVenta = 0;
+            Program.idProductoVenta = 999;
             this.Close();
         }
 
@@ -89,6 +89,8 @@ namespace Proyecto_Glacial.Ventas
                                 Program.listaProductos.agregarProducto(producto);
                                 //ventas.agregarProduto(producto);
                                 //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Precio 2":
@@ -98,6 +100,8 @@ namespace Proyecto_Glacial.Ventas
                                 Program.listaProductos.agregarProducto(producto);
                                 //ventas.agregarProduto(producto);
                                 //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Precio 3":
@@ -107,6 +111,8 @@ namespace Proyecto_Glacial.Ventas
                                 Program.listaProductos.agregarProducto(producto);
                                 //ventas.agregarProduto(producto);
                                 //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
                                 Program.idProductoVenta = 0;
                                 break;
                             case "Especial":
@@ -117,6 +123,8 @@ namespace Proyecto_Glacial.Ventas
                                 //ventas.agregarProduto(producto);
                                 //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
                                 Program.idProductoVenta = 0;
+                                Program.idProductoVenta = 999;
+                                this.Close();
                                 break;
                             default:
                                 MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -135,7 +143,90 @@ namespace Proyecto_Glacial.Ventas
 
         private void frm_VentasAgregarProducto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.idProductoVenta = 0;
-        }        
+            Program.idProductoVenta = 999;
+        }
+
+        private void productosDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Program.idProductoVenta != 0)
+            {
+                Objetos.materialVenta producto = new Objetos.materialVenta();
+                producto.idVenta = Program.idVenta;
+                producto.idProducto = Program.idProductoVenta;
+                producto.Linea = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
+                producto.Codigo = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
+                producto.Descripcion = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[3].Value.ToString();
+                producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
+                if (txt_Cantidad.Text != "0")
+                {
+                    int existencia = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
+                    if (Convert.ToInt32(txt_Cantidad.Text) > existencia)
+                    {
+                        MessageBox.Show("No puedes ingresar una cantidad mayor a la que hay en existencia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txt_Cantidad.Text = "0";
+                    }
+                    else
+                    {
+                        int descontarExistencia = existencia - Convert.ToInt32(txt_Cantidad.Text);
+                        switch (cbx_TipoPrecio.Text)
+                        {
+                            case "Precio 1":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Precio 2":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[7].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Precio 3":
+                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[8].Value);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
+                                producto.Total = producto.obtenerTotal();
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 999;
+                                this.Close();
+                                Program.idProductoVenta = 0;
+                                break;
+                            case "Especial":
+                                producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
+                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
+                                producto.Total = producto.obtenerTotal();
+                                Program.listaProductos.agregarProducto(producto);
+                                //ventas.agregarProduto(producto);
+                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
+                                Program.idProductoVenta = 0;
+                                Program.idProductoVenta = 999;
+                                this.Close();
+                                break;
+                            default:
+                                MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("La cantidad del producto no puede ser 0", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

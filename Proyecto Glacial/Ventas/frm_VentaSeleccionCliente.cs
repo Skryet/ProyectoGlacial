@@ -84,16 +84,40 @@ namespace Proyecto_Glacial.Ventas
             }
         }
 
-        private void btn_AgregarCiente_Click(object sender, EventArgs e)
-        {
-            Form agregarCliente = new frm_ClientesAgregar();
-            agregarCliente.ShowDialog();
-            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-        }
-
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
             this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+        }
+
+        private void clientesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Program.idClienteVenta == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun cliente, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idClienteVenta = 0;
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void frm_VentaSeleccionCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Program.idClienteVenta == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun cliente, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idClienteVenta = 0;                    
+                }
+                else
+                    e.Cancel = true;
+            }
         }
     }
 }

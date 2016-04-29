@@ -123,3 +123,4 @@ C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.application
+C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_AutocompletadoProductos.resources

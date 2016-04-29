@@ -62,20 +62,31 @@ namespace Proyecto_Glacial.Ventas
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
-        {
-            generarVenta.Close();
-            Ventas.frm_VentasAgregarProducto form = Application.OpenForms.OfType<Ventas.frm_VentasAgregarProducto>().FirstOrDefault();
+        {            
+            /*Ventas.frm_VentasAgregarProducto form = Application.OpenForms.OfType<Ventas.frm_VentasAgregarProducto>().FirstOrDefault();
             Ventas.frm_VentasAgregarProducto agregarProducto = form ?? new Ventas.frm_VentasAgregarProducto();
-            AddFormInPanel(agregarProducto);
-        }
-
-        private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            Program.listaProductos.eliminarProducto(Program.idProductoVenta);
+            AddFormInPanel(agregarProducto);                      */
+            Ventas.frm_VentasAgregarProducto agregarProducto = new frm_VentasAgregarProducto();
+            agregarProducto.ShowDialog();
             generarVenta.Close();
             Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
             generarVenta = form ?? new Ventas.frm_VentasAgregar();
             AddFormInPanel(generarVenta);
+
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            if (Program.idProductoVenta != 999)
+            {
+                Program.listaProductos.eliminarProducto(Program.idProductoVenta);
+                generarVenta.Close();
+                Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
+                generarVenta = form ?? new Ventas.frm_VentasAgregar();
+                AddFormInPanel(generarVenta);
+            }
+            else
+                MessageBox.Show("No se ha seleccionado ningún producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frm_Ventas_FormClosing(object sender, FormClosingEventArgs e)
@@ -85,11 +96,13 @@ namespace Proyecto_Glacial.Ventas
                 DialogResult resultadoDialogo = MessageBox.Show("Hay una venta sin finalizar se perderá los datos de la venta si usted sale. ¿Esta seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (resultadoDialogo == DialogResult.Yes)
                 {
-                    generarVenta.Close();                    
+                    generarVenta.Close();
                     Program.ventaCreada = false;
                     limpiarVariablesVenta();
                     this.Close();
-                }               
+                }
+                else
+                    e.Cancel = true;         
             }            
         }
     }
