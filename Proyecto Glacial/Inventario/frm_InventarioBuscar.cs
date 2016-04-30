@@ -44,7 +44,7 @@ namespace Proyecto_Glacial.Inventario
             {
                 switch (cmb_SelccionarTipo.Text)
                 {
-                    case "Número de Producto":
+                    case "Línea del producto":
                             this.productosTableAdapter.FillByBuscarProductoPorID(this.glacial_almacenDataSet.productos, Convert.ToInt32(txt_Buscar.Text));
                             if (productosDataGridView.RowCount == 0)
                                 MessageBox.Show("No se encontró un registro con este número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -72,7 +72,7 @@ namespace Proyecto_Glacial.Inventario
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
 
-            btn_detalles.Enabled = true;
+            //btn_detalles.Enabled = true;
             if(productosDataGridView.SelectedCells[11].Value.ToString() != "")
             //ListaProveedorActual
             Program.idListaProveedorActual = Convert.ToInt32(productosDataGridView.SelectedCells[14].Value.ToString());
@@ -91,6 +91,12 @@ namespace Proyecto_Glacial.Inventario
         private void productosDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             this.productosDataGridView.Columns[2].DefaultCellStyle.Format = "##00000";
+        }
+
+        private void productosDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            Form formVisualizar = new frm_InventarioVisualizarProducto();
+            formVisualizar.ShowDialog();
         }
     }
 }

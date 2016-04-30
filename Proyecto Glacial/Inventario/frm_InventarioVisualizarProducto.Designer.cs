@@ -93,19 +93,19 @@
             id_linea_productoLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             id_linea_productoLabel1.Location = new System.Drawing.Point(62, 67);
             id_linea_productoLabel1.Name = "id_linea_productoLabel1";
-            id_linea_productoLabel1.Size = new System.Drawing.Size(73, 24);
+            id_linea_productoLabel1.Size = new System.Drawing.Size(91, 24);
             id_linea_productoLabel1.TabIndex = 70;
-            id_linea_productoLabel1.Text = "Línea:";
+            id_linea_productoLabel1.Text = "Código:";
             // 
             // nombreLabel1
             // 
             nombreLabel1.AutoSize = true;
             nombreLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel1.Location = new System.Drawing.Point(36, 110);
+            nombreLabel1.Location = new System.Drawing.Point(74, 110);
             nombreLabel1.Name = "nombreLabel1";
-            nombreLabel1.Size = new System.Drawing.Size(99, 24);
+            nombreLabel1.Size = new System.Drawing.Size(73, 24);
             nombreLabel1.TabIndex = 71;
-            nombreLabel1.Text = "Nombre:";
+            nombreLabel1.Text = "Línea:";
             // 
             // descripcionLabel
             // 
@@ -161,7 +161,7 @@
             // 
             marcaCarroLabel1.AutoSize = true;
             marcaCarroLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            marcaCarroLabel1.Location = new System.Drawing.Point(282, 191);
+            marcaCarroLabel1.Location = new System.Drawing.Point(296, 196);
             marcaCarroLabel1.Name = "marcaCarroLabel1";
             marcaCarroLabel1.Size = new System.Drawing.Size(212, 24);
             marcaCarroLabel1.TabIndex = 77;
@@ -171,7 +171,7 @@
             // 
             anioCarroLabel1.AutoSize = true;
             anioCarroLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            anioCarroLabel1.Location = new System.Drawing.Point(543, 194);
+            anioCarroLabel1.Location = new System.Drawing.Point(296, 334);
             anioCarroLabel1.Name = "anioCarroLabel1";
             anioCarroLabel1.Size = new System.Drawing.Size(154, 24);
             anioCarroLabel1.TabIndex = 78;
@@ -181,7 +181,7 @@
             // 
             modeloCarroLabel1.AutoSize = true;
             modeloCarroLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            modeloCarroLabel1.Location = new System.Drawing.Point(282, 267);
+            modeloCarroLabel1.Location = new System.Drawing.Point(296, 272);
             modeloCarroLabel1.Name = "modeloCarroLabel1";
             modeloCarroLabel1.Size = new System.Drawing.Size(236, 24);
             modeloCarroLabel1.TabIndex = 79;
@@ -191,11 +191,11 @@
             // 
             unidad_medidaLabel1.AutoSize = true;
             unidad_medidaLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            unidad_medidaLabel1.Location = new System.Drawing.Point(326, 72);
+            unidad_medidaLabel1.Location = new System.Drawing.Point(644, 228);
             unidad_medidaLabel1.Name = "unidad_medidaLabel1";
-            unidad_medidaLabel1.Size = new System.Drawing.Size(198, 24);
+            unidad_medidaLabel1.Size = new System.Drawing.Size(118, 48);
             unidad_medidaLabel1.TabIndex = 80;
-            unidad_medidaLabel1.Text = "Unidad de Medida:";
+            unidad_medidaLabel1.Text = "Unidad de \r\nMedida:";
             // 
             // precio_especialLabel
             // 
@@ -221,11 +221,21 @@
             // 
             numeroPedimentoLabel1.AutoSize = true;
             numeroPedimentoLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            numeroPedimentoLabel1.Location = new System.Drawing.Point(282, 340);
+            numeroPedimentoLabel1.Location = new System.Drawing.Point(12, 492);
             numeroPedimentoLabel1.Name = "numeroPedimentoLabel1";
             numeroPedimentoLabel1.Size = new System.Drawing.Size(242, 24);
             numeroPedimentoLabel1.TabIndex = 83;
             numeroPedimentoLabel1.Text = "Número de pedimento:";
+            // 
+            // datos_proveedorLabel
+            // 
+            datos_proveedorLabel.AutoSize = true;
+            datos_proveedorLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            datos_proveedorLabel.Location = new System.Drawing.Point(454, 413);
+            datos_proveedorLabel.Name = "datos_proveedorLabel";
+            datos_proveedorLabel.Size = new System.Drawing.Size(246, 24);
+            datos_proveedorLabel.TabIndex = 86;
+            datos_proveedorLabel.Text = "Detalles del Proveedor:";
             // 
             // label1
             // 
@@ -239,9 +249,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(600, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(682, 8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
@@ -279,7 +289,7 @@
             this.txt_lineaNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "id_linea_producto", true));
             this.txt_lineaNombre.Enabled = false;
             this.txt_lineaNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lineaNombre.Location = new System.Drawing.Point(687, 56);
+            this.txt_lineaNombre.Location = new System.Drawing.Point(690, 28);
             this.txt_lineaNombre.Name = "txt_lineaNombre";
             this.txt_lineaNombre.Size = new System.Drawing.Size(10, 32);
             this.txt_lineaNombre.TabIndex = 71;
@@ -288,100 +298,101 @@
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "nombre", true));
             this.nombreTextBox.Enabled = false;
-            this.nombreTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreTextBox.Location = new System.Drawing.Point(153, 102);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(133, 32);
+            this.nombreTextBox.Size = new System.Drawing.Size(491, 29);
             this.nombreTextBox.TabIndex = 72;
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "descripcion", true));
             this.descripcionTextBox.Enabled = false;
-            this.descripcionTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descripcionTextBox.Location = new System.Drawing.Point(153, 148);
+            this.descripcionTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionTextBox.Location = new System.Drawing.Point(153, 137);
+            this.descripcionTextBox.Multiline = true;
             this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(437, 32);
+            this.descripcionTextBox.Size = new System.Drawing.Size(491, 48);
             this.descripcionTextBox.TabIndex = 73;
             // 
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "existencia", true));
             this.existenciaTextBox.Enabled = false;
-            this.existenciaTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.existenciaTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.existenciaTextBox.Location = new System.Drawing.Point(152, 191);
             this.existenciaTextBox.Name = "existenciaTextBox";
-            this.existenciaTextBox.Size = new System.Drawing.Size(118, 32);
+            this.existenciaTextBox.Size = new System.Drawing.Size(118, 29);
             this.existenciaTextBox.TabIndex = 74;
             // 
             // precio1TextBox
             // 
             this.precio1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio1", true));
             this.precio1TextBox.Enabled = false;
-            this.precio1TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precio1TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio1TextBox.Location = new System.Drawing.Point(152, 228);
             this.precio1TextBox.Name = "precio1TextBox";
-            this.precio1TextBox.Size = new System.Drawing.Size(118, 32);
+            this.precio1TextBox.Size = new System.Drawing.Size(118, 29);
             this.precio1TextBox.TabIndex = 75;
             // 
             // precio2TextBox
             // 
             this.precio2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio2", true));
             this.precio2TextBox.Enabled = false;
-            this.precio2TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precio2TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio2TextBox.Location = new System.Drawing.Point(152, 267);
             this.precio2TextBox.Name = "precio2TextBox";
-            this.precio2TextBox.Size = new System.Drawing.Size(118, 32);
+            this.precio2TextBox.Size = new System.Drawing.Size(118, 29);
             this.precio2TextBox.TabIndex = 76;
             // 
             // precio3TextBox
             // 
             this.precio3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio3", true));
             this.precio3TextBox.Enabled = false;
-            this.precio3TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precio3TextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio3TextBox.Location = new System.Drawing.Point(152, 305);
             this.precio3TextBox.Name = "precio3TextBox";
-            this.precio3TextBox.Size = new System.Drawing.Size(118, 32);
+            this.precio3TextBox.Size = new System.Drawing.Size(118, 29);
             this.precio3TextBox.TabIndex = 77;
             // 
             // marcaCarroTextBox
             // 
             this.marcaCarroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "marcaCarro", true));
             this.marcaCarroTextBox.Enabled = false;
-            this.marcaCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.marcaCarroTextBox.Location = new System.Drawing.Point(286, 225);
+            this.marcaCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcaCarroTextBox.Location = new System.Drawing.Point(300, 230);
             this.marcaCarroTextBox.Name = "marcaCarroTextBox";
-            this.marcaCarroTextBox.Size = new System.Drawing.Size(193, 32);
+            this.marcaCarroTextBox.Size = new System.Drawing.Size(324, 29);
             this.marcaCarroTextBox.TabIndex = 78;
             // 
             // anioCarroTextBox
             // 
             this.anioCarroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "anioCarro", true));
             this.anioCarroTextBox.Enabled = false;
-            this.anioCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anioCarroTextBox.Location = new System.Drawing.Point(531, 221);
+            this.anioCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anioCarroTextBox.Location = new System.Drawing.Point(300, 361);
             this.anioCarroTextBox.Name = "anioCarroTextBox";
-            this.anioCarroTextBox.Size = new System.Drawing.Size(166, 32);
+            this.anioCarroTextBox.Size = new System.Drawing.Size(324, 29);
             this.anioCarroTextBox.TabIndex = 79;
             // 
             // modeloCarroTextBox
             // 
             this.modeloCarroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "modeloCarro", true));
             this.modeloCarroTextBox.Enabled = false;
-            this.modeloCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modeloCarroTextBox.Location = new System.Drawing.Point(286, 297);
+            this.modeloCarroTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modeloCarroTextBox.Location = new System.Drawing.Point(300, 302);
             this.modeloCarroTextBox.Name = "modeloCarroTextBox";
-            this.modeloCarroTextBox.Size = new System.Drawing.Size(193, 32);
+            this.modeloCarroTextBox.Size = new System.Drawing.Size(324, 29);
             this.modeloCarroTextBox.TabIndex = 80;
             // 
             // unidad_medidaTextBox
             // 
             this.unidad_medidaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "unidad_medida", true));
             this.unidad_medidaTextBox.Enabled = false;
-            this.unidad_medidaTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidad_medidaTextBox.Location = new System.Drawing.Point(300, 102);
+            this.unidad_medidaTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unidad_medidaTextBox.Location = new System.Drawing.Point(643, 287);
             this.unidad_medidaTextBox.Name = "unidad_medidaTextBox";
-            this.unidad_medidaTextBox.Size = new System.Drawing.Size(266, 32);
+            this.unidad_medidaTextBox.Size = new System.Drawing.Size(324, 29);
             this.unidad_medidaTextBox.TabIndex = 81;
             // 
             // precio_especialTextBox
@@ -398,27 +409,27 @@
             // 
             this.compatibilidadCarrosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "compatibilidadCarros", true));
             this.compatibilidadCarrosTextBox.Enabled = false;
-            this.compatibilidadCarrosTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compatibilidadCarrosTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compatibilidadCarrosTextBox.Location = new System.Drawing.Point(10, 413);
             this.compatibilidadCarrosTextBox.Multiline = true;
             this.compatibilidadCarrosTextBox.Name = "compatibilidadCarrosTextBox";
-            this.compatibilidadCarrosTextBox.Size = new System.Drawing.Size(400, 59);
+            this.compatibilidadCarrosTextBox.Size = new System.Drawing.Size(438, 59);
             this.compatibilidadCarrosTextBox.TabIndex = 83;
             // 
             // numeroPedimentoTextBox
             // 
             this.numeroPedimentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "numeroPedimento", true));
             this.numeroPedimentoTextBox.Enabled = false;
-            this.numeroPedimentoTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeroPedimentoTextBox.Location = new System.Drawing.Point(286, 364);
+            this.numeroPedimentoTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeroPedimentoTextBox.Location = new System.Drawing.Point(16, 516);
             this.numeroPedimentoTextBox.Name = "numeroPedimentoTextBox";
-            this.numeroPedimentoTextBox.Size = new System.Drawing.Size(193, 32);
+            this.numeroPedimentoTextBox.Size = new System.Drawing.Size(193, 29);
             this.numeroPedimentoTextBox.TabIndex = 84;
             // 
             // txt_lineaCodigo
             // 
             this.txt_lineaCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "linea_producto_codigo", true));
-            this.txt_lineaCodigo.Location = new System.Drawing.Point(689, 30);
+            this.txt_lineaCodigo.Location = new System.Drawing.Point(798, 31);
             this.txt_lineaCodigo.Name = "txt_lineaCodigo";
             this.txt_lineaCodigo.Size = new System.Drawing.Size(10, 20);
             this.txt_lineaCodigo.TabIndex = 85;
@@ -426,30 +437,20 @@
             // txt_linea
             // 
             this.txt_linea.Enabled = false;
-            this.txt_linea.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_linea.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_linea.Location = new System.Drawing.Point(153, 64);
             this.txt_linea.Name = "txt_linea";
-            this.txt_linea.Size = new System.Drawing.Size(133, 32);
+            this.txt_linea.Size = new System.Drawing.Size(491, 29);
             this.txt_linea.TabIndex = 86;
-            // 
-            // datos_proveedorLabel
-            // 
-            datos_proveedorLabel.AutoSize = true;
-            datos_proveedorLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            datos_proveedorLabel.Location = new System.Drawing.Point(454, 413);
-            datos_proveedorLabel.Name = "datos_proveedorLabel";
-            datos_proveedorLabel.Size = new System.Drawing.Size(246, 24);
-            datos_proveedorLabel.TabIndex = 86;
-            datos_proveedorLabel.Text = "Detalles del Proveedor:";
             // 
             // datos_proveedorTextBox
             // 
             this.datos_proveedorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "datos_proveedor", true));
             this.datos_proveedorTextBox.Enabled = false;
-            this.datos_proveedorTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datos_proveedorTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datos_proveedorTextBox.Location = new System.Drawing.Point(458, 440);
             this.datos_proveedorTextBox.Name = "datos_proveedorTextBox";
-            this.datos_proveedorTextBox.Size = new System.Drawing.Size(304, 32);
+            this.datos_proveedorTextBox.Size = new System.Drawing.Size(304, 29);
             this.datos_proveedorTextBox.TabIndex = 87;
             // 
             // frm_InventarioVisualizarProducto
@@ -457,7 +458,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(774, 492);
+            this.ClientSize = new System.Drawing.Size(1184, 550);
             this.Controls.Add(datos_proveedorLabel);
             this.Controls.Add(this.datos_proveedorTextBox);
             this.Controls.Add(this.pictureBox1);
@@ -495,6 +496,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_InventarioVisualizarProducto";
             this.Text = "Producto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_InventarioVisualizarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();

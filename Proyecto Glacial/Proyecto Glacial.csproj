@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\chhris\Pictures\Glacial1.07.01\</PublishUrl>
+    <PublishUrl>C:\Users\renterian\Desktop\Glacial\1.0.3FinalClientes\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,6 +60,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lel.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -88,6 +91,7 @@
   <ItemGroup>
     <Compile Include="AutoClosingMessageBox.cs" />
     <Compile Include="Clases\AgregarObtenerImagen.cs" />
+    <Compile Include="Clases\ReestablecerID.cs" />
     <Compile Include="Clientes\frm_ClientesAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +115,12 @@
     </Compile>
     <Compile Include="Clientes\frm_ClientesModificar.Designer.cs">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frm_ClientesVisualizarIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\frm_ClientesVisualizarIndividual.Designer.cs">
+      <DependentUpon>frm_ClientesVisualizarIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasAgregar.cs">
       <SubType>Form</SubType>
@@ -325,6 +335,9 @@
     <EmbeddedResource Include="Clientes\frm_ClientesModificar.resx">
       <DependentUpon>frm_ClientesModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\frm_ClientesVisualizarIndividual.resx">
+      <DependentUpon>frm_ClientesVisualizarIndividual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frm_ComprasAgregar.resx">
       <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -451,7 +464,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Proyecto Glacial_ClaveTemporal.pfx" />
@@ -585,6 +600,11 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IMG_1783.ico" />
+    <Content Include="lel.ico" />
+    <Content Include="wtfff.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

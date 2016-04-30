@@ -61,11 +61,10 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(4, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(997, 80);
+            this.panel1.Size = new System.Drawing.Size(1168, 80);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -81,7 +80,6 @@
             // 
             // pnl_MenuIzquierdo
             // 
-            this.pnl_MenuIzquierdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_MenuIzquierdo.Controls.Add(this.lbl_Modificar);
             this.pnl_MenuIzquierdo.Controls.Add(this.btn_Modificar);
             this.pnl_MenuIzquierdo.Controls.Add(this.btn_Agregar);
@@ -180,11 +178,10 @@
             // pnl_ContenidoCentro
             // 
             this.pnl_ContenidoCentro.AutoSize = true;
-            this.pnl_ContenidoCentro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_ContenidoCentro.Controls.Add(this.label1);
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
-            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(810, 523);
+            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(981, 523);
             this.pnl_ContenidoCentro.TabIndex = 4;
             this.pnl_ContenidoCentro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ContenidoCentro_Paint);
             // 
@@ -201,11 +198,10 @@
             // 
             // pnl_barraEstado
             // 
-            this.pnl_barraEstado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_barraEstado.Controls.Add(this.lbl_Estado);
             this.pnl_barraEstado.Location = new System.Drawing.Point(4, 622);
             this.pnl_barraEstado.Name = "pnl_barraEstado";
-            this.pnl_barraEstado.Size = new System.Drawing.Size(988, 38);
+            this.pnl_barraEstado.Size = new System.Drawing.Size(1168, 38);
             this.pnl_barraEstado.TabIndex = 5;
             // 
             // lbl_Estado
@@ -237,7 +233,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-     //       this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
@@ -260,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 662);
             this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);
@@ -268,6 +263,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_InventarioMenu";
             this.Text = "Menú Inventario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_InventarioMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -112,5 +112,11 @@ namespace Proyecto_Glacial.Clientes
         {
             this.clientesDataGridView.Columns[1].DefaultCellStyle.Format = "##00000";
         }
+
+        private void clientesDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            Form ClientesMostrarInvidual = new Clientes.frm_ClientesVisualizarIndividual();
+            ClientesMostrarInvidual.ShowDialog();
+        }
     }
 }

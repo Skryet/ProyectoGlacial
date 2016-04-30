@@ -31,10 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmb_SelccionarTipo = new System.Windows.Forms.ComboBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
@@ -42,11 +40,13 @@
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.clientesDataGridView = new System.Windows.Forms.DataGridView();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.Identificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,39 +54,16 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiene_credito = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_limite_credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CURP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_asignado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.comprasTableAdapter = null;
-          //  this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = null;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // cmb_SelccionarTipo
             // 
@@ -107,7 +84,7 @@
             this.btn_Buscar.Enabled = false;
             this.btn_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray_02_;
-            this.btn_Buscar.Location = new System.Drawing.Point(494, 12);
+            this.btn_Buscar.Location = new System.Drawing.Point(746, 12);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(80, 80);
             this.btn_Buscar.TabIndex = 13;
@@ -119,7 +96,7 @@
             this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Buscar.Location = new System.Drawing.Point(212, 52);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(276, 29);
+            this.txt_Buscar.Size = new System.Drawing.Size(528, 29);
             this.txt_Buscar.TabIndex = 12;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
@@ -127,7 +104,7 @@
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(499, 95);
+            this.lbl_Buscar.Location = new System.Drawing.Point(751, 95);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(75, 22);
             this.lbl_Buscar.TabIndex = 16;
@@ -136,7 +113,7 @@
             // btn_BuscarTodo
             // 
             this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
-            this.btn_BuscarTodo.Location = new System.Drawing.Point(588, 12);
+            this.btn_BuscarTodo.Location = new System.Drawing.Point(864, 12);
             this.btn_BuscarTodo.Name = "btn_BuscarTodo";
             this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
             this.btn_BuscarTodo.TabIndex = 17;
@@ -147,7 +124,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(588, 95);
+            this.label1.Location = new System.Drawing.Point(860, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 44);
             this.label1.TabIndex = 18;
@@ -165,25 +142,58 @@
             this.Identificador,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.telefono,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.correo,
-            this.rfc});
+            this.rfc,
+            this.fecha_registro,
+            this.tiene_credito,
+            this.credito,
+            this.fecha_limite_credito,
+            this.CURP,
+            this.precio_asignado});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
-            this.clientesDataGridView.Location = new System.Drawing.Point(44, 167);
+            this.clientesDataGridView.Location = new System.Drawing.Point(27, 167);
             this.clientesDataGridView.MultiSelect = false;
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
             this.clientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientesDataGridView.Size = new System.Drawing.Size(624, 220);
+            this.clientesDataGridView.Size = new System.Drawing.Size(917, 306);
             this.clientesDataGridView.TabIndex = 16;
             this.clientesDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.clientesDataGridView_CellFormatting);
             this.clientesDataGridView.Click += new System.EventHandler(this.clientesDataGridView_Click);
+            this.clientesDataGridView.DoubleClick += new System.EventHandler(this.clientesDataGridView_DoubleClick);
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = null;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // Identificador
             // 
@@ -209,23 +219,10 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre o Razón Social";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "apellidoP";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido Paterno";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "apellidoM";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Apellido Materno";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 160;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -276,11 +273,61 @@
             this.rfc.Name = "rfc";
             this.rfc.ReadOnly = true;
             // 
+            // fecha_registro
+            // 
+            this.fecha_registro.DataPropertyName = "fecha_registro";
+            dataGridViewCellStyle3.Format = "G";
+            dataGridViewCellStyle3.NullValue = null;
+            this.fecha_registro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fecha_registro.HeaderText = "Fecha de Registro";
+            this.fecha_registro.Name = "fecha_registro";
+            this.fecha_registro.ReadOnly = true;
+            // 
+            // tiene_credito
+            // 
+            this.tiene_credito.DataPropertyName = "tiene_credito";
+            this.tiene_credito.HeaderText = "¿Crédito aprovado?";
+            this.tiene_credito.Name = "tiene_credito";
+            this.tiene_credito.ReadOnly = true;
+            this.tiene_credito.Width = 60;
+            // 
+            // credito
+            // 
+            this.credito.DataPropertyName = "credito";
+            this.credito.HeaderText = "Crédito";
+            this.credito.Name = "credito";
+            this.credito.ReadOnly = true;
+            this.credito.Width = 60;
+            // 
+            // fecha_limite_credito
+            // 
+            this.fecha_limite_credito.DataPropertyName = "fecha_limite_credito";
+            this.fecha_limite_credito.HeaderText = "Fecha Límite del Crédito";
+            this.fecha_limite_credito.Name = "fecha_limite_credito";
+            this.fecha_limite_credito.ReadOnly = true;
+            // 
+            // CURP
+            // 
+            this.CURP.DataPropertyName = "CURP";
+            this.CURP.HeaderText = "CURP";
+            this.CURP.Name = "CURP";
+            this.CURP.ReadOnly = true;
+            // 
+            // precio_asignado
+            // 
+            this.precio_asignado.DataPropertyName = "precio_asignado";
+            dataGridViewCellStyle4.Format = "Precio #0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.precio_asignado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.precio_asignado.HeaderText = "Precio Referencial";
+            this.precio_asignado.Name = "precio_asignado";
+            this.precio_asignado.ReadOnly = true;
+            // 
             // frm_ClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 484);
+            this.ClientSize = new System.Drawing.Size(965, 485);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_BuscarTodo);
             this.Controls.Add(this.clientesDataGridView);
@@ -291,9 +338,9 @@
             this.Name = "frm_ClientesBuscar";
             this.Text = "frm_ClientesBuscar";
             this.Load += new System.EventHandler(this.frm_ClientesBuscar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,8 +362,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Identificador;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -324,5 +369,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn rfc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_registro;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tiene_credito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_limite_credito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CURP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_asignado;
     }
 }
