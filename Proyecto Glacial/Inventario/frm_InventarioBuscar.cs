@@ -71,7 +71,7 @@ namespace Proyecto_Glacial.Inventario
 
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
-
+            contextMenuStrip1.Show();
             //btn_detalles.Enabled = true;
             if(productosDataGridView.SelectedCells[11].Value.ToString() != "")
             //ListaProveedorActual

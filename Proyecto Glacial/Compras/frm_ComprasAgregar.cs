@@ -24,6 +24,8 @@ namespace Proyecto_Glacial.Compras
         public double totalCompra;
         public double precioUnitario2;
 
+        Form buscarArticulo = new Inventario.frm_InventarioBuscar();
+
        
         public frm_ComprasAgregar()
         {
@@ -132,6 +134,14 @@ namespace Proyecto_Glacial.Compras
         private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.Cells["total"].Value = Convert.ToDouble(dataGridView1.CurrentRow.Cells["cantidad"].Value) * Convert.ToDouble(dataGridView1.CurrentRow.Cells["precioUnitario"].Value);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                buscarArticulo.ShowDialog();
+            }
         }
     }
 }

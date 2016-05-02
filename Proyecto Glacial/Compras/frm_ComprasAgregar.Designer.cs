@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_examinar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
@@ -44,13 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_mesesSinIntereses = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_examinar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista_material_comprasBindingSource)).BeginInit();
@@ -83,7 +83,49 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(675, 155);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
+            // 
+            // idProducto
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.idProducto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idProducto.HeaderText = "Código/Linea";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ToolTipText = "...";
+            // 
+            // btn_examinar
+            // 
+            this.btn_examinar.HeaderText = "";
+            this.btn_examinar.Name = "btn_examinar";
+            this.btn_examinar.Text = "...........";
+            this.btn_examinar.Width = 20;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // unidadMedida
+            // 
+            this.unidadMedida.HeaderText = "Unidad de Medida";
+            this.unidadMedida.Name = "unidadMedida";
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre del Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            // 
+            // precioUnitario
+            // 
+            this.precioUnitario.HeaderText = "Precio Unitario";
+            this.precioUnitario.Name = "precioUnitario";
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
             // 
             // label1
             // 
@@ -186,47 +228,6 @@
             this.label4.Size = new System.Drawing.Size(292, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "¿A cuántas mensualidades?";
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            // 
-            // precioUnitario
-            // 
-            this.precioUnitario.HeaderText = "Precio Unitario";
-            this.precioUnitario.Name = "precioUnitario";
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "Nombre del Producto";
-            this.NombreProducto.Name = "NombreProducto";
-            // 
-            // unidadMedida
-            // 
-            this.unidadMedida.HeaderText = "Unidad de Medida";
-            this.unidadMedida.Name = "unidadMedida";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // btn_examinar
-            // 
-            this.btn_examinar.HeaderText = "";
-            this.btn_examinar.Name = "btn_examinar";
-            this.btn_examinar.Text = "...........";
-            this.btn_examinar.Width = 20;
-            // 
-            // idProducto
-            // 
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.idProducto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idProducto.HeaderText = "Código/Linea";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ToolTipText = "...";
             // 
             // frm_ComprasAgregar
             // 
