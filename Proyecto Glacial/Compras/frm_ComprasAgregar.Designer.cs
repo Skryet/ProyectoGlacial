@@ -33,9 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_examinar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
@@ -47,6 +49,8 @@
             this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comprasTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.comprasTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_mesesSinIntereses = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista_material_comprasBindingSource)).BeginInit();
@@ -69,27 +73,34 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
-            this.NombreProducto,
+            this.btn_examinar,
             this.cantidad,
             this.unidadMedida,
+            this.NombreProducto,
+            this.precioUnitario,
             this.total});
             this.dataGridView1.Location = new System.Drawing.Point(5, 123);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 155);
+            this.dataGridView1.Size = new System.Drawing.Size(675, 155);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
             // idProducto
             // 
             dataGridViewCellStyle1.Format = "N0";
             dataGridViewCellStyle1.NullValue = null;
             this.idProducto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idProducto.HeaderText = "Id Del Producto";
+            this.idProducto.HeaderText = "Código/Linea";
             this.idProducto.Name = "idProducto";
+            this.idProducto.ToolTipText = "...";
             // 
-            // NombreProducto
+            // btn_examinar
             // 
-            this.NombreProducto.HeaderText = "Nombre del Producto";
-            this.NombreProducto.Name = "NombreProducto";
+            this.btn_examinar.HeaderText = "";
+            this.btn_examinar.Name = "btn_examinar";
+            this.btn_examinar.Text = "...........";
+            this.btn_examinar.Width = 20;
             // 
             // cantidad
             // 
@@ -101,6 +112,16 @@
             this.unidadMedida.HeaderText = "Unidad de Medida";
             this.unidadMedida.Name = "unidadMedida";
             // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre del Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            // 
+            // precioUnitario
+            // 
+            this.precioUnitario.HeaderText = "Precio Unitario";
+            this.precioUnitario.Name = "precioUnitario";
+            // 
             // total
             // 
             this.total.HeaderText = "Total";
@@ -110,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(354, 93);
+            this.label1.Location = new System.Drawing.Point(517, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 24);
             this.label1.TabIndex = 3;
@@ -120,7 +141,7 @@
             // 
             this.btn_finalizar.Enabled = false;
             this.btn_finalizar.Image = global::Proyecto_Glacial.Properties.Resources.completeSelling;
-            this.btn_finalizar.Location = new System.Drawing.Point(406, 10);
+            this.btn_finalizar.Location = new System.Drawing.Point(573, 20);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(80, 80);
             this.btn_finalizar.TabIndex = 4;
@@ -133,8 +154,9 @@
             this.cmbTipoPago.FormattingEnabled = true;
             this.cmbTipoPago.Items.AddRange(new object[] {
             "Efectivo",
-            "Crédito",
-            "Cheque"});
+            "Crédito (Meses sin Intereses )",
+            "Cheque",
+            "Débito"});
             this.cmbTipoPago.Location = new System.Drawing.Point(23, 72);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(121, 32);
@@ -160,7 +182,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = this.lista_material_comprasTableAdapter;
             this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
@@ -183,17 +204,38 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 45);
+            this.label3.Location = new System.Drawing.Point(12, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tipo de Pago";
+            // 
+            // txt_mesesSinIntereses
+            // 
+            this.txt_mesesSinIntereses.Enabled = false;
+            this.txt_mesesSinIntereses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_mesesSinIntereses.Location = new System.Drawing.Point(299, 326);
+            this.txt_mesesSinIntereses.Name = "txt_mesesSinIntereses";
+            this.txt_mesesSinIntereses.Size = new System.Drawing.Size(139, 32);
+            this.txt_mesesSinIntereses.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(230, 299);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(292, 24);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "¿A cuántas mensualidades?";
             // 
             // frm_ComprasAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 419);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_mesesSinIntereses);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbTipoPago);
             this.Controls.Add(this.btn_finalizar);
@@ -222,14 +264,18 @@
         private System.Windows.Forms.BindingSource lista_material_comprasBindingSource;
         private glacial_almacenDataSetTableAdapters.lista_material_comprasTableAdapter lista_material_comprasTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadMedida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.BindingSource comprasBindingSource;
         private glacial_almacenDataSetTableAdapters.comprasTableAdapter comprasTableAdapter;
         private System.Windows.Forms.ComboBox cmbTipoPago;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_mesesSinIntereses;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_examinar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

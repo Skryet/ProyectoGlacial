@@ -115,6 +115,36 @@
             lbl_Nombre.TabIndex = 13;
             lbl_Nombre.Text = "Nombre";
             // 
+            // lbl_RFC
+            // 
+            lbl_RFC.AutoSize = true;
+            lbl_RFC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            lbl_RFC.Location = new System.Drawing.Point(35, 363);
+            lbl_RFC.Name = "lbl_RFC";
+            lbl_RFC.Size = new System.Drawing.Size(57, 18);
+            lbl_RFC.TabIndex = 37;
+            lbl_RFC.Text = "R.F.C.";
+            // 
+            // lbl_Cp
+            // 
+            lbl_Cp.AutoSize = true;
+            lbl_Cp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            lbl_Cp.Location = new System.Drawing.Point(35, 318);
+            lbl_Cp.Name = "lbl_Cp";
+            lbl_Cp.Size = new System.Drawing.Size(41, 18);
+            lbl_Cp.TabIndex = 35;
+            lbl_Cp.Text = "C.P.";
+            // 
+            // lbl_email
+            // 
+            lbl_email.AutoSize = true;
+            lbl_email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            lbl_email.Location = new System.Drawing.Point(35, 272);
+            lbl_email.Name = "lbl_email";
+            lbl_email.Size = new System.Drawing.Size(51, 18);
+            lbl_email.TabIndex = 34;
+            lbl_email.Text = "Email";
+            // 
             // btn_Guardar
             // 
             this.btn_Guardar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
@@ -188,6 +218,7 @@
             // txt_Nombre
             // 
             this.txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "nombre", true));
+            this.txt_Nombre.Enabled = false;
             this.txt_Nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.Location = new System.Drawing.Point(132, 39);
             this.txt_Nombre.Name = "txt_Nombre";
@@ -204,10 +235,10 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
+            //     this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-           // this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = this.proveedoresTableAdapter;
@@ -233,34 +264,15 @@
             this.lbl_Cancelar.TabIndex = 27;
             this.lbl_Cancelar.Text = "Cancelar";
             // 
-            // lbl_RFC
-            // 
-            lbl_RFC.AutoSize = true;
-            lbl_RFC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_RFC.Location = new System.Drawing.Point(35, 363);
-            lbl_RFC.Name = "lbl_RFC";
-            lbl_RFC.Size = new System.Drawing.Size(57, 18);
-            lbl_RFC.TabIndex = 37;
-            lbl_RFC.Text = "R.F.C.";
-            // 
             // txt_RFC
             // 
             this.txt_RFC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "rfc", true));
+            this.txt_RFC.Enabled = false;
             this.txt_RFC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.txt_RFC.Location = new System.Drawing.Point(132, 360);
             this.txt_RFC.Name = "txt_RFC";
             this.txt_RFC.Size = new System.Drawing.Size(231, 26);
             this.txt_RFC.TabIndex = 39;
-            // 
-            // lbl_Cp
-            // 
-            lbl_Cp.AutoSize = true;
-            lbl_Cp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_Cp.Location = new System.Drawing.Point(35, 318);
-            lbl_Cp.Name = "lbl_Cp";
-            lbl_Cp.Size = new System.Drawing.Size(41, 18);
-            lbl_Cp.TabIndex = 35;
-            lbl_Cp.Text = "C.P.";
             // 
             // txt_cp
             // 
@@ -270,16 +282,6 @@
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.Size = new System.Drawing.Size(100, 26);
             this.txt_cp.TabIndex = 38;
-            // 
-            // lbl_email
-            // 
-            lbl_email.AutoSize = true;
-            lbl_email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            lbl_email.Location = new System.Drawing.Point(35, 272);
-            lbl_email.Name = "lbl_email";
-            lbl_email.Size = new System.Drawing.Size(51, 18);
-            lbl_email.TabIndex = 34;
-            lbl_email.Text = "Email";
             // 
             // txt_Email
             // 

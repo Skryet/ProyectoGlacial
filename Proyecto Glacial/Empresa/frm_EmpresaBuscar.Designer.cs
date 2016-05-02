@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.cbb_Opciones = new System.Windows.Forms.ComboBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
@@ -36,9 +38,10 @@
             this.lbl_BuscarPor = new System.Windows.Forms.Label();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
+         //   this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.empresaDataGridView = new System.Windows.Forms.DataGridView();
+            this.identificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,14 +121,14 @@
             // 
             // empresaTableAdapter
             // 
-            this.empresaTableAdapter.ClearBeforeFill = true;
+      //      this.empresaTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
+     //       this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
@@ -145,6 +148,7 @@
             this.empresaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.empresaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.identificador,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -159,10 +163,22 @@
             this.empresaDataGridView.Name = "empresaDataGridView";
             this.empresaDataGridView.Size = new System.Drawing.Size(677, 345);
             this.empresaDataGridView.TabIndex = 17;
+            this.empresaDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.empresaDataGridView_CellFormatting);
+            // 
+            // identificador
+            // 
+            dataGridViewCellStyle1.Format = "E";
+            dataGridViewCellStyle1.NullValue = "E";
+            this.identificador.DefaultCellStyle = dataGridViewCellStyle1;
+            this.identificador.HeaderText = "";
+            this.identificador.Name = "identificador";
+            this.identificador.Width = 19;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empresa";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 43;
@@ -254,9 +270,10 @@
         private System.Windows.Forms.Label lbl_BuscarPor;
         private glacial_almacenDataSet glacial_almacenDataSet;
         private System.Windows.Forms.BindingSource empresaBindingSource;
-        private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
+       // private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView empresaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn identificador;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

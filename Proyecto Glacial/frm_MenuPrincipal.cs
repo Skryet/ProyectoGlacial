@@ -20,14 +20,14 @@ namespace Proyecto_Glacial
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
             Form FormularioClientes = new frm_ClientesMenu();
-            FormularioClientes.Show();
+            FormularioClientes.ShowDialog();
 
         }
 
         private void btn_Proveedores_Click(object sender, EventArgs e)
         {
             Form frm_Proveedores = new frm_Proveedores();
-            frm_Proveedores.Show();
+            frm_Proveedores.ShowDialog();
         }
 
         private void btn_productos_Click(object sender, EventArgs e)

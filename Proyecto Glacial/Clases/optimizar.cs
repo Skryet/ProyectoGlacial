@@ -25,6 +25,7 @@ namespace Proyecto_Glacial
         //Validar si es Decimal y Dígito
         public void isDecimalPoint(KeyPressEventArgs e)
         {
+
             if  (Char.IsDigit(e.KeyChar) || e.KeyChar == '.' || Char.IsControl(e.KeyChar) )
             {
                 e.Handled = false;
@@ -45,6 +46,8 @@ namespace Proyecto_Glacial
                 e.Handled = true;
             }
         }
+
+        
 
     }
 }

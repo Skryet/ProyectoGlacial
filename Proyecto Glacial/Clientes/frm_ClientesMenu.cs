@@ -12,9 +12,12 @@ namespace Proyecto_Glacial
 {
     public partial class frm_ClientesMenu : Form
     {
+        Clases.ReestablecerID ReestabelecerID = new Clases.ReestablecerID();
         Form banFormModificar;
         Form banFormAgregar;
         Form banFormBuscar;
+
+        
 
         public void NombreMetodo(string mensaje)
         {
@@ -71,7 +74,7 @@ namespace Proyecto_Glacial
             if (Program.idCliente == 0)
                 MessageBox.Show("Seleccione un registro para trabajar");
             else
-                { 
+                {                
                 btn_Eliminar.Enabled = true;
                 btn_Modificar.Enabled = true;
                 var resultado = MessageBox.Show("¿Está seguro de eliminar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -80,7 +83,7 @@ namespace Proyecto_Glacial
                     ClientesBuscar.Close();
                     this.clientesTableAdapter.EliminarClientePorId(Program.idCliente);
                     MessageBox.Show("Registro Eliminado con éxito!","Completado");
-
+                    ReestabelecerID.restablecerID("clientes");
 
                     ClientesBuscar = Application.OpenForms.OfType<Clientes.frm_ClientesBuscar>().FirstOrDefault();
                     ClientesBuscar = ClientesBuscar ?? new Clientes.frm_ClientesBuscar();

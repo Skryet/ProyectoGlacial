@@ -83,8 +83,9 @@
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
             this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
+            //    this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
@@ -94,6 +95,10 @@
             // 
             // vista_listar_proveedores_productoDataGridView
             // 
+            this.vista_listar_proveedores_productoDataGridView.AllowUserToAddRows = false;
+            this.vista_listar_proveedores_productoDataGridView.AllowUserToDeleteRows = false;
+            this.vista_listar_proveedores_productoDataGridView.AllowUserToResizeColumns = false;
+            this.vista_listar_proveedores_productoDataGridView.AllowUserToResizeRows = false;
             this.vista_listar_proveedores_productoDataGridView.AutoGenerateColumns = false;
             this.vista_listar_proveedores_productoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vista_listar_proveedores_productoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

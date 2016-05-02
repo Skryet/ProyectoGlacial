@@ -16,8 +16,16 @@ namespace Proyecto_Glacial
         public static int idCompra;
         public static int idListaCompra;
 
+        public static int tipoClick;
         public static int idProducto;
 
+        //Variables compra
+        public static string nombreProducto;
+        public static double precioUnitario;
+        public static int cantidad;
+        public static string unidadMedida;
+        public static int total;
+        //Vector de compras
         public static int idCliente;
         public static bool isOpenMainClientForm = true;
 

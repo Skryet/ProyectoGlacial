@@ -44,7 +44,7 @@ namespace Proyecto_Glacial.Inventario
             {
                 switch (cmb_SelccionarTipo.Text)
                 {
-                    case "Número de Producto":
+                    case "Línea del producto":
                             this.productosTableAdapter.FillByBuscarProductoPorID(this.glacial_almacenDataSet.productos, Convert.ToInt32(txt_Buscar.Text));
                             if (productosDataGridView.RowCount == 0)
                                 MessageBox.Show("No se encontró un registro con este número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,11 +71,11 @@ namespace Proyecto_Glacial.Inventario
 
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
-
-            btn_detalles.Enabled = true;
-            if(productosDataGridView.SelectedCells[10].Value.ToString() != "")
+            contextMenuStrip1.Show();
+            //btn_detalles.Enabled = true;
+            if(productosDataGridView.SelectedCells[11].Value.ToString() != "")
             //ListaProveedorActual
-            Program.idListaProveedorActual = Convert.ToInt32(productosDataGridView.SelectedCells[13].Value.ToString());
+            Program.idListaProveedorActual = Convert.ToInt32(productosDataGridView.SelectedCells[14].Value.ToString());
 
             //IdProducto
             Program.idProducto = Convert.ToInt32(productosDataGridView.SelectedCells[0].Value.ToString());
@@ -83,7 +83,20 @@ namespace Proyecto_Glacial.Inventario
 
         private void btn_detalles_Click(object sender, EventArgs e)
         {
-            frm_BuscarProductoProveedores.ShowDialog();
+            //frm_BuscarProductoProveedores.ShowDialog();
+            Form formVisualizar = new frm_InventarioVisualizarProducto();
+            formVisualizar.ShowDialog();
+        }
+
+        private void productosDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            this.productosDataGridView.Columns[2].DefaultCellStyle.Format = "##00000";
+        }
+
+        private void productosDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            Form formVisualizar = new frm_InventarioVisualizarProducto();
+            formVisualizar.ShowDialog();
         }
     }
 }

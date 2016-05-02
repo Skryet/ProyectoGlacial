@@ -46,7 +46,7 @@
             this.lbl_MenuActual = new System.Windows.Forms.Label();
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
+        //    this.empresaTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.empresaTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.pnl_Menu.SuspendLayout();
             this.pnl_Encabezado.SuspendLayout();
@@ -160,14 +160,14 @@
             // 
             // empresaTableAdapter
             // 
-            this.empresaTableAdapter.ClearBeforeFill = true;
+         //   this.empresaTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
+         //   this.tableAdapterManager.empresaTableAdapter = this.empresaTableAdapter;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
             //this.tableAdapterManager.material_comprasTableAdapter = null;
@@ -216,7 +216,7 @@
         private System.Windows.Forms.Label lbl_MenuActual;
         private glacial_almacenDataSet glacial_almacenDataSet;
         private System.Windows.Forms.BindingSource empresaBindingSource;
-        private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
+       // private glacial_almacenDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

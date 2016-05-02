@@ -39,6 +39,7 @@
             this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linea_producto_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,33 +55,34 @@
             this.numeroPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.btn_detalles = new System.Windows.Forms.Button();
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(580, 97);
+            this.label1.Location = new System.Drawing.Point(798, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 44);
+            this.label1.Size = new System.Drawing.Size(155, 44);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Buscar \r\nTodo";
+            this.label1.Text = "Visualizar todos\r\n los productos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_Buscar
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(499, 97);
+            this.lbl_Buscar.Location = new System.Drawing.Point(698, 97);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(75, 22);
             this.lbl_Buscar.TabIndex = 23;
@@ -91,9 +93,9 @@
             this.cmb_SelccionarTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_SelccionarTipo.FormattingEnabled = true;
             this.cmb_SelccionarTipo.Items.AddRange(new object[] {
-            "Número de Producto",
+            "Línea del producto",
             "Nombre"});
-            this.cmb_SelccionarTipo.Location = new System.Drawing.Point(12, 61);
+            this.cmb_SelccionarTipo.Location = new System.Drawing.Point(12, 44);
             this.cmb_SelccionarTipo.Name = "cmb_SelccionarTipo";
             this.cmb_SelccionarTipo.Size = new System.Drawing.Size(194, 30);
             this.cmb_SelccionarTipo.TabIndex = 21;
@@ -102,9 +104,9 @@
             // txt_Buscar
             // 
             this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Buscar.Location = new System.Drawing.Point(212, 62);
+            this.txt_Buscar.Location = new System.Drawing.Point(213, 44);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(276, 29);
+            this.txt_Buscar.Size = new System.Drawing.Size(459, 29);
             this.txt_Buscar.TabIndex = 19;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
@@ -120,6 +122,7 @@
             this.productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
+            this.linea_producto_codigo,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
@@ -139,9 +142,11 @@
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.ReadOnly = true;
             this.productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productosDataGridView.Size = new System.Drawing.Size(633, 220);
+            this.productosDataGridView.Size = new System.Drawing.Size(941, 317);
             this.productosDataGridView.TabIndex = 26;
+            this.productosDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.productosDataGridView_CellFormatting);
             this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
+            this.productosDataGridView.DoubleClick += new System.EventHandler(this.productosDataGridView_DoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -149,15 +154,29 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Número de producto";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 80;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 129;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "id_linea_producto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Línea del Producto";
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Línea";
+            this.dataGridViewTextBoxColumn2.MaxInputLength = 5;
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 3;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 113;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // linea_producto_codigo
+            // 
+            this.linea_producto_codigo.DataPropertyName = "linea_producto_codigo";
+            this.linea_producto_codigo.HeaderText = "Código de Línea";
+            this.linea_producto_codigo.Name = "linea_producto_codigo";
+            this.linea_producto_codigo.ReadOnly = true;
+            this.linea_producto_codigo.Width = 77;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -190,6 +209,7 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Visible = false;
+            this.dataGridViewTextBoxColumn7.Width = 118;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -197,23 +217,23 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Unidad de medida";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 78;
+            this.dataGridViewTextBoxColumn8.Width = 108;
             // 
             // marcaCarro
             // 
             this.marcaCarro.DataPropertyName = "marcaCarro";
-            this.marcaCarro.HeaderText = "Marca del Vehículo perteneciente";
+            this.marcaCarro.HeaderText = "Marca";
             this.marcaCarro.Name = "marcaCarro";
             this.marcaCarro.ReadOnly = true;
-            this.marcaCarro.Width = 117;
+            this.marcaCarro.Width = 62;
             // 
             // modeloCarro
             // 
             this.modeloCarro.DataPropertyName = "modeloCarro";
-            this.modeloCarro.HeaderText = "Modelo del vehículo perteneciente";
+            this.modeloCarro.HeaderText = "Modelo";
             this.modeloCarro.Name = "modeloCarro";
             this.modeloCarro.ReadOnly = true;
-            this.modeloCarro.Width = 121;
+            this.modeloCarro.Width = 67;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -265,8 +285,9 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 129;
             // 
-            // numeroPedimento
+            // btn_detalles
             // 
             this.numeroPedimento.DataPropertyName = "numeroPedimento";
             this.numeroPedimento.HeaderText = "Número de pedimento";
@@ -284,21 +305,10 @@
             this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
             this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btn_detalles
-            // 
-            this.btn_detalles.Enabled = false;
-            this.btn_detalles.Image = global::Proyecto_Glacial.Properties.Resources.tag;
-            this.btn_detalles.Location = new System.Drawing.Point(297, 381);
-            this.btn_detalles.Name = "btn_detalles";
-            this.btn_detalles.Size = new System.Drawing.Size(80, 80);
-            this.btn_detalles.TabIndex = 27;
-            this.btn_detalles.UseVisualStyleBackColor = true;
-            this.btn_detalles.Click += new System.EventHandler(this.btn_detalles_Click);
-            // 
             // btn_BuscarTodo
             // 
             this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
-            this.btn_BuscarTodo.Location = new System.Drawing.Point(580, 14);
+            this.btn_BuscarTodo.Location = new System.Drawing.Point(829, 11);
             this.btn_BuscarTodo.Name = "btn_BuscarTodo";
             this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
             this.btn_BuscarTodo.TabIndex = 24;
@@ -310,22 +320,43 @@
             this.btn_Buscar.Enabled = false;
             this.btn_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray_02_;
-            this.btn_Buscar.Location = new System.Drawing.Point(494, 12);
+            this.btn_Buscar.Location = new System.Drawing.Point(693, 14);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(80, 80);
             this.btn_Buscar.TabIndex = 20;
             this.btn_Buscar.UseVisualStyleBackColor = true;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
-            // label2
+            // productosTableAdapter
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(383, 408);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 22);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Detalles Producto";
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verDetallesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // verDetallesToolStripMenuItem
+            // 
+            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
+            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verDetallesToolStripMenuItem.Text = "Ver Detalles";
             // 
             // productosTableAdapter
             // 
@@ -350,9 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 484);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn_detalles);
+            this.ClientSize = new System.Drawing.Size(965, 485);
             this.Controls.Add(this.productosDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_BuscarTodo);
@@ -366,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,10 +414,9 @@
         private glacial_almacenDataSetTableAdapters.productosTableAdapter productosTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView productosDataGridView;
-        private System.Windows.Forms.Button btn_detalles;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linea_producto_codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -401,5 +430,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_especial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroPedimento;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem verDetallesToolStripMenuItem;
     }
 }

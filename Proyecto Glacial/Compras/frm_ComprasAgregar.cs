@@ -22,6 +22,9 @@ namespace Proyecto_Glacial.Compras
         public string nombre;
         public string tipoPago;
         public double totalCompra;
+        public double precioUnitario2;
+
+        Form buscarArticulo = new Inventario.frm_InventarioBuscar();
 
        
         public frm_ComprasAgregar()
@@ -70,7 +73,7 @@ namespace Proyecto_Glacial.Compras
                 case "Efectivo":
                     tipoPago = "efectivo";
                     break;
-                case "Crédito":
+                case "Crédito (Meses sin Intereses )":
                     tipoPago = "credito";
                     break;
                 case "Cheque":
@@ -87,12 +90,13 @@ namespace Proyecto_Glacial.Compras
                 total2 = Convert.ToDouble(dataGridView1.Rows[i].Cells["total"].Value);
                 totalCompra += total2;
                 nombre = dataGridView1.Rows[i].Cells["nombreProducto"].Value.ToString();
+                precioUnitario2 = Convert.ToDouble(dataGridView1.Rows[i].Cells["precioUnitario"].Value);
 
-                this.lista_material_comprasTableAdapter.InsertarNuevaCompra(idCompra + 1, total2, cantidad2, idProducto2, unidad_medida,nombre);
+                this.lista_material_comprasTableAdapter.InsertarNuevaCompra(idCompra +1, total2, cantidad2, idProducto2, unidad_medida,nombre,precioUnitario2);
                 
                // MessageBox.Show(valor1.ToString());
             }
-            this.comprasTableAdapter.InsertarNuevaCompra(DateTime.Now, tipoPago, 1, totalCompra);
+            this.comprasTableAdapter.InsertarNuevaCompra(DateTime.Now, tipoPago, 1, totalCompra,txt_mesesSinIntereses.Text);
             MessageBox.Show("Venta registrada con éxito!", "Exito" ,MessageBoxButtons.OK);
             this.Close();
 
@@ -118,6 +122,26 @@ namespace Proyecto_Glacial.Compras
         private void cmbTipoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
             btn_finalizar.Enabled = true;
+            if(cmbTipoPago.Text == "Crédito (Meses sin Intereses )")
+            {
+                txt_mesesSinIntereses.Enabled = true;
+            }
+        }
+
+
+
+
+        private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.CurrentRow.Cells["total"].Value = Convert.ToDouble(dataGridView1.CurrentRow.Cells["cantidad"].Value) * Convert.ToDouble(dataGridView1.CurrentRow.Cells["precioUnitario"].Value);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                buscarArticulo.ShowDialog();
+            }
         }
     }
 }

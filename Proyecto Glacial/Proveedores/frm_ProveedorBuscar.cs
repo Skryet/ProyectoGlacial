@@ -70,5 +70,10 @@ namespace Proyecto_Glacial.Proveedores
         {
 
         }
+
+        private void proveedoresDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            this.proveedoresDataGridView.Columns[1].DefaultCellStyle.Format = "##00000";
+        }
     }
 }

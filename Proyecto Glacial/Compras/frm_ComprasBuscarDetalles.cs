@@ -80,9 +80,11 @@ namespace Proyecto_Glacial.Compras
 
         private void frm_ComprasBuscarDetalles_FormClosed(object sender, FormClosedEventArgs e)
         {
-            for (int i = 0; i < lista_material_comprasDataGridView.Rows.Count - 1; i++)//Ciclo para calcular total
+            total2 = 0;
+            totalCompra = 0;
+            for (int i = 0; i < lista_material_comprasDataGridView.Rows.Count; i++)//Ciclo para calcular total
             {
-                total2 = Convert.ToDouble(lista_material_comprasDataGridView.Rows[i].Cells[5].Value);
+                total2 = Convert.ToDouble(lista_material_comprasDataGridView.Rows[i].Cells[6].Value);
                 totalCompra += total2;
             }
             this.comprasTableAdapter.ActualizarCompraPorId(totalCompra, Program.idCompra);

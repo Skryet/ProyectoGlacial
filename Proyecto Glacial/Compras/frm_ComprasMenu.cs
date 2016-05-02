@@ -39,11 +39,8 @@ namespace Proyecto_Glacial.Compras
 
         private void btn_BuscarTodo_Click(object sender, EventArgs e)
         {
-            banFormModificar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Clientes.frm_ClientesModificar);
-            banFormAgregar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frm_ClientesAgregar);
-            banFormBuscar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Clientes.frm_ClientesBuscar);
-            if (banFormModificar != null)
-                banFormModificar.Close();
+            banFormAgregar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Compras.frm_ComprasAgregar);
+            banFormBuscar = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Compras.frm_ComprasBuscar);
             if (banFormAgregar != null)
                 banFormAgregar.Close();
             if (banFormBuscar != null)

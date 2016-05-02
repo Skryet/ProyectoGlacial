@@ -71,7 +71,7 @@
             this.pnl_Header.Controls.Add(this.lbl_Clientes);
             this.pnl_Header.Location = new System.Drawing.Point(4, 6);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(875, 80);
+            this.pnl_Header.Size = new System.Drawing.Size(1168, 80);
             this.pnl_Header.TabIndex = 1;
             // 
             // pnl_MenuIzquierdo
@@ -134,16 +134,16 @@
             this.pnl_ContenidoCentro.Controls.Add(this.label1);
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
-            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(688, 523);
+            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(981, 523);
             this.pnl_ContenidoCentro.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(138, 64);
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(61, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 185);
+            this.label1.Size = new System.Drawing.Size(866, 375);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menú de Inventario\r\n\r\nSistema de Administración\r\n\r\nGlacial\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,14 +154,14 @@
             this.pnl_barraEstado.Controls.Add(this.lbl_Estado);
             this.pnl_barraEstado.Location = new System.Drawing.Point(4, 620);
             this.pnl_barraEstado.Name = "pnl_barraEstado";
-            this.pnl_barraEstado.Size = new System.Drawing.Size(875, 38);
+            this.pnl_barraEstado.Size = new System.Drawing.Size(1168, 51);
             this.pnl_barraEstado.TabIndex = 4;
             // 
             // lbl_Estado
             // 
             this.lbl_Estado.AutoSize = true;
             this.lbl_Estado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Estado.Location = new System.Drawing.Point(9, 8);
+            this.lbl_Estado.Location = new System.Drawing.Point(565, 13);
             this.lbl_Estado.Name = "lbl_Estado";
             this.lbl_Estado.Size = new System.Drawing.Size(108, 24);
             this.lbl_Estado.TabIndex = 0;
@@ -186,10 +186,9 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
             this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
- //           this.tableAdapterManager.material_comprasTableAdapter = null;
             this.tableAdapterManager.productosTableAdapter = null;
             this.tableAdapterManager.proveedor_codigoTableAdapter = null;
             this.tableAdapterManager.proveedoresTableAdapter = null;
@@ -242,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 678);
             this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);
@@ -250,6 +249,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_ClientesMenu";
             this.Text = "Menu Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ClientesMenu_FormClosed);
             this.Load += new System.EventHandler(this.frm_ClientesMenu_Load);
             this.pnl_Header.ResumeLayout(false);

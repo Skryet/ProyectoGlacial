@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,6 +75,46 @@ namespace Proyecto_Glacial.Compras
         private void frm_ComprasBuscar_Enter(object sender, EventArgs e)
         {
             this.comprasTableAdapter.Fill(this.glacial_almacenDataSet.compras);
+        }
+
+        private void btn_reporte_Click(object sender, EventArgs e)
+        {
+            int idCompra = 0;
+            MySqlDataAdapter adapter = null;
+            MySqlDataAdapter adapter2 = null;
+            CrystalReport1 objRpt = null;
+            CrystalReport1 objRpt2 = null;
+            Compras.frm_ComprasReporte rpt = new Compras.frm_ComprasReporte();
+            string Query = "";
+            string Query2 = "";
+            objRpt = new CrystalReport1();
+            objRpt2 = new CrystalReport1();
+            glacial_almacenDataSet Ds = new glacial_almacenDataSet();
+            String ConnStr = @"server=glacialcolima.ddns.net;user id=SGAglacial;password=Glacial_MASTER16;persistsecurityinfo=True;database=glacial_almacen";
+            MySqlConnection myConnection = new MySqlConnection(ConnStr);
+
+
+            for (int i = 0; i < comprasDataGridView.Rows.Count; i++)//Ciclo para agregar la Lista
+            {
+                idCompra = Convert.ToInt32(comprasDataGridView.Rows[i].Cells[0].Value);
+                Query = "SELECT * FROM compras WHERE id_compra = " + idCompra; // ESTE ES NUESTRO QUERY
+                Query2 = "SELECT * FROM lista_material_compras WHERE id_compra = " + idCompra;
+
+                adapter = new MySqlDataAdapter(Query, ConnStr);
+                adapter2 = new MySqlDataAdapter(Query2, ConnStr);
+
+                adapter.Fill(Ds, "compras");
+                adapter2.Fill(Ds, "lista_material_compras");
+                objRpt.SetDataSource(Ds);
+
+                rpt.crystalReportViewer1.ReportSource = objRpt;
+                rpt.ShowDialog(); // AQUI LO MUESTR
+
+                Ds = new glacial_almacenDataSet();
+                // ESTE ES NUESTRO REPORT VIEWER                           
+
+            }
+
         }
     }
 }
