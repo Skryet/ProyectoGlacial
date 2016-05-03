@@ -77,7 +77,9 @@ namespace Proyecto_Glacial.Ventas
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (Program.idProductoVenta != 999)
+            generar.restablecerID(1,"clientes");
+            
+            /*if (Program.idProductoVenta != 999)
             {
                 Program.listaProductos.eliminarProducto(Program.idProductoVenta);
                 generarVenta.Close();
@@ -86,7 +88,7 @@ namespace Proyecto_Glacial.Ventas
                 AddFormInPanel(generarVenta);
             }
             else
-                MessageBox.Show("No se ha seleccionado ningún producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha seleccionado ningún producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
         private void frm_Ventas_FormClosing(object sender, FormClosingEventArgs e)

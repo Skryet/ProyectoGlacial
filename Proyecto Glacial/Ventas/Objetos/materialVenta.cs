@@ -19,6 +19,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
         private string linea;
         private string codigo;
         private string descripcion;
+        private string nombre;
 
         public materialVenta()
         {            
@@ -31,6 +32,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
             linea = "";
             codigo = "";
             descripcion = "";
+            nombre = "";
         }       
 
         public int idVenta { get { return id_venta; } set { id_venta = value; } }
@@ -50,6 +52,8 @@ namespace Proyecto_Glacial.Ventas.Objetos
         public string Codigo { get { return codigo; } set { codigo = value; } }
 
         public string Descripcion { get { return descripcion; } set { descripcion = value; } }
+
+        public string Nombre { get { return nombre; } set { nombre = value; } }
 
         public double obtenerTotal()
         {

@@ -55,10 +55,6 @@
             this.vista_venta_lista_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.dgv_ListaVenta = new System.Windows.Forms.DataGridView();
-            this.rbt_Efectivo = new System.Windows.Forms.RadioButton();
-            this.rbt_Credito = new System.Windows.Forms.RadioButton();
-            this.lbl_TipoPago = new System.Windows.Forms.Label();
-            this.pnl_TipoPago = new System.Windows.Forms.Panel();
             this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_SeleccionarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +62,10 @@
             this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_PrecioPieza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbt_Efectivo = new System.Windows.Forms.RadioButton();
+            this.rbt_Credito = new System.Windows.Forms.RadioButton();
+            this.lbl_TipoPago = new System.Windows.Forms.Label();
+            this.pnl_TipoPago = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.pnl_Descuento.SuspendLayout();
@@ -363,53 +363,6 @@
             this.dgv_ListaVenta.Enter += new System.EventHandler(this.dgv_ListaVenta_Enter);
             this.dgv_ListaVenta.Leave += new System.EventHandler(this.dgv_ListaVenta_Leave);
             // 
-            // rbt_Efectivo
-            // 
-            this.rbt_Efectivo.AutoSize = true;
-            this.rbt_Efectivo.Checked = true;
-            this.rbt_Efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_Efectivo.Location = new System.Drawing.Point(4, 33);
-            this.rbt_Efectivo.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_Efectivo.Name = "rbt_Efectivo";
-            this.rbt_Efectivo.Size = new System.Drawing.Size(91, 22);
-            this.rbt_Efectivo.TabIndex = 27;
-            this.rbt_Efectivo.TabStop = true;
-            this.rbt_Efectivo.Text = "Efectivo";
-            this.rbt_Efectivo.UseVisualStyleBackColor = true;
-            // 
-            // rbt_Credito
-            // 
-            this.rbt_Credito.AutoSize = true;
-            this.rbt_Credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_Credito.Location = new System.Drawing.Point(4, 53);
-            this.rbt_Credito.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_Credito.Name = "rbt_Credito";
-            this.rbt_Credito.Size = new System.Drawing.Size(85, 22);
-            this.rbt_Credito.TabIndex = 26;
-            this.rbt_Credito.Text = "Credito";
-            this.rbt_Credito.UseVisualStyleBackColor = true;
-            // 
-            // lbl_TipoPago
-            // 
-            this.lbl_TipoPago.AutoSize = true;
-            this.lbl_TipoPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_TipoPago.Location = new System.Drawing.Point(4, 11);
-            this.lbl_TipoPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_TipoPago.Name = "lbl_TipoPago";
-            this.lbl_TipoPago.Size = new System.Drawing.Size(116, 18);
-            this.lbl_TipoPago.TabIndex = 28;
-            this.lbl_TipoPago.Text = "Tipo de Pago:";
-            // 
-            // pnl_TipoPago
-            // 
-            this.pnl_TipoPago.Controls.Add(this.lbl_TipoPago);
-            this.pnl_TipoPago.Controls.Add(this.rbt_Credito);
-            this.pnl_TipoPago.Controls.Add(this.rbt_Efectivo);
-            this.pnl_TipoPago.Location = new System.Drawing.Point(7, 141);
-            this.pnl_TipoPago.Name = "pnl_TipoPago";
-            this.pnl_TipoPago.Size = new System.Drawing.Size(158, 100);
-            this.pnl_TipoPago.TabIndex = 29;
-            // 
             // clm_Codigo
             // 
             this.clm_Codigo.Frozen = true;
@@ -457,6 +410,53 @@
             this.clm_Total.Name = "clm_Total";
             this.clm_Total.ReadOnly = true;
             this.clm_Total.Width = 56;
+            // 
+            // rbt_Efectivo
+            // 
+            this.rbt_Efectivo.AutoSize = true;
+            this.rbt_Efectivo.Checked = true;
+            this.rbt_Efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbt_Efectivo.Location = new System.Drawing.Point(4, 33);
+            this.rbt_Efectivo.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_Efectivo.Name = "rbt_Efectivo";
+            this.rbt_Efectivo.Size = new System.Drawing.Size(91, 22);
+            this.rbt_Efectivo.TabIndex = 27;
+            this.rbt_Efectivo.TabStop = true;
+            this.rbt_Efectivo.Text = "Efectivo";
+            this.rbt_Efectivo.UseVisualStyleBackColor = true;
+            // 
+            // rbt_Credito
+            // 
+            this.rbt_Credito.AutoSize = true;
+            this.rbt_Credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.rbt_Credito.Location = new System.Drawing.Point(4, 53);
+            this.rbt_Credito.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_Credito.Name = "rbt_Credito";
+            this.rbt_Credito.Size = new System.Drawing.Size(85, 22);
+            this.rbt_Credito.TabIndex = 26;
+            this.rbt_Credito.Text = "Credito";
+            this.rbt_Credito.UseVisualStyleBackColor = true;
+            // 
+            // lbl_TipoPago
+            // 
+            this.lbl_TipoPago.AutoSize = true;
+            this.lbl_TipoPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_TipoPago.Location = new System.Drawing.Point(4, 11);
+            this.lbl_TipoPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_TipoPago.Name = "lbl_TipoPago";
+            this.lbl_TipoPago.Size = new System.Drawing.Size(116, 18);
+            this.lbl_TipoPago.TabIndex = 28;
+            this.lbl_TipoPago.Text = "Tipo de Pago:";
+            // 
+            // pnl_TipoPago
+            // 
+            this.pnl_TipoPago.Controls.Add(this.lbl_TipoPago);
+            this.pnl_TipoPago.Controls.Add(this.rbt_Credito);
+            this.pnl_TipoPago.Controls.Add(this.rbt_Efectivo);
+            this.pnl_TipoPago.Location = new System.Drawing.Point(7, 141);
+            this.pnl_TipoPago.Name = "pnl_TipoPago";
+            this.pnl_TipoPago.Size = new System.Drawing.Size(158, 100);
+            this.pnl_TipoPago.TabIndex = 29;
             // 
             // frm_VentasAgregar
             // 
