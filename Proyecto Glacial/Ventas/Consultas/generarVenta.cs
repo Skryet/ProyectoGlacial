@@ -398,10 +398,10 @@ namespace Proyecto_Glacial.Ventas.Consultas
             return encontrado;
         }
 
-        public bool restablecerID(int inicioID, string tabla)
+        public bool restablecerID(int id, string tabla)
         {                        
             int seEjecuto = 0;
-            MySqlCommand consulta = new MySqlCommand("ALTER TABLE "+ tabla +" AUTO_INCREMENT = "+ inicioID.ToString() +"; ", generarConexion.obtenerConexion);
+            MySqlCommand consulta = new MySqlCommand("ALTER TABLE clientes AUTO_INCREMENT = 1; ", generarConexion.obtenerConexion);
             conexion.abrirConexion();
             try
             {

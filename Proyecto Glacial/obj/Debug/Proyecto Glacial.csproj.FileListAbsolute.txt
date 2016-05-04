@@ -124,3 +124,44 @@ C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto 
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.application
 C:\Users\Jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_AutocompletadoProductos.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csprojResolveAssemblyReference.cache
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesAgregar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesBuscar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesMenu.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesModificar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasAgregar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasBuscar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasBuscarDetalles.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasMenu.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasModificarDetallesCompra.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_MenuPrincipal.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioAgregar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioBuscar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioMenu.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioModificar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarDatosProveedoProducto.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarProductosProveedor.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioBuscarProductoProveedores.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioModificarDatosProveedorProducto.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_ProveedoresBuscarParaProducto.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Properties.Resources.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorAgregar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorBuscar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_AutocompletadoProductos.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_Ventas.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregar.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregarProducto.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentaSeleccionCliente.resources
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.manifest
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.application
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.pdb
+D:\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\MySql.Data.dll
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
+D:\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.application

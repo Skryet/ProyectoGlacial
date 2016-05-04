@@ -16,19 +16,9 @@ namespace Proyecto_Glacial.Ventas
         {
             InitializeComponent();
         }
-
-        private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.glacial_almacenDataSet);
-
-        }
-
+        
         private void frm_AutocompletadoProductos_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);
+        {            
 
         }
     }

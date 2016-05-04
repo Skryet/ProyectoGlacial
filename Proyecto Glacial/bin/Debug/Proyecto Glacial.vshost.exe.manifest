@@ -54,24 +54,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proyecto Glacial.exe" size="576936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proyecto Glacial.exe" size="574976">
       <assemblyIdentity name="Proyecto Glacial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MLdD8wfkLm/t+JD+BPi7AKHaEBMWqniR9Ne716m9Hss=</dsig:DigestValue>
+        <dsig:DigestValue>Gop35D7o+sWLe9V6zAMQcT7IEDK86Eld/BRSfTP5OLA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Proyecto Glacial.exe.config" size="586">
+  <file name="Proyecto Glacial.exe.config" size="574">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>DJr19R6yG/taqUCHwT+VevwnqZncvxXyS4BIBGfqkj0=</dsig:DigestValue>
+      <dsig:DigestValue>XsPXd7fhI7atxBjS37WFhJ/5KUTn2TNif5+2sdHo7c4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
