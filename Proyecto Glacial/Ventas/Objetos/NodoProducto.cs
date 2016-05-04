@@ -8,11 +8,11 @@ namespace Proyecto_Glacial.Ventas.Objetos
 {
     class NodoProducto
     {
-        private Objetos.materialVenta producto;
+        private Objetos.ListaMaterial producto;
         private Objetos.NodoProducto siguiente;
         private Objetos.NodoProducto anterior;
 
-        public Objetos.materialVenta Producto { get { return producto; } set { producto = value; } }
+        public Objetos.ListaMaterial Producto { get { return producto; } set { producto = value; } }
 
         public Objetos.NodoProducto Siguiente { get { return siguiente; } set { siguiente = value; } }
 

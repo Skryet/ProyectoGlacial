@@ -12,7 +12,7 @@ namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_AutocompletadoProductos : Form
     {
-        public frm_AutocompletadoProductos()
+        public frm_AutocompletadoProductos(Point localizacion, )
         {
             InitializeComponent();
         }
@@ -20,6 +20,6 @@ namespace Proyecto_Glacial.Ventas
         private void frm_AutocompletadoProductos_Load(object sender, EventArgs e)
         {            
 
-        }
+        }        
     }
 }

@@ -249,5 +249,11 @@ namespace Proyecto_Glacial.Ventas
         {
             dgv_ListaVenta.AllowUserToAddRows = false;
         }
+
+        private void dgv_ListaVenta_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            string codigo = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            
+        }
     }
 }

@@ -362,6 +362,7 @@
             this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
             this.dgv_ListaVenta.Enter += new System.EventHandler(this.dgv_ListaVenta_Enter);
             this.dgv_ListaVenta.Leave += new System.EventHandler(this.dgv_ListaVenta_Leave);
+            this.dgv_ListaVenta.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dgv_ListaVenta_PreviewKeyDown);
             // 
             // clm_Codigo
             // 

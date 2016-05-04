@@ -232,6 +232,7 @@
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Consultas\consultasVentas.cs" />
+    <Compile Include="Ventas\Consultas\GenerarAutocompletado.cs" />
     <Compile Include="Ventas\Consultas\generarVenta.cs" />
     <Compile Include="Ventas\frm_AutocompletadoProductos.cs">
       <SubType>Form</SubType>
@@ -264,6 +265,7 @@
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Objetos\ListaEnlazadaProductos.cs" />
+    <Compile Include="Ventas\Objetos\ListaMaterial.cs" />
     <Compile Include="Ventas\Objetos\ListaProductos.cs" />
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <Compile Include="Ventas\Objetos\NodoProducto.cs" />

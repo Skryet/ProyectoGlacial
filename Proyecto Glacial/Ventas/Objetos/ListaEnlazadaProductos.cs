@@ -33,13 +33,13 @@ namespace Proyecto_Glacial.Ventas.Objetos
             }
         }
 
-        public materialVenta obtenerProducto (int pos)
+        public ListaMaterial obtenerProducto (int idProducto)
         {
             NodoProducto tmp = raiz;
-            materialVenta producto = new materialVenta();
-            for (int i = 0; i <= posicion; i++)
+            ListaMaterial producto = new ListaMaterial();
+            while (tmp.Siguiente != null)
             {
-                if (i == pos)
+                if (tmp.Producto.idProducto == idProducto)
                 {
                     producto = tmp.Producto;
                     break;
@@ -62,14 +62,17 @@ namespace Proyecto_Glacial.Ventas.Objetos
                 NodoProducto tmp = raiz;
                 while (tmp.Siguiente != null)
                 {
-                    if (tmp.Producto.idProducto == idProducto)
+                    if (tmp.Siguiente.Producto.idProducto == idProducto)
                     {
-
+                        tmp.Siguiente = tmp.Siguiente.Siguiente;
+                        borrado = true;
                     }
                 }
             }   
             return borrado;
         }
+
+        public NodoProducto ObtenerLista() { return raiz; }
          
     }
 }

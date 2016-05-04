@@ -16,7 +16,7 @@ namespace Proyecto_Glacial.Ventas.Consultas
         public generarVenta()
         {
             consulta = "";
-        }
+        }        
 
         public void agregarProductos(Objetos.materialVenta producto)
         {
