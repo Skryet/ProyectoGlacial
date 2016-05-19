@@ -30,7 +30,7 @@ namespace Proyecto_Glacial.Ventas
         private void productosDataGridView_Click(object sender, EventArgs e)
         {
             if (productosDataGridView.RowCount != 0)
-                Program.idProductoVenta = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+                Program.idProductoVenta = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
         }       
 
         private void cbx_TipoPrecio_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,13 +54,13 @@ namespace Proyecto_Glacial.Ventas
 
         private void bn_Finalizar_Click(object sender, EventArgs e)
         {
-            Program.idProductoVenta = 999;
+            Program.idProductoVenta = "";
             this.Close();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {                              
-            if (Program.idProductoVenta != 0)
+            /*if (Program.idProductoVenta != 0)
             {
                 Objetos.materialVenta producto = new Objetos.materialVenta();
                 producto.idVenta = Program.idVenta;
@@ -138,17 +138,17 @@ namespace Proyecto_Glacial.Ventas
             else
             {
                 DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            }*/
         }
 
         private void frm_VentasAgregarProducto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.idProductoVenta = 999;
+            Program.idProductoVenta = "";
         }
 
         private void productosDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Program.idProductoVenta != 0)
+            /*if (Program.idProductoVenta != 0)
             {
                 Objetos.materialVenta producto = new Objetos.materialVenta();
                 producto.idVenta = Program.idVenta;
@@ -226,7 +226,7 @@ namespace Proyecto_Glacial.Ventas
             else
             {
                 DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            }*/
         }
     }
 }

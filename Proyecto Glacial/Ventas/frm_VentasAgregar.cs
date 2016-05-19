@@ -28,7 +28,7 @@ namespace Proyecto_Glacial.Ventas
             //Variables de Ventas
             Program.idClienteVenta = 0;            
             Program.idVenta = 0;
-            Program.idProductoVenta = 999;
+            Program.idProductoVenta = "";
             Program.ventaCreada = false;
         }
 
@@ -140,8 +140,7 @@ namespace Proyecto_Glacial.Ventas
                 consultasVentas.agregarVenta(venta);
 
                 //AGREGAR PRODUCTOS A LA CONSULTA
-                for (int i = 0; i < Program.listaProductos.obtenerLargo(); i++)                
-                    consultasVentas.agregarProductos(Program.listaProductos.obtenerProducto(i));
+                
 
                 //EJECUTAR CONSULTA
                 consultasVentas.ejecutarConsulta();                
@@ -208,7 +207,7 @@ namespace Proyecto_Glacial.Ventas
         private void dgv_ListaVenta_Click(object sender, EventArgs e)
         {
             if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
-                Program.idProductoVenta = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[1].Value);
+                Program.idProductoVenta = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[1].Value.ToString();
         }     
 
         private void Activar_Referencia(object sender, EventArgs e)
@@ -234,14 +233,14 @@ namespace Proyecto_Glacial.Ventas
                 }
                 Program.listaProductosAutocompletar = new Objetos.ListaEnlazadaProductos();
                 if (cbx_TipoBusqueda.SelectedItem.ToString() == "Código")
-                {
+                {                    
                     string codigo = txt_Producto.Text.ToString();
                     autocompletado.llenarListaAutocompletarCodigo(codigo);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
                     autocompletar = new frm_AutocompletadoProductos(localizacion);
                     autocompletar.Show(this);
-                    activeform.BringToFront();
+                    activeform.BringToFront();                                        
                 }
                 else if (cbx_TipoBusqueda.SelectedItem.ToString() == "Descripción")
                 {
@@ -278,6 +277,25 @@ namespace Proyecto_Glacial.Ventas
                     }
                 }
             }
+            MostrarDatos_DataGridView();
+        }
+
+        private void MostrarDatos_DataGridView()
+        {
+            dgv_ListaVenta.Rows.Clear();
+            Objetos.NodoProducto tmp = Program.listaProductosVenta.ObtenerLista();
+            Objetos.NodoProducto recorrerLista = tmp;
+            if (tmp != null)
+            {
+                for (int i = 0; i < Program.listaProductosVenta.CantidadElementos(); i++)
+                {
+                    double total = recorrerLista.Producto.Precio1 * recorrerLista.Producto.Cantidad;
+                    dgv_ListaVenta.Rows.Add(recorrerLista.Producto.idLineaProducto, recorrerLista.Producto.Nombre, recorrerLista.Producto.Descripcion, recorrerLista.Producto.Cantidad.ToString(),
+                        recorrerLista.Producto.UnidadMedida, recorrerLista.Producto.Precio1.ToString(), total, "Precio 1");
+                    recorrerLista = recorrerLista.Siguiente;
+                }
+            }
+            dgv_ListaVenta.Refresh();
         }
     }
 }

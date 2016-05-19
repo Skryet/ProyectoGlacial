@@ -38,7 +38,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
         {
             NodoProducto tmp = raiz;
             NodoProducto producto = null;
-            while (tmp.Siguiente != null)
+            for (int i = 0; i < posicion; i++)
             {
                 if (tmp.Producto.idLineaProducto == idLineaProducto)
                 {

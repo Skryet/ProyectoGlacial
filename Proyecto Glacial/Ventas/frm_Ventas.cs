@@ -20,7 +20,7 @@ namespace Proyecto_Glacial.Ventas
             //Variables de Ventas
             Program.idClienteVenta = 0;
             Program.idVenta = 0;
-            Program.idProductoVenta = 0;
+            Program.idProductoVenta = "";
             Program.ventaCreada = false;
         }
 

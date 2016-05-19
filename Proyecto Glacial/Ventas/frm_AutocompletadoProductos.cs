@@ -55,14 +55,13 @@ namespace Proyecto_Glacial.Ventas
                     Program.listaProductosVenta.AgregarCantidad(cantidad, idLineaProducto);
                 else
                     MessageBox.Show("No se puede agregar la cantidad que necesita por que se excede la existencia del almacén.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
             }
             else
             {
+                Producto.Producto.Cantidad = 1;
                 Program.listaProductosVenta.Insertar(Producto);
-                this.Close();
             }
-            
-        }
+            this.Close();
+            }
     }
 }

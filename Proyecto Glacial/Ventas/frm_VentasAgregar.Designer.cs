@@ -69,7 +69,7 @@
             this.cbx_TipoBusqueda = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_SeleccionarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clm_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -303,7 +303,7 @@
             this.dgv_ListaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ListaVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clm_Codigo,
-            this.clm_SeleccionarProducto,
+            this.clm_Nombre,
             this.clm_Descripcion,
             this.clm_Cantidad,
             this.clm_Unidad,
@@ -535,13 +535,11 @@
             this.clm_Codigo.Name = "clm_Codigo";
             this.clm_Codigo.Width = 65;
             // 
-            // clm_SeleccionarProducto
+            // clm_Nombre
             // 
-            this.clm_SeleccionarProducto.Frozen = true;
-            this.clm_SeleccionarProducto.HeaderText = "";
-            this.clm_SeleccionarProducto.Name = "clm_SeleccionarProducto";
-            this.clm_SeleccionarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clm_SeleccionarProducto.Width = 5;
+            this.clm_Nombre.HeaderText = "Nombre";
+            this.clm_Nombre.Name = "clm_Nombre";
+            this.clm_Nombre.Width = 69;
             // 
             // clm_Descripcion
             // 
@@ -673,7 +671,7 @@
         private System.Windows.Forms.ComboBox cbx_TipoBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Codigo;
-        private System.Windows.Forms.DataGridViewButtonColumn clm_SeleccionarProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Unidad;
