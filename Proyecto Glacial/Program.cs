@@ -27,7 +27,7 @@ namespace Proyecto_Glacial
         public static int idProductoVenta = 999;
         public static bool ventaCreada = false;
         public static bool enActividadVenta = false;
-        public static Ventas.Objetos.ListaProductos listaProductos;
+        public static Ventas.Objetos.ListaEnlazadaProductos listaProductosVenta;
         public static Ventas.Objetos.ListaEnlazadaProductos listaProductosAutocompletar;
                         
         public static optimizar metodosOptimizar = new optimizar();        

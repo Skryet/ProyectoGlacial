@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.rbt_Cliente = new System.Windows.Forms.RadioButton();
-            this.rbt_SinRegistro = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_SeleccioneComprador = new System.Windows.Forms.Label();
             this.txt_Cliente = new System.Windows.Forms.TextBox();
             this.btn_SeleccionarCliente = new System.Windows.Forms.Button();
-            this.vista_venta_lista_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_Subtotal = new System.Windows.Forms.TextBox();
@@ -52,9 +48,26 @@
             this.pnl_Descuento = new System.Windows.Forms.Panel();
             this.lbl_Descuento = new System.Windows.Forms.Label();
             this.btn_Finalizar = new System.Windows.Forms.Button();
+            this.dgv_ListaVenta = new System.Windows.Forms.DataGridView();
+            this.rbt_DeContado = new System.Windows.Forms.RadioButton();
+            this.rbt_Credito = new System.Windows.Forms.RadioButton();
+            this.lbl_TipoPago = new System.Windows.Forms.Label();
+            this.pnl_TipoPago = new System.Windows.Forms.Panel();
+            this.pnl_FormaPago = new System.Windows.Forms.Panel();
+            this.lbl_Referencia = new System.Windows.Forms.Label();
+            this.txt_Referencia = new System.Windows.Forms.TextBox();
+            this.rbt_Cheque = new System.Windows.Forms.RadioButton();
+            this.rbt_TarjetaDebito = new System.Windows.Forms.RadioButton();
+            this.lbl_FormaPago = new System.Windows.Forms.Label();
+            this.rbt_TarjetaCredito = new System.Windows.Forms.RadioButton();
+            this.rbt_Efectivo = new System.Windows.Forms.RadioButton();
+            this.vista_venta_lista_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.vista_venta_lista_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.dgv_ListaVenta = new System.Windows.Forms.DataGridView();
+            this.txt_Producto = new System.Windows.Forms.TextBox();
+            this.cbx_TipoBusqueda = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_SeleccionarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,88 +75,48 @@
             this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_PrecioPieza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rbt_Efectivo = new System.Windows.Forms.RadioButton();
-            this.rbt_Credito = new System.Windows.Forms.RadioButton();
-            this.lbl_TipoPago = new System.Windows.Forms.Label();
-            this.pnl_TipoPago = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            this.clm_PrecioVenta = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnl_Descuento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaVenta)).BeginInit();
             this.pnl_TipoPago.SuspendLayout();
+            this.pnl_FormaPago.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // rbt_Cliente
+            // lbl_SeleccioneComprador
             // 
-            this.rbt_Cliente.AutoSize = true;
-            this.rbt_Cliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_Cliente.Location = new System.Drawing.Point(11, 78);
-            this.rbt_Cliente.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_Cliente.Name = "rbt_Cliente";
-            this.rbt_Cliente.Size = new System.Drawing.Size(82, 22);
-            this.rbt_Cliente.TabIndex = 0;
-            this.rbt_Cliente.Text = "Cliente";
-            this.rbt_Cliente.UseVisualStyleBackColor = true;
-            this.rbt_Cliente.CheckedChanged += new System.EventHandler(this.rbt_Cliente_CheckedChanged);
-            // 
-            // rbt_SinRegistro
-            // 
-            this.rbt_SinRegistro.AutoSize = true;
-            this.rbt_SinRegistro.Checked = true;
-            this.rbt_SinRegistro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_SinRegistro.Location = new System.Drawing.Point(11, 57);
-            this.rbt_SinRegistro.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_SinRegistro.Name = "rbt_SinRegistro";
-            this.rbt_SinRegistro.Size = new System.Drawing.Size(154, 22);
-            this.rbt_SinRegistro.TabIndex = 2;
-            this.rbt_SinRegistro.TabStop = true;
-            this.rbt_SinRegistro.Text = "Venta al Publico";
-            this.rbt_SinRegistro.UseVisualStyleBackColor = true;
-            this.rbt_SinRegistro.CheckedChanged += new System.EventHandler(this.rbt_SinRegistro_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.label1.Location = new System.Drawing.Point(104, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Seleccione el tipo de comprador:";
+            this.lbl_SeleccioneComprador.AutoSize = true;
+            this.lbl_SeleccioneComprador.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_SeleccioneComprador.Location = new System.Drawing.Point(82, 33);
+            this.lbl_SeleccioneComprador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_SeleccioneComprador.Name = "lbl_SeleccioneComprador";
+            this.lbl_SeleccioneComprador.Size = new System.Drawing.Size(270, 18);
+            this.lbl_SeleccioneComprador.TabIndex = 3;
+            this.lbl_SeleccioneComprador.Text = "Seleccione el tipo de comprador:";
             // 
             // txt_Cliente
             // 
-            this.txt_Cliente.Enabled = false;
-            this.txt_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cliente.Location = new System.Drawing.Point(7, 104);
+            this.txt_Cliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.txt_Cliente.Location = new System.Drawing.Point(7, 65);
             this.txt_Cliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Cliente.Multiline = true;
             this.txt_Cliente.Name = "txt_Cliente";
-            this.txt_Cliente.Size = new System.Drawing.Size(427, 22);
+            this.txt_Cliente.ReadOnly = true;
+            this.txt_Cliente.Size = new System.Drawing.Size(390, 44);
             this.txt_Cliente.TabIndex = 4;
             // 
             // btn_SeleccionarCliente
             // 
-            this.btn_SeleccionarCliente.Enabled = false;
             this.btn_SeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(438, 103);
+            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(401, 65);
             this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
-            this.btn_SeleccionarCliente.Size = new System.Drawing.Size(27, 24);
+            this.btn_SeleccionarCliente.Size = new System.Drawing.Size(27, 44);
             this.btn_SeleccionarCliente.TabIndex = 5;
             this.btn_SeleccionarCliente.Text = "...";
             this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
             this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
-            // 
-            // vista_venta_lista_productosBindingSource
-            // 
-            this.vista_venta_lista_productosBindingSource.DataMember = "vista_venta_lista_productos";
-            this.vista_venta_lista_productosBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Cancelar
             // 
@@ -159,10 +132,11 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(877, 27);
+            this.dateTimePicker1.Location = new System.Drawing.Point(903, 8);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(256, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(235, 21);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // txt_Subtotal
@@ -231,7 +205,7 @@
             // btn_Descuento
             // 
             this.btn_Descuento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Descuento.Location = new System.Drawing.Point(604, 406);
+            this.btn_Descuento.Location = new System.Drawing.Point(573, 406);
             this.btn_Descuento.Name = "btn_Descuento";
             this.btn_Descuento.Size = new System.Drawing.Size(190, 30);
             this.btn_Descuento.TabIndex = 18;
@@ -292,7 +266,7 @@
             this.pnl_Descuento.Controls.Add(this.lbl_Cantidad);
             this.pnl_Descuento.Controls.Add(this.txt_DescuentoPorcentaje);
             this.pnl_Descuento.Controls.Add(this.txt_Descuento);
-            this.pnl_Descuento.Location = new System.Drawing.Point(561, 447);
+            this.pnl_Descuento.Location = new System.Drawing.Point(530, 447);
             this.pnl_Descuento.Name = "pnl_Descuento";
             this.pnl_Descuento.Size = new System.Drawing.Size(284, 94);
             this.pnl_Descuento.TabIndex = 23;
@@ -319,6 +293,188 @@
             this.btn_Finalizar.UseVisualStyleBackColor = true;
             this.btn_Finalizar.Click += new System.EventHandler(this.btn_Finalizar_Click);
             // 
+            // dgv_ListaVenta
+            // 
+            this.dgv_ListaVenta.AllowUserToAddRows = false;
+            this.dgv_ListaVenta.AllowUserToDeleteRows = false;
+            this.dgv_ListaVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_ListaVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv_ListaVenta.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_ListaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clm_Codigo,
+            this.clm_SeleccionarProducto,
+            this.clm_Descripcion,
+            this.clm_Cantidad,
+            this.clm_Unidad,
+            this.clm_PrecioPieza,
+            this.clm_Total,
+            this.clm_PrecioVenta});
+            this.dgv_ListaVenta.Location = new System.Drawing.Point(445, 121);
+            this.dgv_ListaVenta.MultiSelect = false;
+            this.dgv_ListaVenta.Name = "dgv_ListaVenta";
+            this.dgv_ListaVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv_ListaVenta.Size = new System.Drawing.Size(690, 272);
+            this.dgv_ListaVenta.TabIndex = 25;
+            this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
+            // 
+            // rbt_DeContado
+            // 
+            this.rbt_DeContado.AutoSize = true;
+            this.rbt_DeContado.Checked = true;
+            this.rbt_DeContado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbt_DeContado.Location = new System.Drawing.Point(80, 45);
+            this.rbt_DeContado.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_DeContado.Name = "rbt_DeContado";
+            this.rbt_DeContado.Size = new System.Drawing.Size(118, 22);
+            this.rbt_DeContado.TabIndex = 27;
+            this.rbt_DeContado.TabStop = true;
+            this.rbt_DeContado.Text = "De contado";
+            this.rbt_DeContado.UseVisualStyleBackColor = true;
+            // 
+            // rbt_Credito
+            // 
+            this.rbt_Credito.AutoSize = true;
+            this.rbt_Credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.rbt_Credito.Location = new System.Drawing.Point(262, 45);
+            this.rbt_Credito.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_Credito.Name = "rbt_Credito";
+            this.rbt_Credito.Size = new System.Drawing.Size(85, 22);
+            this.rbt_Credito.TabIndex = 26;
+            this.rbt_Credito.Text = "Credito";
+            this.rbt_Credito.UseVisualStyleBackColor = true;
+            // 
+            // lbl_TipoPago
+            // 
+            this.lbl_TipoPago.AutoSize = true;
+            this.lbl_TipoPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_TipoPago.Location = new System.Drawing.Point(153, 13);
+            this.lbl_TipoPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_TipoPago.Name = "lbl_TipoPago";
+            this.lbl_TipoPago.Size = new System.Drawing.Size(116, 18);
+            this.lbl_TipoPago.TabIndex = 28;
+            this.lbl_TipoPago.Text = "Tipo de Pago:";
+            // 
+            // pnl_TipoPago
+            // 
+            this.pnl_TipoPago.Controls.Add(this.lbl_TipoPago);
+            this.pnl_TipoPago.Controls.Add(this.rbt_Credito);
+            this.pnl_TipoPago.Controls.Add(this.rbt_DeContado);
+            this.pnl_TipoPago.Location = new System.Drawing.Point(7, 128);
+            this.pnl_TipoPago.Name = "pnl_TipoPago";
+            this.pnl_TipoPago.Size = new System.Drawing.Size(421, 97);
+            this.pnl_TipoPago.TabIndex = 29;
+            // 
+            // pnl_FormaPago
+            // 
+            this.pnl_FormaPago.Controls.Add(this.lbl_Referencia);
+            this.pnl_FormaPago.Controls.Add(this.txt_Referencia);
+            this.pnl_FormaPago.Controls.Add(this.rbt_Cheque);
+            this.pnl_FormaPago.Controls.Add(this.rbt_TarjetaDebito);
+            this.pnl_FormaPago.Controls.Add(this.lbl_FormaPago);
+            this.pnl_FormaPago.Controls.Add(this.rbt_TarjetaCredito);
+            this.pnl_FormaPago.Controls.Add(this.rbt_Efectivo);
+            this.pnl_FormaPago.Location = new System.Drawing.Point(7, 231);
+            this.pnl_FormaPago.Name = "pnl_FormaPago";
+            this.pnl_FormaPago.Size = new System.Drawing.Size(421, 237);
+            this.pnl_FormaPago.TabIndex = 30;
+            // 
+            // lbl_Referencia
+            // 
+            this.lbl_Referencia.AutoSize = true;
+            this.lbl_Referencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_Referencia.Location = new System.Drawing.Point(83, 174);
+            this.lbl_Referencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Referencia.Name = "lbl_Referencia";
+            this.lbl_Referencia.Size = new System.Drawing.Size(255, 18);
+            this.lbl_Referencia.TabIndex = 32;
+            this.lbl_Referencia.Text = "Numero de cuenta / Referencia";
+            // 
+            // txt_Referencia
+            // 
+            this.txt_Referencia.Enabled = false;
+            this.txt_Referencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Referencia.Location = new System.Drawing.Point(20, 204);
+            this.txt_Referencia.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Referencia.Name = "txt_Referencia";
+            this.txt_Referencia.Size = new System.Drawing.Size(390, 22);
+            this.txt_Referencia.TabIndex = 33;
+            // 
+            // rbt_Cheque
+            // 
+            this.rbt_Cheque.AutoSize = true;
+            this.rbt_Cheque.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.rbt_Cheque.Location = new System.Drawing.Point(57, 129);
+            this.rbt_Cheque.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_Cheque.Name = "rbt_Cheque";
+            this.rbt_Cheque.Size = new System.Drawing.Size(92, 22);
+            this.rbt_Cheque.TabIndex = 30;
+            this.rbt_Cheque.Text = "Cheque ";
+            this.rbt_Cheque.UseVisualStyleBackColor = true;
+            this.rbt_Cheque.CheckedChanged += new System.EventHandler(this.Activar_Referencia);
+            // 
+            // rbt_TarjetaDebito
+            // 
+            this.rbt_TarjetaDebito.AutoSize = true;
+            this.rbt_TarjetaDebito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.rbt_TarjetaDebito.Location = new System.Drawing.Point(58, 103);
+            this.rbt_TarjetaDebito.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_TarjetaDebito.Name = "rbt_TarjetaDebito";
+            this.rbt_TarjetaDebito.Size = new System.Drawing.Size(163, 22);
+            this.rbt_TarjetaDebito.TabIndex = 29;
+            this.rbt_TarjetaDebito.Text = "Tarjeta de Debito";
+            this.rbt_TarjetaDebito.UseVisualStyleBackColor = true;
+            this.rbt_TarjetaDebito.CheckedChanged += new System.EventHandler(this.Activar_Referencia);
+            // 
+            // lbl_FormaPago
+            // 
+            this.lbl_FormaPago.AutoSize = true;
+            this.lbl_FormaPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_FormaPago.Location = new System.Drawing.Point(148, 14);
+            this.lbl_FormaPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_FormaPago.Name = "lbl_FormaPago";
+            this.lbl_FormaPago.Size = new System.Drawing.Size(133, 18);
+            this.lbl_FormaPago.TabIndex = 28;
+            this.lbl_FormaPago.Text = "Forma de Pago:";
+            // 
+            // rbt_TarjetaCredito
+            // 
+            this.rbt_TarjetaCredito.AutoSize = true;
+            this.rbt_TarjetaCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.rbt_TarjetaCredito.Location = new System.Drawing.Point(58, 77);
+            this.rbt_TarjetaCredito.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_TarjetaCredito.Name = "rbt_TarjetaCredito";
+            this.rbt_TarjetaCredito.Size = new System.Drawing.Size(170, 22);
+            this.rbt_TarjetaCredito.TabIndex = 26;
+            this.rbt_TarjetaCredito.Text = "Tarjeta de Credito";
+            this.rbt_TarjetaCredito.UseVisualStyleBackColor = true;
+            this.rbt_TarjetaCredito.CheckedChanged += new System.EventHandler(this.Activar_Referencia);
+            // 
+            // rbt_Efectivo
+            // 
+            this.rbt_Efectivo.AutoSize = true;
+            this.rbt_Efectivo.Checked = true;
+            this.rbt_Efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbt_Efectivo.Location = new System.Drawing.Point(58, 51);
+            this.rbt_Efectivo.Margin = new System.Windows.Forms.Padding(2);
+            this.rbt_Efectivo.Name = "rbt_Efectivo";
+            this.rbt_Efectivo.Size = new System.Drawing.Size(91, 22);
+            this.rbt_Efectivo.TabIndex = 27;
+            this.rbt_Efectivo.TabStop = true;
+            this.rbt_Efectivo.Text = "Efectivo";
+            this.rbt_Efectivo.UseVisualStyleBackColor = true;
+            this.rbt_Efectivo.CheckedChanged += new System.EventHandler(this.Activar_Referencia);
+            // 
+            // vista_venta_lista_productosBindingSource
+            // 
+            this.vista_venta_lista_productosBindingSource.DataMember = "vista_venta_lista_productos";
+            this.vista_venta_lista_productosBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // vista_venta_lista_productosTableAdapter
             // 
             this.vista_venta_lista_productosTableAdapter.ClearBeforeFill = true;
@@ -338,31 +494,39 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // dgv_ListaVenta
+            // txt_Producto
             // 
-            this.dgv_ListaVenta.AllowUserToAddRows = false;
-            this.dgv_ListaVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgv_ListaVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgv_ListaVenta.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgv_ListaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ListaVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clm_Codigo,
-            this.clm_SeleccionarProducto,
-            this.clm_Descripcion,
-            this.clm_Cantidad,
-            this.clm_Unidad,
-            this.clm_PrecioPieza,
-            this.clm_Total});
-            this.dgv_ListaVenta.Location = new System.Drawing.Point(486, 64);
-            this.dgv_ListaVenta.MultiSelect = false;
-            this.dgv_ListaVenta.Name = "dgv_ListaVenta";
-            this.dgv_ListaVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_ListaVenta.Size = new System.Drawing.Size(649, 329);
-            this.dgv_ListaVenta.TabIndex = 25;
-            this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
-            this.dgv_ListaVenta.Enter += new System.EventHandler(this.dgv_ListaVenta_Enter);
-            this.dgv_ListaVenta.Leave += new System.EventHandler(this.dgv_ListaVenta_Leave);
-            this.dgv_ListaVenta.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dgv_ListaVenta_PreviewKeyDown);
+            this.txt_Producto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.txt_Producto.Location = new System.Drawing.Point(658, 76);
+            this.txt_Producto.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Producto.Name = "txt_Producto";
+            this.txt_Producto.Size = new System.Drawing.Size(390, 21);
+            this.txt_Producto.TabIndex = 31;
+            this.txt_Producto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_Producto_KeyUp);
+            // 
+            // cbx_TipoBusqueda
+            // 
+            this.cbx_TipoBusqueda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.cbx_TipoBusqueda.FormattingEnabled = true;
+            this.cbx_TipoBusqueda.Items.AddRange(new object[] {
+            "Código",
+            "Descripción"});
+            this.cbx_TipoBusqueda.Location = new System.Drawing.Point(482, 76);
+            this.cbx_TipoBusqueda.Name = "cbx_TipoBusqueda";
+            this.cbx_TipoBusqueda.Size = new System.Drawing.Size(171, 22);
+            this.cbx_TipoBusqueda.TabIndex = 32;
+            this.cbx_TipoBusqueda.Text = "Código";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label1.Location = new System.Drawing.Point(740, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 18);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Lista de Venta";
             // 
             // clm_Codigo
             // 
@@ -383,6 +547,7 @@
             // 
             this.clm_Descripcion.HeaderText = "Descripción";
             this.clm_Descripcion.Name = "clm_Descripcion";
+            this.clm_Descripcion.ReadOnly = true;
             this.clm_Descripcion.Width = 88;
             // 
             // clm_Cantidad
@@ -412,58 +577,27 @@
             this.clm_Total.ReadOnly = true;
             this.clm_Total.Width = 56;
             // 
-            // rbt_Efectivo
+            // clm_PrecioVenta
             // 
-            this.rbt_Efectivo.AutoSize = true;
-            this.rbt_Efectivo.Checked = true;
-            this.rbt_Efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_Efectivo.Location = new System.Drawing.Point(4, 33);
-            this.rbt_Efectivo.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_Efectivo.Name = "rbt_Efectivo";
-            this.rbt_Efectivo.Size = new System.Drawing.Size(91, 22);
-            this.rbt_Efectivo.TabIndex = 27;
-            this.rbt_Efectivo.TabStop = true;
-            this.rbt_Efectivo.Text = "Efectivo";
-            this.rbt_Efectivo.UseVisualStyleBackColor = true;
-            // 
-            // rbt_Credito
-            // 
-            this.rbt_Credito.AutoSize = true;
-            this.rbt_Credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_Credito.Location = new System.Drawing.Point(4, 53);
-            this.rbt_Credito.Margin = new System.Windows.Forms.Padding(2);
-            this.rbt_Credito.Name = "rbt_Credito";
-            this.rbt_Credito.Size = new System.Drawing.Size(85, 22);
-            this.rbt_Credito.TabIndex = 26;
-            this.rbt_Credito.Text = "Credito";
-            this.rbt_Credito.UseVisualStyleBackColor = true;
-            // 
-            // lbl_TipoPago
-            // 
-            this.lbl_TipoPago.AutoSize = true;
-            this.lbl_TipoPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_TipoPago.Location = new System.Drawing.Point(4, 11);
-            this.lbl_TipoPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_TipoPago.Name = "lbl_TipoPago";
-            this.lbl_TipoPago.Size = new System.Drawing.Size(116, 18);
-            this.lbl_TipoPago.TabIndex = 28;
-            this.lbl_TipoPago.Text = "Tipo de Pago:";
-            // 
-            // pnl_TipoPago
-            // 
-            this.pnl_TipoPago.Controls.Add(this.lbl_TipoPago);
-            this.pnl_TipoPago.Controls.Add(this.rbt_Credito);
-            this.pnl_TipoPago.Controls.Add(this.rbt_Efectivo);
-            this.pnl_TipoPago.Location = new System.Drawing.Point(7, 141);
-            this.pnl_TipoPago.Name = "pnl_TipoPago";
-            this.pnl_TipoPago.Size = new System.Drawing.Size(158, 100);
-            this.pnl_TipoPago.TabIndex = 29;
+            this.clm_PrecioVenta.HeaderText = "Precio de Venta";
+            this.clm_PrecioVenta.Items.AddRange(new object[] {
+            "Precio 1",
+            "Precio 2",
+            "Precio 3",
+            "Especial",
+            "Libre"});
+            this.clm_PrecioVenta.Name = "clm_PrecioVenta";
+            this.clm_PrecioVenta.Width = 80;
             // 
             // frm_VentasAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 555);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbx_TipoBusqueda);
+            this.Controls.Add(this.txt_Producto);
+            this.Controls.Add(this.pnl_FormaPago);
             this.Controls.Add(this.pnl_TipoPago);
             this.Controls.Add(this.dgv_ListaVenta);
             this.Controls.Add(this.btn_Finalizar);
@@ -479,31 +613,27 @@
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_SeleccionarCliente);
             this.Controls.Add(this.txt_Cliente);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.rbt_SinRegistro);
-            this.Controls.Add(this.rbt_Cliente);
+            this.Controls.Add(this.lbl_SeleccioneComprador);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_VentasAgregar";
             this.Text = "Ventas - Agregar";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_VentasAgregar_FormClosing);
             this.Load += new System.EventHandler(this.frm_VentasAgregar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.pnl_Descuento.ResumeLayout(false);
             this.pnl_Descuento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaVenta)).EndInit();
             this.pnl_TipoPago.ResumeLayout(false);
             this.pnl_TipoPago.PerformLayout();
+            this.pnl_FormaPago.ResumeLayout(false);
+            this.pnl_FormaPago.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vista_venta_lista_productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton rbt_Cliente;
-        private System.Windows.Forms.RadioButton rbt_SinRegistro;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_SeleccioneComprador;
         private System.Windows.Forms.TextBox txt_Cliente;
         private System.Windows.Forms.Button btn_SeleccionarCliente;
         private glacial_almacenDataSet glacial_almacenDataSet;
@@ -511,7 +641,6 @@
         private glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter vista_venta_lista_productosTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btn_Cancelar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txt_Subtotal;
         private System.Windows.Forms.Label lbl_Subtotal;
         private System.Windows.Forms.Label lbl_IVA;
@@ -527,10 +656,22 @@
         private System.Windows.Forms.Label lbl_Descuento;
         private System.Windows.Forms.Button btn_Finalizar;
         private System.Windows.Forms.DataGridView dgv_ListaVenta;
-        private System.Windows.Forms.RadioButton rbt_Efectivo;
+        private System.Windows.Forms.RadioButton rbt_DeContado;
         private System.Windows.Forms.RadioButton rbt_Credito;
         private System.Windows.Forms.Label lbl_TipoPago;
         private System.Windows.Forms.Panel pnl_TipoPago;
+        private System.Windows.Forms.Panel pnl_FormaPago;
+        private System.Windows.Forms.RadioButton rbt_Cheque;
+        private System.Windows.Forms.RadioButton rbt_TarjetaDebito;
+        private System.Windows.Forms.Label lbl_FormaPago;
+        private System.Windows.Forms.RadioButton rbt_TarjetaCredito;
+        private System.Windows.Forms.RadioButton rbt_Efectivo;
+        private System.Windows.Forms.Label lbl_Referencia;
+        private System.Windows.Forms.TextBox txt_Referencia;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txt_Producto;
+        private System.Windows.Forms.ComboBox cbx_TipoBusqueda;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Codigo;
         private System.Windows.Forms.DataGridViewButtonColumn clm_SeleccionarProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Descripcion;
@@ -538,5 +679,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_PrecioPieza;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Total;
+        private System.Windows.Forms.DataGridViewComboBoxColumn clm_PrecioVenta;
     }
 }

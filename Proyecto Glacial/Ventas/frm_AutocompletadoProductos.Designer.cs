@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_Productos = new System.Windows.Forms.DataGridView();
+            this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.clm_Codifo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,17 +37,17 @@
             this.clm_Precio1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Precio2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Precio3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Productos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_Productos
+            // productosDataGridView
             // 
-            this.dgv_Productos.AllowUserToAddRows = false;
-            this.dgv_Productos.AllowUserToDeleteRows = false;
-            this.dgv_Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgv_Productos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgv_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productosDataGridView.AllowUserToAddRows = false;
+            this.productosDataGridView.AllowUserToDeleteRows = false;
+            this.productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clm_Codifo,
             this.clm_Nombre,
             this.clm_Descripcion,
@@ -56,12 +56,15 @@
             this.clm_Precio1,
             this.clm_Precio2,
             this.clm_Precio3});
-            this.dgv_Productos.Location = new System.Drawing.Point(1, 0);
-            this.dgv_Productos.MultiSelect = false;
-            this.dgv_Productos.Name = "dgv_Productos";
-            this.dgv_Productos.ReadOnly = true;
-            this.dgv_Productos.Size = new System.Drawing.Size(668, 244);
-            this.dgv_Productos.TabIndex = 0;
+            this.productosDataGridView.Location = new System.Drawing.Point(1, 0);
+            this.productosDataGridView.MultiSelect = false;
+            this.productosDataGridView.Name = "productosDataGridView";
+            this.productosDataGridView.ReadOnly = true;
+            this.productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productosDataGridView.Size = new System.Drawing.Size(668, 244);
+            this.productosDataGridView.TabIndex = 0;
+            this.productosDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Productos_CellContentDoubleClick);
+            this.productosDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_Productos_KeyPress);
             // 
             // clm_Codifo
             // 
@@ -124,17 +127,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 247);
-            this.Controls.Add(this.dgv_Productos);
+            this.Controls.Add(this.productosDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_AutocompletadoProductos";
             this.Text = "frm_AutocompletadoProductos";
             this.Load += new System.EventHandler(this.frm_AutocompletadoProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Productos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgv_Productos;
+        private System.Windows.Forms.DataGridView productosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Codifo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_Descripcion;

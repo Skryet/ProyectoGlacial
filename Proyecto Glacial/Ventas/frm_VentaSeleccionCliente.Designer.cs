@@ -38,15 +38,14 @@
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.clientesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_SeleccionarCliente = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).BeginInit();
@@ -56,7 +55,7 @@
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(595, 82);
+            this.lbl_Buscar.Location = new System.Drawing.Point(620, 82);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(68, 24);
             this.lbl_Buscar.TabIndex = 22;
@@ -69,7 +68,7 @@
             this.cmb_SelccionarTipo.Items.AddRange(new object[] {
             "Número de Cliente",
             "Apellido Paterno"});
-            this.cmb_SelccionarTipo.Location = new System.Drawing.Point(10, 37);
+            this.cmb_SelccionarTipo.Location = new System.Drawing.Point(40, 37);
             this.cmb_SelccionarTipo.Name = "cmb_SelccionarTipo";
             this.cmb_SelccionarTipo.Size = new System.Drawing.Size(194, 32);
             this.cmb_SelccionarTipo.TabIndex = 21;
@@ -78,7 +77,7 @@
             // txt_Buscar
             // 
             this.txt_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Buscar.Location = new System.Drawing.Point(208, 38);
+            this.txt_Buscar.Location = new System.Drawing.Point(238, 38);
             this.txt_Buscar.Name = "txt_Buscar";
             this.txt_Buscar.Size = new System.Drawing.Size(376, 29);
             this.txt_Buscar.TabIndex = 19;
@@ -88,7 +87,7 @@
             this.btn_Buscar.Enabled = false;
             this.btn_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray_02_;
-            this.btn_Buscar.Location = new System.Drawing.Point(590, 12);
+            this.btn_Buscar.Location = new System.Drawing.Point(620, 12);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(70, 70);
             this.btn_Buscar.TabIndex = 20;
@@ -135,9 +134,8 @@
             this.clientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
+            this.telefono,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
@@ -148,10 +146,32 @@
             this.clientesDataGridView.ReadOnly = true;
             this.clientesDataGridView.RowTemplate.Height = 24;
             this.clientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientesDataGridView.Size = new System.Drawing.Size(676, 279);
+            this.clientesDataGridView.Size = new System.Drawing.Size(733, 279);
             this.clientesDataGridView.TabIndex = 23;
             this.clientesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientesDataGridView_CellDoubleClick);
             this.clientesDataGridView.Click += new System.EventHandler(this.clientesDataGridView_Click);
+            // 
+            // btn_SeleccionarCliente
+            // 
+            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(296, 424);
+            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
+            this.btn_SeleccionarCliente.Size = new System.Drawing.Size(130, 34);
+            this.btn_SeleccionarCliente.TabIndex = 24;
+            this.btn_SeleccionarCliente.Text = "Seleccionar Cliente";
+            this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
+            // 
+            // btn_Actualizar
+            // 
+            this.btn_Actualizar.Location = new System.Drawing.Point(296, 80);
+            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Actualizar.Name = "btn_Actualizar";
+            this.btn_Actualizar.Size = new System.Drawing.Size(130, 24);
+            this.btn_Actualizar.TabIndex = 26;
+            this.btn_Actualizar.Text = "Actualizar tabla";
+            this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -164,25 +184,10 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre / Razón Social";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 69;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "apellidoP";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido Paterno";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "apellidoM";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Apellido Materno";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 102;
+            this.dataGridViewTextBoxColumn2.Width = 105;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -191,6 +196,14 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 77;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 74;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -208,33 +221,11 @@
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 62;
             // 
-            // btn_SeleccionarCliente
-            // 
-            this.btn_SeleccionarCliente.Location = new System.Drawing.Point(266, 427);
-            this.btn_SeleccionarCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_SeleccionarCliente.Name = "btn_SeleccionarCliente";
-            this.btn_SeleccionarCliente.Size = new System.Drawing.Size(130, 34);
-            this.btn_SeleccionarCliente.TabIndex = 24;
-            this.btn_SeleccionarCliente.Text = "Seleccionar Cliente";
-            this.btn_SeleccionarCliente.UseVisualStyleBackColor = true;
-            this.btn_SeleccionarCliente.Click += new System.EventHandler(this.btn_SeleccionarCliente_Click);
-            // 
-            // btn_Actualizar
-            // 
-            this.btn_Actualizar.Location = new System.Drawing.Point(266, 80);
-            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(130, 24);
-            this.btn_Actualizar.TabIndex = 26;
-            this.btn_Actualizar.Text = "Actualizar tabla";
-            this.btn_Actualizar.UseVisualStyleBackColor = true;
-            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
-            // 
             // frm_VentaSeleccionCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 469);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(737, 469);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.btn_SeleccionarCliente);
             this.Controls.Add(this.clientesDataGridView);
@@ -242,8 +233,10 @@
             this.Controls.Add(this.cmb_SelccionarTipo);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_VentaSeleccionCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas - Seleccionar Cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_VentaSeleccionCliente_FormClosing);
             this.Load += new System.EventHandler(this.frm_VentaSeleccionCliente_Load);
@@ -265,14 +258,15 @@
         private glacial_almacenDataSetTableAdapters.clientesTableAdapter clientesTableAdapter;
         private glacial_almacenDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView clientesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Button btn_SeleccionarCliente;
         private System.Windows.Forms.Button btn_Actualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }

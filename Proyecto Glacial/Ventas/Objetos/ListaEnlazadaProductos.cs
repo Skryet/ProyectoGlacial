@@ -27,26 +27,43 @@ namespace Proyecto_Glacial.Ventas.Objetos
             else
             {
                 NodoProducto tmp = raiz;
-                while (tmp.Siguiente != null)                
+                while (tmp.Siguiente != null)
                     tmp = tmp.Siguiente;
-                tmp.Siguiente = nuevo;                
+                tmp.Siguiente = nuevo;
+                posicion++;
             }
         }
 
-        public ListaMaterial obtenerProducto (int idProducto)
+        public NodoProducto obtenerProducto(string idLineaProducto)
         {
             NodoProducto tmp = raiz;
-            ListaMaterial producto = new ListaMaterial();
+            NodoProducto producto = null;
             while (tmp.Siguiente != null)
             {
-                if (tmp.Producto.idProducto == idProducto)
+                if (tmp.Producto.idLineaProducto == idLineaProducto)
                 {
-                    producto = tmp.Producto;
+                    producto = new NodoProducto();
+                    producto.Producto = tmp.Producto;
                     break;
                 }
                 tmp = tmp.Siguiente;
             }
             return producto;
+        }
+
+        public void AgregarCantidad(int cantidad, string idLineaProducto)
+        {
+            NodoProducto tmp = raiz;
+            NodoProducto producto = null;
+            while (tmp.Siguiente != null)
+            {
+                if (tmp.Producto.idLineaProducto == idLineaProducto)
+                {
+                    producto.Producto.Cantidad += cantidad;
+                    break;
+                }
+                tmp = tmp.Siguiente;
+            }            
         }
 
         public bool borrarProducto(int idProducto)
@@ -68,11 +85,13 @@ namespace Proyecto_Glacial.Ventas.Objetos
                         borrado = true;
                     }
                 }
-            }   
+            }
             return borrado;
         }
 
         public NodoProducto ObtenerLista() { return raiz; }
+
+        public int CantidadElementos() { return posicion; }
          
     }
 }

@@ -14,15 +14,13 @@ namespace Proyecto_Glacial.Ventas
     {
         private Consultas.consultasVentas consultas = new Consultas.consultasVentas();
         private Consultas.generarVenta consultasVentas = new Consultas.generarVenta();
-                            
+        private Consultas.GenerarAutocompletado autocompletado = new Consultas.GenerarAutocompletado();
+        private frm_AutocompletadoProductos autocompletar;
+
+
         public frm_VentasAgregar()
         {
-            InitializeComponent();
-            if (Program.ventaCreada == true)
-            {
-                rbt_Cliente.Enabled = false;                
-                rbt_SinRegistro.Enabled = false;
-            }
+            InitializeComponent();            
         }
 
         private void limpiarVariablesVenta()
@@ -56,12 +54,12 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentasAgregar_Load(object sender, EventArgs e)
         {
             //Llenar dgv_ListaProductos
-            Ventas.Objetos.materialVenta[] lista = Program.listaProductos.obtenerLista();
+            /*Ventas.Objetos.materialVenta[] lista = Program.listaProductos.obtenerLista();
             for (int i = 0; i < Program.listaProductos.obtenerLargo(); i++)
                 dgv_ListaVenta.Rows.Add(lista[i].Linea, lista[i].Codigo, lista[i].Descripcion, lista[i].unidadMedida, lista[i].Cantidad, lista[i].precioUnidad, lista[i].Total);
    
             if (dgv_ListaVenta.RowCount != 0)
-                dgv_ListaVenta.CurrentRow.Selected = false;                      
+                dgv_ListaVenta.CurrentRow.Selected = false;*/
 
             this.Location = new Point(300, 100);
             generarTotalVenta();
@@ -71,8 +69,7 @@ namespace Proyecto_Glacial.Ventas
             {
                 int temp_idClienteVenta = Program.idClienteVenta;
                 string nombreCliente = "";
-                consultas.obtenerNombreCliente(ref nombreCliente, Program.idClienteVenta);
-                rbt_Cliente.Checked = true;
+                consultas.obtenerNombreCliente(ref nombreCliente, Program.idClienteVenta);                
                 txt_Cliente.Text = nombreCliente;
                 Program.idClienteVenta = temp_idClienteVenta;             
             }
@@ -91,29 +88,7 @@ namespace Proyecto_Glacial.Ventas
             else
                 MessageBox.Show("Ha ocurrido un error al seleccionar el cliente, seleccionelo de nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-       
-        private void rbt_SinRegistro_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbt_SinRegistro.Checked == true)
-            {
-                Program.idClienteVenta = 0;                
-                txt_Cliente.Text = "";                
-                txt_Cliente.Enabled = false;
-                btn_SeleccionarCliente.Enabled = false;
-            }
-        }
-
-        private void rbt_Cliente_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbt_Cliente.Checked == true)
-            {
-                Program.idClienteVenta = 0;                
-                txt_Cliente.Text = "";                
-                txt_Cliente.Enabled = true;                
-                btn_SeleccionarCliente.Enabled = true;
-            }
-        }       
-
+               
         private void btn_Cancelar_Click(object sender, EventArgs e)
          {
             if (Program.ventaCreada == true)
@@ -181,10 +156,6 @@ namespace Proyecto_Glacial.Ventas
                 MessageBox.Show("No se han agregado productos a la venta", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        private void frm_VentasAgregar_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
         private void validarDecimas(object sender, KeyPressEventArgs e)
 
         {
@@ -238,22 +209,75 @@ namespace Proyecto_Glacial.Ventas
         {
             if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
                 Program.idProductoVenta = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[1].Value);
+        }     
+
+        private void Activar_Referencia(object sender, EventArgs e)
+        {
+            if (rbt_Cheque.Checked == true || rbt_TarjetaDebito.Checked == true || rbt_TarjetaCredito.Checked == true)
+                txt_Referencia.Enabled = true;
+            else
+                txt_Referencia.Enabled = false;
         }
 
-        private void dgv_ListaVenta_Enter(object sender, EventArgs e)
+        private void txt_Producto_KeyUp(object sender, KeyEventArgs e)
         {
-            dgv_ListaVenta.AllowUserToAddRows = true;
-        }
-
-        private void dgv_ListaVenta_Leave(object sender, EventArgs e)
-        {
-            dgv_ListaVenta.AllowUserToAddRows = false;
-        }
-
-        private void dgv_ListaVenta_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            string codigo = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
-            
+            if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Escape)
+            {
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    string nombreForm = Application.OpenForms[i].ToString();
+                    Form abierto = Application.OpenForms[i];
+                    if (nombreForm.Contains("frm_AutocompletadoProductos") != false)
+                    {
+                        abierto.Close();
+                    }
+                }
+                Program.listaProductosAutocompletar = new Objetos.ListaEnlazadaProductos();
+                if (cbx_TipoBusqueda.SelectedItem.ToString() == "Código")
+                {
+                    string codigo = txt_Producto.Text.ToString();
+                    autocompletado.llenarListaAutocompletarCodigo(codigo);
+                    Point localizacion = txt_Producto.Location;
+                    Form activeform = Form.ActiveForm;
+                    autocompletar = new frm_AutocompletadoProductos(localizacion);
+                    autocompletar.Show(this);
+                    activeform.BringToFront();
+                }
+                else if (cbx_TipoBusqueda.SelectedItem.ToString() == "Descripción")
+                {
+                    string descripcion = txt_Producto.Text.ToString();
+                    autocompletado.llenarListaAutocompletarDescripcion(descripcion);
+                    Point localizacion = txt_Producto.Location;
+                    Form activeform = Form.ActiveForm;
+                    autocompletar = new frm_AutocompletadoProductos(localizacion);
+                    autocompletar.Show(this);
+                    activeform.BringToFront();
+                }                
+            }
+            if (txt_Producto.Text == "")
+            {
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    string nombreForm = Application.OpenForms[i].ToString();
+                    Form abierto = Application.OpenForms[i];
+                    if (nombreForm.Contains("frm_AutocompletadoProductos") != false)
+                    {
+                        abierto.Close();
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    string nombreForm = Application.OpenForms[i].ToString();
+                    Form abierto = Application.OpenForms[i];
+                    if (nombreForm.Contains("frm_AutocompletadoProductos") != false)
+                    {
+                        abierto.Close();
+                    }
+                }
+            }
         }
     }
 }
