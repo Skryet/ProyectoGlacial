@@ -53,37 +53,40 @@ namespace Proyecto_Glacial.Ventas.Objetos
 
         public void AgregarCantidad(int cantidad, string idLineaProducto)
         {
-            NodoProducto tmp = raiz;
-            NodoProducto producto = null;
-            while (tmp.Siguiente != null)
+            NodoProducto tmp = raiz;            
+            for (int i = 0; i < posicion; i++)
             {
                 if (tmp.Producto.idLineaProducto == idLineaProducto)
                 {
-                    producto.Producto.Cantidad += cantidad;
+                    tmp.Producto.Cantidad = cantidad;
                     break;
                 }
                 tmp = tmp.Siguiente;
-            }            
+            }
         }
 
-        public bool borrarProducto(int idProducto)
+        public bool borrarProducto(string idProducto)
         {
             bool borrado = false;
-            if (raiz.Producto.idProducto == idProducto)
+            if (raiz.Producto.idLineaProducto == idProducto)
             {
                 raiz = raiz.Siguiente;
-                borrado = true;
+                posicion--;
+                borrado = true;                
             }
             else
             {
                 NodoProducto tmp = raiz;
-                while (tmp.Siguiente != null)
+                for (int i = 0; i < posicion-1; i++)
                 {
-                    if (tmp.Siguiente.Producto.idProducto == idProducto)
+                    if (tmp.Siguiente.Producto.idLineaProducto == idProducto)
                     {
                         tmp.Siguiente = tmp.Siguiente.Siguiente;
+                        posicion--;
                         borrado = true;
+                        break;                    
                     }
+                    tmp = tmp.Siguiente;
                 }
             }
             return borrado;

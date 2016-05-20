@@ -62,33 +62,22 @@ namespace Proyecto_Glacial.Ventas
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
-        {            
-            /*Ventas.frm_VentasAgregarProducto form = Application.OpenForms.OfType<Ventas.frm_VentasAgregarProducto>().FirstOrDefault();
-            Ventas.frm_VentasAgregarProducto agregarProducto = form ?? new Ventas.frm_VentasAgregarProducto();
-            AddFormInPanel(agregarProducto);                      */
+        {                         
             Ventas.frm_VentasAgregarProducto agregarProducto = new frm_VentasAgregarProducto();
-            agregarProducto.ShowDialog();
-            generarVenta.Close();
-            Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
-            generarVenta = form ?? new Ventas.frm_VentasAgregar();
-            AddFormInPanel(generarVenta);
-
+            agregarProducto.ShowDialog();            
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            generar.restablecerID(1,"clientes");
-            
-            /*if (Program.idProductoVenta != 999)
+        {                       
+           if (Program.idProductoVenta != "")
             {
-                Program.listaProductos.eliminarProducto(Program.idProductoVenta);
-                generarVenta.Close();
-                Ventas.frm_VentasAgregar form = Application.OpenForms.OfType<Ventas.frm_VentasAgregar>().FirstOrDefault();
-                generarVenta = form ?? new Ventas.frm_VentasAgregar();
-                AddFormInPanel(generarVenta);
+                Program.listaProductosVenta.borrarProducto(Program.idProductoVenta);
+                Program.idProductoVenta = "";
+                Program.manipularDatos.MostrarDatos_DataGridView();
+                Program.manipularDatos.generarTotalVenta();
             }
             else
-                MessageBox.Show("No se ha seleccionado ningún producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                MessageBox.Show("No se ha seleccionado ningún producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frm_Ventas_FormClosing(object sender, FormClosingEventArgs e)

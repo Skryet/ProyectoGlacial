@@ -12,13 +12,16 @@ namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_AutocompletadoProductos : Form
     {
-        private Point posicion;
-        public frm_AutocompletadoProductos(Point localizacion)
+        private Point posicion;        
+        private TextBox txt_limpiar;                
+
+        public frm_AutocompletadoProductos(Point localizacion, ref TextBox txt_BusquedaProducto)
         {
             InitializeComponent();
-            posicion = localizacion;
+            posicion = localizacion;            
+            txt_limpiar = txt_BusquedaProducto;           
         }
-        
+
         private void frm_AutocompletadoProductos_Load(object sender, EventArgs e)
         {
             Objetos.NodoProducto tmp = Program.listaProductosAutocompletar.ObtenerLista();
@@ -35,8 +38,6 @@ namespace Proyecto_Glacial.Ventas
 
         private void dgv_Productos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            { }
             if ((int)e.KeyChar == (int)Keys.Escape)
             { this.Close(); }
         }
@@ -61,7 +62,11 @@ namespace Proyecto_Glacial.Ventas
                 Producto.Producto.Cantidad = 1;
                 Program.listaProductosVenta.Insertar(Producto);
             }
+            Program.manipularDatos.MostrarDatos_DataGridView();
+            Program.manipularDatos.generarTotalVenta();
+            txt_limpiar.Text = "";
             this.Close();
-            }
-    }
+        }        
+      
+    }    
 }

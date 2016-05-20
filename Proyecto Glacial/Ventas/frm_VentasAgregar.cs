@@ -15,12 +15,13 @@ namespace Proyecto_Glacial.Ventas
         private Consultas.consultasVentas consultas = new Consultas.consultasVentas();
         private Consultas.generarVenta consultasVentas = new Consultas.generarVenta();
         private Consultas.GenerarAutocompletado autocompletado = new Consultas.GenerarAutocompletado();
-        private frm_AutocompletadoProductos autocompletar;
+        private frm_AutocompletadoProductos autocompletar;        
 
 
         public frm_VentasAgregar()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            Program.manipularDatos = new Objetos.Manipular_DataGirdView(ref dgv_ListaVenta, ref txt_Subtotal, ref txt_IVA, ref txt_Total);
         }
 
         private void limpiarVariablesVenta()
@@ -52,15 +53,7 @@ namespace Proyecto_Glacial.Ventas
         }
 
         private void frm_VentasAgregar_Load(object sender, EventArgs e)
-        {
-            //Llenar dgv_ListaProductos
-            /*Ventas.Objetos.materialVenta[] lista = Program.listaProductos.obtenerLista();
-            for (int i = 0; i < Program.listaProductos.obtenerLargo(); i++)
-                dgv_ListaVenta.Rows.Add(lista[i].Linea, lista[i].Codigo, lista[i].Descripcion, lista[i].unidadMedida, lista[i].Cantidad, lista[i].precioUnidad, lista[i].Total);
-   
-            if (dgv_ListaVenta.RowCount != 0)
-                dgv_ListaVenta.CurrentRow.Selected = false;*/
-
+        {            
             this.Location = new Point(300, 100);
             generarTotalVenta();
 
@@ -206,8 +199,11 @@ namespace Proyecto_Glacial.Ventas
 
         private void dgv_ListaVenta_Click(object sender, EventArgs e)
         {
-            if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
-                Program.idProductoVenta = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[1].Value.ToString();
+            if (dgv_ListaVenta.Rows.Count != 0)
+            {
+                if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
+                    Program.idProductoVenta = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            }
         }     
 
         private void Activar_Referencia(object sender, EventArgs e)
@@ -219,7 +215,7 @@ namespace Proyecto_Glacial.Ventas
         }
 
         private void txt_Producto_KeyUp(object sender, KeyEventArgs e)
-        {
+        {            
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Escape)
             {
                 for (int i = 0; i < Application.OpenForms.Count; i++)
@@ -238,8 +234,8 @@ namespace Proyecto_Glacial.Ventas
                     autocompletado.llenarListaAutocompletarCodigo(codigo);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
-                    autocompletar = new frm_AutocompletadoProductos(localizacion);
-                    autocompletar.Show(this);
+                    autocompletar = new frm_AutocompletadoProductos(localizacion, ref txt_Producto);
+                    autocompletar.Show(this);                    
                     activeform.BringToFront();                                        
                 }
                 else if (cbx_TipoBusqueda.SelectedItem.ToString() == "Descripción")
@@ -248,7 +244,7 @@ namespace Proyecto_Glacial.Ventas
                     autocompletado.llenarListaAutocompletarDescripcion(descripcion);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
-                    autocompletar = new frm_AutocompletadoProductos(localizacion);
+                    autocompletar = new frm_AutocompletadoProductos(localizacion, ref txt_Producto);
                     autocompletar.Show(this);
                     activeform.BringToFront();
                 }                
@@ -277,25 +273,7 @@ namespace Proyecto_Glacial.Ventas
                     }
                 }
             }
-            MostrarDatos_DataGridView();
         }
-
-        private void MostrarDatos_DataGridView()
-        {
-            dgv_ListaVenta.Rows.Clear();
-            Objetos.NodoProducto tmp = Program.listaProductosVenta.ObtenerLista();
-            Objetos.NodoProducto recorrerLista = tmp;
-            if (tmp != null)
-            {
-                for (int i = 0; i < Program.listaProductosVenta.CantidadElementos(); i++)
-                {
-                    double total = recorrerLista.Producto.Precio1 * recorrerLista.Producto.Cantidad;
-                    dgv_ListaVenta.Rows.Add(recorrerLista.Producto.idLineaProducto, recorrerLista.Producto.Nombre, recorrerLista.Producto.Descripcion, recorrerLista.Producto.Cantidad.ToString(),
-                        recorrerLista.Producto.UnidadMedida, recorrerLista.Producto.Precio1.ToString(), total, "Precio 1");
-                    recorrerLista = recorrerLista.Siguiente;
-                }
-            }
-            dgv_ListaVenta.Refresh();
-        }
+       
     }
 }

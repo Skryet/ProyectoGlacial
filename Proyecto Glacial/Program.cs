@@ -29,6 +29,9 @@ namespace Proyecto_Glacial
         public static bool enActividadVenta = false;
         public static Ventas.Objetos.ListaEnlazadaProductos listaProductosVenta;
         public static Ventas.Objetos.ListaEnlazadaProductos listaProductosAutocompletar;
+
+        //Manupular Datos
+        public static Ventas.Objetos.Manipular_DataGirdView manipularDatos;
                         
         public static optimizar metodosOptimizar = new optimizar();        
         

@@ -326,10 +326,10 @@
             this.rbt_DeContado.Location = new System.Drawing.Point(80, 45);
             this.rbt_DeContado.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_DeContado.Name = "rbt_DeContado";
-            this.rbt_DeContado.Size = new System.Drawing.Size(118, 22);
+            this.rbt_DeContado.Size = new System.Drawing.Size(94, 22);
             this.rbt_DeContado.TabIndex = 27;
             this.rbt_DeContado.TabStop = true;
-            this.rbt_DeContado.Text = "De contado";
+            this.rbt_DeContado.Text = "Contado";
             this.rbt_DeContado.UseVisualStyleBackColor = true;
             // 
             // rbt_Credito
@@ -579,10 +579,10 @@
             // 
             this.clm_PrecioVenta.HeaderText = "Precio de Venta";
             this.clm_PrecioVenta.Items.AddRange(new object[] {
+            "Especial",
             "Precio 1",
             "Precio 2",
             "Precio 3",
-            "Especial",
             "Libre"});
             this.clm_PrecioVenta.Name = "clm_PrecioVenta";
             this.clm_PrecioVenta.Width = 80;

@@ -267,6 +267,7 @@
     <Compile Include="Ventas\Objetos\ListaEnlazadaProductos.cs" />
     <Compile Include="Ventas\Objetos\ListaMaterial.cs" />
     <Compile Include="Ventas\Objetos\ListaProductos.cs" />
+    <Compile Include="Ventas\Objetos\Manipular_DataGirdView.cs" />
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <Compile Include="Ventas\Objetos\NodoProducto.cs" />
     <Compile Include="Ventas\Objetos\Venta.cs" />

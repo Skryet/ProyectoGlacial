@@ -33,14 +33,14 @@
             this.lbl_MenuActual = new System.Windows.Forms.Label();
             this.pnl_Contenido = new System.Windows.Forms.Panel();
             this.pnl_Menu = new System.Windows.Forms.Panel();
-            this.lbl_PoductoAgregar = new System.Windows.Forms.Label();
+            this.lbl_Catalogo = new System.Windows.Forms.Label();
             this.lbl_PoductoEliminar = new System.Windows.Forms.Label();
             this.lbl_NuevaVenta = new System.Windows.Forms.Label();
             this.btn_NuevaVenta = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_Eliminar = new System.Windows.Forms.Label();
-            this.lbl_Agregar = new System.Windows.Forms.Label();
+            this.lbl_Ver = new System.Windows.Forms.Label();
             this.lbl_Ventas = new System.Windows.Forms.Label();
             this.pnl_Encabezado = new System.Windows.Forms.Panel();
             this.pnl_BarraEstado.SuspendLayout();
@@ -75,29 +75,30 @@
             // 
             // pnl_Menu
             // 
-            this.pnl_Menu.Controls.Add(this.lbl_PoductoAgregar);
+            this.pnl_Menu.Controls.Add(this.lbl_Catalogo);
             this.pnl_Menu.Controls.Add(this.lbl_PoductoEliminar);
             this.pnl_Menu.Controls.Add(this.lbl_NuevaVenta);
             this.pnl_Menu.Controls.Add(this.btn_NuevaVenta);
             this.pnl_Menu.Controls.Add(this.btn_Eliminar);
             this.pnl_Menu.Controls.Add(this.btn_Agregar);
             this.pnl_Menu.Controls.Add(this.lbl_Eliminar);
-            this.pnl_Menu.Controls.Add(this.lbl_Agregar);
+            this.pnl_Menu.Controls.Add(this.lbl_Ver);
             this.pnl_Menu.Location = new System.Drawing.Point(4, 92);
             this.pnl_Menu.Name = "pnl_Menu";
             this.pnl_Menu.Size = new System.Drawing.Size(174, 593);
             this.pnl_Menu.TabIndex = 6;
             // 
-            // lbl_PoductoAgregar
+            // lbl_Catalogo
             // 
-            this.lbl_PoductoAgregar.AutoSize = true;
-            this.lbl_PoductoAgregar.Enabled = false;
-            this.lbl_PoductoAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PoductoAgregar.Location = new System.Drawing.Point(43, 332);
-            this.lbl_PoductoAgregar.Name = "lbl_PoductoAgregar";
-            this.lbl_PoductoAgregar.Size = new System.Drawing.Size(93, 22);
-            this.lbl_PoductoAgregar.TabIndex = 14;
-            this.lbl_PoductoAgregar.Text = "producto";
+            this.lbl_Catalogo.AutoSize = true;
+            this.lbl_Catalogo.Enabled = false;
+            this.lbl_Catalogo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Catalogo.Location = new System.Drawing.Point(42, 332);
+            this.lbl_Catalogo.Name = "lbl_Catalogo";
+            this.lbl_Catalogo.Size = new System.Drawing.Size(92, 22);
+            this.lbl_Catalogo.TabIndex = 14;
+            this.lbl_Catalogo.Text = "Catalogo";
+            this.lbl_Catalogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_PoductoEliminar
             // 
@@ -147,7 +148,7 @@
             // 
             this.btn_Agregar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Agregar.Enabled = false;
-            this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
+            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
             this.btn_Agregar.Location = new System.Drawing.Point(49, 234);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 75);
@@ -166,16 +167,17 @@
             this.lbl_Eliminar.TabIndex = 2;
             this.lbl_Eliminar.Text = "Eliminar";
             // 
-            // lbl_Agregar
+            // lbl_Ver
             // 
-            this.lbl_Agregar.AutoSize = true;
-            this.lbl_Agregar.Enabled = false;
-            this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Agregar.Location = new System.Drawing.Point(45, 310);
-            this.lbl_Agregar.Name = "lbl_Agregar";
-            this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
-            this.lbl_Agregar.TabIndex = 1;
-            this.lbl_Agregar.Text = "Agregar";
+            this.lbl_Ver.AutoSize = true;
+            this.lbl_Ver.Enabled = false;
+            this.lbl_Ver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Ver.Location = new System.Drawing.Point(66, 310);
+            this.lbl_Ver.Name = "lbl_Ver";
+            this.lbl_Ver.Size = new System.Drawing.Size(42, 22);
+            this.lbl_Ver.TabIndex = 1;
+            this.lbl_Ver.Text = "Ver";
+            this.lbl_Ver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Ventas
             // 
@@ -230,10 +232,10 @@
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Label lbl_Eliminar;
-        private System.Windows.Forms.Label lbl_Agregar;
+        private System.Windows.Forms.Label lbl_Ver;
         private System.Windows.Forms.Label lbl_Ventas;
         private System.Windows.Forms.Panel pnl_Encabezado;
         private System.Windows.Forms.Label lbl_PoductoEliminar;
-        private System.Windows.Forms.Label lbl_PoductoAgregar;
+        private System.Windows.Forms.Label lbl_Catalogo;
     }
 }
