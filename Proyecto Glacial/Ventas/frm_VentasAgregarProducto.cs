@@ -13,6 +13,8 @@ namespace Proyecto_Glacial.Ventas
     public partial class frm_VentasAgregarProducto : Form
     {
         private Ventas.Consultas.generarVenta ventas = new Consultas.generarVenta();
+        private Consultas.GenerarAutocompletado LlenarLista = new Consultas.GenerarAutocompletado();
+        private Objetos.ListaEnlazadaProductos ListaProductos = new Objetos.ListaEnlazadaProductos();
 
         public frm_VentasAgregarProducto()
         {
@@ -21,124 +23,55 @@ namespace Proyecto_Glacial.Ventas
 
         private void frm_VentasAgregarProducto_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.glacial_almacenDataSet.productos);
+            //Llenar Lista de Productos
+            LlenarLista.llenarListaAutocompletarCodigo("", ListaProductos);
+            Objetos.NodoProducto tmp = ListaProductos.ObtenerLista();
+            Objetos.NodoProducto recorrerLista = tmp;
+            for (int i = 0; i < ListaProductos.CantidadElementos(); i++)
+            {
+                productosDataGridView.Rows.Add(recorrerLista.Producto.idLineaProducto, recorrerLista.Producto.Nombre, recorrerLista.Producto.Descripcion, recorrerLista.Producto.Cantidad.ToString(),
+                    recorrerLista.Producto.UnidadMedida, recorrerLista.Producto.Precio1.ToString(), recorrerLista.Producto.Precio2.ToString(), recorrerLista.Producto.Precio3.ToString());
+                recorrerLista = recorrerLista.Siguiente;
+            }
+
             if (productosDataGridView.RowCount != 0)
                 productosDataGridView.CurrentRow.Selected = false;
         }
 
         private void productosDataGridView_Click(object sender, EventArgs e)
-        {
+        {                    
             if (productosDataGridView.RowCount != 0)
                 Program.idProductoVenta = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
         }       
 
         private void cbx_TipoPrecio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_TipoPrecio.Text == "Especial")
-            {
-                txt_PrecioEspecial.Enabled = true;
-                lbl_PrecioEspecial.Enabled = true;
-                txt_PrecioEspecial.Visible = true;
-                lbl_PrecioEspecial.Visible = true;
-            }
-
-            else
-            {
-                txt_PrecioEspecial.Enabled = false;
-                lbl_PrecioEspecial.Enabled = false;
-                txt_PrecioEspecial.Visible = false;
-                lbl_PrecioEspecial.Visible = false;
-            }
+            
         }
-
-        private void bn_Finalizar_Click(object sender, EventArgs e)
-        {
-            Program.idProductoVenta = "";
-            this.Close();
-        }
-
+        
         private void btn_Agregar_Click(object sender, EventArgs e)
-        {                              
-            /*if (Program.idProductoVenta != 0)
+        {
+            string idLineaProducto = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            Objetos.NodoProducto Producto = ListaProductos.obtenerProducto(idLineaProducto);
+
+            //Comprobar que sobre pase la existencia
+            Objetos.NodoProducto verificarExistencia = Program.listaProductosVenta.obtenerProducto(idLineaProducto);
+            if (verificarExistencia != null)
             {
-                Objetos.materialVenta producto = new Objetos.materialVenta();
-                producto.idVenta = Program.idVenta;
-                producto.idProducto = Program.idProductoVenta;
-                producto.Linea = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
-                producto.Codigo = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
-                producto.Descripcion = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[3].Value.ToString();
-                producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
-                if (txt_Cantidad.Text != "0")
-                {
-                    int existencia = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
-                    if (Convert.ToInt32(txt_Cantidad.Text) > existencia)
-                    {
-                        MessageBox.Show("No puedes ingresar una cantidad mayor a la que hay en existencia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        txt_Cantidad.Text = "0";
-                    }
-                    else
-                    {
-                        int descontarExistencia = existencia - Convert.ToInt32(txt_Cantidad.Text);
-                        switch (cbx_TipoPrecio.Text)
-                        {
-                            case "Precio 1":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Precio 2":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[7].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Precio 3":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[8].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Especial":
-                                producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 0;
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                break;
-                            default:
-                                MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                        }
-                    }
-                }
+                int cantidad = verificarExistencia.Producto.Cantidad + 1;
+                if (cantidad <= ListaProductos.obtenerProducto(idLineaProducto).Producto.Cantidad)
+                    Program.listaProductosVenta.AgregarCantidad(cantidad, idLineaProducto);
                 else
-                    MessageBox.Show("La cantidad del producto no puede ser 0", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No se puede agregar la cantidad que necesita por que se excede la existencia del almacén.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
+                Producto.Producto.Cantidad = 1;
+                Program.listaProductosVenta.Insertar(Producto);
+            }
+            Program.manipularDatos.MostrarDatos_DataGridView();
+            Program.manipularDatos.generarTotalVenta();            
+            this.Close();
         }
 
         private void frm_VentasAgregarProducto_FormClosing(object sender, FormClosingEventArgs e)
@@ -148,85 +81,27 @@ namespace Proyecto_Glacial.Ventas
 
         private void productosDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*if (Program.idProductoVenta != 0)
+            string idLineaProducto = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            Objetos.NodoProducto Producto = ListaProductos.obtenerProducto(idLineaProducto);
+
+            //Comprobar que sobre pase la existencia
+            Objetos.NodoProducto verificarExistencia = Program.listaProductosVenta.obtenerProducto(idLineaProducto);
+            if (verificarExistencia != null)
             {
-                Objetos.materialVenta producto = new Objetos.materialVenta();
-                producto.idVenta = Program.idVenta;
-                producto.idProducto = Program.idProductoVenta;
-                producto.Linea = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
-                producto.Codigo = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[1].Value.ToString();
-                producto.Descripcion = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[3].Value.ToString();
-                producto.Cantidad = Convert.ToInt32(txt_Cantidad.Text);
-                if (txt_Cantidad.Text != "0")
-                {
-                    int existencia = Convert.ToInt32(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
-                    if (Convert.ToInt32(txt_Cantidad.Text) > existencia)
-                    {
-                        MessageBox.Show("No puedes ingresar una cantidad mayor a la que hay en existencia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        txt_Cantidad.Text = "0";
-                    }
-                    else
-                    {
-                        int descontarExistencia = existencia - Convert.ToInt32(txt_Cantidad.Text);
-                        switch (cbx_TipoPrecio.Text)
-                        {
-                            case "Precio 1":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[6].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Precio 2":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[7].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Precio 3":
-                                producto.precioUnidad = Convert.ToDouble(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[8].Value);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[5].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                Program.idProductoVenta = 0;
-                                break;
-                            case "Especial":
-                                producto.precioUnidad = Convert.ToDouble(txt_PrecioEspecial.Text);
-                                producto.unidadMedida = Convert.ToString(productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[4].Value);
-                                producto.Total = producto.obtenerTotal();
-                                Program.listaProductos.agregarProducto(producto);
-                                //ventas.agregarProduto(producto);
-                                //ventas.descontarProductos(descontarExistencia, Program.idProductoVenta);
-                                Program.idProductoVenta = 0;
-                                Program.idProductoVenta = 999;
-                                this.Close();
-                                break;
-                            default:
-                                MessageBox.Show("No se ha seleccionado el precio en el que se dara el producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                        }
-                    }
-                }
+                int cantidad = verificarExistencia.Producto.Cantidad + 1;
+                if (cantidad <= ListaProductos.obtenerProducto(idLineaProducto).Producto.Cantidad)
+                    Program.listaProductosVenta.AgregarCantidad(cantidad, idLineaProducto);
                 else
-                    MessageBox.Show("La cantidad del producto no puede ser 0", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No se puede agregar la cantidad que necesita por que se excede la existencia del almacén.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
+                Producto.Producto.Cantidad = 1;
+                Program.listaProductosVenta.Insertar(Producto);
+            }
+            Program.manipularDatos.MostrarDatos_DataGridView();
+            Program.manipularDatos.generarTotalVenta();
+            this.Close();
         }
     }
 }

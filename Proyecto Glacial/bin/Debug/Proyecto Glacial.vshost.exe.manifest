@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proyecto Glacial.exe" size="600576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proyecto Glacial.exe" size="604672">
       <assemblyIdentity name="Proyecto Glacial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DO8z3yn+Z2ez8ld+ZnOKrJoasi62kL8eETh2L02VJ28=</dsig:DigestValue>
+        <dsig:DigestValue>gCnvZcOROPcsEE3Pl7rIT7s5SurOI7CxYIlebu2esT0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -18,6 +18,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
         private double precio2;
         private double precio3;
         private double precio_especial;
+        private double precio_establecido;
 
         public ListaMaterial()
         {
@@ -30,6 +31,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
             precio2 = 0;
             precio3 = 0;
             precio_especial = 0;
+            precio_establecido = 0;
         }
 
         public int idProducto { get { return id_producto; } set { id_producto = value; } }
@@ -41,6 +43,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
         public double Precio1 { get { return precio1; } set { precio1 = value; } }
         public double Precio2 { get { return precio2; } set { precio2 = value; } }
         public double Precio3 { get { return precio3; } set { precio3 = value; } }
-        public double PrecioEspecial { get { return precio_especial; } set { precio_especial = value; } }        
+        public double PrecioEspecial { get { return precio_especial; } set { precio_especial = value; } }    
+        public double PrecioEstablecido { get { return precio_establecido; } set { precio_establecido = value; } }    
     }
 }

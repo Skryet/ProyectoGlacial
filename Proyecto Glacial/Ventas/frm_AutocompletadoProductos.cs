@@ -44,6 +44,11 @@ namespace Proyecto_Glacial.Ventas
 
         private void dgv_Productos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void productosDataGridView_DoubleClick(object sender, EventArgs e)
+        {
             string idLineaProducto = productosDataGridView.Rows[productosDataGridView.CurrentCellAddress.Y].Cells[0].Value.ToString();
             Objetos.NodoProducto Producto = Program.listaProductosAutocompletar.obtenerProducto(idLineaProducto);
 
@@ -66,7 +71,6 @@ namespace Proyecto_Glacial.Ventas
             Program.manipularDatos.generarTotalVenta();
             txt_limpiar.Text = "";
             this.Close();
-        }        
-      
+        }
     }    
 }

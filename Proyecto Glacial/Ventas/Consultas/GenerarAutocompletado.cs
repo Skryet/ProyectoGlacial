@@ -13,7 +13,7 @@ namespace Proyecto_Glacial.Ventas.Consultas
     {
         private generarConexion conexion = new generarConexion();       
 
-        public void llenarListaAutocompletarCodigo(string buscarCodigo)
+        public void llenarListaAutocompletarCodigo(string buscarCodigo, Objetos.ListaEnlazadaProductos listaProductos)
         {
 
             string comando = "SELECT id_producto, id_linea_producto, nombre, descripcion, existencia, unidad_medida, precio1, precio2, precio3, precio_especial"
@@ -38,7 +38,7 @@ namespace Proyecto_Glacial.Ventas.Consultas
                         producto.Producto.Precio2 = lector.GetDouble(7);
                         producto.Producto.Precio3 = lector.GetDouble(8);
                         producto.Producto.PrecioEspecial = lector.GetDouble(9);
-                        Program.listaProductosAutocompletar.Insertar(producto);
+                        listaProductos.Insertar(producto);
                     }
                 }
             }

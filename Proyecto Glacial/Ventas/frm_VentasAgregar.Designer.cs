@@ -49,6 +49,14 @@
             this.lbl_Descuento = new System.Windows.Forms.Label();
             this.btn_Finalizar = new System.Windows.Forms.Button();
             this.dgv_ListaVenta = new System.Windows.Forms.DataGridView();
+            this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_PrecioPieza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_PrecioVenta = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.rbt_DeContado = new System.Windows.Forms.RadioButton();
             this.rbt_Credito = new System.Windows.Forms.RadioButton();
             this.lbl_TipoPago = new System.Windows.Forms.Label();
@@ -68,14 +76,6 @@
             this.txt_Producto = new System.Windows.Forms.TextBox();
             this.cbx_TipoBusqueda = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_PrecioPieza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_PrecioVenta = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnl_Descuento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaVenta)).BeginInit();
             this.pnl_TipoPago.SuspendLayout();
@@ -316,7 +316,70 @@
             this.dgv_ListaVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv_ListaVenta.Size = new System.Drawing.Size(690, 272);
             this.dgv_ListaVenta.TabIndex = 25;
+            this.dgv_ListaVenta.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaVenta_CellValidated);
+            this.dgv_ListaVenta.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_ListaVenta_CellValidating);
+            this.dgv_ListaVenta.ColumnContextMenuStripChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgv_ListaVenta_ColumnContextMenuStripChanged);
+            this.dgv_ListaVenta.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_ListaVenta_EditingControlShowing);
             this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
+            // 
+            // clm_Codigo
+            // 
+            this.clm_Codigo.Frozen = true;
+            this.clm_Codigo.HeaderText = "Código";
+            this.clm_Codigo.Name = "clm_Codigo";
+            this.clm_Codigo.Width = 65;
+            // 
+            // clm_Nombre
+            // 
+            this.clm_Nombre.HeaderText = "Nombre";
+            this.clm_Nombre.Name = "clm_Nombre";
+            this.clm_Nombre.Width = 69;
+            // 
+            // clm_Descripcion
+            // 
+            this.clm_Descripcion.HeaderText = "Descripción";
+            this.clm_Descripcion.Name = "clm_Descripcion";
+            this.clm_Descripcion.ReadOnly = true;
+            this.clm_Descripcion.Width = 88;
+            // 
+            // clm_Cantidad
+            // 
+            this.clm_Cantidad.HeaderText = "Cantidad";
+            this.clm_Cantidad.Name = "clm_Cantidad";
+            this.clm_Cantidad.Width = 74;
+            // 
+            // clm_Unidad
+            // 
+            this.clm_Unidad.HeaderText = "Unidad";
+            this.clm_Unidad.Name = "clm_Unidad";
+            this.clm_Unidad.ReadOnly = true;
+            this.clm_Unidad.Width = 66;
+            // 
+            // clm_PrecioPieza
+            // 
+            this.clm_PrecioPieza.HeaderText = "Precio Unitario";
+            this.clm_PrecioPieza.Name = "clm_PrecioPieza";
+            this.clm_PrecioPieza.ReadOnly = true;
+            this.clm_PrecioPieza.Width = 93;
+            // 
+            // clm_Total
+            // 
+            this.clm_Total.HeaderText = "Total";
+            this.clm_Total.Name = "clm_Total";
+            this.clm_Total.ReadOnly = true;
+            this.clm_Total.Width = 56;
+            // 
+            // clm_PrecioVenta
+            // 
+            this.clm_PrecioVenta.HeaderText = "Precio de Venta";
+            this.clm_PrecioVenta.Items.AddRange(new object[] {
+            "Especial",
+            "Precio 1",
+            "Precio 2",
+            "Precio 3",
+            "Libre"});
+            this.clm_PrecioVenta.Name = "clm_PrecioVenta";
+            this.clm_PrecioVenta.Width = 80;
             // 
             // rbt_DeContado
             // 
@@ -527,65 +590,6 @@
             this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Lista de Venta";
-            // 
-            // clm_Codigo
-            // 
-            this.clm_Codigo.Frozen = true;
-            this.clm_Codigo.HeaderText = "Código";
-            this.clm_Codigo.Name = "clm_Codigo";
-            this.clm_Codigo.Width = 65;
-            // 
-            // clm_Nombre
-            // 
-            this.clm_Nombre.HeaderText = "Nombre";
-            this.clm_Nombre.Name = "clm_Nombre";
-            this.clm_Nombre.Width = 69;
-            // 
-            // clm_Descripcion
-            // 
-            this.clm_Descripcion.HeaderText = "Descripción";
-            this.clm_Descripcion.Name = "clm_Descripcion";
-            this.clm_Descripcion.ReadOnly = true;
-            this.clm_Descripcion.Width = 88;
-            // 
-            // clm_Cantidad
-            // 
-            this.clm_Cantidad.HeaderText = "Cantidad";
-            this.clm_Cantidad.Name = "clm_Cantidad";
-            this.clm_Cantidad.Width = 74;
-            // 
-            // clm_Unidad
-            // 
-            this.clm_Unidad.HeaderText = "Unidad";
-            this.clm_Unidad.Name = "clm_Unidad";
-            this.clm_Unidad.ReadOnly = true;
-            this.clm_Unidad.Width = 66;
-            // 
-            // clm_PrecioPieza
-            // 
-            this.clm_PrecioPieza.HeaderText = "Precio Unitario";
-            this.clm_PrecioPieza.Name = "clm_PrecioPieza";
-            this.clm_PrecioPieza.ReadOnly = true;
-            this.clm_PrecioPieza.Width = 101;
-            // 
-            // clm_Total
-            // 
-            this.clm_Total.HeaderText = "Total";
-            this.clm_Total.Name = "clm_Total";
-            this.clm_Total.ReadOnly = true;
-            this.clm_Total.Width = 56;
-            // 
-            // clm_PrecioVenta
-            // 
-            this.clm_PrecioVenta.HeaderText = "Precio de Venta";
-            this.clm_PrecioVenta.Items.AddRange(new object[] {
-            "Especial",
-            "Precio 1",
-            "Precio 2",
-            "Precio 3",
-            "Libre"});
-            this.clm_PrecioVenta.Name = "clm_PrecioVenta";
-            this.clm_PrecioVenta.Width = 80;
             // 
             // frm_VentasAgregar
             // 

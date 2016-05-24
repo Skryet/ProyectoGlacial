@@ -15,7 +15,8 @@ namespace Proyecto_Glacial.Ventas
         private Consultas.consultasVentas consultas = new Consultas.consultasVentas();
         private Consultas.generarVenta consultasVentas = new Consultas.generarVenta();
         private Consultas.GenerarAutocompletado autocompletado = new Consultas.GenerarAutocompletado();
-        private frm_AutocompletadoProductos autocompletar;        
+        private frm_AutocompletadoProductos autocompletar;
+        private int cantidadPrevia;
 
 
         public frm_VentasAgregar()
@@ -203,7 +204,7 @@ namespace Proyecto_Glacial.Ventas
             {
                 if (Convert.ToString(dgv_ListaVenta.Rows[0].Cells[0].Value) != "")
                     Program.idProductoVenta = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
-            }
+            }                                     
         }     
 
         private void Activar_Referencia(object sender, EventArgs e)
@@ -231,7 +232,7 @@ namespace Proyecto_Glacial.Ventas
                 if (cbx_TipoBusqueda.SelectedItem.ToString() == "Código")
                 {                    
                     string codigo = txt_Producto.Text.ToString();
-                    autocompletado.llenarListaAutocompletarCodigo(codigo);
+                    autocompletado.llenarListaAutocompletarCodigo(codigo, Program.listaProductosAutocompletar);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
                     autocompletar = new frm_AutocompletadoProductos(localizacion, ref txt_Producto);
@@ -274,6 +275,103 @@ namespace Proyecto_Glacial.Ventas
                 }
             }
         }
-       
+
+        private void dgv_ListaVenta_CellToolTipTextChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_ListaVenta_ColumnContextMenuStripChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (e.Column.Index == 7)
+            {
+                string precio = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[7].Value.ToString();
+                string codigo = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
+
+                switch (precio)
+                {
+                    case "Especial":
+                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial;
+                        break;
+                    case "Precio 1":
+                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1;
+                        break;
+                    case "Precio 2":
+                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2;
+                        break;
+                    case "Precio 3":
+                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3;
+                        break;
+                    case "Libre":
+                        break;
+                }
+            }
+        }
+
+        private void dgv_ListaVenta_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is DataGridViewComboBoxEditingControl)
+            {
+                DataGridViewComboBoxEditingControl CellComboBox = (DataGridViewComboBoxEditingControl)e.Control;
+                CellComboBox.SelectionChangeCommitted -= new EventHandler(Verificar_ComboBox);
+                if (dgv_ListaVenta.CurrentCell.ColumnIndex == 7)
+                {
+                    CellComboBox.SelectionChangeCommitted += new EventHandler(Verificar_ComboBox);
+                }
+            }
+        }
+
+        void Verificar_ComboBox(object sender, EventArgs e)
+        {
+            ComboBox cbx = (ComboBox)sender;        
+            string precio = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[7].Value.ToString();
+            string codigo = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
+
+            switch (cbx.SelectedItem.ToString())
+            {
+                case "Especial":
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial;                    
+                    Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial, codigo);
+                    break;
+                case "Precio 1":
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1;
+                    Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1, codigo);
+                    break;
+                case "Precio 2":
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2;
+                    Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2, codigo);
+                    break;
+                case "Precio 3":
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3;
+                    Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3, codigo);
+                    break;
+                case "Libre":
+                    break;
+            }
+            dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value) * Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value);
+            Program.manipularDatos.generarTotalVenta();
+        }
+
+        private void dgv_ListaVenta_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].IsInEditMode)
+            {
+                if (Program.listaProductosVenta.ComprobarExistencia(Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value), dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString()) == false)
+                {
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value) * Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value);
+                    Program.manipularDatos.generarTotalVenta();
+                }
+                else
+                {
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value = cantidadPrevia;
+                    MessageBox.Show("La cantidad asignada supera el límite de la cantidad existente en almacén.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void dgv_ListaVenta_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            cantidadPrevia = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value);
+        }
     }
 }
