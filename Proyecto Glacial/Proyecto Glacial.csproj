@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\chhris\Pictures\Glacial2.0.4\</PublishUrl>
+    <PublishUrl>E:\ll\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,8 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -168,26 +167,32 @@
     <Compile Include="Empresa\frm_EmpresaAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaAgregar.Designer.cs">
-      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
+    <Compile Include="Compras\frm_ComprasAgregar.Designer.cs">
+      <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaBuscar.cs">
+    <Compile Include="Compras\frm_ComprasBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaBuscar.Designer.cs">
-      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
+    <Compile Include="Compras\frm_ComprasBuscar.Designer.cs">
+      <DependentUpon>frm_ComprasBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaModificar.cs">
+    <Compile Include="Compras\frm_ComprasBuscarDetalles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\frm_EmpresaModificar.Designer.cs">
-      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
+    <Compile Include="Compras\frm_ComprasBuscarDetalles.Designer.cs">
+      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\frm_Empresas.cs">
+    <Compile Include="Compras\frm_ComprasMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\frm_Empresas.Designer.cs">
-      <DependentUpon>frm_Empresas.cs</DependentUpon>
+    <Compile Include="Compras\frm_ComprasMenu.Designer.cs">
+      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
+      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -292,7 +297,14 @@
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Consultas\consultasVentas.cs" />
+    <Compile Include="Ventas\Consultas\GenerarAutocompletado.cs" />
     <Compile Include="Ventas\Consultas\generarVenta.cs" />
+    <Compile Include="Ventas\frm_AutocompletadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_AutocompletadoProductos.Designer.cs">
+      <DependentUpon>frm_AutocompletadoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frm_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,13 +329,13 @@
     <Compile Include="Ventas\frm_VentaSeleccionCliente.designer.cs">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventas\frm_VentasSeleccionEmpresa.designer.cs">
-      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Ventas\Objetos\ListaEnlazadaProductos.cs" />
+    <Compile Include="Ventas\Objetos\ListaMaterial.cs" />
+    <Compile Include="Ventas\Objetos\ListaProductos.cs" />
+    <Compile Include="Ventas\Objetos\Manipular_DataGirdView.cs" />
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
+    <Compile Include="Ventas\Objetos\NodoProducto.cs" />
+    <Compile Include="Ventas\Objetos\Venta.cs" />
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,14 +376,14 @@
     <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
       <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaBuscar.resx">
-      <DependentUpon>frm_EmpresaBuscar.cs</DependentUpon>
+    <EmbeddedResource Include="Compras\frm_ComprasBuscarDetalles.resx">
+      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaModificar.resx">
-      <DependentUpon>frm_EmpresaModificar.cs</DependentUpon>
+    <EmbeddedResource Include="Compras\frm_ComprasMenu.resx">
+      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_Empresas.resx">
-      <DependentUpon>frm_Empresas.cs</DependentUpon>
+    <EmbeddedResource Include="Compras\frm_ComprasModificarDetallesCompra.resx">
+      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
@@ -423,6 +435,9 @@
     <EmbeddedResource Include="Proveedores\frm_ProveedorModificar.resx">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_AutocompletadoProductos.resx">
+      <DependentUpon>frm_AutocompletadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frm_Ventas.resx">
       <DependentUpon>frm_Ventas.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,9 +449,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frm_VentaSeleccionCliente.resx">
       <DependentUpon>frm_VentaSeleccionCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\frm_VentasSeleccionEmpresa.resx">
-      <DependentUpon>frm_VentasSeleccionEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="glacial_almacenDataSet.xsc">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
@@ -607,6 +619,7 @@
     <Content Include="lel.ico" />
     <Content Include="wtfff.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

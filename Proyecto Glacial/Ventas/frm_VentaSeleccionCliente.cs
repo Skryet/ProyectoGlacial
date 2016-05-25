@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Proyecto_Glacial.Ventas
 {
     public partial class frm_VentaSeleccionCliente : Form
-    {
+    {        
         public frm_VentaSeleccionCliente()
         {
             InitializeComponent();
@@ -28,7 +28,9 @@ namespace Proyecto_Glacial.Ventas
         private void frm_VentaSeleccionCliente_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);            
+            if (clientesDataGridView.RowCount != 0)
+                clientesDataGridView.CurrentRow.Selected = false;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -77,19 +79,45 @@ namespace Proyecto_Glacial.Ventas
                 }
             }
             else
-                this.Close();                 
-        }
-
-        private void btn_AgregarCiente_Click(object sender, EventArgs e)
-        {
-            Form agregarCliente = new frm_ClientesAgregar();
-            agregarCliente.ShowDialog();
-            this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+            {                
+                this.Close();
+            }
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
             this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
+        }
+
+        private void clientesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Program.idClienteVenta == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun cliente, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idClienteVenta = 0;
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void frm_VentaSeleccionCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Program.idClienteVenta == 0)
+            {
+                DialogResult resultadoDialogo = MessageBox.Show("No se ha seleccionado ningun cliente, ¿Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultadoDialogo == DialogResult.Yes)
+                {
+                    Program.idClienteVenta = 0;                    
+                }
+                else
+                    e.Cancel = true;
+            }
         }
     }
 }

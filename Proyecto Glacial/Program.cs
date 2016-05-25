@@ -31,14 +31,18 @@ namespace Proyecto_Glacial
 
         //Variables de Ventas
         public static int idClienteVenta = 0;
-        public static int idEmpresaVenta = 0;
         public static int idVenta = 0;
-        public static int idProductoVenta = 0;
+        public static string idProductoVenta = "";
         public static bool ventaCreada = false;
+        public static bool enActividadVenta = false;
+        public static Ventas.Objetos.ListaEnlazadaProductos listaProductosVenta;
+        public static Ventas.Objetos.ListaEnlazadaProductos listaProductosAutocompletar;
 
-        public static optimizar metodosOptimizar = new optimizar();
-        //public static int idProveedor;
-        public static int idEmpresa;
+        //Manupular Datos
+        public static Ventas.Objetos.Manipular_DataGirdView manipularDatos;
+                        
+        public static optimizar metodosOptimizar = new optimizar();        
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
