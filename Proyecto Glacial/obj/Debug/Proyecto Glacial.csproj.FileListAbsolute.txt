@@ -265,3 +265,6 @@ E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportApp
 E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\stdole.dll
 E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
 E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.application
+C:\Users\jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+C:\Users\jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\jever\Source\Repos\ProyectoGlacial\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
