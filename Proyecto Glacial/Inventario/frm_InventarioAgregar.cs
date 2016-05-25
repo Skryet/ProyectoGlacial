@@ -108,6 +108,7 @@ namespace Proyecto_Glacial.Inventario
 
         private void frm_InventarioAgregar_Load(object sender, EventArgs e)
         {
+            buscarLineas();
             this.Location = new Point(300, 30);
             btn_AgregarProveedor.Enabled = true;
             regresarTodos();
@@ -129,7 +130,7 @@ namespace Proyecto_Glacial.Inventario
         {
             //SELECT MAX(linea_producto_codigo)FROM productos WHERE id_linea_producto = "CA"
             int ultimoIdExistente = 0;
-            MySqlCommand consulta = new MySqlCommand("SELECT MAX(linea_producto_codigo)FROM productos WHERE id_linea_producto = " + "'" + txt_lineaProducto.Text + "'" , generarConexion.obtenerConexion);
+            MySqlCommand consulta = new MySqlCommand("SELECT MAX(linea_producto_codigo)FROM productos WHERE nombre = " + "'" + txt_nombre.Text + "'", generarConexion.obtenerConexion);
             Conexion.abrirConexion();
             try
             {
@@ -149,9 +150,9 @@ namespace Proyecto_Glacial.Inventario
                         Conexion.cerrarConexion();
                         return ultimoIdExistente + 1;
                     }
-                    
+
                 }
-                
+
             }
             catch (MySqlException e)
             {
@@ -162,38 +163,78 @@ namespace Proyecto_Glacial.Inventario
 
         }
 
+        private void buscarLineas()
+        {
+            cmb_modelo.Text = "";
+            MySqlCommand consulta = new MySqlCommand("SELECT DISTINCT nombre FROM productos", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    txt_nombre.Items.Add(lector.GetString(0));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            Conexion.abrirConexion();
+            consulta = new MySqlCommand("SELECT DISTINCT marcaCarro FROM productos", generarConexion.obtenerConexion);
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    cmb_marca.Items.Add(lector.GetString(0));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Conexion.cerrarConexion();
+        }
+
+    
+
         private void btn_proveedoresAgregado_Click(object sender, EventArgs e)
         {
             byte[] img = null;
             if (!validarCampos())
             {
                 MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                    pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
                     img = ms.ToArray();
-                banderaRealizarPeticionFinal = true;
-                Program.agregarProveedoresProducto = false;
-                btn_Guardar.Enabled = false;
-                this.productosTableAdapter.InsertarProductosConProveedores((txt_lineaProducto.Text).ToString(),
-                    Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
-                    (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
-                    Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
+                    banderaRealizarPeticionFinal = true;
+                    Program.agregarProveedoresProducto = false;
+                    btn_Guardar.Enabled = false;                
+                this.productosTableAdapter.InsertarProductosConProveedores((txt_lineaProducto.Text).ToString() + codigoActualLinea.ToString("#000#"),
+                        Program.idListaProveedorActual, txt_nombre.Text, txt_descripcion.Text, Convert.ToInt32
+                        (txt_existencia.Text), Convert.ToInt32(txt_cantidadMinima.Text), txt_unidadMedida.Text,
+                        Convert.ToDouble(txt_precio1.Text), Convert.ToDouble(txt_precio2.Text),
                         Convert.ToDouble(txt_precio3.Text),img,cmb_marca.Text, 
                         txt_año.Text, cmb_modelo.Text ,(txt_numeroPedimento.Text),
                         Convert.ToDouble(txt_precioEspecial.Text),txt_compatibilidad.Text,
                         Convert.ToDouble(txt_precio.Text),codigoActualLinea,txt_detallesProveedor.Text);
-                this.lista_proveedores_productosTableAdapter.InsertarListaNuevaDeProveedoresProductos();
-                var resultado = MessageBox.Show("Producto Registrado con Éxito, ¿Desea Agregar otro Producto ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.No)
-                {
-                    this.Close();
+                    this.lista_proveedores_productosTableAdapter.InsertarListaNuevaDeProveedoresProductos();
+                    var resultado = MessageBox.Show("Producto Registrado con Éxito, ¿Desea Agregar otro Producto ? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.No)
+                    {
+                        this.Close();
                     }
                     else
                     {
                         this.Close();
                         Form frmAgregar = new Inventario.frm_InventarioAgregar();
                         frmAgregar.ShowDialog();
+                    }
                 }
-            }
             else
                 MessageBox.Show("Faltan campos por llenar!", "Advertencia");
 
@@ -228,7 +269,7 @@ namespace Proyecto_Glacial.Inventario
             Program.nombreProveedor = "";
             Program.agregarProveedoresProducto = false;
             banderaRealizarPeticionFinal = true;
-            
+
         }
 
         private void isDigit(object sender, KeyPressEventArgs e)
@@ -293,14 +334,17 @@ namespace Proyecto_Glacial.Inventario
 
         private void txt_precio_Leave(object sender, EventArgs e)
         {
+            if(txt_precio.Text != "")
+            { 
             decimal val = Convert.ToDecimal(txt_precio.Text);
-            txt_precio.Text = val.ToString("N2");
+                txt_precio.Text = val.ToString("N2");
 
-            txt_precio1.Text = ((Convert.ToDouble(txt_precio.Text) * .30) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
-            txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
-            txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
-            txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
-        
+                txt_precio1.Text = ((Convert.ToDouble(txt_precio.Text) * .30) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            }
+
         }
 
         private void cmb_modelo_Leave(object sender, EventArgs e)
@@ -315,7 +359,13 @@ namespace Proyecto_Glacial.Inventario
 
         private void txt_lineaProducto_Leave_1(object sender, EventArgs e)
         {            
+            
+        }
+
+        private void txt_nombre_Leave(object sender, EventArgs e)
+        {
             codigoActualLinea = buscarUltimoCodigo();
         }
     }
+
 }

@@ -54,9 +54,6 @@
             this.txt_existencia = new System.Windows.Forms.TextBox();
             this.txt_cantidadMinima = new System.Windows.Forms.TextBox();
             this.txt_unidadMedida = new System.Windows.Forms.TextBox();
-            this.txt_precio1 = new System.Windows.Forms.TextBox();
-            this.txt_precio2 = new System.Windows.Forms.TextBox();
-            this.txt_precio3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.txt_marcaCarro = new System.Windows.Forms.TextBox();
@@ -70,6 +67,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_examinar = new System.Windows.Forms.Button();
             this.txt_precio = new System.Windows.Forms.TextBox();
+            this.txt_precio1 = new System.Windows.Forms.TextBox();
+            this.txt_precio2 = new System.Windows.Forms.TextBox();
+            this.txt_precio3 = new System.Windows.Forms.TextBox();
             nombreLabel = new System.Windows.Forms.Label();
             id_linea_productoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -96,27 +96,27 @@
             // 
             nombreLabel.AutoSize = true;
             nombreLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(7, 72);
+            nombreLabel.Location = new System.Drawing.Point(29, 75);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(99, 24);
+            nombreLabel.Size = new System.Drawing.Size(73, 24);
             nombreLabel.TabIndex = 1;
-            nombreLabel.Text = "Nombre:";
+            nombreLabel.Text = "Línea:";
             // 
             // id_linea_productoLabel
             // 
             id_linea_productoLabel.AutoSize = true;
             id_linea_productoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_linea_productoLabel.Location = new System.Drawing.Point(10, 117);
+            id_linea_productoLabel.Location = new System.Drawing.Point(29, 117);
             id_linea_productoLabel.Name = "id_linea_productoLabel";
-            id_linea_productoLabel.Size = new System.Drawing.Size(73, 24);
+            id_linea_productoLabel.Size = new System.Drawing.Size(91, 24);
             id_linea_productoLabel.TabIndex = 2;
-            id_linea_productoLabel.Text = "Línea:";
+            id_linea_productoLabel.Text = "Código:";
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(264, 130);
+            descripcionLabel.Location = new System.Drawing.Point(277, 117);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(140, 24);
             descripcionLabel.TabIndex = 4;
@@ -126,7 +126,7 @@
             // 
             existenciaLabel.AutoSize = true;
             existenciaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            existenciaLabel.Location = new System.Drawing.Point(6, 261);
+            existenciaLabel.Location = new System.Drawing.Point(3, 261);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(121, 24);
             existenciaLabel.TabIndex = 6;
@@ -156,7 +156,7 @@
             // 
             precio1Label.AutoSize = true;
             precio1Label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precio1Label.Location = new System.Drawing.Point(6, 211);
+            precio1Label.Location = new System.Drawing.Point(14, 210);
             precio1Label.Name = "precio1Label";
             precio1Label.Size = new System.Drawing.Size(100, 24);
             precio1Label.TabIndex = 12;
@@ -197,31 +197,31 @@
             // 
             marcaCarroLabel.AutoSize = true;
             marcaCarroLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            marcaCarroLabel.Location = new System.Drawing.Point(379, 312);
+            marcaCarroLabel.Location = new System.Drawing.Point(451, 310);
             marcaCarroLabel.Name = "marcaCarroLabel";
-            marcaCarroLabel.Size = new System.Drawing.Size(205, 22);
+            marcaCarroLabel.Size = new System.Drawing.Size(73, 22);
             marcaCarroLabel.TabIndex = 21;
-            marcaCarroLabel.Text = "Marca perteneciente:";
+            marcaCarroLabel.Text = "Marca:";
             // 
             // anioCarroLabel
             // 
             anioCarroLabel.AutoSize = true;
             anioCarroLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            anioCarroLabel.Location = new System.Drawing.Point(455, 390);
+            anioCarroLabel.Location = new System.Drawing.Point(464, 384);
             anioCarroLabel.Name = "anioCarroLabel";
-            anioCarroLabel.Size = new System.Drawing.Size(184, 22);
+            anioCarroLabel.Size = new System.Drawing.Size(52, 22);
             anioCarroLabel.TabIndex = 23;
-            anioCarroLabel.Text = "Año perteneciente:";
+            anioCarroLabel.Text = "Año:";
             // 
             // modeloCarroLabel
             // 
             modeloCarroLabel.AutoSize = true;
             modeloCarroLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            modeloCarroLabel.Location = new System.Drawing.Point(369, 353);
+            modeloCarroLabel.Location = new System.Drawing.Point(441, 351);
             modeloCarroLabel.Name = "modeloCarroLabel";
-            modeloCarroLabel.Size = new System.Drawing.Size(215, 22);
+            modeloCarroLabel.Size = new System.Drawing.Size(82, 22);
             modeloCarroLabel.TabIndex = 25;
-            modeloCarroLabel.Text = "Modelo Perteneciente:";
+            modeloCarroLabel.Text = "Modelo:";
             // 
             // numeroPedimentoLabel
             // 
@@ -253,6 +253,16 @@
             compatibilidadCarrosLabel.TabIndex = 31;
             compatibilidadCarrosLabel.Text = "Compatible con:";
             // 
+            // precioLabel
+            // 
+            precioLabel.AutoSize = true;
+            precioLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            precioLabel.Location = new System.Drawing.Point(43, 164);
+            precioLabel.Name = "precioLabel";
+            precioLabel.Size = new System.Drawing.Size(77, 24);
+            precioLabel.TabIndex = 35;
+            precioLabel.Text = "Costo:";
+            // 
             // txt_nombre
             // 
             this.txt_nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "nombre", true));
@@ -275,29 +285,31 @@
             // txt_lineaProducto
             // 
             this.txt_lineaProducto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "id_linea_producto", true));
-            this.txt_lineaProducto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lineaProducto.Location = new System.Drawing.Point(89, 109);
+            this.txt_lineaProducto.Enabled = false;
+            this.txt_lineaProducto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lineaProducto.Location = new System.Drawing.Point(133, 117);
             this.txt_lineaProducto.Name = "txt_lineaProducto";
-            this.txt_lineaProducto.Size = new System.Drawing.Size(153, 32);
+            this.txt_lineaProducto.Size = new System.Drawing.Size(132, 29);
             this.txt_lineaProducto.TabIndex = 1;
             this.txt_lineaProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isDigit);
             // 
             // txt_descripcion
             // 
             this.txt_descripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "descripcion", true));
-            this.txt_descripcion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion.Location = new System.Drawing.Point(268, 157);
+            this.txt_descripcion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descripcion.Location = new System.Drawing.Point(280, 144);
+            this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(487, 32);
+            this.txt_descripcion.Size = new System.Drawing.Size(487, 60);
             this.txt_descripcion.TabIndex = 3;
             // 
             // txt_existencia
             // 
             this.txt_existencia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "existencia", true));
-            this.txt_existencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_existencia.Location = new System.Drawing.Point(130, 258);
+            this.txt_existencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_existencia.Location = new System.Drawing.Point(133, 254);
             this.txt_existencia.Name = "txt_existencia";
-            this.txt_existencia.Size = new System.Drawing.Size(141, 32);
+            this.txt_existencia.Size = new System.Drawing.Size(141, 29);
             this.txt_existencia.TabIndex = 7;
             this.txt_existencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isDigit);
             // 
@@ -319,36 +331,6 @@
             this.txt_unidadMedida.Name = "txt_unidadMedida";
             this.txt_unidadMedida.Size = new System.Drawing.Size(145, 32);
             this.txt_unidadMedida.TabIndex = 9;
-            // 
-            // txt_precio1
-            // 
-            this.txt_precio1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio1", true));
-            this.txt_precio1.Enabled = false;
-            this.txt_precio1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio1.Location = new System.Drawing.Point(130, 208);
-            this.txt_precio1.Name = "txt_precio1";
-            this.txt_precio1.Size = new System.Drawing.Size(141, 32);
-            this.txt_precio1.TabIndex = 4;
-            // 
-            // txt_precio2
-            // 
-            this.txt_precio2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio2", true));
-            this.txt_precio2.Enabled = false;
-            this.txt_precio2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio2.Location = new System.Drawing.Point(383, 208);
-            this.txt_precio2.Name = "txt_precio2";
-            this.txt_precio2.Size = new System.Drawing.Size(141, 32);
-            this.txt_precio2.TabIndex = 5;
-            // 
-            // txt_precio3
-            // 
-            this.txt_precio3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio3", true));
-            this.txt_precio3.Enabled = false;
-            this.txt_precio3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio3.Location = new System.Drawing.Point(633, 208);
-            this.txt_precio3.Name = "txt_precio3";
-            this.txt_precio3.Size = new System.Drawing.Size(141, 32);
-            this.txt_precio3.TabIndex = 6;
             // 
             // label1
             // 
@@ -374,7 +356,7 @@
             // 
             this.txt_marcaCarro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "marcaCarro", true));
             this.txt_marcaCarro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_marcaCarro.Location = new System.Drawing.Point(590, 307);
+            this.txt_marcaCarro.Location = new System.Drawing.Point(534, 307);
             this.txt_marcaCarro.Name = "txt_marcaCarro";
             this.txt_marcaCarro.Size = new System.Drawing.Size(177, 29);
             this.txt_marcaCarro.TabIndex = 22;
@@ -383,17 +365,17 @@
             // 
             this.txt_anioCarro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "anioCarro", true));
             this.txt_anioCarro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_anioCarro.Location = new System.Drawing.Point(646, 383);
+            this.txt_anioCarro.Location = new System.Drawing.Point(534, 377);
             this.txt_anioCarro.MaxLength = 4;
             this.txt_anioCarro.Name = "txt_anioCarro";
-            this.txt_anioCarro.Size = new System.Drawing.Size(121, 29);
+            this.txt_anioCarro.Size = new System.Drawing.Size(177, 29);
             this.txt_anioCarro.TabIndex = 24;
             // 
             // txt_modeloCarro
             // 
             this.txt_modeloCarro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "modeloCarro", true));
             this.txt_modeloCarro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_modeloCarro.Location = new System.Drawing.Point(590, 346);
+            this.txt_modeloCarro.Location = new System.Drawing.Point(534, 342);
             this.txt_modeloCarro.Name = "txt_modeloCarro";
             this.txt_modeloCarro.Size = new System.Drawing.Size(177, 29);
             this.txt_modeloCarro.TabIndex = 26;
@@ -436,7 +418,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientesTableAdapter = null;
             this.tableAdapterManager.comprasTableAdapter = null;
-            //   this.tableAdapterManager.empresaTableAdapter = null;
             this.tableAdapterManager.lista_material_comprasTableAdapter = null;
             this.tableAdapterManager.lista_material_ventasTableAdapter = null;
             this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
@@ -465,33 +446,53 @@
             this.btn_examinar.UseVisualStyleBackColor = true;
             this.btn_examinar.Click += new System.EventHandler(this.btn_examinar_Click);
             // 
-            // precioLabel
-            // 
-            precioLabel.AutoSize = true;
-            precioLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precioLabel.Location = new System.Drawing.Point(4, 165);
-            precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(83, 24);
-            precioLabel.TabIndex = 35;
-            precioLabel.Text = "Precio:";
-            // 
             // txt_precio
             // 
-            this.txt_precio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "precio", true));
-            this.txt_precio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio.Location = new System.Drawing.Point(93, 162);
+            this.txt_precio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_precio.Location = new System.Drawing.Point(133, 164);
             this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(100, 32);
-            this.txt_precio.TabIndex = 36;
-            this.txt_precio.Leave += new System.EventHandler(this.txt_precio_Leave);
+            this.txt_precio.Size = new System.Drawing.Size(132, 29);
+            this.txt_precio.TabIndex = 37;
+            this.txt_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_KeyPress);
+            this.txt_precio.Leave += new System.EventHandler(this.txt_precio_Leave_1);
+            // 
+            // txt_precio1
+            // 
+            this.txt_precio1.Enabled = false;
+            this.txt_precio1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_precio1.Location = new System.Drawing.Point(133, 210);
+            this.txt_precio1.Name = "txt_precio1";
+            this.txt_precio1.Size = new System.Drawing.Size(132, 29);
+            this.txt_precio1.TabIndex = 38;
+            // 
+            // txt_precio2
+            // 
+            this.txt_precio2.Enabled = false;
+            this.txt_precio2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_precio2.Location = new System.Drawing.Point(383, 210);
+            this.txt_precio2.Name = "txt_precio2";
+            this.txt_precio2.Size = new System.Drawing.Size(141, 29);
+            this.txt_precio2.TabIndex = 39;
+            // 
+            // txt_precio3
+            // 
+            this.txt_precio3.Enabled = false;
+            this.txt_precio3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_precio3.Location = new System.Drawing.Point(627, 210);
+            this.txt_precio3.Name = "txt_precio3";
+            this.txt_precio3.Size = new System.Drawing.Size(141, 29);
+            this.txt_precio3.TabIndex = 40;
             // 
             // frm_InventarioModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 491);
-            this.Controls.Add(precioLabel);
+            this.Controls.Add(this.txt_precio3);
+            this.Controls.Add(this.txt_precio2);
+            this.Controls.Add(this.txt_precio1);
             this.Controls.Add(this.txt_precio);
+            this.Controls.Add(precioLabel);
             this.Controls.Add(this.btn_examinar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(compatibilidadCarrosLabel);
@@ -510,11 +511,8 @@
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.label1);
             this.Controls.Add(precio3Label);
-            this.Controls.Add(this.txt_precio3);
             this.Controls.Add(precio2Label);
-            this.Controls.Add(this.txt_precio2);
             this.Controls.Add(precio1Label);
-            this.Controls.Add(this.txt_precio1);
             this.Controls.Add(unidad_medidaLabel);
             this.Controls.Add(this.txt_unidadMedida);
             this.Controls.Add(cantidad_minimaLabel);
@@ -550,9 +548,6 @@
         private System.Windows.Forms.TextBox txt_existencia;
         private System.Windows.Forms.TextBox txt_cantidadMinima;
         private System.Windows.Forms.TextBox txt_unidadMedida;
-        private System.Windows.Forms.TextBox txt_precio1;
-        private System.Windows.Forms.TextBox txt_precio2;
-        private System.Windows.Forms.TextBox txt_precio3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.TextBox txt_marcaCarro;
@@ -564,5 +559,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_examinar;
         private System.Windows.Forms.TextBox txt_precio;
+        private System.Windows.Forms.TextBox txt_precio1;
+        private System.Windows.Forms.TextBox txt_precio2;
+        private System.Windows.Forms.TextBox txt_precio3;
     }
 }

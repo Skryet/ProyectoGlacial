@@ -132,8 +132,6 @@ C:\Users\renterian\Desktop\GlacialFinalAlmacen (1)\GlacialFinalAlmacen\Proyecto 
 C:\Users\renterian\Desktop\GlacialFinalAlmacen (1)\GlacialFinalAlmacen\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
 C:\Users\renterian\Desktop\GlacialFinalAlmacen (1)\GlacialFinalAlmacen\Proyecto Glacial\obj\Debug\Proyecto Glacial.csprojResolveAssemblyReference.cache
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
-C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
-C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.manifest
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.application
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe
@@ -198,3 +196,72 @@ C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
 C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.application
+C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+C:\Users\chhris\Source\Repos\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.config
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.pdb
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.csprojResolveAssemblyReference.cache
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesBuscar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_ClientesMenu.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesModificar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Clientes.frm_ClientesVisualizarIndividual.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasBuscar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasBuscarDetalles.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasMenu.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasModificarDetallesCompra.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Compras.frm_ComprasReporte.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaBuscar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_EmpresaModificar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Empresa.frm_Empresas.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_MenuPrincipal.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioBuscar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioMenu.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioModificar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.frm_InventarioVisualizarProducto.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarDatosProveedoProducto.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioAgregarProductosProveedor.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioBuscarProductoProveedores.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_InventarioModificarDatosProveedorProducto.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Inventario.Inventario_Proveedores.frm_ProveedoresBuscarParaProducto.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Properties.Resources.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorBuscar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.frm_Proveedores.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Proveedores.frm_ProveedorModificar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_Ventas.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregar.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasAgregarProducto.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentaSeleccionCliente.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto_Glacial.Ventas.frm_VentasSeleccionEmpresa.resources
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.csproj.GenerateResource.Cache
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe.manifest
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.application
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.exe
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\Proyecto Glacial.pdb
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportSource.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.Shared.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.Windows.Forms.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\FlashControlV71.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\MySql.Data.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\ShockwaveFlashObjects.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\bin\Debug\stdole.dll
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.exe.manifest
+E:\ProyectoGlacial02-06-16\Proyecto Glacial\obj\Debug\Proyecto Glacial.application

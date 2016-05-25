@@ -54,7 +54,8 @@ namespace Proyecto_Glacial.Proveedores
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[0].Value);            
+            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[1].Value);
+            MessageBox.Show(Program.idProveedor.ToString());
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
@@ -74,6 +75,11 @@ namespace Proyecto_Glacial.Proveedores
         private void proveedoresDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             this.proveedoresDataGridView.Columns[1].DefaultCellStyle.Format = "##00000";
+        }
+
+        private void proveedoresDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

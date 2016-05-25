@@ -39,9 +39,9 @@
             System.Windows.Forms.Label rfcLabel;
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label precio_asignadoLabel;
-            System.Windows.Forms.Label fecha_limite_creditoLabel;
             System.Windows.Forms.Label creditoLabel;
             System.Windows.Forms.Label fecha_registroLabel1;
+            System.Windows.Forms.Label fecha_limite_creditoLabel;
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
@@ -57,11 +57,13 @@
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.precio_asignadoTextBox = new System.Windows.Forms.TextBox();
             this.CHECK_tieneCredito = new System.Windows.Forms.CheckBox();
-            this.fecha_limite_creditoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.creditoTextBox = new System.Windows.Forms.TextBox();
             this.fecha_registroDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grp_credito = new System.Windows.Forms.GroupBox();
+            this.txt_credito = new System.Windows.Forms.TextBox();
+            this.fecha_limite_creditoTextBox = new System.Windows.Forms.TextBox();
             this.txt_codigoClienteFormato = new System.Windows.Forms.TextBox();
+            this.rb_efectivo = new System.Windows.Forms.RadioButton();
+            this.rb_credito = new System.Windows.Forms.RadioButton();
             nombreLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             id_clienteLabel = new System.Windows.Forms.Label();
@@ -72,13 +74,141 @@
             rfcLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
             precio_asignadoLabel = new System.Windows.Forms.Label();
-            fecha_limite_creditoLabel = new System.Windows.Forms.Label();
             creditoLabel = new System.Windows.Forms.Label();
             fecha_registroLabel1 = new System.Windows.Forms.Label();
+            fecha_limite_creditoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.grp_credito.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.Location = new System.Drawing.Point(105, 20);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(248, 22);
+            nombreLabel.TabIndex = 1;
+            nombreLabel.Text = "Nombre (s) / Razón social:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            direccionLabel.Location = new System.Drawing.Point(105, 107);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(103, 22);
+            direccionLabel.TabIndex = 2;
+            direccionLabel.Text = "Dirección:";
+            // 
+            // id_clienteLabel
+            // 
+            id_clienteLabel.AutoSize = true;
+            id_clienteLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            id_clienteLabel.Location = new System.Drawing.Point(710, 20);
+            id_clienteLabel.Name = "id_clienteLabel";
+            id_clienteLabel.Size = new System.Drawing.Size(185, 22);
+            id_clienteLabel.TabIndex = 4;
+            id_clienteLabel.Text = "Número de Cliente:";
+            // 
+            // coloniaLabel
+            // 
+            coloniaLabel.AutoSize = true;
+            coloniaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            coloniaLabel.Location = new System.Drawing.Point(526, 175);
+            coloniaLabel.Name = "coloniaLabel";
+            coloniaLabel.Size = new System.Drawing.Size(84, 22);
+            coloniaLabel.TabIndex = 6;
+            coloniaLabel.Text = "Colonia:";
+            // 
+            // ciudadLabel
+            // 
+            ciudadLabel.AutoSize = true;
+            ciudadLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciudadLabel.Location = new System.Drawing.Point(104, 175);
+            ciudadLabel.Name = "ciudadLabel";
+            ciudadLabel.Size = new System.Drawing.Size(81, 22);
+            ciudadLabel.TabIndex = 8;
+            ciudadLabel.Text = "Ciudad:";
+            // 
+            // cpLabel
+            // 
+            cpLabel.AutoSize = true;
+            cpLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cpLabel.Location = new System.Drawing.Point(723, 247);
+            cpLabel.Name = "cpLabel";
+            cpLabel.Size = new System.Drawing.Size(143, 22);
+            cpLabel.TabIndex = 10;
+            cpLabel.Text = "Código Postal:";
+            // 
+            // correoLabel
+            // 
+            correoLabel.AutoSize = true;
+            correoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            correoLabel.Location = new System.Drawing.Point(105, 250);
+            correoLabel.Name = "correoLabel";
+            correoLabel.Size = new System.Drawing.Size(79, 22);
+            correoLabel.TabIndex = 12;
+            correoLabel.Text = "Correo:";
+            // 
+            // rfcLabel
+            // 
+            rfcLabel.AutoSize = true;
+            rfcLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            rfcLabel.Location = new System.Drawing.Point(105, 311);
+            rfcLabel.Name = "rfcLabel";
+            rfcLabel.Size = new System.Drawing.Size(55, 22);
+            rfcLabel.TabIndex = 14;
+            rfcLabel.Text = "RFC:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telefonoLabel.Location = new System.Drawing.Point(534, 247);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(94, 22);
+            telefonoLabel.TabIndex = 16;
+            telefonoLabel.Text = "Teléfono:";
+            // 
+            // precio_asignadoLabel
+            // 
+            precio_asignadoLabel.AutoSize = true;
+            precio_asignadoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            precio_asignadoLabel.Location = new System.Drawing.Point(534, 311);
+            precio_asignadoLabel.Name = "precio_asignadoLabel";
+            precio_asignadoLabel.Size = new System.Drawing.Size(163, 22);
+            precio_asignadoLabel.TabIndex = 22;
+            precio_asignadoLabel.Text = "Precio asignado:";
+            // 
+            // creditoLabel
+            // 
+            creditoLabel.AutoSize = true;
+            creditoLabel.Location = new System.Drawing.Point(6, 38);
+            creditoLabel.Name = "creditoLabel";
+            creditoLabel.Size = new System.Drawing.Size(170, 22);
+            creditoLabel.TabIndex = 28;
+            creditoLabel.Text = "Monto de crédito:";
+            // 
+            // fecha_registroLabel1
+            // 
+            fecha_registroLabel1.AutoSize = true;
+            fecha_registroLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fecha_registroLabel1.Location = new System.Drawing.Point(526, 105);
+            fecha_registroLabel1.Name = "fecha_registroLabel1";
+            fecha_registroLabel1.Size = new System.Drawing.Size(181, 22);
+            fecha_registroLabel1.TabIndex = 30;
+            fecha_registroLabel1.Text = "Fecha de  registro:";
+            // 
+            // fecha_limite_creditoLabel
+            // 
+            fecha_limite_creditoLabel.AutoSize = true;
+            fecha_limite_creditoLabel.Location = new System.Drawing.Point(247, 38);
+            fecha_limite_creditoLabel.Name = "fecha_limite_creditoLabel";
+            fecha_limite_creditoLabel.Size = new System.Drawing.Size(154, 22);
+            fecha_limite_creditoLabel.TabIndex = 29;
+            fecha_limite_creditoLabel.Text = "Días de crédito:";
             // 
             // glacial_almacenDataSet
             // 
@@ -108,55 +238,27 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(105, 45);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(248, 22);
-            nombreLabel.TabIndex = 1;
-            nombreLabel.Text = "Nombre (s) / Razón social:";
-            // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "nombre", true));
             this.nombreTextBox.Enabled = false;
-            this.nombreTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreTextBox.Location = new System.Drawing.Point(105, 70);
+            this.nombreTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Location = new System.Drawing.Point(105, 45);
+            this.nombreTextBox.Multiline = true;
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(406, 29);
+            this.nombreTextBox.Size = new System.Drawing.Size(406, 59);
             this.nombreTextBox.TabIndex = 2;
-            // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            direccionLabel.Location = new System.Drawing.Point(105, 107);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(103, 22);
-            direccionLabel.TabIndex = 2;
-            direccionLabel.Text = "Dirección:";
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "direccion", true));
             this.direccionTextBox.Enabled = false;
-            this.direccionTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.direccionTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccionTextBox.Location = new System.Drawing.Point(105, 132);
+            this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(403, 29);
+            this.direccionTextBox.Size = new System.Drawing.Size(403, 40);
             this.direccionTextBox.TabIndex = 3;
-            // 
-            // id_clienteLabel
-            // 
-            id_clienteLabel.AutoSize = true;
-            id_clienteLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_clienteLabel.Location = new System.Drawing.Point(710, 20);
-            id_clienteLabel.Name = "id_clienteLabel";
-            id_clienteLabel.Size = new System.Drawing.Size(185, 22);
-            id_clienteLabel.TabIndex = 4;
-            id_clienteLabel.Text = "Número de Cliente:";
             // 
             // id_clienteTextBox
             // 
@@ -170,16 +272,6 @@
             this.id_clienteTextBox.TabIndex = 5;
             this.id_clienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // coloniaLabel
-            // 
-            coloniaLabel.AutoSize = true;
-            coloniaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            coloniaLabel.Location = new System.Drawing.Point(526, 175);
-            coloniaLabel.Name = "coloniaLabel";
-            coloniaLabel.Size = new System.Drawing.Size(84, 22);
-            coloniaLabel.TabIndex = 6;
-            coloniaLabel.Text = "Colonia:";
-            // 
             // coloniaTextBox
             // 
             this.coloniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "colonia", true));
@@ -189,16 +281,6 @@
             this.coloniaTextBox.Name = "coloniaTextBox";
             this.coloniaTextBox.Size = new System.Drawing.Size(377, 29);
             this.coloniaTextBox.TabIndex = 7;
-            // 
-            // ciudadLabel
-            // 
-            ciudadLabel.AutoSize = true;
-            ciudadLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ciudadLabel.Location = new System.Drawing.Point(104, 175);
-            ciudadLabel.Name = "ciudadLabel";
-            ciudadLabel.Size = new System.Drawing.Size(81, 22);
-            ciudadLabel.TabIndex = 8;
-            ciudadLabel.Text = "Ciudad:";
             // 
             // ciudadTextBox
             // 
@@ -210,16 +292,6 @@
             this.ciudadTextBox.Size = new System.Drawing.Size(406, 29);
             this.ciudadTextBox.TabIndex = 9;
             // 
-            // cpLabel
-            // 
-            cpLabel.AutoSize = true;
-            cpLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cpLabel.Location = new System.Drawing.Point(723, 247);
-            cpLabel.Name = "cpLabel";
-            cpLabel.Size = new System.Drawing.Size(143, 22);
-            cpLabel.TabIndex = 10;
-            cpLabel.Text = "Código Postal:";
-            // 
             // cpTextBox
             // 
             this.cpTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "cp", true));
@@ -229,16 +301,6 @@
             this.cpTextBox.Name = "cpTextBox";
             this.cpTextBox.Size = new System.Drawing.Size(180, 29);
             this.cpTextBox.TabIndex = 11;
-            // 
-            // correoLabel
-            // 
-            correoLabel.AutoSize = true;
-            correoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            correoLabel.Location = new System.Drawing.Point(105, 250);
-            correoLabel.Name = "correoLabel";
-            correoLabel.Size = new System.Drawing.Size(79, 22);
-            correoLabel.TabIndex = 12;
-            correoLabel.Text = "Correo:";
             // 
             // correoTextBox
             // 
@@ -250,35 +312,15 @@
             this.correoTextBox.Size = new System.Drawing.Size(403, 29);
             this.correoTextBox.TabIndex = 13;
             // 
-            // rfcLabel
-            // 
-            rfcLabel.AutoSize = true;
-            rfcLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rfcLabel.Location = new System.Drawing.Point(105, 311);
-            rfcLabel.Name = "rfcLabel";
-            rfcLabel.Size = new System.Drawing.Size(55, 22);
-            rfcLabel.TabIndex = 14;
-            rfcLabel.Text = "RFC:";
-            // 
             // rfcTextBox
             // 
             this.rfcTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "rfc", true));
             this.rfcTextBox.Enabled = false;
             this.rfcTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rfcTextBox.Location = new System.Drawing.Point(108, 336);
+            this.rfcTextBox.Location = new System.Drawing.Point(105, 342);
             this.rfcTextBox.Name = "rfcTextBox";
             this.rfcTextBox.Size = new System.Drawing.Size(400, 29);
             this.rfcTextBox.TabIndex = 15;
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            telefonoLabel.Location = new System.Drawing.Point(534, 247);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(94, 22);
-            telefonoLabel.TabIndex = 16;
-            telefonoLabel.Text = "Teléfono:";
             // 
             // telefonoTextBox
             // 
@@ -289,16 +331,6 @@
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(180, 29);
             this.telefonoTextBox.TabIndex = 17;
-            // 
-            // precio_asignadoLabel
-            // 
-            precio_asignadoLabel.AutoSize = true;
-            precio_asignadoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precio_asignadoLabel.Location = new System.Drawing.Point(534, 311);
-            precio_asignadoLabel.Name = "precio_asignadoLabel";
-            precio_asignadoLabel.Size = new System.Drawing.Size(163, 22);
-            precio_asignadoLabel.TabIndex = 22;
-            precio_asignadoLabel.Text = "Precio asignado:";
             // 
             // precio_asignadoTextBox
             // 
@@ -315,58 +347,12 @@
             this.CHECK_tieneCredito.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.clientesBindingSource, "tiene_credito", true));
             this.CHECK_tieneCredito.Enabled = false;
             this.CHECK_tieneCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHECK_tieneCredito.Location = new System.Drawing.Point(120, 377);
+            this.CHECK_tieneCredito.Location = new System.Drawing.Point(399, 346);
             this.CHECK_tieneCredito.Name = "CHECK_tieneCredito";
-            this.CHECK_tieneCredito.Size = new System.Drawing.Size(135, 93);
+            this.CHECK_tieneCredito.Size = new System.Drawing.Size(42, 23);
             this.CHECK_tieneCredito.TabIndex = 25;
             this.CHECK_tieneCredito.Text = "¿Tiene Crédito?";
             this.CHECK_tieneCredito.UseVisualStyleBackColor = true;
-            // 
-            // fecha_limite_creditoLabel
-            // 
-            fecha_limite_creditoLabel.AutoSize = true;
-            fecha_limite_creditoLabel.Location = new System.Drawing.Point(112, 38);
-            fecha_limite_creditoLabel.Name = "fecha_limite_creditoLabel";
-            fecha_limite_creditoLabel.Size = new System.Drawing.Size(191, 22);
-            fecha_limite_creditoLabel.TabIndex = 26;
-            fecha_limite_creditoLabel.Text = "fecha limite credito:";
-            // 
-            // fecha_limite_creditoDateTimePicker
-            // 
-            this.fecha_limite_creditoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.clientesBindingSource, "fecha_limite_credito", true));
-            this.fecha_limite_creditoDateTimePicker.Enabled = false;
-            this.fecha_limite_creditoDateTimePicker.Location = new System.Drawing.Point(116, 61);
-            this.fecha_limite_creditoDateTimePicker.Name = "fecha_limite_creditoDateTimePicker";
-            this.fecha_limite_creditoDateTimePicker.Size = new System.Drawing.Size(200, 29);
-            this.fecha_limite_creditoDateTimePicker.TabIndex = 27;
-            // 
-            // creditoLabel
-            // 
-            creditoLabel.AutoSize = true;
-            creditoLabel.Location = new System.Drawing.Point(6, 38);
-            creditoLabel.Name = "creditoLabel";
-            creditoLabel.Size = new System.Drawing.Size(81, 22);
-            creditoLabel.TabIndex = 28;
-            creditoLabel.Text = "credito:";
-            // 
-            // creditoTextBox
-            // 
-            this.creditoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "credito", true));
-            this.creditoTextBox.Enabled = false;
-            this.creditoTextBox.Location = new System.Drawing.Point(10, 63);
-            this.creditoTextBox.Name = "creditoTextBox";
-            this.creditoTextBox.Size = new System.Drawing.Size(100, 29);
-            this.creditoTextBox.TabIndex = 29;
-            // 
-            // fecha_registroLabel1
-            // 
-            fecha_registroLabel1.AutoSize = true;
-            fecha_registroLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fecha_registroLabel1.Location = new System.Drawing.Point(526, 105);
-            fecha_registroLabel1.Name = "fecha_registroLabel1";
-            fecha_registroLabel1.Size = new System.Drawing.Size(181, 22);
-            fecha_registroLabel1.TabIndex = 30;
-            fecha_registroLabel1.Text = "Fecha de  registro:";
             // 
             // fecha_registroDateTimePicker1
             // 
@@ -381,17 +367,33 @@
             // 
             // grp_credito
             // 
-            this.grp_credito.Controls.Add(creditoLabel);
-            this.grp_credito.Controls.Add(this.creditoTextBox);
-            this.grp_credito.Controls.Add(this.fecha_limite_creditoDateTimePicker);
+            this.grp_credito.Controls.Add(this.txt_credito);
             this.grp_credito.Controls.Add(fecha_limite_creditoLabel);
+            this.grp_credito.Controls.Add(this.fecha_limite_creditoTextBox);
+            this.grp_credito.Controls.Add(creditoLabel);
             this.grp_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_credito.Location = new System.Drawing.Point(255, 377);
             this.grp_credito.Name = "grp_credito";
-            this.grp_credito.Size = new System.Drawing.Size(381, 100);
+            this.grp_credito.Size = new System.Drawing.Size(429, 115);
             this.grp_credito.TabIndex = 32;
             this.grp_credito.TabStop = false;
             this.grp_credito.Text = "Crédito";
+            // 
+            // txt_credito
+            // 
+            this.txt_credito.Location = new System.Drawing.Point(10, 68);
+            this.txt_credito.Name = "txt_credito";
+            this.txt_credito.Size = new System.Drawing.Size(158, 29);
+            this.txt_credito.TabIndex = 35;
+            // 
+            // fecha_limite_creditoTextBox
+            // 
+            this.fecha_limite_creditoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "fecha_limite_credito", true));
+            this.fecha_limite_creditoTextBox.Enabled = false;
+            this.fecha_limite_creditoTextBox.Location = new System.Drawing.Point(275, 68);
+            this.fecha_limite_creditoTextBox.Name = "fecha_limite_creditoTextBox";
+            this.fecha_limite_creditoTextBox.Size = new System.Drawing.Size(100, 29);
+            this.fecha_limite_creditoTextBox.TabIndex = 30;
             // 
             // txt_codigoClienteFormato
             // 
@@ -404,22 +406,50 @@
             this.txt_codigoClienteFormato.TabIndex = 5;
             this.txt_codigoClienteFormato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // rb_efectivo
+            // 
+            this.rb_efectivo.AutoSize = true;
+            this.rb_efectivo.Enabled = false;
+            this.rb_efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_efectivo.Location = new System.Drawing.Point(68, 466);
+            this.rb_efectivo.Name = "rb_efectivo";
+            this.rb_efectivo.Size = new System.Drawing.Size(102, 26);
+            this.rb_efectivo.TabIndex = 33;
+            this.rb_efectivo.TabStop = true;
+            this.rb_efectivo.Text = "Efectivo";
+            this.rb_efectivo.UseVisualStyleBackColor = true;
+            // 
+            // rb_credito
+            // 
+            this.rb_credito.AutoSize = true;
+            this.rb_credito.Enabled = false;
+            this.rb_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_credito.Location = new System.Drawing.Point(68, 415);
+            this.rb_credito.Name = "rb_credito";
+            this.rb_credito.Size = new System.Drawing.Size(96, 26);
+            this.rb_credito.TabIndex = 34;
+            this.rb_credito.TabStop = true;
+            this.rb_credito.Text = "Crédito";
+            this.rb_credito.UseVisualStyleBackColor = true;
+            // 
             // frm_ClientesVisualizarIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1084, 562);
+            this.Controls.Add(this.rfcTextBox);
+            this.Controls.Add(this.rb_credito);
+            this.Controls.Add(this.rb_efectivo);
             this.Controls.Add(this.grp_credito);
             this.Controls.Add(fecha_registroLabel1);
-            this.Controls.Add(this.fecha_registroDateTimePicker1);
             this.Controls.Add(this.CHECK_tieneCredito);
+            this.Controls.Add(this.fecha_registroDateTimePicker1);
             this.Controls.Add(precio_asignadoLabel);
             this.Controls.Add(this.precio_asignadoTextBox);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(rfcLabel);
-            this.Controls.Add(this.rfcTextBox);
             this.Controls.Add(correoLabel);
             this.Controls.Add(this.correoTextBox);
             this.Controls.Add(cpLabel);
@@ -465,10 +495,12 @@
         private System.Windows.Forms.TextBox telefonoTextBox;
         private System.Windows.Forms.TextBox precio_asignadoTextBox;
         private System.Windows.Forms.CheckBox CHECK_tieneCredito;
-        private System.Windows.Forms.DateTimePicker fecha_limite_creditoDateTimePicker;
-        private System.Windows.Forms.TextBox creditoTextBox;
         private System.Windows.Forms.DateTimePicker fecha_registroDateTimePicker1;
         private System.Windows.Forms.GroupBox grp_credito;
         private System.Windows.Forms.TextBox txt_codigoClienteFormato;
+        private System.Windows.Forms.TextBox fecha_limite_creditoTextBox;
+        private System.Windows.Forms.RadioButton rb_efectivo;
+        private System.Windows.Forms.RadioButton rb_credito;
+        private System.Windows.Forms.TextBox txt_credito;
     }
 }

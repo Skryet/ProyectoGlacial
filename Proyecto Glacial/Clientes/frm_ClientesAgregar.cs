@@ -17,7 +17,7 @@ namespace Proyecto_Glacial
         generarConexion Conexion = new generarConexion();
         public int buscarUltimoIdLista()
         {
-    
+            
             int ultimoIdExistente = 0; //SELECT `id_lista_proveedores` FROM `proveedor_codigo` ORDER BY `id_lista_proveedores` DESC LIMIT 1
             MySqlCommand consulta = new MySqlCommand("SELECT MAX(`id_cliente`) FROM clientes", generarConexion.obtenerConexion);
             Conexion.abrirConexion();
@@ -77,7 +77,7 @@ namespace Proyecto_Glacial
             }
             return vacio;
         }
-            
+        
         public frm_ClientesAgregar()
         {
             InitializeComponent();
@@ -109,7 +109,11 @@ namespace Proyecto_Glacial
 
         private void btn_AgregarCliente_Click(object sender, EventArgs e)
         {
-
+            bool tieneCredito;
+            if (rb_credito.Checked)
+                tieneCredito = true;
+            else
+                tieneCredito = false;
             //Verificar espacios en blanco
             if (validarCampos())
             {
@@ -122,7 +126,7 @@ namespace Proyecto_Glacial
                 this.clientesTableAdapter.InsertarNuevoCliente(
                     txtNombre.Text,txtDireccion.Text ,txtColonia.Text ,txtCiudad.Text,
                     txtCodigoPostal.Text, txt_correo.Text, txt_rfc.Text,txt_telefono.Text,DateTime.Now,
-                    txt_CURP.Text,1,0,null);
+                    txt_CURP.Text,1,tieneCredito,Convert.ToInt32(txt_diasCredito.Text),Convert.ToDouble(txt_credito.Text));
                 //Mensaje de Confirmación            
                 Limpiar();
                 Program.isOpenMainClientForm = false;
@@ -146,10 +150,20 @@ namespace Proyecto_Glacial
         {
             DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro de regresar al menu principal?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (resultadoDialogo == DialogResult.Yes)
-        {
+            {
                 Program.idProveedor = 0;
                 this.Close();
+            }
         }
+
+        private void rb_credito_CheckedChanged(object sender, EventArgs e)
+        {
+            grp_credito.Visible = true;
+        }
+
+        private void rb_efectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            grp_credito.Visible = false;
         }
     }
 }

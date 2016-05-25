@@ -56,6 +56,44 @@ namespace Proyecto_Glacial.Clientes
             return 0;
         }
 
+        public int obtenerCredito()
+        {
+            int ultimoIdExistente = 0; //SELECT `id_lista_proveedores` FROM `proveedor_codigo` ORDER BY `id_lista_proveedores` DESC LIMIT 1
+            MySqlCommand consulta = new MySqlCommand("SELECT credito FROM clientes WHERE id_cliente="
+                + "'" + Program.idCliente + "'", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+
+            try
+            {
+
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (lector.GetValue(0).ToString() == "")
+                    {
+                        ultimoIdExistente = 0;
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+
+                    }
+                    else
+                    {
+
+                        ultimoIdExistente = lector.GetInt32(0);
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            return 0;
+        }
+
         private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             
@@ -66,8 +104,10 @@ namespace Proyecto_Glacial.Clientes
         }
 
         private void frm_ClientesModificar_Load(object sender, EventArgs e)
-        {                       
-            switch(buscarUltimoIdLista())
+        {
+
+            
+            switch (buscarUltimoIdLista())
             {
                 case 0:
                     cmb_precioSeleccionar.Text = "Precio Libre";
@@ -87,7 +127,13 @@ namespace Proyecto_Glacial.Clientes
             }
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.FillByBuscarClienteId(this.glacial_almacenDataSet.clientes,Program.idCliente);
-            
+
+            if (check_tieneCredito.Checked)
+                rb_credito.Checked = true;
+            else
+                rb_efectivo.Checked = true;
+
+            //Visualizar cliente
             int numero = Convert.ToInt32(txt_cliente.Text);
             string cadena = numero.ToString("D4");
             txt_cliente.Text = cadena;
@@ -95,7 +141,11 @@ namespace Proyecto_Glacial.Clientes
             int consecutivo = Convert.ToInt32(txt_cliente.Text);
 
             txt_numeroCliente.Text = "C" + consecutivo.ToString("D4");
-            txt_credito.Text = "0";
+            
+            //Visualizar credito
+            numero = Convert.ToInt32(obtenerCredito().ToString());
+            string cadena2 = numero.ToString("N2");
+            txt_credito.Text = cadena2;
 
 
         }
@@ -136,10 +186,10 @@ namespace Proyecto_Glacial.Clientes
             var resultado = MessageBox.Show("¿Está seguro de acctualizar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-
+                
                 this.clientesTableAdapter.UpdateClientesPorId(txt_Nombre.Text, txt_direccion.Text, txt_colonia.Text, txt_ciudad.Text,
                     txt_cp.Text, txt_correo.Text, txt_rfc.Text, txt_telefono.Text, txt_CURP.Text, Convert.ToInt32(precioReferencial),tieneCredito
-                    ,Convert.ToInt32(txt_credito.Text), fecha_limiteCredito.Value.Date, Program.idCliente);
+                    , Convert.ToDouble(txt_credito.Text), Convert.ToInt32(txt_diasCredito.Text), Program.idCliente);
                 MessageBox.Show("Registro Actualizado con éxito!", "Completado");
                 //this.Close();
                 this.Refresh();
@@ -153,7 +203,10 @@ namespace Proyecto_Glacial.Clientes
                 txt_correo.Enabled = false;
                 txt_rfc.Enabled = false;
                 txt_telefono.Enabled = false;
-                check_tieneCredito.Enabled = false;
+                rb_credito.Enabled = false;
+                rb_efectivo.Enabled = false;
+                txt_credito.Enabled = false;
+                txt_diasCredito.Enabled = false;
             }
            
             
@@ -161,20 +214,41 @@ namespace Proyecto_Glacial.Clientes
             
         }
 
-        private void check_tieneCredito_CheckedChanged(object sender, EventArgs e)
+       
+
+       
+
+        private void rb_credito_CheckedChanged(object sender, EventArgs e)
         {
-            if (check_tieneCredito.Checked == true)
+            if (rb_credito.Checked)
             {
                 tieneCredito = true;
                 grp_credito.Visible = true;
             }
-            else
-            {
+        }
+
+        private void rb_efectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_efectivo.Checked)
+            {  
                 tieneCredito = false;
                 grp_credito.Visible = false;
-                fecha_limiteCredito.Text = "";
-                txt_credito.Text = "";
             }
+        }
+
+        private void txt_credito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                decimal val = Convert.ToDecimal(txt_credito.Text);
+                txt_credito.Text = val.ToString("N2");
+            }
+        }
+
+        private void txt_credito_Leave(object sender, EventArgs e)
+        {
+            decimal val = Convert.ToDecimal(txt_credito.Text);
+            txt_credito.Text = val.ToString("N2");
         }
     }
 }

@@ -45,6 +45,8 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             this.txt_cliente = new System.Windows.Forms.TextBox();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.txt_colonia = new System.Windows.Forms.TextBox();
@@ -54,17 +56,17 @@
             this.txt_rfc = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.txt_CURP = new System.Windows.Forms.TextBox();
-            this.check_tieneCredito = new System.Windows.Forms.CheckBox();
-            this.txt_credito = new System.Windows.Forms.TextBox();
-            this.fecha_limiteCredito = new System.Windows.Forms.DateTimePicker();
             this.grp_credito = new System.Windows.Forms.GroupBox();
+            this.txt_diasCredito = new System.Windows.Forms.TextBox();
+            this.txt_credito = new System.Windows.Forms.TextBox();
+            this.check_tieneCredito = new System.Windows.Forms.CheckBox();
             this.txt_numeroCliente = new System.Windows.Forms.TextBox();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.cmb_precioSeleccionar = new System.Windows.Forms.ComboBox();
             this.btn_Actualizar = new System.Windows.Forms.Button();
+            this.rb_credito = new System.Windows.Forms.RadioButton();
+            this.rb_efectivo = new System.Windows.Forms.RadioButton();
+            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             id_clienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -80,9 +82,9 @@
             fecha_limite_creditoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            this.grp_credito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
+            this.grp_credito.SuspendLayout();
             this.SuspendLayout();
             // 
             // id_clienteLabel
@@ -199,11 +201,11 @@
             // 
             lbl_credito.AutoSize = true;
             lbl_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbl_credito.Location = new System.Drawing.Point(6, 26);
+            lbl_credito.Location = new System.Drawing.Point(6, 22);
             lbl_credito.Name = "lbl_credito";
-            lbl_credito.Size = new System.Drawing.Size(78, 22);
+            lbl_credito.Size = new System.Drawing.Size(164, 22);
             lbl_credito.TabIndex = 26;
-            lbl_credito.Text = "Crédito";
+            lbl_credito.Text = "Monto de crédito";
             // 
             // fecha_limite_creditoLabel
             // 
@@ -211,9 +213,9 @@
             fecha_limite_creditoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fecha_limite_creditoLabel.Location = new System.Drawing.Point(269, 16);
             fecha_limite_creditoLabel.Name = "fecha_limite_creditoLabel";
-            fecha_limite_creditoLabel.Size = new System.Drawing.Size(120, 22);
+            fecha_limite_creditoLabel.Size = new System.Drawing.Size(151, 22);
             fecha_limite_creditoLabel.TabIndex = 27;
-            fecha_limite_creditoLabel.Text = "Fecha límite";
+            fecha_limite_creditoLabel.Text = "Días de Crédito";
             // 
             // label2
             // 
@@ -224,6 +226,16 @@
             label2.Size = new System.Drawing.Size(95, 22);
             label2.TabIndex = 2;
             label2.Text = "Modificar";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(588, 303);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(178, 22);
+            label3.TabIndex = 32;
+            label3.Text = "Precio referencial:";
             // 
             // txt_cliente
             // 
@@ -236,6 +248,16 @@
             this.txt_cliente.Size = new System.Drawing.Size(142, 29);
             this.txt_cliente.TabIndex = 1;
             this.txt_cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_Nombre
             // 
@@ -323,50 +345,49 @@
             this.txt_CURP.Size = new System.Drawing.Size(235, 29);
             this.txt_CURP.TabIndex = 10;
             // 
-            // check_tieneCredito
-            // 
-            this.check_tieneCredito.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.clientesBindingSource, "tiene_credito", true));
-            this.check_tieneCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_tieneCredito.Location = new System.Drawing.Point(16, 451);
-            this.check_tieneCredito.Name = "check_tieneCredito";
-            this.check_tieneCredito.Size = new System.Drawing.Size(146, 56);
-            this.check_tieneCredito.TabIndex = 11;
-            this.check_tieneCredito.Text = "¿Tiene Crédito?";
-            this.check_tieneCredito.UseVisualStyleBackColor = true;
-            this.check_tieneCredito.CheckedChanged += new System.EventHandler(this.check_tieneCredito_CheckedChanged);
-            // 
-            // txt_credito
-            // 
-            this.txt_credito.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "credito", true));
-            this.txt_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_credito.Location = new System.Drawing.Point(10, 51);
-            this.txt_credito.Name = "txt_credito";
-            this.txt_credito.Size = new System.Drawing.Size(160, 29);
-            this.txt_credito.TabIndex = 12;
-            // 
-            // fecha_limiteCredito
-            // 
-            this.fecha_limiteCredito.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.clientesBindingSource, "fecha_limite_credito", true));
-            this.fecha_limiteCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_limiteCredito.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fecha_limiteCredito.Location = new System.Drawing.Point(273, 49);
-            this.fecha_limiteCredito.Name = "fecha_limiteCredito";
-            this.fecha_limiteCredito.Size = new System.Drawing.Size(161, 29);
-            this.fecha_limiteCredito.TabIndex = 13;
-            // 
             // grp_credito
             // 
-            this.grp_credito.Controls.Add(this.txt_credito);
-            this.grp_credito.Controls.Add(this.fecha_limiteCredito);
+            this.grp_credito.Controls.Add(this.txt_diasCredito);
             this.grp_credito.Controls.Add(fecha_limite_creditoLabel);
             this.grp_credito.Controls.Add(lbl_credito);
+            this.grp_credito.Controls.Add(this.txt_credito);
             this.grp_credito.Location = new System.Drawing.Point(150, 427);
             this.grp_credito.Name = "grp_credito";
-            this.grp_credito.Size = new System.Drawing.Size(482, 92);
+            this.grp_credito.Size = new System.Drawing.Size(482, 119);
             this.grp_credito.TabIndex = 29;
             this.grp_credito.TabStop = false;
             this.grp_credito.Text = "Crédito";
             this.grp_credito.Visible = false;
+            // 
+            // txt_diasCredito
+            // 
+            this.txt_diasCredito.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "fecha_limite_credito", true));
+            this.txt_diasCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_diasCredito.Location = new System.Drawing.Point(262, 51);
+            this.txt_diasCredito.Name = "txt_diasCredito";
+            this.txt_diasCredito.Size = new System.Drawing.Size(158, 29);
+            this.txt_diasCredito.TabIndex = 14;
+            this.txt_diasCredito.Text = "0";
+            // 
+            // txt_credito
+            // 
+            this.txt_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_credito.Location = new System.Drawing.Point(10, 51);
+            this.txt_credito.Name = "txt_credito";
+            this.txt_credito.Size = new System.Drawing.Size(160, 29);
+            this.txt_credito.TabIndex = 13;
+            this.txt_credito.Text = "0";
+            this.txt_credito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_credito_KeyPress);
+            this.txt_credito.Leave += new System.EventHandler(this.txt_credito_Leave);
+            // 
+            // check_tieneCredito
+            // 
+            this.check_tieneCredito.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.clientesBindingSource, "tiene_credito", true));
+            this.check_tieneCredito.Location = new System.Drawing.Point(472, 389);
+            this.check_tieneCredito.Name = "check_tieneCredito";
+            this.check_tieneCredito.Size = new System.Drawing.Size(21, 24);
+            this.check_tieneCredito.TabIndex = 35;
+            this.check_tieneCredito.UseVisualStyleBackColor = true;
             // 
             // txt_numeroCliente
             // 
@@ -379,15 +400,56 @@
             this.txt_numeroCliente.TabIndex = 30;
             this.txt_numeroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // clientesBindingSource
+            // cmb_precioSeleccionar
             // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
+            this.cmb_precioSeleccionar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_precioSeleccionar.FormattingEnabled = true;
+            this.cmb_precioSeleccionar.Items.AddRange(new object[] {
+            "Precio Libre",
+            "Precio 1",
+            "Precio 2",
+            "Precio 3",
+            "Precio Especial"});
+            this.cmb_precioSeleccionar.Location = new System.Drawing.Point(592, 327);
+            this.cmb_precioSeleccionar.Name = "cmb_precioSeleccionar";
+            this.cmb_precioSeleccionar.Size = new System.Drawing.Size(138, 30);
+            this.cmb_precioSeleccionar.TabIndex = 8;
             // 
-            // glacial_almacenDataSet
+            // btn_Actualizar
             // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btn_Actualizar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
+            this.btn_Actualizar.Location = new System.Drawing.Point(854, 402);
+            this.btn_Actualizar.Name = "btn_Actualizar";
+            this.btn_Actualizar.Size = new System.Drawing.Size(80, 80);
+            this.btn_Actualizar.TabIndex = 16;
+            this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
+            // 
+            // rb_credito
+            // 
+            this.rb_credito.AutoSize = true;
+            this.rb_credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_credito.Location = new System.Drawing.Point(19, 449);
+            this.rb_credito.Name = "rb_credito";
+            this.rb_credito.Size = new System.Drawing.Size(96, 26);
+            this.rb_credito.TabIndex = 33;
+            this.rb_credito.TabStop = true;
+            this.rb_credito.Text = "Crédito";
+            this.rb_credito.UseVisualStyleBackColor = true;
+            this.rb_credito.CheckedChanged += new System.EventHandler(this.rb_credito_CheckedChanged);
+            // 
+            // rb_efectivo
+            // 
+            this.rb_efectivo.AutoSize = true;
+            this.rb_efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_efectivo.Location = new System.Drawing.Point(19, 485);
+            this.rb_efectivo.Name = "rb_efectivo";
+            this.rb_efectivo.Size = new System.Drawing.Size(102, 26);
+            this.rb_efectivo.TabIndex = 34;
+            this.rb_efectivo.TabStop = true;
+            this.rb_efectivo.Text = "Efectivo";
+            this.rb_efectivo.UseVisualStyleBackColor = true;
+            this.rb_efectivo.CheckedChanged += new System.EventHandler(this.rb_efectivo_CheckedChanged);
             // 
             // clientesTableAdapter
             // 
@@ -407,53 +469,20 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // cmb_precioSeleccionar
-            // 
-            this.cmb_precioSeleccionar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_precioSeleccionar.FormattingEnabled = true;
-            this.cmb_precioSeleccionar.Items.AddRange(new object[] {
-            "Precio Libre",
-            "Precio 1",
-            "Precio 2",
-            "Precio 3",
-            "Precio Especial"});
-            this.cmb_precioSeleccionar.Location = new System.Drawing.Point(592, 327);
-            this.cmb_precioSeleccionar.Name = "cmb_precioSeleccionar";
-            this.cmb_precioSeleccionar.Size = new System.Drawing.Size(138, 30);
-            this.cmb_precioSeleccionar.TabIndex = 8;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(588, 303);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(178, 22);
-            label3.TabIndex = 32;
-            label3.Text = "Precio referencial:";
-            // 
-            // btn_Actualizar
-            // 
-            this.btn_Actualizar.Image = global::Proyecto_Glacial.Properties.Resources.diskette;
-            this.btn_Actualizar.Location = new System.Drawing.Point(854, 402);
-            this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(80, 80);
-            this.btn_Actualizar.TabIndex = 16;
-            this.btn_Actualizar.UseVisualStyleBackColor = true;
-            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
-            // 
             // frm_ClientesModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 527);
+            this.ClientSize = new System.Drawing.Size(973, 566);
+            this.Controls.Add(this.txt_CURP);
+            this.Controls.Add(this.grp_credito);
+            this.Controls.Add(this.rb_efectivo);
+            this.Controls.Add(this.rb_credito);
+            this.Controls.Add(this.check_tieneCredito);
             this.Controls.Add(label3);
             this.Controls.Add(this.cmb_precioSeleccionar);
             this.Controls.Add(this.txt_numeroCliente);
-            this.Controls.Add(this.grp_credito);
-            this.Controls.Add(this.check_tieneCredito);
             this.Controls.Add(cURPLabel);
-            this.Controls.Add(this.txt_CURP);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(rfcLabel);
@@ -478,10 +507,10 @@
             this.Name = "frm_ClientesModificar";
             this.Text = "Clientes - Modificar";
             this.Load += new System.EventHandler(this.frm_ClientesModificar_Load);
-            this.grp_credito.ResumeLayout(false);
-            this.grp_credito.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
+            this.grp_credito.ResumeLayout(false);
+            this.grp_credito.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,11 +532,13 @@
         private System.Windows.Forms.TextBox txt_rfc;
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.TextBox txt_CURP;
-        private System.Windows.Forms.CheckBox check_tieneCredito;
-        private System.Windows.Forms.TextBox txt_credito;
-        private System.Windows.Forms.DateTimePicker fecha_limiteCredito;
         private System.Windows.Forms.GroupBox grp_credito;
         private System.Windows.Forms.TextBox txt_numeroCliente;
         private System.Windows.Forms.ComboBox cmb_precioSeleccionar;
+        private System.Windows.Forms.TextBox txt_diasCredito;
+        private System.Windows.Forms.RadioButton rb_credito;
+        private System.Windows.Forms.RadioButton rb_efectivo;
+        private System.Windows.Forms.TextBox txt_credito;
+        private System.Windows.Forms.CheckBox check_tieneCredito;
     }
 }

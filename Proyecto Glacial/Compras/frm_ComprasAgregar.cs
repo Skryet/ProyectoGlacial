@@ -138,10 +138,7 @@ namespace Proyecto_Glacial.Compras
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
-            {
-                buscarArticulo.ShowDialog();
-            }
+
         }
     }
 }

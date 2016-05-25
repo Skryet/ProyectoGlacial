@@ -15,6 +15,51 @@ namespace Proyecto_Glacial.Inventario
     public partial class frm_InventarioModificar : Form
     {
         private MySqlDataAdapter da;
+        int precio1;
+        int precio2;
+        int precio3;
+        generarConexion Conexion = new generarConexion();
+        public int buscarPrecios()
+        {
+
+
+            int ultimoIdExistente = 0; //SELECT `id_lista_proveedores` FROM `proveedor_codigo` ORDER BY `id_lista_proveedores` DESC LIMIT 1
+            MySqlCommand consulta = new MySqlCommand("SELECT precio,precio1,precio2,precio3 from productos where id_producto ="
+                + "'" + Program.idProducto + "'", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+
+            try
+            {
+
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (lector.GetValue(0).ToString() == "")
+                    {
+                        ultimoIdExistente = 0;
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+
+                    }
+                    else
+                    {
+                        ultimoIdExistente =lector.GetInt32(0); lector.GetInt32(0);
+                        precio1 = lector.GetInt32(1);
+                        precio2 = lector.GetInt32(2);
+                        precio3 = lector.GetInt32(3);
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            return 0;
+        }
 
         public frm_InventarioModificar()
         {
@@ -31,7 +76,7 @@ namespace Proyecto_Glacial.Inventario
 
         private void frm_InventarioModificar_Load(object sender, EventArgs e)
         {
-
+            
 
             //Visualizacion de datos e IMAGEN
             MySqlCommand consulta = new MySqlCommand("SELECT imagen FROM productos WHERE id_producto =  " + Program.idProducto, generarConexion.obtenerConexion);
@@ -45,42 +90,29 @@ namespace Proyecto_Glacial.Inventario
             da.Dispose();
             this.productosTableAdapter.FillByBuscarProductoPorID(this.glacial_almacenDataSet.productos, Program.idProducto);
 
+            string cadena2 = buscarPrecios().ToString("N2");
+            txt_precio.Text = cadena2;
+
+            cadena2 = precio1.ToString("N2");
+            txt_precio1.Text = cadena2;
+
+            cadena2 = precio2.ToString("N2");
+            txt_precio2.Text = cadena2;
+
+            cadena2 = precio3.ToString("N2");
+            txt_precio3.Text = cadena2;
+
+
         }
 
-        private void txt_precio1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Program.metodosOptimizar.isDecimalPoint(e);
-        }
-
-        private void txt_precio2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Program.metodosOptimizar.isDecimalPoint(e);
-        }
-
-        private void txt_precio3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Program.metodosOptimizar.isDecimalPoint(e);
-        }
-
-        private void txt_existencia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Program.metodosOptimizar.isDigit(e);
-        }
-
-        private void cantidad_minimaTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Program.metodosOptimizar.isDigit(e);
-        }
+  
 
         private void isDigit(object sender, KeyPressEventArgs e)
         {
             Program.metodosOptimizar.isDigit(e);
         }
 
-        private void isDecimal(object sender, KeyPressEventArgs e, TextBox Te)
-        {
-            Program.metodosOptimizar.isDecimalPoint(e);
-        }
+
 
 
         private void btn_actualizar_Click(object sender, EventArgs e)
@@ -120,6 +152,35 @@ namespace Proyecto_Glacial.Inventario
             txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
             txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
             txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+        }
+
+        private void txt_precio_Leave_1(object sender, EventArgs e)
+        {
+            decimal val = Convert.ToDecimal(txt_precio.Text);
+            txt_precio.Text = val.ToString("N2");
+
+            txt_precio1.Text = ((Convert.ToDouble(txt_precio.Text) * .30) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+            txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+        }
+
+        private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+
+                decimal val = Convert.ToDecimal(txt_precio.Text);
+                txt_precio.Text = val.ToString("N2");
+
+                txt_precio1.Text = ((Convert.ToDouble(txt_precio.Text) * .30) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precio2.Text = ((Convert.ToDouble(txt_precio.Text) * .50) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precio3.Text = ((Convert.ToDouble(txt_precio.Text) * 1) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+                txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
+
+            }
         }
     }
 }

@@ -145,7 +145,7 @@ namespace Proyecto_Glacial
 
         private void frm_ClientesMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-             Program.isOpenMainClientForm = true;
+  
         }
 
         private void frm_ClientesMenu_Load(object sender, EventArgs e)

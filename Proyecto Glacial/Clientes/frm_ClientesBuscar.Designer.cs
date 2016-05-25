@@ -40,10 +40,6 @@
             this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.clientesDataGridView = new System.Windows.Forms.DataGridView();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.Identificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,39 +56,14 @@
             this.fecha_limite_credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CURP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_asignado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.material_comprasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = null;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // cmb_SelccionarTipo
             // 
@@ -165,7 +136,9 @@
             this.clientesDataGridView.AllowUserToAddRows = false;
             this.clientesDataGridView.AllowUserToDeleteRows = false;
             this.clientesDataGridView.AutoGenerateColumns = false;
+            this.clientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.clientesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.clientesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Identificador,
@@ -190,11 +163,151 @@
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
             this.clientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientesDataGridView.Size = new System.Drawing.Size(917, 306);
+            this.clientesDataGridView.Size = new System.Drawing.Size(1111, 306);
             this.clientesDataGridView.TabIndex = 16;
             this.clientesDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.clientesDataGridView_CellFormatting);
             this.clientesDataGridView.Click += new System.EventHandler(this.clientesDataGridView_Click);
             this.clientesDataGridView.DoubleClick += new System.EventHandler(this.clientesDataGridView_DoubleClick);
+            // 
+            // Identificador
+            // 
+            dataGridViewCellStyle1.Format = "\"C\"";
+            dataGridViewCellStyle1.NullValue = "C";
+            this.Identificador.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Identificador.HeaderText = "";
+            this.Identificador.MaxInputLength = 6;
+            this.Identificador.Name = "Identificador";
+            this.Identificador.ReadOnly = true;
+            this.Identificador.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Identificador.Width = 19;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_cliente";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de Cliente";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre o Razón Social";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "direccion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Direccion";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 77;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "colonia";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Colonia";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 67;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ciudad";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ciudad";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Código Postal";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 89;
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "correo";
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Width = 63;
+            // 
+            // rfc
+            // 
+            this.rfc.DataPropertyName = "rfc";
+            this.rfc.HeaderText = "RFC";
+            this.rfc.Name = "rfc";
+            this.rfc.ReadOnly = true;
+            this.rfc.Width = 53;
+            // 
+            // fecha_registro
+            // 
+            this.fecha_registro.DataPropertyName = "fecha_registro";
+            dataGridViewCellStyle3.Format = "G";
+            dataGridViewCellStyle3.NullValue = null;
+            this.fecha_registro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fecha_registro.HeaderText = "Fecha de Registro";
+            this.fecha_registro.Name = "fecha_registro";
+            this.fecha_registro.ReadOnly = true;
+            this.fecha_registro.Width = 74;
+            // 
+            // tiene_credito
+            // 
+            this.tiene_credito.DataPropertyName = "tiene_credito";
+            this.tiene_credito.HeaderText = "Crédito";
+            this.tiene_credito.Name = "tiene_credito";
+            this.tiene_credito.ReadOnly = true;
+            this.tiene_credito.Width = 46;
+            // 
+            // credito
+            // 
+            this.credito.DataPropertyName = "credito";
+            this.credito.HeaderText = "Crédito";
+            this.credito.Name = "credito";
+            this.credito.ReadOnly = true;
+            this.credito.Width = 65;
+            // 
+            // fecha_limite_credito
+            // 
+            this.fecha_limite_credito.DataPropertyName = "fecha_limite_credito";
+            this.fecha_limite_credito.HeaderText = "Fecha Límite del Crédito";
+            this.fecha_limite_credito.Name = "fecha_limite_credito";
+            this.fecha_limite_credito.ReadOnly = true;
+            this.fecha_limite_credito.Width = 89;
+            // 
+            // CURP
+            // 
+            this.CURP.DataPropertyName = "CURP";
+            this.CURP.HeaderText = "CURP";
+            this.CURP.Name = "CURP";
+            this.CURP.ReadOnly = true;
+            this.CURP.Width = 62;
+            // 
+            // precio_asignado
+            // 
+            this.precio_asignado.DataPropertyName = "precio_asignado";
+            dataGridViewCellStyle4.Format = "Precio #0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.precio_asignado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.precio_asignado.HeaderText = "Precio Referencial";
+            this.precio_asignado.Name = "precio_asignado";
+            this.precio_asignado.ReadOnly = true;
+            this.precio_asignado.Width = 109;
             // 
             // clientesBindingSource
             // 
@@ -224,139 +337,11 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // Identificador
-            // 
-            dataGridViewCellStyle1.Format = "\"C\"";
-            dataGridViewCellStyle1.NullValue = "C";
-            this.Identificador.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Identificador.HeaderText = "";
-            this.Identificador.MaxInputLength = 6;
-            this.Identificador.Name = "Identificador";
-            this.Identificador.ReadOnly = true;
-            this.Identificador.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Identificador.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_cliente";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Número de Cliente";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre o Razón Social";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "direccion";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "colonia";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Colonia";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ciudad";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Ciudad";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Código Postal";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // correo
-            // 
-            this.correo.DataPropertyName = "correo";
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            // 
-            // rfc
-            // 
-            this.rfc.DataPropertyName = "rfc";
-            this.rfc.HeaderText = "RFC";
-            this.rfc.Name = "rfc";
-            this.rfc.ReadOnly = true;
-            // 
-            // fecha_registro
-            // 
-            this.fecha_registro.DataPropertyName = "fecha_registro";
-            dataGridViewCellStyle3.Format = "G";
-            dataGridViewCellStyle3.NullValue = null;
-            this.fecha_registro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fecha_registro.HeaderText = "Fecha de Registro";
-            this.fecha_registro.Name = "fecha_registro";
-            this.fecha_registro.ReadOnly = true;
-            // 
-            // tiene_credito
-            // 
-            this.tiene_credito.DataPropertyName = "tiene_credito";
-            this.tiene_credito.HeaderText = "¿Crédito aprovado?";
-            this.tiene_credito.Name = "tiene_credito";
-            this.tiene_credito.ReadOnly = true;
-            this.tiene_credito.Width = 60;
-            // 
-            // credito
-            // 
-            this.credito.DataPropertyName = "credito";
-            this.credito.HeaderText = "Crédito";
-            this.credito.Name = "credito";
-            this.credito.ReadOnly = true;
-            this.credito.Width = 60;
-            // 
-            // fecha_limite_credito
-            // 
-            this.fecha_limite_credito.DataPropertyName = "fecha_limite_credito";
-            this.fecha_limite_credito.HeaderText = "Fecha Límite del Crédito";
-            this.fecha_limite_credito.Name = "fecha_limite_credito";
-            this.fecha_limite_credito.ReadOnly = true;
-            // 
-            // CURP
-            // 
-            this.CURP.DataPropertyName = "CURP";
-            this.CURP.HeaderText = "CURP";
-            this.CURP.Name = "CURP";
-            this.CURP.ReadOnly = true;
-            // 
-            // precio_asignado
-            // 
-            this.precio_asignado.DataPropertyName = "precio_asignado";
-            dataGridViewCellStyle4.Format = "Precio #0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.precio_asignado.DefaultCellStyle = dataGridViewCellStyle4;
-            this.precio_asignado.HeaderText = "Precio Referencial";
-            this.precio_asignado.Name = "precio_asignado";
-            this.precio_asignado.ReadOnly = true;
-            // 
             // frm_ClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 485);
+            this.ClientSize = new System.Drawing.Size(1150, 485);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_BuscarTodo);
             this.Controls.Add(this.clientesDataGridView);

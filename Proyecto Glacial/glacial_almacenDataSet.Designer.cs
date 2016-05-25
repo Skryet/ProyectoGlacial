@@ -237,16 +237,6 @@ namespace Proyecto_Glacial {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public productosDataTable productos {
-            get {
-                return this.tableproductos;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -430,7 +420,7 @@ namespace Proyecto_Glacial {
             if ((initTable == true)) {
                 if ((this.tablevista_venta_lista_productos != null)) {
                     this.tablevista_venta_lista_productos.InitVars();
-        }
+                }
             }
             this.tablelista_material_ventas = ((lista_material_ventasDataTable)(base.Tables["lista_material_ventas"]));
             if ((initTable == true)) {
@@ -535,12 +525,6 @@ namespace Proyecto_Glacial {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializelista_material_ventas() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeproductos() {
             return false;
         }
         
@@ -865,7 +849,7 @@ namespace Proyecto_Glacial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public clientesRow AddclientesRow(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, System.DateTime fecha_registro, string CURP, int precio_asignado, bool tiene_credito, System.DateTime fecha_limite_credito, int credito) {
+            public clientesRow AddclientesRow(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, System.DateTime fecha_registro, string CURP, int precio_asignado, bool tiene_credito, int fecha_limite_credito, double credito) {
                 clientesRow rowclientesRow = ((clientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -958,9 +942,9 @@ namespace Proyecto_Glacial {
                 base.Columns.Add(this.columnprecio_asignado);
                 this.columntiene_credito = new global::System.Data.DataColumn("tiene_credito", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntiene_credito);
-                this.columnfecha_limite_credito = new global::System.Data.DataColumn("fecha_limite_credito", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnfecha_limite_credito = new global::System.Data.DataColumn("fecha_limite_credito", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_limite_credito);
-                this.columncredito = new global::System.Data.DataColumn("credito", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columncredito = new global::System.Data.DataColumn("credito", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncredito);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_cliente}, true));
@@ -2899,54 +2883,6 @@ namespace Proyecto_Glacial {
             public global::System.Data.DataColumn id_clienteColumn {
                 get {
                     return this.columnid_cliente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn unidad_medidaColumn {
-                get {
-                    return this.columnunidad_medida;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio1Column {
-                get {
-                    return this.columnprecio1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio2Column {
-                get {
-                    return this.columnprecio2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio3Column {
-                get {
-                    return this.columnprecio3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_especialColumn {
-                get {
-                    return this.columnprecio_especial;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn imagenColumn {
-                get {
-                    return this.columnimagen;
                 }
             }
             
@@ -5022,10 +4958,10 @@ namespace Proyecto_Glacial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_limite_credito {
+            public int fecha_limite_credito {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableclientes.fecha_limite_creditoColumn]));
+                        return ((int)(this[this.tableclientes.fecha_limite_creditoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_limite_credito\' de la tabla \'clientes\' es DBNull.", e);
@@ -5038,10 +4974,10 @@ namespace Proyecto_Glacial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int credito {
+            public double credito {
                 get {
                     try {
-                        return ((int)(this[this.tableclientes.creditoColumn]));
+                        return ((double)(this[this.tableclientes.creditoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'credito\' de la tabla \'clientes\' es DBNull.", e);
@@ -5808,68 +5744,6 @@ namespace Proyecto_Glacial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_producto {
-                get {
-                    return ((int)(this[this.tablelista_material_compras.id_productoColumn]));
-                }
-                set {
-                    this[this.tablelista_material_compras.id_productoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cantidad {
-                get {
-                    return ((int)(this[this.tablelista_material_compras.cantidadColumn]));
-                }
-                set {
-                    this[this.tablelista_material_compras.cantidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string unidad_medida {
-                get {
-                    try {
-                        return ((string)(this[this.tablelista_material_compras.unidad_medidaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'lista_material_compras\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tablelista_material_compras.unidad_medidaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre {
-                get {
-                    return ((string)(this[this.tablelista_material_compras.nombreColumn]));
-                }
-                set {
-                    this[this.tablelista_material_compras.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isunidad_medidaNull() {
-                return this.IsNull(this.tablelista_material_compras.unidad_medidaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setunidad_medidaNull() {
-                this[this.tablelista_material_compras.unidad_medidaColumn] = global::System.Convert.DBNull;
-            }
-        
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int IVA {
                 get {
                     return ((int)(this[this.tableventas.IVAColumn]));
@@ -5878,7 +5752,7 @@ namespace Proyecto_Glacial {
                     this[this.tableventas.IVAColumn] = value;
                 }
             }
-        
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int total {
@@ -5896,11 +5770,11 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((global::System.DateTime)(this[this.tableventas.fechaColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'ventas\' es DBNull.", e);
+                    }
                 }
-            }
                 set {
                     this[this.tableventas.fechaColumn] = value;
                 }
@@ -5926,13 +5800,13 @@ namespace Proyecto_Glacial {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfechaNull() {
                 return this.IsNull(this.tableventas.fechaColumn);
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetfechaNull() {
                 this[this.tableventas.fechaColumn] = global::System.Convert.DBNull;
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6011,7 +5885,7 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((string)(this[this.tablevista_listar_proveedores_producto.unidad_medidaColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'vista_listar_proveedores_prod" +
                                 "ucto\' es DBNull.", e);
@@ -6076,16 +5950,11 @@ namespace Proyecto_Glacial {
             public int id_venta {
                 get {
                     return ((int)(this[this.tablevista_venta_lista_productos.id_ventaColumn]));
-                    }
+                }
                 set {
                     this[this.tablevista_venta_lista_productos.id_ventaColumn] = value;
-                    }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsestadoNull() {
-                return this.IsNull(this.tableproveedores.estadoColumn);
                 }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6126,7 +5995,7 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((string)(this[this.tablevista_venta_lista_productos.unidad_medidaColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'vista_venta_lista_productos\' " +
                                 "es DBNull.", e);
@@ -6154,10 +6023,6 @@ namespace Proyecto_Glacial {
                 get {
                     return ((double)(this[this.tablevista_venta_lista_productos.totalColumn]));
                 }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'ventas\' es DBNull.", e);
-                    }
-                }
                 set {
                     this[this.tablevista_venta_lista_productos.totalColumn] = value;
                 }
@@ -6168,63 +6033,11 @@ namespace Proyecto_Glacial {
             public bool Isunidad_medidaNull() {
                 return this.IsNull(this.tablevista_venta_lista_productos.unidad_medidaColumn);
             }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cliente\' de la tabla \'ventas\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableventas.id_clienteColumn] = value;
-                }
-            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setunidad_medidaNull() {
                 this[this.tablevista_venta_lista_productos.unidad_medidaColumn] = global::System.Convert.DBNull;
-            }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_empresa\' de la tabla \'ventas\' es DBNull.", e);
-        }
-                }
-                set {
-                    this[this.tableventas.id_empresaColumn] = value;
-                }
-            }
-        
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsfechaNull() {
-                return this.IsNull(this.tableventas.fechaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetfechaNull() {
-                this[this.tableventas.fechaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_clienteNull() {
-                return this.IsNull(this.tableventas.id_clienteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_clienteNull() {
-                this[this.tableventas.id_clienteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_empresaNull() {
-                return this.IsNull(this.tableventas.id_empresaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_empresaNull() {
-                this[this.tableventas.id_empresaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6291,7 +6104,7 @@ namespace Proyecto_Glacial {
             public string unidad_medida {
                 get {
                     return ((string)(this[this.tablelista_material_ventas.unidad_medidaColumn]));
-                    }
+                }
                 set {
                     this[this.tablelista_material_ventas.unidad_medidaColumn] = value;
                 }
@@ -6313,11 +6126,11 @@ namespace Proyecto_Glacial {
             public double total {
                 get {
                     return ((double)(this[this.tablelista_material_ventas.totalColumn]));
-            }
+                }
                 set {
                     this[this.tablelista_material_ventas.totalColumn] = value;
+                }
             }
-        }
         }
         
         /// <summary>
@@ -6361,7 +6174,7 @@ namespace Proyecto_Glacial {
             public int id_lista_proveedores {
                 get {
                     return ((int)(this[this.tableproductos.id_lista_proveedoresColumn]));
-                    }
+                }
                 set {
                     this[this.tableproductos.id_lista_proveedoresColumn] = value;
                 }
@@ -6372,7 +6185,7 @@ namespace Proyecto_Glacial {
             public string nombre {
                 get {
                     return ((string)(this[this.tableproductos.nombreColumn]));
-                    }
+                }
                 set {
                     this[this.tableproductos.nombreColumn] = value;
                 }
@@ -6383,7 +6196,7 @@ namespace Proyecto_Glacial {
             public string descripcion {
                 get {
                     return ((string)(this[this.tableproductos.descripcionColumn]));
-                    }
+                }
                 set {
                     this[this.tableproductos.descripcionColumn] = value;
                 }
@@ -6394,37 +6207,20 @@ namespace Proyecto_Glacial {
             public int existencia {
                 get {
                     return ((int)(this[this.tableproductos.existenciaColumn]));
-                    }
+                }
                 set {
                     this[this.tableproductos.existenciaColumn] = value;
                 }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setunidad_medidaNull() {
-                this[this.tablevista_venta_lista_productos.unidad_medidaColumn] = global::System.Convert.DBNull;
             }
-        }
-            
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class lista_material_ventasRow : global::System.Data.DataRow {
-            
-            private lista_material_ventasDataTable tablelista_material_ventas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string marcaCarro {
                 get {
                     return ((string)(this[this.tableproductos.marcaCarroColumn]));
-            }
+                }
                 set {
                     this[this.tableproductos.marcaCarroColumn] = value;
-            }
-            }
-                set {
-                    this[this.tablelista_material_ventas.id_ventaColumn] = value;
                 }
             }
             
@@ -6433,13 +6229,9 @@ namespace Proyecto_Glacial {
             public string anioCarro {
                 get {
                     return ((string)(this[this.tableproductos.anioCarroColumn]));
-            }
+                }
                 set {
                     this[this.tableproductos.anioCarroColumn] = value;
-            }
-            }
-                set {
-                    this[this.tablelista_material_ventas.unidad_medidaColumn] = value;
                 }
             }
             
@@ -6448,22 +6240,18 @@ namespace Proyecto_Glacial {
             public string modeloCarro {
                 get {
                     return ((string)(this[this.tableproductos.modeloCarroColumn]));
-            }
+                }
                 set {
                     this[this.tableproductos.modeloCarroColumn] = value;
+                }
             }
-                set {
-                    this[this.tablelista_material_ventas.totalColumn] = value;
-        }
-            }
-        }
-        
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double precio1 {
                 get {
                     return ((double)(this[this.tableproductos.precio1Column]));
-            }
+                }
                 set {
                     this[this.tableproductos.precio1Column] = value;
                 }
@@ -6497,7 +6285,7 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((string)(this[this.tableproductos.numeroPedimentoColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'numeroPedimento\' de la tabla \'productos\' es DBNull.", e);
                     }
@@ -6524,22 +6312,22 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((string)(this[this.tableproductos.unidad_medidaColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'productos\' es DBNull.", e);
+                    }
                 }
-            }
                 set {
                     this[this.tableproductos.unidad_medidaColumn] = value;
-        }
+                }
             }
-        
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double precio_especial {
                 get {
                     return ((double)(this[this.tableproductos.precio_especialColumn]));
-            }
+                }
                 set {
                     this[this.tableproductos.precio_especialColumn] = value;
                 }
@@ -6551,7 +6339,7 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((byte[])(this[this.tableproductos.imagenColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'imagen\' de la tabla \'productos\' es DBNull.", e);
                     }
@@ -6567,7 +6355,7 @@ namespace Proyecto_Glacial {
                 get {
                     try {
                         return ((string)(this[this.tableproductos.compatibilidadCarrosColumn]));
-                }
+                    }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'compatibilidadCarros\' de la tabla \'productos\' es DBNull.", e);
                     }
@@ -6594,10 +6382,6 @@ namespace Proyecto_Glacial {
                 get {
                     return ((int)(this[this.tableproductos.linea_producto_codigoColumn]));
                 }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numeroPedimento\' de la tabla \'productos\' es DBNull.", e);
-                    }
-                }
                 set {
                     this[this.tableproductos.linea_producto_codigoColumn] = value;
                 }
@@ -6623,13 +6407,13 @@ namespace Proyecto_Glacial {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnumeroPedimentoNull() {
                 return this.IsNull(this.tableproductos.numeroPedimentoColumn);
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnumeroPedimentoNull() {
                 this[this.tableproductos.numeroPedimentoColumn] = global::System.Convert.DBNull;
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6641,13 +6425,13 @@ namespace Proyecto_Glacial {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setunidad_medidaNull() {
                 this[this.tableproductos.unidad_medidaColumn] = global::System.Convert.DBNull;
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsimagenNull() {
                 return this.IsNull(this.tableproductos.imagenColumn);
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6671,8 +6455,8 @@ namespace Proyecto_Glacial {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isdatos_proveedorNull() {
                 return this.IsNull(this.tableproductos.datos_proveedorColumn);
-        }
-        
+            }
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setdatos_proveedorNull() {
@@ -7898,8 +7682,8 @@ namespace Proyecto_Glacial.glacial_almacenDataSetTableAdapters {
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = @"INSERT INTO clientes
-                         (nombre, direccion, colonia, ciudad, cp, correo, rfc, telefono, fecha_registro, CURP, precio_asignado, tiene_credito, fecha_limite_credito)
-VALUES        (@nombre, @direccion, @colonia, @ciudad, @cp, @correo, @rfc, @telefono, @fechaRegistro, @CURP, @precioAsignado, @tieneCredito, @fechaLimiteCredito)";
+                         (nombre, direccion, colonia, ciudad, cp, correo, rfc, telefono, fecha_registro, CURP, precio_asignado, tiene_credito, fecha_limite_credito, credito)
+VALUES        (@nombre, @direccion, @colonia, @ciudad, @cp, @correo, @rfc, @telefono, @fechaRegistro, @CURP, @precioAsignado, @tieneCredito, @fechaLimiteCredito, @credito)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nombre";
@@ -7968,7 +7752,7 @@ VALUES        (@nombre, @direccion, @colonia, @ciudad, @cp, @correo, @rfc, @tele
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@fechaRegistro";
             param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "fecha_registro";
             this._commandCollection[5].Parameters.Add(param);
@@ -7997,10 +7781,17 @@ VALUES        (@nombre, @direccion, @colonia, @ciudad, @cp, @correo, @rfc, @tele
             this._commandCollection[5].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@fechaLimiteCredito";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "fecha_limite_credito";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@credito";
+            param.DbType = global::System.Data.DbType.Double;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.IsNullable = true;
+            param.SourceColumn = "credito";
             this._commandCollection[5].Parameters.Add(param);
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
@@ -8098,15 +7889,15 @@ WHERE        (id_cliente = @id_cliente)";
             this._commandCollection[6].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@credito";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.Double;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "credito";
             this._commandCollection[6].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@fechaCredito";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "fecha_limite_credito";
             this._commandCollection[6].Parameters.Add(param);
@@ -8710,7 +8501,7 @@ WHERE        (id_cliente = @id_cliente)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertarNuevoCliente(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, System.DateTime fechaRegistro, string CURP, int precioAsignado, object tieneCredito, global::System.Nullable<global::System.DateTime> fechaLimiteCredito) {
+        public virtual int InsertarNuevoCliente(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, System.DateTime fechaRegistro, string CURP, int precioAsignado, object tieneCredito, global::System.Nullable<int> fechaLimiteCredito, global::System.Nullable<double> credito) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -8769,16 +8560,22 @@ WHERE        (id_cliente = @id_cliente)";
             }
             command.Parameters[10].Value = ((int)(precioAsignado));
             if ((tieneCredito == null)) {
-                throw new global::System.ArgumentNullException("tieneCredito");
+                command.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[11].Value = ((object)(tieneCredito));
             }
             if ((fechaLimiteCredito.HasValue == true)) {
-                command.Parameters[12].Value = ((System.DateTime)(fechaLimiteCredito.Value));
+                command.Parameters[12].Value = ((int)(fechaLimiteCredito.Value));
             }
             else {
                 command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((credito.HasValue == true)) {
+                command.Parameters[13].Value = ((double)(credito.Value));
+            }
+            else {
+                command.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8800,7 +8597,7 @@ WHERE        (id_cliente = @id_cliente)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int UpdateClientesPorId(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, string CURP, int precioAsignado, object tieneCredito, global::System.Nullable<int> credito, global::System.Nullable<global::System.DateTime> fechaCredito, int id_cliente) {
+        public virtual int UpdateClientesPorId(string nombre, string direccion, string colonia, string ciudad, string cp, string correo, string rfc, string telefono, string CURP, int precioAsignado, object tieneCredito, global::System.Nullable<double> credito, global::System.Nullable<int> fechaCredito, int id_cliente) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[6];
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -8864,13 +8661,13 @@ WHERE        (id_cliente = @id_cliente)";
                 command.Parameters[10].Value = ((object)(tieneCredito));
             }
             if ((credito.HasValue == true)) {
-                command.Parameters[11].Value = ((int)(credito.Value));
+                command.Parameters[11].Value = ((double)(credito.Value));
             }
             else {
                 command.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((fechaCredito.HasValue == true)) {
-                command.Parameters[12].Value = ((System.DateTime)(fechaCredito.Value));
+                command.Parameters[12].Value = ((int)(fechaCredito.Value));
             }
             else {
                 command.Parameters[12].Value = global::System.DBNull.Value;
@@ -9060,7 +8857,7 @@ WHERE        (id_cliente = @id_cliente)";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9621,29 +9418,6 @@ WHERE        (id_cliente = @id_cliente)";
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int ActualizarCompraPorId(double total, int idCompra) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((double)(total));
-            command.Parameters[1].Value = ((int)(idCompra));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
                 }
             }
             return returnValue;
@@ -9708,69 +9482,6 @@ WHERE        (id_cliente = @id_cliente)";
             else {
                 command.Parameters[4].Value = ((object)(mesesSinIntereses));
             }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-            return returnValue;
-    }
-    
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int BorrarCompraPorID(int idCompra) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(idCompra));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertarNuevaCompra(System.DateTime fecha, string tipo_pago, object autorizacion, double total) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
-            command.Parameters[0].Value = ((System.DateTime)(fecha));
-            if ((tipo_pago == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(tipo_pago));
-            }
-            if ((autorizacion == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((object)(autorizacion));
-            }
-            command.Parameters[3].Value = ((double)(total));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10564,12 +10275,12 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
-        }
+            }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
-            }
                 }
+            }
             return returnValue;
         }
         
@@ -10584,16 +10295,16 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             command.Parameters[3].Value = ((int)(id_producto));
             if ((unidad_medida == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
-        }
+            }
             else {
                 command.Parameters[4].Value = ((string)(unidad_medida));
-        }
+            }
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
-        }
+            }
             else {
                 command.Parameters[5].Value = ((string)(nombre));
-        }
+            }
             command.Parameters[6].Value = ((double)(precioUnitario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10629,7 +10340,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             }
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
-                }
+            }
             else {
                 command.Parameters[5].Value = ((string)(nombre));
             }
@@ -11641,7 +11352,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
             if ((codigo == null)) {
                 throw new global::System.ArgumentNullException("codigo");
-    }
+            }
             else {
                 command.Parameters[0].Value = ((string)(codigo));
             }
@@ -11669,7 +11380,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             }
             return returnValue;
         }
-    
+        
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -12007,23 +11718,6 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "cp";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p15";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "rfc";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p16";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "rfc";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12589,7 +12283,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -13329,7 +13023,6 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.IsNullable = true;
             param.SourceColumn = "IVA";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -13499,18 +13192,9 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.IsNullable = true;
             param.SourceColumn = "subtotal";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
-            param.IsNullable = true;
-            param.SourceColumn = "subtotal";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -13527,7 +13211,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -13610,24 +13294,6 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_venta, subtotal, descuento, IVA, total, fecha, id_cliente FROM ventas";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Proyecto_Glacial.Properties.Settings.Default.glacial_almacenConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_venta, subtotal, descuento, IVA, total, fecha, id_cliente, id_empresa F" +
-                "ROM ventas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13906,17 +13572,15 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                         != global::System.Data.ConnectionState.Open)) {
                 this.Adapter.UpdateCommand.Connection.Open();
             }
-            if ((p5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(p5.Value));
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
-            if ((p6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6.Value));
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
         }
     }
     
@@ -14021,7 +13685,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                 }
                 return this._commandCollection;
             }
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14049,14 +13713,14 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             tableMapping.ColumnMappings.Add("id_lista_proveedores", "id_lista_proveedores");
             tableMapping.ColumnMappings.Add("id_proveedor_codigo", "id_proveedor_codigo");
             this._adapter.TableMappings.Add(tableMapping);
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
             this._connection.ConnectionString = global::Proyecto_Glacial.Properties.Settings.Default.glacial_almacenConnectionString;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14080,7 +13744,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.IsNullable = true;
             param.SourceColumn = "id_lista_proveedores";
             this._commandCollection[1].Parameters.Add(param);
-                }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14178,15 +13842,12 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                 }
                 if ((this.Adapter.UpdateCommand != null)) {
                     this.Adapter.UpdateCommand.Connection = value;
-            }
+                }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
                         ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-            }
+                    }
                 }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
         }
         
@@ -14253,14 +13914,14 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             tableMapping.ColumnMappings.Add("total", "total");
             this._adapter.TableMappings.Add(tableMapping);
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
             this._connection.ConnectionString = global::Proyecto_Glacial.Properties.Settings.Default.glacial_almacenConnectionString;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14284,7 +13945,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             param.IsNullable = true;
             param.SourceColumn = "id_venta";
             this._commandCollection[1].Parameters.Add(param);
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14297,7 +13958,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14308,7 +13969,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             glacial_almacenDataSet.vista_venta_lista_productosDataTable dataTable = new glacial_almacenDataSet.vista_venta_lista_productosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-                }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14735,25 +14396,19 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             return this.Adapter.Update(dataSet, "lista_material_ventas");
         }
         
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public vista_venta_lista_productosTableAdapter() {
-            this.ClearBeforeFill = true;
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-        }
-                return this._adapter;
-            }
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14778,19 +14433,15 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                         != global::System.Data.ConnectionState.Open)) {
                 this.Adapter.DeleteCommand.Connection.Open();
             }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
             }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
                 }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
             }
-        }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14804,12 +14455,8 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             if ((p4 == null)) {
                 throw new global::System.ArgumentNullException("p4");
             }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Proyecto_Glacial.Properties.Settings.Default.glacial_almacenConnectionString;
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((double)(p5));
             this.Adapter.InsertCommand.Parameters[5].Value = ((double)(p6));
@@ -14822,6 +14469,12 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                 int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
                 return returnValue;
             }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14866,8 +14519,8 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
                 }
             }
         }
-            }
-        
+    }
+    
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>
@@ -15262,8 +14915,8 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "existencia";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -15741,7 +15394,7 @@ WHERE        (id_lista_material_compra = @id_lista_material_compra)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[7];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[9];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, marcaCarro, anioCarro, modeloCarro, precio1, precio2, precio3, numeroPedimento, cantidad_minima, unidad_medida, precio_especial, imagen, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor FROM productos";
@@ -15905,72 +15558,25 @@ WHERE        (id_producto = @id_producto)";
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, precio_especial, anioCarro, marcaCarro, modeloCarro, numeroPedimento, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor FROM productos WHERE (nombre LIKE @nombre)";
+            this._commandCollection[3].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, marcaCarro, anioCarro, modeloCarro, precio1, precio2, precio3, numeroPedimento, cantidad_minima, unidad_medida, precio_especial, imagen, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor 
+FROM productos
+WHERE id_linea_producto LIKE @lineaProducto";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nombre";
+            param.ParameterName = "@lineaProducto";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
+            param.Size = 5;
             param.IsNullable = true;
-            param.SourceColumn = "nombre";
+            param.SourceColumn = "id_linea_producto";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, precio_especial, anioCarro, marcaCarro, modeloCarro, numeroPedimento, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor FROM productos WHERE (id_producto = @id_producto)";
+            this._commandCollection[4].CommandText = @"SELECT        id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, marcaCarro, anioCarro, modeloCarro, precio1, precio2, precio3, numeroPedimento, cantidad_minima, unidad_medida, 
+                         precio_especial, imagen, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor
+FROM            productos
+WHERE        (descripcion LIKE @descripcion)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@id_producto";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "id_producto";
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, marcaCarro, anioCarro, modeloCarro, precio1, precio2, precio3, numeroPedimento, cantidad_minima, unidad_medida, precio_especial, imagen, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor 
-FROM productos
-WHERE id_linea_producto = @id_linea_producto";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@id_linea_producto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 5;
-            param.IsNullable = true;
-            param.SourceColumn = "id_linea_producto";
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"INSERT INTO productos
-                         (id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, marcaCarro, anioCarro, modeloCarro, numeroPedimento, 
-                         precio_especial, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor)
-VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion, @existencia, @cantidad_minima, @unidad_medida, @precio1, @precio2, @precio3, @imagen, @marcaCarro, @añoCarro, 
-                         @modeloCarro, @numeroPedimento, @precioEspecial, @compatibilidadCarros, @precio, @lineaProductoCodigo, @datosProveedor)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@id_linea_producto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 5;
-            param.IsNullable = true;
-            param.SourceColumn = "id_linea_producto";
-            this._commandCollection[6].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@id_lista_proveedores";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "id_lista_proveedores";
-            this._commandCollection[6].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nombre";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "nombre";
-            this._commandCollection[6].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@descripcion";
             param.DbType = global::System.Data.DbType.String;
@@ -15978,21 +15584,100 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 300;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, precio_especial, anioCarro, marcaCarro, modeloCarro, numeroPedimento, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor FROM productos WHERE (nombre LIKE @nombre)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nombre";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "nombre";
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT        id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, precio_especial, anioCarro, marcaCarro, 
+                         modeloCarro, numeroPedimento, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor
+FROM            productos
+WHERE        (id_producto = @idProducto)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idProducto";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_producto";
             this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT id_producto, id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, marcaCarro, anioCarro, modeloCarro, precio1, precio2, precio3, numeroPedimento, cantidad_minima, unidad_medida, precio_especial, imagen, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor 
+FROM productos
+WHERE id_linea_producto = @id_linea_producto";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@id_linea_producto";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "id_linea_producto";
+            this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"INSERT INTO productos
+                         (id_linea_producto, id_lista_proveedores, nombre, descripcion, existencia, cantidad_minima, unidad_medida, precio1, precio2, precio3, imagen, marcaCarro, anioCarro, modeloCarro, numeroPedimento, 
+                         precio_especial, compatibilidadCarros, precio, linea_producto_codigo, datos_proveedor)
+VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion, @existencia, @cantidad_minima, @unidad_medida, @precio1, @precio2, @precio3, @imagen, @marcaCarro, @añoCarro, 
+                         @modeloCarro, @numeroPedimento, @precioEspecial, @compatibilidadCarros, @precio, @lineaProductoCodigo, @datosProveedor)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@id_linea_producto";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "id_linea_producto";
+            this._commandCollection[8].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@id_lista_proveedores";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_lista_proveedores";
+            this._commandCollection[8].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nombre";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "nombre";
+            this._commandCollection[8].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@descripcion";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 300;
+            param.IsNullable = true;
+            param.SourceColumn = "descripcion";
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@existencia";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "existencia";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cantidad_minima";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad_minima";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@unidad_medida";
             param.DbType = global::System.Data.DbType.String;
@@ -16000,28 +15685,28 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 30;
             param.IsNullable = true;
             param.SourceColumn = "unidad_medida";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@precio1";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "precio1";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@precio2";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "precio2";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@precio3";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "precio3";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@imagen";
             param.DbType = global::System.Data.DbType.Binary;
@@ -16029,7 +15714,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "imagen";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@marcaCarro";
             param.DbType = global::System.Data.DbType.String;
@@ -16037,7 +15722,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "marcaCarro";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@añoCarro";
             param.DbType = global::System.Data.DbType.String;
@@ -16045,7 +15730,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = "anioCarro";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@modeloCarro";
             param.DbType = global::System.Data.DbType.String;
@@ -16053,7 +15738,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "modeloCarro";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@numeroPedimento";
             param.DbType = global::System.Data.DbType.String;
@@ -16061,14 +15746,14 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 5;
             param.IsNullable = true;
             param.SourceColumn = "numeroPedimento";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@precioEspecial";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "precio_especial";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@compatibilidadCarros";
             param.DbType = global::System.Data.DbType.String;
@@ -16076,21 +15761,21 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 500;
             param.IsNullable = true;
             param.SourceColumn = "compatibilidadCarros";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@precio";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
             param.SourceColumn = "precio";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@lineaProductoCodigo";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "linea_producto_codigo";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@datosProveedor";
             param.DbType = global::System.Data.DbType.String;
@@ -16098,7 +15783,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "datos_proveedor";
-            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[8].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16129,8 +15814,46 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByBuscarProductoNombre(glacial_almacenDataSet.productosDataTable dataTable, string nombre) {
+        public virtual int FillByBuscarPorCodigo(glacial_almacenDataSet.productosDataTable dataTable, string lineaProducto) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((lineaProducto == null)) {
+                throw new global::System.ArgumentNullException("lineaProducto");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(lineaProducto));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByBuscarPorDescripcion(glacial_almacenDataSet.productosDataTable dataTable, string descripcion) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(descripcion));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByBuscarProductoLinea(glacial_almacenDataSet.productosDataTable dataTable, string nombre) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
@@ -16149,7 +15872,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual glacial_almacenDataSet.productosDataTable GetDataByBuscarProductoNombre(string nombre) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
@@ -16165,9 +15888,9 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByBuscarProductoPorID(glacial_almacenDataSet.productosDataTable dataTable, int id_producto) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_producto));
+        public virtual int FillByBuscarProductoPorID(glacial_almacenDataSet.productosDataTable dataTable, int idProducto) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idProducto));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -16179,9 +15902,9 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual glacial_almacenDataSet.productosDataTable GetDataByBuscarProductoPorID(int id_producto) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_producto));
+        public virtual glacial_almacenDataSet.productosDataTable GetDataByBuscarProductoPorID(int idProducto) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idProducto));
             glacial_almacenDataSet.productosDataTable dataTable = new glacial_almacenDataSet.productosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -16192,7 +15915,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByBuscarProductosPorCodigo(glacial_almacenDataSet.productosDataTable dataTable, string id_linea_producto) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((id_linea_producto == null)) {
                 throw new global::System.ArgumentNullException("id_linea_producto");
             }
@@ -16728,70 +16451,70 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
             if ((id_linea_producto == null)) {
                 throw new global::System.ArgumentNullException("id_linea_producto");
-                }
+            }
             else {
                 command.Parameters[0].Value = ((string)(id_linea_producto));
             }
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
-        }
+            }
             else {
                 command.Parameters[1].Value = ((string)(nombre));
-                }
+            }
             if ((descripcion == null)) {
                 throw new global::System.ArgumentNullException("descripcion");
             }
             else {
                 command.Parameters[2].Value = ((string)(descripcion));
-                }
+            }
             command.Parameters[3].Value = ((int)(existencia));
             command.Parameters[4].Value = ((int)(cantidadMinima));
             if ((unidadMedida == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
-                }
+            }
             else {
                 command.Parameters[5].Value = ((string)(unidadMedida));
-                }
+            }
             command.Parameters[6].Value = ((double)(precioUno));
             command.Parameters[7].Value = ((double)(precioDos));
             command.Parameters[8].Value = ((double)(precioTres));
             if ((marcaCarro == null)) {
                 throw new global::System.ArgumentNullException("marcaCarro");
-                    }
+            }
             else {
                 command.Parameters[9].Value = ((string)(marcaCarro));
-                }
+            }
             if ((anioCarro == null)) {
                 throw new global::System.ArgumentNullException("anioCarro");
             }
             else {
                 command.Parameters[10].Value = ((string)(anioCarro));
-        }
+            }
             if ((modeloCarro == null)) {
                 throw new global::System.ArgumentNullException("modeloCarro");
             }
             else {
                 command.Parameters[11].Value = ((string)(modeloCarro));
-                }
+            }
             if ((numeroPedimento == null)) {
                 command.Parameters[12].Value = global::System.DBNull.Value;
-                }
+            }
             else {
                 command.Parameters[12].Value = ((string)(numeroPedimento));
-                }
+            }
             command.Parameters[13].Value = ((double)(precioEspecial));
             if ((compatibilidadCarros == null)) {
                 command.Parameters[14].Value = global::System.DBNull.Value;
-                }
+            }
             else {
                 command.Parameters[14].Value = ((string)(compatibilidadCarros));
             }
             if ((imagen == null)) {
                 command.Parameters[15].Value = global::System.DBNull.Value;
-        }
+            }
             else {
                 command.Parameters[15].Value = ((byte[])(imagen));
-                }
+            }
             command.Parameters[16].Value = ((double)(precio));
             command.Parameters[17].Value = ((int)(id_producto));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -16802,11 +16525,11 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
-        }
+            }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
-            }
+                }
             }
             return returnValue;
         }
@@ -16822,15 +16545,15 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
-        }
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
-        }
+            }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
-        }
+                }
             }
             return returnValue;
         }
@@ -16859,7 +16582,7 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
                     double precio, 
                     int lineaProductoCodigo, 
                     string datosProveedor) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[6];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[8];
             if ((id_linea_producto == null)) {
                 throw new global::System.ArgumentNullException("id_linea_producto");
             }
@@ -16934,338 +16657,6 @@ VALUES        (@id_linea_producto, @id_lista_proveedores, @nombre, @descripcion,
             }
             else {
                 command.Parameters[19].Value = ((string)(datosProveedor));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-        }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual glacial_almacenDataSet.productosDataTable GetDataByBuscarProductoPorID(int id_producto) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_producto));
-            glacial_almacenDataSet.productosDataTable dataTable = new glacial_almacenDataSet.productosDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(glacial_almacenDataSet.productosDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(glacial_almacenDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "productos");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    int p1, 
-                    string p2, 
-                    int p3, 
-                    string p4, 
-                    string p5, 
-                    int p6, 
-                    string p7, 
-                    string p8, 
-                    string p9, 
-                    double p10, 
-                    double p11, 
-                    double p12, 
-                    global::System.Nullable<int> p13, 
-                    int p14, 
-                    string p15, 
-                    double p16, 
-                    object p17, 
-                    string p18) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
-            if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
-            if ((p4 == null)) {
-                throw new global::System.ArgumentNullException("p4");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
-            }
-            if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(p6));
-            if ((p7 == null)) {
-                throw new global::System.ArgumentNullException("p7");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p7));
-            }
-            if ((p8 == null)) {
-                throw new global::System.ArgumentNullException("p8");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p8));
-            }
-            if ((p9 == null)) {
-                throw new global::System.ArgumentNullException("p9");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(p9));
-            }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((double)(p10));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((double)(p11));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((double)(p12));
-            if ((p13.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(p13.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(p14));
-            if ((p15 == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(p15));
-            }
-            this.Adapter.InsertCommand.Parameters[15].Value = ((double)(p16));
-            if ((p17 == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((object)(p17));
-            }
-            if ((p18 == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(p18));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int ActualizarProductoPorID(string id_linea_producto, string nombre, string descripcion, int existencia, int cantidadMinima, string unidadMedida, double precioUno, double precioDos, double precioTres, int id_producto) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
-            if ((id_linea_producto == null)) {
-                throw new global::System.ArgumentNullException("id_linea_producto");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(id_linea_producto));
-            }
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(nombre));
-            }
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(descripcion));
-            }
-            command.Parameters[3].Value = ((int)(existencia));
-            command.Parameters[4].Value = ((int)(cantidadMinima));
-            if ((unidadMedida == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(unidadMedida));
-            }
-            command.Parameters[6].Value = ((double)(precioUno));
-            command.Parameters[7].Value = ((double)(precioDos));
-            command.Parameters[8].Value = ((double)(precioTres));
-            command.Parameters[9].Value = ((int)(id_producto));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int BorrarProductoPorID(int id_producto) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(id_producto));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertarProductosConProveedores(
-                    string id_linea_producto, 
-                    int id_lista_proveedores, 
-                    string nombre, 
-                    string descripcion, 
-                    int existencia, 
-                    int cantidad_minima, 
-                    string unidad_medida, 
-                    double precio1, 
-                    double precio2, 
-                    double precio3, 
-                    byte[] imagen, 
-                    string marcaCarro, 
-                    string añoCarro, 
-                    string modeloCarro, 
-                    global::System.Nullable<int> numeroPedimento, 
-                    double precioEspecial, 
-                    string compatibilidadCarros) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
-            if ((id_linea_producto == null)) {
-                throw new global::System.ArgumentNullException("id_linea_producto");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(id_linea_producto));
-            }
-            command.Parameters[1].Value = ((int)(id_lista_proveedores));
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(nombre));
-            }
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(descripcion));
-            }
-            command.Parameters[4].Value = ((int)(existencia));
-            command.Parameters[5].Value = ((int)(cantidad_minima));
-            if ((unidad_medida == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[6].Value = ((string)(unidad_medida));
-            }
-            command.Parameters[7].Value = ((double)(precio1));
-            command.Parameters[8].Value = ((double)(precio2));
-            command.Parameters[9].Value = ((double)(precio3));
-            if ((imagen == null)) {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[10].Value = ((byte[])(imagen));
-            }
-            if ((marcaCarro == null)) {
-                throw new global::System.ArgumentNullException("marcaCarro");
-            }
-            else {
-                command.Parameters[11].Value = ((string)(marcaCarro));
-            }
-            if ((añoCarro == null)) {
-                throw new global::System.ArgumentNullException("añoCarro");
-            }
-            else {
-                command.Parameters[12].Value = ((string)(añoCarro));
-            }
-            if ((modeloCarro == null)) {
-                throw new global::System.ArgumentNullException("modeloCarro");
-            }
-            else {
-                command.Parameters[13].Value = ((string)(modeloCarro));
-            }
-            if ((numeroPedimento.HasValue == true)) {
-                command.Parameters[14].Value = ((int)(numeroPedimento.Value));
-            }
-            else {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            command.Parameters[15].Value = ((double)(precioEspecial));
-            if ((compatibilidadCarros == null)) {
-                command.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[16].Value = ((string)(compatibilidadCarros));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

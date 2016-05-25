@@ -19,6 +19,57 @@ namespace Proyecto_Glacial.Inventario
             InitializeComponent();
         }
 
+        int precio, precio1, precio2, precio3;
+        generarConexion Conexion = new generarConexion();
+
+        private void existenciaTextBox_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        public int buscarPrecios()
+        {
+
+
+            int ultimoIdExistente = 0; //SELECT `id_lista_proveedores` FROM `proveedor_codigo` ORDER BY `id_lista_proveedores` DESC LIMIT 1
+            MySqlCommand consulta = new MySqlCommand("SELECT precio,precio1,precio2,precio3 from productos where id_producto ="
+                + "'" + Program.idProducto + "'", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+
+            try
+            {
+
+                MySqlDataReader lector = consulta.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (lector.GetValue(0).ToString() == "")
+                    {
+                        ultimoIdExistente = 0;
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+
+                    }
+                    else
+                    {
+                        precio = lector.GetInt32(0);
+                        precio1 = lector.GetInt32(1);
+                        precio2 = lector.GetInt32(2);
+                        precio3 = lector.GetInt32(3);
+                        ultimoIdExistente = lector.GetInt32(1);
+                        Conexion.cerrarConexion();
+                        return ultimoIdExistente;
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+            return 0;
+        }
+
         private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -45,6 +96,19 @@ namespace Proyecto_Glacial.Inventario
             // TODO: esta línea de código carga datos en la tabla 'glacial_almacenDataSet.productos' Puede moverla o quitarla según sea necesario.
             this.productosTableAdapter.FillByBuscarProductoPorID(this.glacial_almacenDataSet.productos,Program.idProducto);
 
+            buscarPrecios();
+            string cadena2 = precio1.ToString("N2");
+            txt_precio1.Text = cadena2;
+
+
+            cadena2 = precio2.ToString("N2");
+            txt_precio2.Text = cadena2;
+
+            cadena2 = precio3.ToString("N2");
+            txt_precio3.Text = cadena2;
+
+            
+            
 
 
 

@@ -33,8 +33,12 @@
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.pnl_MenuIzquierdo = new System.Windows.Forms.Panel();
             this.lbl_Modificar = new System.Windows.Forms.Label();
+            this.btn_Modificar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_Eliminar = new System.Windows.Forms.Label();
+            this.btn_Eliminar = new System.Windows.Forms.Button();
             this.lbl_Agregar = new System.Windows.Forms.Label();
+            this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.pnl_ContenidoCentro = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,10 +48,6 @@
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.clientesTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.clientesTableAdapter();
             this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.btn_Modificar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_Eliminar = new System.Windows.Forms.Button();
-            this.btn_BuscarTodo = new System.Windows.Forms.Button();
             this.pnl_Header.SuspendLayout();
             this.pnl_MenuIzquierdo.SuspendLayout();
             this.pnl_ContenidoCentro.SuspendLayout();
@@ -71,7 +71,7 @@
             this.pnl_Header.Controls.Add(this.lbl_Clientes);
             this.pnl_Header.Location = new System.Drawing.Point(4, 6);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(1168, 80);
+            this.pnl_Header.Size = new System.Drawing.Size(1353, 80);
             this.pnl_Header.TabIndex = 1;
             // 
             // pnl_MenuIzquierdo
@@ -99,6 +99,27 @@
             this.lbl_Modificar.TabIndex = 3;
             this.lbl_Modificar.Text = "Modificar";
             // 
+            // btn_Modificar
+            // 
+            this.btn_Modificar.Enabled = false;
+            this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
+            this.btn_Modificar.Location = new System.Drawing.Point(49, 388);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(80, 80);
+            this.btn_Modificar.TabIndex = 7;
+            this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
+            this.btn_Agregar.Location = new System.Drawing.Point(49, 144);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(80, 80);
+            this.btn_Agregar.TabIndex = 4;
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
             // lbl_Eliminar
             // 
             this.lbl_Eliminar.AutoSize = true;
@@ -109,6 +130,17 @@
             this.lbl_Eliminar.TabIndex = 2;
             this.lbl_Eliminar.Text = "Eliminar";
             // 
+            // btn_Eliminar
+            // 
+            this.btn_Eliminar.Enabled = false;
+            this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
+            this.btn_Eliminar.Location = new System.Drawing.Point(49, 268);
+            this.btn_Eliminar.Name = "btn_Eliminar";
+            this.btn_Eliminar.Size = new System.Drawing.Size(80, 80);
+            this.btn_Eliminar.TabIndex = 6;
+            this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            // 
             // lbl_Agregar
             // 
             this.lbl_Agregar.AutoSize = true;
@@ -118,6 +150,16 @@
             this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
             this.lbl_Agregar.TabIndex = 1;
             this.lbl_Agregar.Text = "Agregar";
+            // 
+            // btn_BuscarTodo
+            // 
+            this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
+            this.btn_BuscarTodo.Location = new System.Drawing.Point(49, 14);
+            this.btn_BuscarTodo.Name = "btn_BuscarTodo";
+            this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
+            this.btn_BuscarTodo.TabIndex = 5;
+            this.btn_BuscarTodo.UseVisualStyleBackColor = true;
+            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // lbl_Buscar
             // 
@@ -134,14 +176,14 @@
             this.pnl_ContenidoCentro.Controls.Add(this.label1);
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
-            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(981, 523);
+            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(1166, 523);
             this.pnl_ContenidoCentro.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 73);
+            this.label1.Location = new System.Drawing.Point(198, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(866, 375);
             this.label1.TabIndex = 1;
@@ -195,53 +237,11 @@
             this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
             // 
-            // btn_Modificar
-            // 
-            this.btn_Modificar.Enabled = false;
-            this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
-            this.btn_Modificar.Location = new System.Drawing.Point(49, 388);
-            this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(80, 80);
-            this.btn_Modificar.TabIndex = 7;
-            this.btn_Modificar.UseVisualStyleBackColor = true;
-            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
-            this.btn_Agregar.Location = new System.Drawing.Point(49, 144);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(80, 80);
-            this.btn_Agregar.TabIndex = 4;
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
-            // btn_Eliminar
-            // 
-            this.btn_Eliminar.Enabled = false;
-            this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
-            this.btn_Eliminar.Location = new System.Drawing.Point(49, 268);
-            this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(80, 80);
-            this.btn_Eliminar.TabIndex = 6;
-            this.btn_Eliminar.UseVisualStyleBackColor = true;
-            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
-            // 
-            // btn_BuscarTodo
-            // 
-            this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
-            this.btn_BuscarTodo.Location = new System.Drawing.Point(49, 14);
-            this.btn_BuscarTodo.Name = "btn_BuscarTodo";
-            this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
-            this.btn_BuscarTodo.TabIndex = 5;
-            this.btn_BuscarTodo.UseVisualStyleBackColor = true;
-            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
             // frm_ClientesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 678);
+            this.ClientSize = new System.Drawing.Size(1362, 678);
             this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);

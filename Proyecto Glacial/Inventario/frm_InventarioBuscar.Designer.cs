@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.cmb_SelccionarTipo = new System.Windows.Forms.ComboBox();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.productosDataGridView = new System.Windows.Forms.DataGridView();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
+            this.btn_BuscarTodo = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.productosTableAdapter();
+            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linea_producto_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,36 +59,27 @@
             this.precio_especial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
-            this.btn_BuscarTodo = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.productosTableAdapter();
-            this.tableAdapterManager = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(798, 97);
+            this.label1.Location = new System.Drawing.Point(817, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 44);
+            this.label1.Size = new System.Drawing.Size(136, 44);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Visualizar todos\r\n los productos";
+            this.label1.Text = "Actualizar /\r\nBuscar Todos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_Buscar
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(698, 97);
+            this.lbl_Buscar.Location = new System.Drawing.Point(698, 117);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(75, 22);
             this.lbl_Buscar.TabIndex = 23;
@@ -93,13 +90,15 @@
             this.cmb_SelccionarTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_SelccionarTipo.FormattingEnabled = true;
             this.cmb_SelccionarTipo.Items.AddRange(new object[] {
-            "Línea del producto",
-            "Nombre"});
+            "Código",
+            "Línea",
+            "Nombre/Descripción"});
             this.cmb_SelccionarTipo.Location = new System.Drawing.Point(12, 44);
             this.cmb_SelccionarTipo.Name = "cmb_SelccionarTipo";
             this.cmb_SelccionarTipo.Size = new System.Drawing.Size(194, 30);
             this.cmb_SelccionarTipo.TabIndex = 21;
             this.cmb_SelccionarTipo.Text = "Seleccione";
+            this.cmb_SelccionarTipo.SelectedIndexChanged += new System.EventHandler(this.cmb_SelccionarTipo_SelectedIndexChanged);
             // 
             // txt_Buscar
             // 
@@ -109,15 +108,15 @@
             this.txt_Buscar.Size = new System.Drawing.Size(459, 29);
             this.txt_Buscar.TabIndex = 19;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
+            this.txt_Buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscar_KeyPress);
             // 
             // productosDataGridView
             // 
             this.productosDataGridView.AllowUserToAddRows = false;
             this.productosDataGridView.AllowUserToDeleteRows = false;
             this.productosDataGridView.AutoGenerateColumns = false;
-            this.productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.productosDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.productosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -142,11 +141,61 @@
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.ReadOnly = true;
             this.productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productosDataGridView.Size = new System.Drawing.Size(941, 317);
+            this.productosDataGridView.Size = new System.Drawing.Size(996, 317);
             this.productosDataGridView.TabIndex = 26;
             this.productosDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.productosDataGridView_CellFormatting);
             this.productosDataGridView.Click += new System.EventHandler(this.productosDataGridView_Click);
             this.productosDataGridView.DoubleClick += new System.EventHandler(this.productosDataGridView_DoubleClick);
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "productos";
+            this.productosBindingSource.DataSource = this.glacial_almacenDataSet;
+            // 
+            // glacial_almacenDataSet
+            // 
+            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
+            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btn_BuscarTodo
+            // 
+            this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
+            this.btn_BuscarTodo.Location = new System.Drawing.Point(850, 20);
+            this.btn_BuscarTodo.Name = "btn_BuscarTodo";
+            this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
+            this.btn_BuscarTodo.TabIndex = 24;
+            this.btn_BuscarTodo.UseVisualStyleBackColor = true;
+            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_BuscarTodo_Click);
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Enabled = false;
+            this.btn_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray_02_;
+            this.btn_Buscar.Location = new System.Drawing.Point(693, 34);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(80, 80);
+            this.btn_Buscar.TabIndex = 20;
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientesTableAdapter = null;
+            this.tableAdapterManager.comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
+            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
+            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
+            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
+            this.tableAdapterManager.proveedoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -162,29 +211,30 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "id_linea_producto";
             this.dataGridViewTextBoxColumn2.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Línea";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Código";
             this.dataGridViewTextBoxColumn2.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn2.MinimumWidth = 3;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 60;
+            this.dataGridViewTextBoxColumn2.Width = 65;
             // 
             // linea_producto_codigo
             // 
             this.linea_producto_codigo.DataPropertyName = "linea_producto_codigo";
-            this.linea_producto_codigo.HeaderText = "Código de Línea";
+            this.linea_producto_codigo.HeaderText = "";
             this.linea_producto_codigo.Name = "linea_producto_codigo";
             this.linea_producto_codigo.ReadOnly = true;
-            this.linea_producto_codigo.Width = 77;
+            this.linea_producto_codigo.Visible = false;
+            this.linea_producto_codigo.Width = 50;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Línea";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 69;
+            this.dataGridViewTextBoxColumn4.Width = 60;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -209,7 +259,7 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Visible = false;
-            this.dataGridViewTextBoxColumn7.Width = 118;
+            this.dataGridViewTextBoxColumn7.Width = 176;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -238,9 +288,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "precio1";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn9.HeaderText = "Precio 1";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -249,9 +299,9 @@
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "precio2";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn10.HeaderText = "Precio 2";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
@@ -260,9 +310,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "precio3";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn11.HeaderText = "Precio 3";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -287,7 +337,7 @@
             this.dataGridViewTextBoxColumn3.Visible = false;
             this.dataGridViewTextBoxColumn3.Width = 129;
             // 
-            // btn_detalles
+            // numeroPedimento
             // 
             this.numeroPedimento.DataPropertyName = "numeroPedimento";
             this.numeroPedimento.HeaderText = "Número de pedimento";
@@ -295,93 +345,11 @@
             this.numeroPedimento.ReadOnly = true;
             this.numeroPedimento.Width = 124;
             // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "productos";
-            this.productosBindingSource.DataSource = this.glacial_almacenDataSet;
-            // 
-            // glacial_almacenDataSet
-            // 
-            this.glacial_almacenDataSet.DataSetName = "glacial_almacenDataSet";
-            this.glacial_almacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btn_BuscarTodo
-            // 
-            this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
-            this.btn_BuscarTodo.Location = new System.Drawing.Point(829, 11);
-            this.btn_BuscarTodo.Name = "btn_BuscarTodo";
-            this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
-            this.btn_BuscarTodo.TabIndex = 24;
-            this.btn_BuscarTodo.UseVisualStyleBackColor = true;
-            this.btn_BuscarTodo.Click += new System.EventHandler(this.btn_BuscarTodo_Click);
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Enabled = false;
-            this.btn_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray_02_;
-            this.btn_Buscar.Location = new System.Drawing.Point(693, 14);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(80, 80);
-            this.btn_Buscar.TabIndex = 20;
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = null;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDetallesToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
-            // 
-            // verDetallesToolStripMenuItem
-            // 
-            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
-            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verDetallesToolStripMenuItem.Text = "Ver Detalles";
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientesTableAdapter = null;
-            this.tableAdapterManager.comprasTableAdapter = null;
-            this.tableAdapterManager.empresaTableAdapter = null;
-            this.tableAdapterManager.lista_material_comprasTableAdapter = null;
-            this.tableAdapterManager.lista_material_ventasTableAdapter = null;
-            this.tableAdapterManager.lista_proveedores_productosTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.proveedor_codigoTableAdapter = null;
-            this.tableAdapterManager.proveedoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Proyecto_Glacial.glacial_almacenDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
             // frm_InventarioBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 485);
+            this.ClientSize = new System.Drawing.Size(1084, 485);
             this.Controls.Add(this.productosDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_BuscarTodo);
@@ -395,7 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,7 +397,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_especial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroPedimento;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem verDetallesToolStripMenuItem;
     }
 }
