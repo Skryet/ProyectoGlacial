@@ -15,8 +15,7 @@ namespace Proyecto_Glacial
         public static int idProveedorCodigo;
         public static int idCompra;
         public static int idListaCompra;
-
-        public static int tipoClick;
+        
         public static int idProducto;
 
         //Variables compra

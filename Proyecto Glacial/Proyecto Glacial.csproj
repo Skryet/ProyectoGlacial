@@ -125,31 +125,31 @@
     <Compile Include="Compras\frm_ComprasAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frm_ComprasAgregar.Designer.cs">
+    <Compile Include="Compras\frm_ComprasAgregar.designer.cs">
       <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frm_ComprasBuscar.Designer.cs">
+    <Compile Include="Compras\frm_ComprasBuscar.designer.cs">
       <DependentUpon>frm_ComprasBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasBuscarDetalles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frm_ComprasBuscarDetalles.Designer.cs">
+    <Compile Include="Compras\frm_ComprasBuscarDetalles.designer.cs">
       <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frm_ComprasMenu.Designer.cs">
+    <Compile Include="Compras\frm_ComprasMenu.designer.cs">
       <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasModificarDetallesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
+    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.designer.cs">
       <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_ComprasReporte.cs">
@@ -163,36 +163,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Empresa\frm_EmpresaAgregar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasAgregar.Designer.cs">
-      <DependentUpon>frm_ComprasAgregar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasBuscar.Designer.cs">
-      <DependentUpon>frm_ComprasBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasBuscarDetalles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasBuscarDetalles.Designer.cs">
-      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasMenu.Designer.cs">
-      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras\frm_ComprasModificarDetallesCompra.Designer.cs">
-      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -372,18 +342,6 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\frm_EmpresaAgregar.resx">
-      <DependentUpon>frm_EmpresaAgregar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Compras\frm_ComprasBuscarDetalles.resx">
-      <DependentUpon>frm_ComprasBuscarDetalles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Compras\frm_ComprasMenu.resx">
-      <DependentUpon>frm_ComprasMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Compras\frm_ComprasModificarDetallesCompra.resx">
-      <DependentUpon>frm_ComprasModificarDetallesCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
