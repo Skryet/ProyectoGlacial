@@ -13,10 +13,14 @@ namespace Proyecto_Glacial.Ventas.Objetos
         private TextBox SubTotal;
         private TextBox IVA;
         private TextBox Total;
+        private TextBox Descuento;
+        private TextBox DescuentoPorcentage;
 
-        public Manipular_DataGirdView(ref DataGridView data, ref TextBox subtotal, ref TextBox iva, ref TextBox total)
+        public Manipular_DataGirdView(ref DataGridView data, ref TextBox subtotal, ref TextBox iva, ref TextBox total, ref TextBox descuento, ref TextBox descuentoPorcentage)
         {
             dgv = data;
+            Descuento = descuento;
+            DescuentoPorcentage = descuentoPorcentage;   
             SubTotal = subtotal;
             IVA = iva;
             Total = total;
@@ -62,14 +66,23 @@ namespace Proyecto_Glacial.Ventas.Objetos
             {
                 for (int i = 0; i < dgv.RowCount; i++)
                     subtotal += Convert.ToDouble(dgv.Rows[i].Cells[6].Value);
-                subtotal = Math.Round(subtotal, 2);
+                subtotal = Math.Round(subtotal, 2) - CalcularDescuento(subtotal);
                 iva = subtotal * 0.16;
                 total = subtotal + iva;                
             }
 
             SubTotal.Text = subtotal.ToString();
-            IVA.Text = iva.ToString();
-            Total.Text = total.ToString();
+            IVA.Text = decimal.Round(Convert.ToDecimal(iva), 2).ToString();
+            Total.Text = decimal.Round(Convert.ToDecimal(total), 2).ToString();
+        }
+
+        private double CalcularDescuento(double subtotal)
+        {
+            double CantidadDescuento = 0;
+            double PorcentageDescontar = Convert.ToDouble(DescuentoPorcentage.Text) / 100;
+            CantidadDescuento = Convert.ToDouble(decimal.Round(Convert.ToDecimal(subtotal * PorcentageDescontar), 2));
+            Descuento.Text = CantidadDescuento.ToString();
+            return CantidadDescuento;
         }
     }
 }

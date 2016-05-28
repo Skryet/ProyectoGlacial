@@ -235,7 +235,6 @@
             this.txt_Descuento.TabIndex = 21;
             this.txt_Descuento.Text = "0.00";
             this.txt_Descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarDecimas);
             // 
             // lbl_Porcentaje
             // 
@@ -256,6 +255,7 @@
             this.txt_DescuentoPorcentaje.TabIndex = 19;
             this.txt_DescuentoPorcentaje.Text = "0.00";
             this.txt_DescuentoPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_DescuentoPorcentaje.Enter += new System.EventHandler(this.txt_DescuentoPorcentaje_Enter);
             this.txt_DescuentoPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarDecimas);
             this.txt_DescuentoPorcentaje.Leave += new System.EventHandler(this.txt_DescuentoPorcentaje_Leave);
             // 
@@ -321,6 +321,7 @@
             this.dgv_ListaVenta.ColumnContextMenuStripChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgv_ListaVenta_ColumnContextMenuStripChanged);
             this.dgv_ListaVenta.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_ListaVenta_EditingControlShowing);
             this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
+            this.dgv_ListaVenta.DoubleClick += new System.EventHandler(this.dgv_ListaVenta_DoubleClick);
             // 
             // clm_Codigo
             // 

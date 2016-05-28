@@ -22,7 +22,7 @@ namespace Proyecto_Glacial.Ventas
         public frm_VentasAgregar()
         {
             InitializeComponent();
-            Program.manipularDatos = new Objetos.Manipular_DataGirdView(ref dgv_ListaVenta, ref txt_Subtotal, ref txt_IVA, ref txt_Total);
+            Program.manipularDatos = new Objetos.Manipular_DataGirdView(ref dgv_ListaVenta, ref txt_Subtotal, ref txt_IVA, ref txt_Total, ref txt_Descuento, ref txt_DescuentoPorcentaje);
         }
 
         private void limpiarVariablesVenta()
@@ -116,6 +116,7 @@ namespace Proyecto_Glacial.Ventas
                         ctr.Text = "0.00";
                 }
                 pnl_Descuento.Visible = false;
+                Program.manipularDatos.generarTotalVenta();
             }            
         }               
 
@@ -182,20 +183,17 @@ namespace Proyecto_Glacial.Ventas
                 e.Handled = (IsDec) ? true : false;
             else
                 e.Handled = true;
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Program.manipularDatos.generarTotalVenta();
+            }
         }
 
         private void txt_DescuentoPorcentaje_Leave(object sender, EventArgs e)
         {
-            double subtotal = Convert.ToDouble(txt_Subtotal.Text);
-            double descuento = subtotal * (Convert.ToDouble(txt_DescuentoPorcentaje.Text)/100);
-            subtotal = subtotal - descuento;
-            if (subtotal > 0)
-                txt_Descuento.Text = descuento.ToString();
-            else
-            {
-                MessageBox.Show("La cantidad que desea descontar es mayor que el subtotal", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (txt_DescuentoPorcentaje.Text == "")
                 txt_DescuentoPorcentaje.Text = "0.00";
-            }
         }
 
         private void dgv_ListaVenta_Click(object sender, EventArgs e)
@@ -274,11 +272,6 @@ namespace Proyecto_Glacial.Ventas
                     }
                 }
             }
-        }
-
-        private void dgv_ListaVenta_CellToolTipTextChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgv_ListaVenta_ColumnContextMenuStripChanged(object sender, DataGridViewColumnEventArgs e)
@@ -372,6 +365,20 @@ namespace Proyecto_Glacial.Ventas
         private void dgv_ListaVenta_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             cantidadPrevia = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value);
+        }
+
+        private void dgv_ListaVenta_DoubleClick(object sender, EventArgs e)
+        {
+            int id = Program.listaProductosVenta.obtenerProducto(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString()).Producto.idProducto;
+            Program.idProducto = id;
+            Inventario.frm_InventarioVisualizarProducto DetalleProducto = new Inventario.frm_InventarioVisualizarProducto();
+            DetalleProducto.ShowDialog();
+            Program.idProducto = 0;
+        }
+
+        private void txt_DescuentoPorcentaje_Enter(object sender, EventArgs e)
+        {
+            txt_DescuentoPorcentaje.Text = "";
         }
     }
 }
