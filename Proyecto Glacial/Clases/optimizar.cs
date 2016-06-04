@@ -37,7 +37,7 @@ namespace Proyecto_Glacial
         //Validar es dígito
         public void isDigit(KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == 45 || e.KeyChar == 47)
             {
                 e.Handled = false;
             }

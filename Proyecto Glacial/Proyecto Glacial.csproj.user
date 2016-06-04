@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>C:\Users\renterian\Desktop\Glacial\1.0.2FinalClientes\|C:\Users\chhris\Pictures\Glacial1.04\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>C:\Liberaciones\almacen\|D:\Glacial Ventas\|C:\Users\renterian\Desktop\Glacial\1.0.2FinalClientes\|C:\Users\chhris\Pictures\Glacial1.04\</PublishUrlHistory>
+    <InstallUrlHistory>http://glacialcolima.ddns.net/AppServ/SistemaAlmacen/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />

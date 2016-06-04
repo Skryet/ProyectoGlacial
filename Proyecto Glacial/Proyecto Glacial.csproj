@@ -12,18 +12,22 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\ll\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Liberaciones\almacen\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <InstallUrl>http://glacialcolima.ddns.net/AppServ/SistemaAlmacen/</InstallUrl>
+    <UpdateUrl>http://glacialcolima.ddns.net/AppServ/SistemaAlmacen/</UpdateUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -240,6 +244,7 @@
       <DependentUpon>frm_ProveedoresBuscarParaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\optimizar.cs" />
+    <Compile Include="Inventario\Objetos\Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores\frm_ProveedorAgregar.cs">
@@ -269,6 +274,12 @@
     <Compile Include="Ventas\Consultas\consultasVentas.cs" />
     <Compile Include="Ventas\Consultas\GenerarAutocompletado.cs" />
     <Compile Include="Ventas\Consultas\generarVenta.cs" />
+    <Compile Include="Ventas\frm_AsignarPrecioLibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_AsignarPrecioLibre.Designer.cs">
+      <DependentUpon>frm_AsignarPrecioLibre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frm_AutocompletadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frm_ProveedorModificar.resx">
       <DependentUpon>frm_ProveedorModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_AsignarPrecioLibre.resx">
+      <DependentUpon>frm_AsignarPrecioLibre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frm_AutocompletadoProductos.resx">
       <DependentUpon>frm_AutocompletadoProductos.cs</DependentUpon>

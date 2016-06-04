@@ -11,8 +11,7 @@ namespace Proyecto_Glacial.Ventas.Objetos
     {
         private NodoProducto raiz;
         private int posicion;
-        private generarConexion conexion = new generarConexion();
-        private string consulta;
+        private generarConexion conexion = new generarConexion();        
 
         public ListaEnlazadaProductos()
         {

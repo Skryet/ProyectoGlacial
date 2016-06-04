@@ -62,9 +62,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(4, 6);
+            this.panel1.Location = new System.Drawing.Point(2, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1168, 80);
+            this.panel1.Size = new System.Drawing.Size(1341, 80);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -90,14 +90,14 @@
             this.pnl_MenuIzquierdo.Controls.Add(this.lbl_Buscar);
             this.pnl_MenuIzquierdo.Location = new System.Drawing.Point(4, 93);
             this.pnl_MenuIzquierdo.Name = "pnl_MenuIzquierdo";
-            this.pnl_MenuIzquierdo.Size = new System.Drawing.Size(181, 523);
+            this.pnl_MenuIzquierdo.Size = new System.Drawing.Size(181, 589);
             this.pnl_MenuIzquierdo.TabIndex = 3;
             // 
             // lbl_Modificar
             // 
             this.lbl_Modificar.AutoSize = true;
             this.lbl_Modificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Modificar.Location = new System.Drawing.Point(44, 471);
+            this.lbl_Modificar.Location = new System.Drawing.Point(44, 506);
             this.lbl_Modificar.Name = "lbl_Modificar";
             this.lbl_Modificar.Size = new System.Drawing.Size(95, 22);
             this.lbl_Modificar.TabIndex = 3;
@@ -107,7 +107,7 @@
             // 
             this.btn_Modificar.Enabled = false;
             this.btn_Modificar.Image = global::Proyecto_Glacial.Properties.Resources.ModifyButtonBlue;
-            this.btn_Modificar.Location = new System.Drawing.Point(49, 388);
+            this.btn_Modificar.Location = new System.Drawing.Point(49, 423);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(80, 80);
             this.btn_Modificar.TabIndex = 7;
@@ -117,7 +117,7 @@
             // btn_Agregar
             // 
             this.btn_Agregar.Image = global::Proyecto_Glacial.Properties.Resources.AddButtonBlue;
-            this.btn_Agregar.Location = new System.Drawing.Point(49, 144);
+            this.btn_Agregar.Location = new System.Drawing.Point(49, 179);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(80, 80);
             this.btn_Agregar.TabIndex = 4;
@@ -128,7 +128,7 @@
             // 
             this.lbl_Eliminar.AutoSize = true;
             this.lbl_Eliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Eliminar.Location = new System.Drawing.Point(48, 351);
+            this.lbl_Eliminar.Location = new System.Drawing.Point(48, 386);
             this.lbl_Eliminar.Name = "lbl_Eliminar";
             this.lbl_Eliminar.Size = new System.Drawing.Size(85, 22);
             this.lbl_Eliminar.TabIndex = 2;
@@ -138,7 +138,7 @@
             // 
             this.btn_Eliminar.Enabled = false;
             this.btn_Eliminar.Image = global::Proyecto_Glacial.Properties.Resources.DeleteButtonRed;
-            this.btn_Eliminar.Location = new System.Drawing.Point(49, 268);
+            this.btn_Eliminar.Location = new System.Drawing.Point(49, 303);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(80, 80);
             this.btn_Eliminar.TabIndex = 6;
@@ -149,7 +149,7 @@
             // 
             this.lbl_Agregar.AutoSize = true;
             this.lbl_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Agregar.Location = new System.Drawing.Point(47, 227);
+            this.lbl_Agregar.Location = new System.Drawing.Point(47, 262);
             this.lbl_Agregar.Name = "lbl_Agregar";
             this.lbl_Agregar.Size = new System.Drawing.Size(86, 22);
             this.lbl_Agregar.TabIndex = 1;
@@ -158,7 +158,7 @@
             // btn_BuscarTodo
             // 
             this.btn_BuscarTodo.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonAllGray;
-            this.btn_BuscarTodo.Location = new System.Drawing.Point(49, 14);
+            this.btn_BuscarTodo.Location = new System.Drawing.Point(49, 49);
             this.btn_BuscarTodo.Name = "btn_BuscarTodo";
             this.btn_BuscarTodo.Size = new System.Drawing.Size(80, 80);
             this.btn_BuscarTodo.TabIndex = 5;
@@ -169,7 +169,7 @@
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(45, 97);
+            this.lbl_Buscar.Location = new System.Drawing.Point(45, 132);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(92, 22);
             this.lbl_Buscar.TabIndex = 0;
@@ -181,7 +181,7 @@
             this.pnl_ContenidoCentro.Controls.Add(this.label1);
             this.pnl_ContenidoCentro.Location = new System.Drawing.Point(191, 93);
             this.pnl_ContenidoCentro.Name = "pnl_ContenidoCentro";
-            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(981, 523);
+            this.pnl_ContenidoCentro.Size = new System.Drawing.Size(1152, 589);
             this.pnl_ContenidoCentro.TabIndex = 4;
             this.pnl_ContenidoCentro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ContenidoCentro_Paint);
             // 
@@ -199,9 +199,9 @@
             // pnl_barraEstado
             // 
             this.pnl_barraEstado.Controls.Add(this.lbl_Estado);
-            this.pnl_barraEstado.Location = new System.Drawing.Point(4, 622);
+            this.pnl_barraEstado.Location = new System.Drawing.Point(4, 688);
             this.pnl_barraEstado.Name = "pnl_barraEstado";
-            this.pnl_barraEstado.Size = new System.Drawing.Size(1168, 38);
+            this.pnl_barraEstado.Size = new System.Drawing.Size(1339, 38);
             this.pnl_barraEstado.TabIndex = 5;
             // 
             // lbl_Estado
@@ -255,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 662);
+            this.ClientSize = new System.Drawing.Size(1344, 729);
             this.Controls.Add(this.pnl_barraEstado);
             this.Controls.Add(this.pnl_ContenidoCentro);
             this.Controls.Add(this.pnl_MenuIzquierdo);

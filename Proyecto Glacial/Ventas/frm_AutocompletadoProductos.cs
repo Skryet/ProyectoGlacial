@@ -29,7 +29,7 @@ namespace Proyecto_Glacial.Ventas
             for (int i = 0; i < Program.listaProductosAutocompletar.CantidadElementos(); i++)
             {
                 productosDataGridView.Rows.Add(recorrerLista.Producto.idLineaProducto, recorrerLista.Producto.Nombre, recorrerLista.Producto.Descripcion, recorrerLista.Producto.Cantidad.ToString(),
-                    recorrerLista.Producto.UnidadMedida, recorrerLista.Producto.Precio1.ToString(), recorrerLista.Producto.Precio2.ToString(), recorrerLista.Producto.Precio3.ToString());
+                    recorrerLista.Producto.UnidadMedida, recorrerLista.Producto.Precio1.ToString("C"), recorrerLista.Producto.Precio2.ToString("C"), recorrerLista.Producto.Precio3.ToString("C"));
                 recorrerLista = recorrerLista.Siguiente;
             }
             posicion.Y += 140;

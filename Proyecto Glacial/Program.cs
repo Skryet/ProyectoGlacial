@@ -24,6 +24,7 @@ namespace Proyecto_Glacial
         public static int cantidad;
         public static string unidadMedida;
         public static int total;
+      
         //Vector de compras
         public static int idCliente;
         public static bool isOpenMainClientForm = true;

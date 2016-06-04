@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace Proyecto_Glacial.Ventas
         public frm_VentasAgregar()
         {
             InitializeComponent();
-            Program.manipularDatos = new Objetos.Manipular_DataGirdView(ref dgv_ListaVenta, ref txt_Subtotal, ref txt_IVA, ref txt_Total);
+            Program.manipularDatos = new Objetos.Manipular_DataGirdView(ref dgv_ListaVenta, ref txt_Subtotal, ref txt_IVA, ref txt_Total, ref txt_Descuento, ref txt_DescuentoPorcentaje);
         }
 
         private void limpiarVariablesVenta()
@@ -116,6 +117,7 @@ namespace Proyecto_Glacial.Ventas
                         ctr.Text = "0.00";
                 }
                 pnl_Descuento.Visible = false;
+                Program.manipularDatos.generarTotalVenta();
             }            
         }               
 
@@ -123,7 +125,7 @@ namespace Proyecto_Glacial.Ventas
         {
             if (dgv_ListaVenta.RowCount != 0)
             {
-                Objetos.Venta venta = new Objetos.Venta();
+                /*Objetos.Venta venta = new Objetos.Venta();
                 //ASIGNAR VARIABLES DE VENTA
                 venta.idCliente = Program.idCliente;
                 venta.Subtotal = Convert.ToDouble(txt_Subtotal.Text);
@@ -137,7 +139,7 @@ namespace Proyecto_Glacial.Ventas
                 
 
                 //EJECUTAR CONSULTA
-                consultasVentas.ejecutarConsulta();                
+                consultasVentas.ejecutarConsulta();*/
 
 
                 Program.enActividadVenta = false;
@@ -182,20 +184,17 @@ namespace Proyecto_Glacial.Ventas
                 e.Handled = (IsDec) ? true : false;
             else
                 e.Handled = true;
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Program.manipularDatos.generarTotalVenta();
+            }
         }
 
         private void txt_DescuentoPorcentaje_Leave(object sender, EventArgs e)
         {
-            double subtotal = Convert.ToDouble(txt_Subtotal.Text);
-            double descuento = subtotal * (Convert.ToDouble(txt_DescuentoPorcentaje.Text)/100);
-            subtotal = subtotal - descuento;
-            if (subtotal > 0)
-                txt_Descuento.Text = descuento.ToString();
-            else
-            {
-                MessageBox.Show("La cantidad que desea descontar es mayor que el subtotal", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (txt_DescuentoPorcentaje.Text == "")
                 txt_DescuentoPorcentaje.Text = "0.00";
-            }
         }
 
         private void dgv_ListaVenta_Click(object sender, EventArgs e)
@@ -232,7 +231,7 @@ namespace Proyecto_Glacial.Ventas
                 if (cbx_TipoBusqueda.SelectedItem.ToString() == "Código")
                 {                    
                     string codigo = txt_Producto.Text.ToString();
-                    autocompletado.llenarListaAutocompletarCodigo(codigo, Program.listaProductosAutocompletar);
+                    autocompletado.llenarListaAutocompletarCodigo(codigo, Program.listaProductosAutocompletar, false);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
                     autocompletar = new frm_AutocompletadoProductos(localizacion, ref txt_Producto);
@@ -242,7 +241,7 @@ namespace Proyecto_Glacial.Ventas
                 else if (cbx_TipoBusqueda.SelectedItem.ToString() == "Descripción")
                 {
                     string descripcion = txt_Producto.Text.ToString();
-                    autocompletado.llenarListaAutocompletarDescripcion(descripcion);
+                    autocompletado.llenarListaAutocompletarDescripcion(descripcion, Program.listaProductosAutocompletar, false);
                     Point localizacion = txt_Producto.Location;
                     Form activeform = Form.ActiveForm;
                     autocompletar = new frm_AutocompletadoProductos(localizacion, ref txt_Producto);
@@ -274,39 +273,7 @@ namespace Proyecto_Glacial.Ventas
                     }
                 }
             }
-        }
-
-        private void dgv_ListaVenta_CellToolTipTextChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgv_ListaVenta_ColumnContextMenuStripChanged(object sender, DataGridViewColumnEventArgs e)
-        {
-            if (e.Column.Index == 7)
-            {
-                string precio = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[7].Value.ToString();
-                string codigo = dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString();
-
-                switch (precio)
-                {
-                    case "Especial":
-                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial;
-                        break;
-                    case "Precio 1":
-                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1;
-                        break;
-                    case "Precio 2":
-                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2;
-                        break;
-                    case "Precio 3":
-                        dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3;
-                        break;
-                    case "Libre":
-                        break;
-                }
-            }
-        }
+        }        
 
         private void dgv_ListaVenta_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -330,25 +297,30 @@ namespace Proyecto_Glacial.Ventas
             switch (cbx.SelectedItem.ToString())
             {
                 case "Especial":
-                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial;                    
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = (Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial).ToString("C");
                     Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.PrecioEspecial, codigo);
                     break;
                 case "Precio 1":
-                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1;
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = (Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1).ToString("C");
                     Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio1, codigo);
                     break;
                 case "Precio 2":
-                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2;
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = (Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2).ToString("C");
                     Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio2, codigo);
                     break;
                 case "Precio 3":
-                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3;
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = (Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3).ToString("C");
                     Program.listaProductosVenta.EstablecerPrecio(Program.listaProductosVenta.obtenerProducto(codigo).Producto.Precio3, codigo);
                     break;
                 case "Libre":
+                    frm_AsignarPrecioLibre asignarPrecio = new frm_AsignarPrecioLibre(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString());                    
+                    asignarPrecio.ShowDialog();
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value = Program.listaProductosVenta.obtenerProducto(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString()).Producto.PrecioEstablecido;
                     break;
             }
-            dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value) * Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value);
+            int cantidad = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value);
+            double precioUnidad = double.Parse(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value.ToString(), NumberStyles.Currency, CultureInfo.GetCultureInfo("en-US"));
+            dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = (cantidad * precioUnidad).ToString("C");
             Program.manipularDatos.generarTotalVenta();
         }
 
@@ -358,7 +330,9 @@ namespace Proyecto_Glacial.Ventas
             {
                 if (Program.listaProductosVenta.ComprobarExistencia(Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value), dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString()) == false)
                 {
-                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value) * Convert.ToDouble(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value);
+                    int cantidad = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value);
+                    double precio = double.Parse(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[5].Value.ToString(), NumberStyles.Currency, CultureInfo.GetCultureInfo("en-US"));
+                    dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[6].Value = (cantidad * precio).ToString("C");
                     Program.manipularDatos.generarTotalVenta();
                 }
                 else
@@ -372,6 +346,20 @@ namespace Proyecto_Glacial.Ventas
         private void dgv_ListaVenta_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             cantidadPrevia = Convert.ToInt32(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[3].Value);
+        }
+
+        private void dgv_ListaVenta_DoubleClick(object sender, EventArgs e)
+        {
+            int id = Program.listaProductosVenta.obtenerProducto(dgv_ListaVenta.Rows[dgv_ListaVenta.CurrentCellAddress.Y].Cells[0].Value.ToString()).Producto.idProducto;
+            Program.idProducto = id;
+            Inventario.frm_InventarioVisualizarProducto DetalleProducto = new Inventario.frm_InventarioVisualizarProducto();
+            DetalleProducto.ShowDialog();
+            Program.idProducto = 0;
+        }
+
+        private void txt_DescuentoPorcentaje_Enter(object sender, EventArgs e)
+        {
+            txt_DescuentoPorcentaje.Text = "";
         }
     }
 }

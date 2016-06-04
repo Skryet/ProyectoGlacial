@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -86,12 +86,16 @@
             this.lista_proveedores_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lista_proveedores_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.lista_proveedores_productosTableAdapter();
             this.txt_nombre = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clm_Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vista_listar_proveedores_productoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista_listar_proveedores_productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glacial_almacenDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista_proveedores_productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nombre
@@ -251,9 +255,9 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "precio";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -369,8 +373,6 @@
             this.txt_lineaProducto.TabIndex = 1;
             this.txt_lineaProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_lineaProducto.TextChanged += new System.EventHandler(this.despintarTexto);
-            this.txt_lineaProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio1_KeyPress);
-            this.txt_lineaProducto.Leave += new System.EventHandler(this.txt_lineaProducto_Leave_1);
             // 
             // label1
             // 
@@ -387,9 +389,9 @@
             this.txt_año.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_año.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_año.Location = new System.Drawing.Point(690, 238);
-            this.txt_año.MaxLength = 4;
+            this.txt_año.MaxLength = 15;
             this.txt_año.Name = "txt_año";
-            this.txt_año.Size = new System.Drawing.Size(115, 32);
+            this.txt_año.Size = new System.Drawing.Size(129, 32);
             this.txt_año.TabIndex = 14;
             this.txt_año.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isDigit);
             // 
@@ -407,21 +409,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(479, 215);
+            this.label6.Location = new System.Drawing.Point(328, 213);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 22);
+            this.label6.Size = new System.Drawing.Size(73, 22);
             this.label6.TabIndex = 32;
-            this.label6.Text = "Marca perteneciente:";
+            this.label6.Text = "Marca:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(257, 211);
+            this.label5.Location = new System.Drawing.Point(532, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 22);
+            this.label5.Size = new System.Drawing.Size(82, 22);
             this.label5.TabIndex = 30;
-            this.label5.Text = "Modelo perteneciente:";
+            this.label5.Text = "Modelo:";
             // 
             // label2
             // 
@@ -542,7 +544,7 @@
             // 
             this.cmb_modelo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_modelo.FormattingEnabled = true;
-            this.cmb_modelo.Location = new System.Drawing.Point(261, 241);
+            this.cmb_modelo.Location = new System.Drawing.Point(480, 241);
             this.cmb_modelo.Name = "cmb_modelo";
             this.cmb_modelo.Size = new System.Drawing.Size(184, 32);
             this.cmb_modelo.TabIndex = 12;
@@ -551,7 +553,7 @@
             // 
             this.cmb_marca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_marca.FormattingEnabled = true;
-            this.cmb_marca.Location = new System.Drawing.Point(483, 241);
+            this.cmb_marca.Location = new System.Drawing.Point(273, 241);
             this.cmb_marca.Name = "cmb_marca";
             this.cmb_marca.Size = new System.Drawing.Size(184, 32);
             this.cmb_marca.TabIndex = 13;
@@ -572,7 +574,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(257, 292);
+            this.label9.Location = new System.Drawing.Point(832, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(223, 22);
             this.label9.TabIndex = 45;
@@ -629,19 +631,44 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txt_nombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.FormattingEnabled = true;
             this.txt_nombre.Location = new System.Drawing.Point(171, 43);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(357, 30);
             this.txt_nombre.TabIndex = 46;
-            this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clm_Proveedor,
+            this.clm_Codigo});
+            this.dataGridView1.Location = new System.Drawing.Point(836, 84);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(288, 150);
+            this.dataGridView1.TabIndex = 47;
+            // 
+            // clm_Proveedor
+            // 
+            this.clm_Proveedor.Frozen = true;
+            this.clm_Proveedor.HeaderText = "Proveedor";
+            this.clm_Proveedor.Name = "clm_Proveedor";
+            // 
+            // clm_Codigo
+            // 
+            this.clm_Codigo.Frozen = true;
+            this.clm_Codigo.HeaderText = "Código";
+            this.clm_Codigo.Name = "clm_Codigo";
             // 
             // frm_InventarioAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 545);
+            this.ClientSize = new System.Drawing.Size(1136, 550);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_detallesProveedor);
             this.Controls.Add(this.label9);
@@ -696,6 +723,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista_proveedores_productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,5 +786,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_detallesProveedor;
         private System.Windows.Forms.ComboBox txt_nombre;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Codigo;
     }
 }

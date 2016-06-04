@@ -62,13 +62,13 @@
             this.lbl_TipoPago = new System.Windows.Forms.Label();
             this.pnl_TipoPago = new System.Windows.Forms.Panel();
             this.pnl_FormaPago = new System.Windows.Forms.Panel();
-            this.lbl_Referencia = new System.Windows.Forms.Label();
-            this.txt_Referencia = new System.Windows.Forms.TextBox();
             this.rbt_Cheque = new System.Windows.Forms.RadioButton();
             this.rbt_TarjetaDebito = new System.Windows.Forms.RadioButton();
             this.lbl_FormaPago = new System.Windows.Forms.Label();
             this.rbt_TarjetaCredito = new System.Windows.Forms.RadioButton();
             this.rbt_Efectivo = new System.Windows.Forms.RadioButton();
+            this.lbl_Referencia = new System.Windows.Forms.Label();
+            this.txt_Referencia = new System.Windows.Forms.TextBox();
             this.vista_venta_lista_productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glacial_almacenDataSet = new Proyecto_Glacial.glacial_almacenDataSet();
             this.vista_venta_lista_productosTableAdapter = new Proyecto_Glacial.glacial_almacenDataSetTableAdapters.vista_venta_lista_productosTableAdapter();
@@ -88,12 +88,12 @@
             // 
             this.lbl_SeleccioneComprador.AutoSize = true;
             this.lbl_SeleccioneComprador.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_SeleccioneComprador.Location = new System.Drawing.Point(82, 33);
+            this.lbl_SeleccioneComprador.Location = new System.Drawing.Point(119, 33);
             this.lbl_SeleccioneComprador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_SeleccioneComprador.Name = "lbl_SeleccioneComprador";
-            this.lbl_SeleccioneComprador.Size = new System.Drawing.Size(270, 18);
+            this.lbl_SeleccioneComprador.Size = new System.Drawing.Size(160, 18);
             this.lbl_SeleccioneComprador.TabIndex = 3;
-            this.lbl_SeleccioneComprador.Text = "Seleccione el tipo de comprador:";
+            this.lbl_SeleccioneComprador.Text = "Seleccione cliente:";
             // 
             // txt_Cliente
             // 
@@ -235,7 +235,6 @@
             this.txt_Descuento.TabIndex = 21;
             this.txt_Descuento.Text = "0.00";
             this.txt_Descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarDecimas);
             // 
             // lbl_Porcentaje
             // 
@@ -256,6 +255,7 @@
             this.txt_DescuentoPorcentaje.TabIndex = 19;
             this.txt_DescuentoPorcentaje.Text = "0.00";
             this.txt_DescuentoPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_DescuentoPorcentaje.Enter += new System.EventHandler(this.txt_DescuentoPorcentaje_Enter);
             this.txt_DescuentoPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarDecimas);
             this.txt_DescuentoPorcentaje.Leave += new System.EventHandler(this.txt_DescuentoPorcentaje_Leave);
             // 
@@ -310,17 +310,17 @@
             this.clm_PrecioPieza,
             this.clm_Total,
             this.clm_PrecioVenta});
-            this.dgv_ListaVenta.Location = new System.Drawing.Point(445, 121);
+            this.dgv_ListaVenta.Location = new System.Drawing.Point(244, 121);
             this.dgv_ListaVenta.MultiSelect = false;
             this.dgv_ListaVenta.Name = "dgv_ListaVenta";
             this.dgv_ListaVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_ListaVenta.Size = new System.Drawing.Size(690, 272);
+            this.dgv_ListaVenta.Size = new System.Drawing.Size(891, 272);
             this.dgv_ListaVenta.TabIndex = 25;
             this.dgv_ListaVenta.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaVenta_CellValidated);
             this.dgv_ListaVenta.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_ListaVenta_CellValidating);
-            this.dgv_ListaVenta.ColumnContextMenuStripChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgv_ListaVenta_ColumnContextMenuStripChanged);
             this.dgv_ListaVenta.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_ListaVenta_EditingControlShowing);
             this.dgv_ListaVenta.Click += new System.EventHandler(this.dgv_ListaVenta_Click);
+            this.dgv_ListaVenta.DoubleClick += new System.EventHandler(this.dgv_ListaVenta_DoubleClick);
             // 
             // clm_Codigo
             // 
@@ -386,7 +386,7 @@
             this.rbt_DeContado.AutoSize = true;
             this.rbt_DeContado.Checked = true;
             this.rbt_DeContado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_DeContado.Location = new System.Drawing.Point(80, 45);
+            this.rbt_DeContado.Location = new System.Drawing.Point(8, 45);
             this.rbt_DeContado.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_DeContado.Name = "rbt_DeContado";
             this.rbt_DeContado.Size = new System.Drawing.Size(94, 22);
@@ -399,7 +399,7 @@
             // 
             this.rbt_Credito.AutoSize = true;
             this.rbt_Credito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_Credito.Location = new System.Drawing.Point(262, 45);
+            this.rbt_Credito.Location = new System.Drawing.Point(127, 45);
             this.rbt_Credito.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_Credito.Name = "rbt_Credito";
             this.rbt_Credito.Size = new System.Drawing.Size(85, 22);
@@ -411,7 +411,7 @@
             // 
             this.lbl_TipoPago.AutoSize = true;
             this.lbl_TipoPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_TipoPago.Location = new System.Drawing.Point(153, 13);
+            this.lbl_TipoPago.Location = new System.Drawing.Point(53, 15);
             this.lbl_TipoPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TipoPago.Name = "lbl_TipoPago";
             this.lbl_TipoPago.Size = new System.Drawing.Size(116, 18);
@@ -425,13 +425,11 @@
             this.pnl_TipoPago.Controls.Add(this.rbt_DeContado);
             this.pnl_TipoPago.Location = new System.Drawing.Point(7, 128);
             this.pnl_TipoPago.Name = "pnl_TipoPago";
-            this.pnl_TipoPago.Size = new System.Drawing.Size(421, 97);
+            this.pnl_TipoPago.Size = new System.Drawing.Size(217, 97);
             this.pnl_TipoPago.TabIndex = 29;
             // 
             // pnl_FormaPago
             // 
-            this.pnl_FormaPago.Controls.Add(this.lbl_Referencia);
-            this.pnl_FormaPago.Controls.Add(this.txt_Referencia);
             this.pnl_FormaPago.Controls.Add(this.rbt_Cheque);
             this.pnl_FormaPago.Controls.Add(this.rbt_TarjetaDebito);
             this.pnl_FormaPago.Controls.Add(this.lbl_FormaPago);
@@ -439,35 +437,14 @@
             this.pnl_FormaPago.Controls.Add(this.rbt_Efectivo);
             this.pnl_FormaPago.Location = new System.Drawing.Point(7, 231);
             this.pnl_FormaPago.Name = "pnl_FormaPago";
-            this.pnl_FormaPago.Size = new System.Drawing.Size(421, 237);
+            this.pnl_FormaPago.Size = new System.Drawing.Size(217, 175);
             this.pnl_FormaPago.TabIndex = 30;
-            // 
-            // lbl_Referencia
-            // 
-            this.lbl_Referencia.AutoSize = true;
-            this.lbl_Referencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_Referencia.Location = new System.Drawing.Point(83, 174);
-            this.lbl_Referencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Referencia.Name = "lbl_Referencia";
-            this.lbl_Referencia.Size = new System.Drawing.Size(255, 18);
-            this.lbl_Referencia.TabIndex = 32;
-            this.lbl_Referencia.Text = "Numero de cuenta / Referencia";
-            // 
-            // txt_Referencia
-            // 
-            this.txt_Referencia.Enabled = false;
-            this.txt_Referencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Referencia.Location = new System.Drawing.Point(20, 204);
-            this.txt_Referencia.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Referencia.Name = "txt_Referencia";
-            this.txt_Referencia.Size = new System.Drawing.Size(390, 22);
-            this.txt_Referencia.TabIndex = 33;
             // 
             // rbt_Cheque
             // 
             this.rbt_Cheque.AutoSize = true;
             this.rbt_Cheque.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_Cheque.Location = new System.Drawing.Point(57, 129);
+            this.rbt_Cheque.Location = new System.Drawing.Point(17, 127);
             this.rbt_Cheque.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_Cheque.Name = "rbt_Cheque";
             this.rbt_Cheque.Size = new System.Drawing.Size(92, 22);
@@ -480,7 +457,7 @@
             // 
             this.rbt_TarjetaDebito.AutoSize = true;
             this.rbt_TarjetaDebito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_TarjetaDebito.Location = new System.Drawing.Point(58, 103);
+            this.rbt_TarjetaDebito.Location = new System.Drawing.Point(18, 101);
             this.rbt_TarjetaDebito.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_TarjetaDebito.Name = "rbt_TarjetaDebito";
             this.rbt_TarjetaDebito.Size = new System.Drawing.Size(163, 22);
@@ -493,7 +470,7 @@
             // 
             this.lbl_FormaPago.AutoSize = true;
             this.lbl_FormaPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lbl_FormaPago.Location = new System.Drawing.Point(148, 14);
+            this.lbl_FormaPago.Location = new System.Drawing.Point(55, 12);
             this.lbl_FormaPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_FormaPago.Name = "lbl_FormaPago";
             this.lbl_FormaPago.Size = new System.Drawing.Size(133, 18);
@@ -504,7 +481,7 @@
             // 
             this.rbt_TarjetaCredito.AutoSize = true;
             this.rbt_TarjetaCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.rbt_TarjetaCredito.Location = new System.Drawing.Point(58, 77);
+            this.rbt_TarjetaCredito.Location = new System.Drawing.Point(18, 75);
             this.rbt_TarjetaCredito.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_TarjetaCredito.Name = "rbt_TarjetaCredito";
             this.rbt_TarjetaCredito.Size = new System.Drawing.Size(170, 22);
@@ -518,7 +495,7 @@
             this.rbt_Efectivo.AutoSize = true;
             this.rbt_Efectivo.Checked = true;
             this.rbt_Efectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbt_Efectivo.Location = new System.Drawing.Point(58, 51);
+            this.rbt_Efectivo.Location = new System.Drawing.Point(18, 49);
             this.rbt_Efectivo.Margin = new System.Windows.Forms.Padding(2);
             this.rbt_Efectivo.Name = "rbt_Efectivo";
             this.rbt_Efectivo.Size = new System.Drawing.Size(91, 22);
@@ -527,6 +504,27 @@
             this.rbt_Efectivo.Text = "Efectivo";
             this.rbt_Efectivo.UseVisualStyleBackColor = true;
             this.rbt_Efectivo.CheckedChanged += new System.EventHandler(this.Activar_Referencia);
+            // 
+            // lbl_Referencia
+            // 
+            this.lbl_Referencia.AutoSize = true;
+            this.lbl_Referencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lbl_Referencia.Location = new System.Drawing.Point(47, 418);
+            this.lbl_Referencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Referencia.Name = "lbl_Referencia";
+            this.lbl_Referencia.Size = new System.Drawing.Size(255, 18);
+            this.lbl_Referencia.TabIndex = 32;
+            this.lbl_Referencia.Text = "Numero de cuenta / Referencia";
+            // 
+            // txt_Referencia
+            // 
+            this.txt_Referencia.Enabled = false;
+            this.txt_Referencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Referencia.Location = new System.Drawing.Point(23, 447);
+            this.txt_Referencia.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Referencia.Name = "txt_Referencia";
+            this.txt_Referencia.Size = new System.Drawing.Size(318, 22);
+            this.txt_Referencia.TabIndex = 33;
             // 
             // vista_venta_lista_productosBindingSource
             // 
@@ -596,7 +594,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 555);
+            this.Controls.Add(this.lbl_Referencia);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_Referencia);
             this.Controls.Add(this.cbx_TipoBusqueda);
             this.Controls.Add(this.txt_Producto);
             this.Controls.Add(this.pnl_FormaPago);
