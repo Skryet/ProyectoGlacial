@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Glacial
 {
-    class generarConexion
+    public class generarConexion
     {
         private static MySqlConnection conexion = new MySqlConnection("server=glacialcolima.ddns.net;user id=SGAglacial;password=Glacial_MASTER16;persistsecurityinfo=True;database=glacial_almacen");
 

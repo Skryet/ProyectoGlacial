@@ -54,8 +54,8 @@ namespace Proyecto_Glacial.Proveedores
 
         private void proveedoresDataGridView_Click(object sender, EventArgs e)
         {
-            Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[1].Value);
-            MessageBox.Show(Program.idProveedor.ToString());
+            if (proveedoresDataGridView.RowCount != 0)            
+                Program.idProveedor = Convert.ToInt32(proveedoresDataGridView.Rows[proveedoresDataGridView.CurrentCellAddress.Y].Cells[1].Value);                         
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)

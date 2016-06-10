@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbb_Opciones = new System.Windows.Forms.ComboBox();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.lbl_BuscarPor = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.cbb_Opciones.Items.AddRange(new object[] {
             "Nombre",
             "Estado"});
-            this.cbb_Opciones.Location = new System.Drawing.Point(14, 45);
+            this.cbb_Opciones.Location = new System.Drawing.Point(239, 47);
             this.cbb_Opciones.Name = "cbb_Opciones";
             this.cbb_Opciones.Size = new System.Drawing.Size(141, 23);
             this.cbb_Opciones.TabIndex = 10;
@@ -71,7 +71,7 @@
             // txt_Buscar
             // 
             this.txt_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
-            this.txt_Buscar.Location = new System.Drawing.Point(161, 45);
+            this.txt_Buscar.Location = new System.Drawing.Point(386, 47);
             this.txt_Buscar.Name = "txt_Buscar";
             this.txt_Buscar.Size = new System.Drawing.Size(400, 23);
             this.txt_Buscar.TabIndex = 8;
@@ -81,7 +81,7 @@
             // 
             this.lbl_BuscarPor.AutoSize = true;
             this.lbl_BuscarPor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
-            this.lbl_BuscarPor.Location = new System.Drawing.Point(265, 16);
+            this.lbl_BuscarPor.Location = new System.Drawing.Point(490, 18);
             this.lbl_BuscarPor.Name = "lbl_BuscarPor";
             this.lbl_BuscarPor.Size = new System.Drawing.Size(116, 21);
             this.lbl_BuscarPor.TabIndex = 7;
@@ -118,7 +118,7 @@
             // btn_Actualizar
             // 
             this.btn_Actualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Actualizar.Location = new System.Drawing.Point(207, 84);
+            this.btn_Actualizar.Location = new System.Drawing.Point(432, 86);
             this.btn_Actualizar.Name = "btn_Actualizar";
             this.btn_Actualizar.Size = new System.Drawing.Size(240, 23);
             this.btn_Actualizar.TabIndex = 12;
@@ -147,10 +147,11 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.proveedoresDataGridView.DataSource = this.proveedoresBindingSource;
-            this.proveedoresDataGridView.Location = new System.Drawing.Point(0, 122);
+            this.proveedoresDataGridView.Location = new System.Drawing.Point(7, 122);
             this.proveedoresDataGridView.Name = "proveedoresDataGridView";
+            this.proveedoresDataGridView.ReadOnly = true;
             this.proveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.proveedoresDataGridView.Size = new System.Drawing.Size(679, 350);
+            this.proveedoresDataGridView.Size = new System.Drawing.Size(1137, 420);
             this.proveedoresDataGridView.TabIndex = 12;
             this.proveedoresDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedoresDataGridView_CellContentClick);
             this.proveedoresDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.proveedoresDataGridView_CellFormatting);
@@ -158,10 +159,11 @@
             // 
             // identificador
             // 
-            dataGridViewCellStyle4.NullValue = "P";
-            this.identificador.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.NullValue = "P";
+            this.identificador.DefaultCellStyle = dataGridViewCellStyle2;
             this.identificador.HeaderText = "P";
             this.identificador.Name = "identificador";
+            this.identificador.ReadOnly = true;
             this.identificador.Width = 39;
             // 
             // dataGridViewTextBoxColumn1
@@ -169,6 +171,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_proveedor";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
@@ -176,6 +179,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 69;
             // 
             // dataGridViewTextBoxColumn3
@@ -183,6 +187,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "telefono";
             this.dataGridViewTextBoxColumn3.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 74;
             // 
             // dataGridViewTextBoxColumn4
@@ -190,6 +195,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "direccion";
             this.dataGridViewTextBoxColumn4.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 77;
             // 
             // dataGridViewTextBoxColumn5
@@ -197,6 +203,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "colonia";
             this.dataGridViewTextBoxColumn5.HeaderText = "Colonia";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 67;
             // 
             // dataGridViewTextBoxColumn6
@@ -204,6 +211,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
             this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 65;
             // 
             // dataGridViewTextBoxColumn7
@@ -211,6 +219,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "correo";
             this.dataGridViewTextBoxColumn7.HeaderText = "Correo";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 63;
             // 
             // dataGridViewTextBoxColumn8
@@ -218,6 +227,7 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cp";
             this.dataGridViewTextBoxColumn8.HeaderText = "C.P.";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 52;
             // 
             // dataGridViewTextBoxColumn9
@@ -225,13 +235,14 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "rfc";
             this.dataGridViewTextBoxColumn9.HeaderText = "R.F.C.";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 62;
             // 
             // btn_Buscar
             // 
             this.btn_Buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Buscar.Image = global::Proyecto_Glacial.Properties.Resources.SearchButtonGray;
-            this.btn_Buscar.Location = new System.Drawing.Point(582, 19);
+            this.btn_Buscar.Location = new System.Drawing.Point(807, 21);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 75);
             this.btn_Buscar.TabIndex = 9;
@@ -242,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 484);
+            this.ClientSize = new System.Drawing.Size(1149, 554);
             this.Controls.Add(this.proveedoresDataGridView);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.cbb_Opciones);

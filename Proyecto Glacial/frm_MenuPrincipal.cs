@@ -15,6 +15,7 @@ namespace Proyecto_Glacial
         public frm_MenuPrincipal()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btn_Clientes_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace Proyecto_Glacial
 
         private void frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(300, 20);
+            
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

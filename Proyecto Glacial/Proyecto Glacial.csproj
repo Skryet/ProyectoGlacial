@@ -27,7 +27,7 @@
     <UpdateUrl>http://glacialcolima.ddns.net/AppServ/SistemaAlmacen/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -178,7 +178,7 @@
     <Compile Include="glacial_almacenDataSet.cs">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="glacial_almacenDataSet.Designer.cs">
+    <Compile Include="glacial_almacenDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>
@@ -427,8 +427,8 @@
     </None>
     <None Include="glacial_almacenDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>glacial_almacenDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>glacial_almacenDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="glacial_almacenDataSet.xss">
       <DependentUpon>glacial_almacenDataSet.xsd</DependentUpon>

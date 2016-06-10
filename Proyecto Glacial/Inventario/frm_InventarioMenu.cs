@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_Glacial.Inventario
 {
@@ -15,6 +16,7 @@ namespace Proyecto_Glacial.Inventario
         Form banFormModificar;
         Form banFormAgregar;
         Form banFormBuscar;
+        generarConexion Conexion = new generarConexion();
         public frm_InventarioMenu()
         {
             InitializeComponent();
@@ -70,21 +72,29 @@ namespace Proyecto_Glacial.Inventario
             InventarioAgregarProductos = InventarioAgregarProductos ?? new Inventario.frm_InventarioAgregar();
             AddFormInPanel(InventarioAgregarProductos); 
             lbl_Estado.Text = "Almacén - Agregar Productos";
+            Program.idProducto = 0;
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            var resultado = MessageBox.Show("¿Desea Eliminar este Producto con todos sus proveedores? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
+            if (Program.idProducto != 0)
             {
-                MessageBox.Show("Registro Eliminado con éxito!");
-                this.productosTableAdapter.BorrarProductoPorID(Program.idProducto);
-                this.proveedor_codigoTableAdapter.BorrarProductosProveedoresPorIDlista(Program.idListaProveedorActual);
-                InventarioBuscar.Close();
-                InventarioBuscar = Application.OpenForms.OfType<Inventario.frm_InventarioBuscar>().FirstOrDefault();
-                InventarioBuscar = InventarioBuscar ?? new Inventario.frm_InventarioBuscar();
-                AddFormInPanel(InventarioBuscar);
+                var resultado = MessageBox.Show("¿Desea Eliminar este Producto con todos sus proveedores? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    MessageBox.Show("Registro Eliminado con éxito!");
+                    EliminarCodigosProveedor();
+                    this.productosTableAdapter.BorrarProductoPorID(Program.idProducto);
+                    this.proveedor_codigoTableAdapter.BorrarProductosProveedoresPorIDlista(Program.idListaProveedorActual);
+                    InventarioBuscar.Close();
+                    InventarioBuscar = Application.OpenForms.OfType<Inventario.frm_InventarioBuscar>().FirstOrDefault();
+                    InventarioBuscar = InventarioBuscar ?? new Inventario.frm_InventarioBuscar();
+                    AddFormInPanel(InventarioBuscar);
+                    Program.idProducto = 0;
+                }
             }
+            else
+                MessageBox.Show("No se ha seleccionado ningún producto a eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -108,10 +118,31 @@ namespace Proyecto_Glacial.Inventario
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            InventarioModificar = Application.OpenForms.OfType<Inventario.frm_InventarioModificar>().FirstOrDefault();
-            InventarioModificar = InventarioModificar ?? new Inventario.frm_InventarioModificar();
-            AddFormInPanel(InventarioModificar);
-            lbl_Estado.Text = "Almacén - Modificar Productos";
+            if (Program.idProducto != 0)
+            {
+                InventarioModificar = Application.OpenForms.OfType<Inventario.frm_InventarioModificar>().FirstOrDefault();
+                InventarioModificar = InventarioModificar ?? new Inventario.frm_InventarioModificar();
+                AddFormInPanel(InventarioModificar);
+                lbl_Estado.Text = "Almacén - Modificar Productos";
+                Program.idProducto = 0;
+            }
+            else
+                MessageBox.Show("No se ha seleccionado ningún producto a modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        public void EliminarCodigosProveedor()
+        {
+            MySqlCommand consulta = new MySqlCommand("DELETE FROM proveedor_codigo WHERE id_producto = '" + Program.idProducto.ToString() + "';", generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                consulta.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
         }
     }
 }

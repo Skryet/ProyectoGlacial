@@ -102,7 +102,7 @@ namespace Proyecto_Glacial.Inventario
             cadena2 = precio3.ToString("N2");
             txt_precio3.Text = cadena2;
 
-
+            VisualisarCodigoProveedor();
         }
 
   
@@ -128,8 +128,10 @@ namespace Proyecto_Glacial.Inventario
                 Convert.ToDouble(txt_precio3.Text),txt_marcaCarro.Text,txt_anioCarro.Text, txt_modeloCarro.Text
                 ,txt_numeroPedimento.Text,Convert.ToDouble(txt_precioEspecial.Text)
                 ,txt_compatibilidad.Text,img,Convert.ToDouble(txt_precio.Text),Program.idProducto);
+            ModificarCodigosProveedor();
             MessageBox.Show("Registro actualizado con éxito");
             this.Close();
+
         }
 
         private void btn_examinar_Click(object sender, EventArgs e)
@@ -181,6 +183,50 @@ namespace Proyecto_Glacial.Inventario
                 txt_precioEspecial.Text = ((Convert.ToDouble(txt_precio.Text) * .10) + Convert.ToDouble(txt_precio.Text)).ToString("N2");
 
             }
+        }
+
+        public void VisualisarCodigoProveedor()
+        {
+            string comando = "SELECT nombre_proveedor, codigo"
+                + " FROM proveedor_codigo WHERE id_producto = '" + Program.idProducto.ToString() + "';";
+            MySqlCommand consulta = new MySqlCommand(comando, generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                MySqlDataReader lector = consulta.ExecuteReader();
+                while (lector.Read())
+                {
+                    dgv_CodigoProveedor.Rows.Add(lector.GetString(0), lector.GetString(1));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
+        }
+
+        public void ModificarCodigosProveedor()
+        {            
+            string consulta = "";
+            for (int i = 0; i < dgv_CodigoProveedor.RowCount; i++)
+            {
+                consulta += "UPDATE proveedor_codigo SET nombre_proveedor ='" + 
+                    dgv_CodigoProveedor.Rows[i].Cells[0].Value.ToString() + "', codigo ='" +
+                    dgv_CodigoProveedor.Rows[i].Cells[1].Value.ToString() + 
+                    "' WHERE id_producto = '" +Program.idProducto.ToString()+ "'; ";
+            }
+            MySqlCommand agregar = new MySqlCommand(consulta, generarConexion.obtenerConexion);
+            Conexion.abrirConexion();
+            try
+            {
+                agregar.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Conexion.cerrarConexion();
         }
     }
 }

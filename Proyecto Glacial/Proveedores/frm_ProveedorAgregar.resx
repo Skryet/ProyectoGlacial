@@ -132,6 +132,15 @@
   <metadata name="lbl_Estado.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="lbl_RFC.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="lbl_Cp.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="lbl_email.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="proveedoresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>196, 17</value>
   </metadata>
@@ -144,13 +153,31 @@
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>588, 17</value>
   </metadata>
-  <metadata name="lbl_RFC.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="lbl_Cp.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="lbl_email.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Cancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEN8AABDfAXRVXjAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAEk0lEQVR4XuWb24sTVxzH01qL+lC1WhAtRe1couv9ghXrpVXpP2CLD1UE9amgQn1QVFgQFHwQ1Fpz
+        zon1TTEICtbNzGSXfauCba2Cb4IP4rVq6x2v8ffbTbIzc35JJskk2Tnz8MlmfjPn9zvf787l5Jwkkc/n
+        Yw0ZjBNksBl8aaU10xE/UvvaCRkMm2Q3Nwyb3zRsto3a307IYJiY2aNmv3iej50BIDgJwm/1i4+ZAXpO
+        TDFscXtAfIwM0LpSU0HwHa/4mBigWbwDxN6VxcfAgGSOTQeh92ThRRQ2wMyKGYbF/6WFF1HUAMNKzYQb
+        3n1atBsFDdAdPiuYeEQxAzSLzQFhD2Sh5VDIgKQt5oKoh7LISihigOmk5oGg/2SB1VDAACPL54OYOsQj
+        ETdAt9kCEPK/LCwoETZAy4mvQMQjWVQtiIuGww/B3726zXealthiOGxDMse/S2aPTEx0dn5I1W4mZNCP
+        lk0tBAENig/Ec+AyDKiOA2um//7raKo/YUIG3ZhOehF06rGrk63kNdADl96myTn2BdW/RiGDRYwc+xo6
+        8MTVofZisb/BjB0Te4+NovpbD2QQ0e3UEig6eMR7EPfx/tGRyXxM9b0WyKDm8KVQ6KlceNBxzXTY95SG
+        oEgB02LfmDZ/RhQbxIiM1nXwE7+WIHg2TFt8Gz3xJa4YvWysW08QSm/gsbMCkuBjiEoeFf5Jdv8yxi2w
+        Gn0vui1WQuOoi+8HnhS1jB8SOAqDhi+kRBEGLuO/gj4qE9DgjD+BGoiLMHgaSYl2kwCnhukWt+gkkedC
+        tbFC34vKJsDlsNsv2k3pjcImvNZy6dlu0W48GwqbcGnun2yoW2sRKYAmwGljE0kiDQyZd/m1IlIAUdSE
+        l1Ps9DS/Vs+GG0VN6PHr9Gz4UdEE/1ngEUyBJkBDx58oujDm1ucRW44mmfAOzq5nhQXVV759TQNruj8r
+        SGLLEY4JYq/W9dtn48+yEZD0g2JunA02eo5MKEy+roaP5QcMh1+V24eDbvOtpdrFN0Fo3ITa1gVM5+h4
+        wxJr4b92Ctq/kfPVzfXiFDxZuBKNmVD/wgicFZP6zoyQpupwYRfzksWq8fkf+4dDkpw/aXUaXxnC6xdy
+        bQfKfA0nIBb7GfORRYJQnwnhLY11WOlPIecJuUZgzmEeMnlQajch/LVB0+I/4DQ5Xa8ijxOZzBAyaS3U
+        ZkL4BiAd5w6Pg/xn5XqVwcVeMmGtBDehOQYUMR2+Geq8k+uWwRE/kYnqoc8ES3SThUo01wAEBlYboVYg
+        E0yb7SOT1Et1E5pvAAKPy/VQ761c34fDT5IJGqGyCa0xANEdvg5qVjPhAtm4Ucqb0DoDEPyOAdStZMIt
+        smEYFG6MPd6CrTUAKdwTXH3w8IhsFBayCa03AMFrfaAPHp6QDcLEa0J7DCgMn28URJfAj8Zkg7AZMKE9
+        BiC47A998N8PnpIHNwOcA4Ab42JqX6vA577PgOvkgaqCy2S4euwy4Dx5oMr0/5ap9FWA0+RBqoNzAQUD
+        9pAHqM6y3s6PcM4RhsyryAPigOGkluM0G7kzTpDB+JBPvAf9efBXReEF7wAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
