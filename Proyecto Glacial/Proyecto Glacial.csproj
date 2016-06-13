@@ -96,6 +96,12 @@
     <Compile Include="AutoClosingMessageBox.cs" />
     <Compile Include="Clases\AgregarObtenerImagen.cs" />
     <Compile Include="Clases\ReestablecerID.cs" />
+    <Compile Include="Clientes\Credito\frm_Creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Credito\frm_Creditos.Designer.cs">
+      <DependentUpon>frm_Creditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\frm_ClientesAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <Compile Include="Ventas\Objetos\NodoProducto.cs" />
     <Compile Include="Ventas\Objetos\Venta.cs" />
+    <EmbeddedResource Include="Clientes\Credito\frm_Creditos.resx">
+      <DependentUpon>frm_Creditos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,12 +586,12 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

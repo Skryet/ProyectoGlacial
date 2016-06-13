@@ -153,13 +153,12 @@ namespace Proyecto_Glacial
             this.Location = new Point(300, 20);
         }
 
-
-
-        // this.clientesTableAdapter.Fill(this.glacial_almacenDataSet.clientes);
-
-
-
-
-
+        private void btn_Creditos_Click(object sender, EventArgs e)
+        {
+            Clientes.Credito.frm_Creditos credito = Application.OpenForms.OfType<Clientes.Credito.frm_Creditos>().FirstOrDefault();
+            credito = credito ?? new Clientes.Credito.frm_Creditos();
+            AddFormInPanel(credito);
+            lbl_Estado.Text = "Glacial - Creditos";
+        }        
     }
 }
