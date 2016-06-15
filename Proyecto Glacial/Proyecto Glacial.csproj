@@ -27,7 +27,7 @@
     <UpdateUrl>http://glacialcolima.ddns.net/AppServ/SistemaAlmacen/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,11 +96,24 @@
     <Compile Include="AutoClosingMessageBox.cs" />
     <Compile Include="Clases\AgregarObtenerImagen.cs" />
     <Compile Include="Clases\ReestablecerID.cs" />
+    <Compile Include="Clientes\Credito\Consultas\autocompletado_clientes.cs" />
+    <Compile Include="Clientes\Credito\frm_AutocompletadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Credito\frm_AutocompletadoClientes.Designer.cs">
+      <DependentUpon>frm_AutocompletadoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\Credito\frm_Creditos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clientes\Credito\frm_Creditos.Designer.cs">
       <DependentUpon>frm_Creditos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Credito\frm_Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Credito\frm_Pagos.Designer.cs">
+      <DependentUpon>frm_Pagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Clientes\frm_ClientesAgregar.cs">
       <SubType>Form</SubType>
@@ -323,8 +336,14 @@
     <Compile Include="Ventas\Objetos\materialVenta.cs" />
     <Compile Include="Ventas\Objetos\NodoProducto.cs" />
     <Compile Include="Ventas\Objetos\Venta.cs" />
+    <EmbeddedResource Include="Clientes\Credito\frm_AutocompletadoClientes.resx">
+      <DependentUpon>frm_AutocompletadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\Credito\frm_Creditos.resx">
       <DependentUpon>frm_Creditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Credito\frm_Pagos.resx">
+      <DependentUpon>frm_Pagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\frm_ClientesAgregar.resx">
       <DependentUpon>frm_ClientesAgregar.cs</DependentUpon>
@@ -586,12 +605,12 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

@@ -155,8 +155,8 @@ namespace Proyecto_Glacial
 
         private void btn_Creditos_Click(object sender, EventArgs e)
         {
-            Clientes.Credito.frm_Creditos credito = Application.OpenForms.OfType<Clientes.Credito.frm_Creditos>().FirstOrDefault();
-            credito = credito ?? new Clientes.Credito.frm_Creditos();
+            Clientes.Credito.btn_Pago credito = Application.OpenForms.OfType<Clientes.Credito.btn_Pago>().FirstOrDefault();
+            credito = credito ?? new Clientes.Credito.btn_Pago();
             AddFormInPanel(credito);
             lbl_Estado.Text = "Glacial - Creditos";
         }        
